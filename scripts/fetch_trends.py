@@ -25,8 +25,15 @@ CUR_YEAR = 2026
 SPLIT_YEAR = 2024          # >= 为 recent, < 为 baseline
 FIELDS = "title,year,venue,citationCount"
 
-SEC_VENUES = ["Symposium On Usable Privacy and Security",
-              "Proceedings on Privacy Enhancing Technologies"]
+# SOUPS/PETS 全收(usable/隐私专会);四大会只收 interview/survey 论文(usable 方法学标志,
+# 能滤掉系统安全论文,把标题不含 "usable" 但其实是用户研究的论文也抓进来)
+SEC_FULL_VENUES = ["Symposium On Usable Privacy and Security",
+                   "Proceedings on Privacy Enhancing Technologies"]
+SEC_BIG4_VENUES = ["USENIX Security Symposium",
+                   "IEEE Symposium on Security and Privacy",
+                   "Conference on Computer and Communications Security",
+                   "Network and Distributed System Security Symposium"]
+BIG4_QUERY = "interview | survey | questionnaire"
 HCI_VENUE = "International Conference on Human Factors in Computing Systems"
 # 全用单词 OR;多词短语(如 data protection)会被 SS 当成 AND,不要放进来
 HCI_QUERY = "privacy | security | surveillance | consent | confidentiality | anonymity"
@@ -143,15 +150,18 @@ def render(title, papers):
     return "\n".join(L) + "\n"
 
 def main():
-    print("拉取 SOUPS + PETS ...")
-    sec = dedup(sum((bulk(v) for v in SEC_VENUES), []))
+    print("拉取 SOUPS + PETS (全收) ...")
+    sec = sum((bulk(v) for v in SEC_FULL_VENUES), [])
+    print("拉取 四大会 interview/survey 论文 ...")
+    sec += sum((bulk(v, BIG4_QUERY) for v in SEC_BIG4_VENUES), [])
+    sec = dedup(sec)
     print(f"  security 样本 {len(sec)} 篇")
     print("拉取 CHI(privacy/security) ...")
     hci = dedup(bulk(HCI_VENUE, HCI_QUERY))
     print(f"  hci 样本 {len(hci)} 篇")
 
     open(os.path.join(ROOT, "security", "trends", "latest.md"), "w", encoding="utf-8"
-         ).write(render("# 安全领域 · 新趋势（SOUPS + PETS）", sec))
+         ).write(render("# 安全领域 · 新趋势（SOUPS + PETS + 四大会 interview/survey）", sec))
     open(os.path.join(ROOT, "hci", "trends", "latest.md"), "w", encoding="utf-8"
          ).write(render("# HCI 领域 · 隐私安全新趋势（CHI）", hci))
     json.dump({"security_n": len(sec), "hci_n": len(hci)},
