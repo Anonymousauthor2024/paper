@@ -1,0 +1,71 @@
+{
+  "note": "usable security/privacy 大牛库。不预先分 security/hci；抓到的论文按 venue 自动归类。每个大牛绑定一组 ss_author_ids（Semantic Scholar 消歧不可靠，需多 id 合并去重）。",
+  "experts": [
+    {
+      "name": "Yang Wang",
+      "affiliation": "UIUC",
+      "role": "professor",
+      "known_for": "usable/inclusive privacy & security, targeted ads, accessibility",
+      "ss_author_ids": ["2155654353", "2300286628", "2287404943", "2347750822", "2324671769"],
+      "dblp": null,
+      "note": "Yaman Yu / Smirity Kaushik 的导师；SS 拆成 5 个 profile，已合并"
+    },
+    {
+      "name": "Yaman Yu",
+      "affiliation": "UIUC",
+      "role": "phd",
+      "known_for": "youth + generative AI safety, Web3 usability, stablecoin privacy",
+      "ss_author_ids": ["2214817714"],
+      "dblp": null
+    },
+    {
+      "name": "Yixin Zou",
+      "affiliation": "MPI-SP",
+      "role": "faculty",
+      "known_for": "usable privacy, at-risk users, security & privacy advice",
+      "ss_author_ids": ["2301562974"],
+      "dblp": null,
+      "note": "博士导师 Florian Schaub"
+    },
+    {
+      "name": "Jingjie Li",
+      "affiliation": "University of Edinburgh",
+      "role": "faculty",
+      "known_for": "usable security, IoT/VR security perceptions, mixed-methods",
+      "ss_author_ids": ["49297766"],
+      "dblp": null
+    },
+    {
+      "name": "Tanusree Sharma",
+      "affiliation": "Penn State",
+      "role": "faculty",
+      "known_for": "usable security, Web3/blockchain, AI governance",
+      "ss_author_ids": ["2270046781"],
+      "dblp": null
+    },
+    {
+      "name": "Kanye Ye Wang",
+      "affiliation": "University of Macau",
+      "role": "faculty",
+      "known_for": "privacy perceptions, smart home, HCI qualitative",
+      "ss_author_ids": ["2292090978"],
+      "dblp": null
+    },
+    {
+      "name": "Florian Schaub",
+      "affiliation": "University of Michigan",
+      "role": "professor",
+      "known_for": "usable privacy, privacy notices & choices, at-risk users",
+      "ss_author_ids": ["34949741", "2261515099"],
+      "dblp": null
+    },
+    {
+      "name": "Lorrie Faith Cranor",
+      "affiliation": "CMU",
+      "role": "professor",
+      "known_for": "usable privacy & security (founding figure), privacy policies, passwords, SOUPS",
+      "ss_author_ids": ["1699751", "2106548793"],
+      "dblp": null
+    }
+  ]
+}
