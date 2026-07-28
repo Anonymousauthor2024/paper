@@ -1,0 +1,56 @@
+# 大牛 · 安全会议(四大会 + SOUPS/PETS)近期论文
+
+_生成于 2026-07-28；🆕 = 最近 18 个月_
+
+- 2026 🆕 | [SEC] Yixin Zou | IEEE Symposium on Security and Privacy — **“I Wonder if These Warnings are Accurate”: Security and Privacy Advice in Nine Majority World Countries**
+- 2026 🆕 | [SEC] Yixin Zou | IEEE Symposium on Security and Privacy — **Toward Inclusive Security and Privacy for Deaf and Hard-of-Hearing People: A Community-Based Interview Study**
+- 2026 🆕 | [SEC] Florian Schaub | Proceedings on Privacy Enhancing Technol — **How We Define Privacy Literacy: Teaching Experiences & Challenges of Community-Engaged Privacy Educators**
+- 2026 🆕 | [SEC] Lorrie Faith Cranor | IEEE Symposium on Security and Privacy — **From “Be Careful” to “Here's Why”: Investigating User Reasoning with Context-Specific SMS Scam Warnings**
+- 2025 🆕 | [SEC] Yang Wang, Yaman Yu | Conference on Computer and Communication — **YouthSafe: A Youth-Centric Safety Benchmark and Safeguard Model for Large Language Models** (arXiv:2509.08997)
+- 2025 🆕 | [SEC] Yang Wang, Yaman Yu | Symposium On Usable Privacy and Security — **Youth-Centered GAI Risks (YAIR): A Taxonomy of Generative AI Risks from Empirical Data**
+- 2025 🆕 | [SEC] Yang Wang, Yaman Yu, Tanusree Sharma, Kanye Ye Wang | IEEE Symposium on Security and Privacy — **Security Perceptions of Users in Stablecoins: Advantages and Risks within the Cryptocurrency Ecosystem**
+- 2025 🆕 | [SEC] Yang Wang, Yaman Yu, Yixin Zou, Tanusree Sharma | Proceedings on Privacy Enhancing Technol — **Privacy Perceptions and Behaviors Towards Targeted Advertising on Social Media: A Cross-Country Study on the Effect of Culture and Religion**
+- 2025 🆕 | [SEC] Yixin Zou | IEEE Symposium on Security and Privacy — **Human-Centered Threat Modeling in Practice: Lessons, Challenges, and Paths Forward** (arXiv:2511.13781)
+- 2025 🆕 | [SEC] Yixin Zou | USENIX Security Symposium — **"No, I Can't Be a Security Personnel on Your Phone": Security and Privacy Threats From Sharing Infrastructure in Rural Ghana**
+- 2025 🆕 | [SEC] Yixin Zou | Symposium On Usable Privacy and Security — **More than Usability: Differential Access to Digital Security and Privacy**
+- 2025 🆕 | [SEC] Yixin Zou | USENIX Security Symposium — **Digital Security Perceptions and Practices Around the World: A WEIRD versus Non-WEIRD Comparison**
+- 2025 🆕 | [SEC] Yixin Zou | IEEE Symposium on Security and Privacy — **SoK: A Privacy Framework for Security Research Using Social Media Data**
+- 2025 | [SEC] Yixin Zou | Proceedings on Privacy Enhancing Technol — **"What are they gonna do with my data?": Privacy Expectations, Concerns, and Behaviors in Virtual Reality**
+- 2025 | [SEC] Yixin Zou, Florian Schaub | Proceedings on Privacy Enhancing Technol — **Misalignments and Demographic Differences in Expected and Actual Privacy Settings on Facebook**
+- 2025 | [SEC] Jingjie Li | Proceedings on Privacy Enhancing Technol — **Privacy Bills of Materials: A Transparent Privacy Information Inventory for Collaborative Privacy Notice Generation in Mobile App Development** (arXiv:2501.01131)
+- 2025 🆕 | [SEC] Kanye Ye Wang | Conference on Computer and Communication — **Digital Safety for Children with Intellectual Disabilities When Using Mobile Devices from Parents' and Teachers' Perspectives**
+- 2025 🆕 | [SEC] Kanye Ye Wang | USENIX Security Symposium — **Investigating the Impact of Online Community Involvement on Safety Practices and Perceived Risks Among People Who Use Drugs**
+- 2025 🆕 | [SEC] Florian Schaub | Conference on Computer and Communication — **Layered, Overlapping, and Inconsistent: A Large-Scale Analysis of the Multiple Privacy Policies and Controls of U.S. Banks** (arXiv:2507.05415)
+- 2025 🆕 | [SEC] Florian Schaub | USENIX Security Symposium — **How Transparent is Usable Privacy and Security Research? A Meta-Study on Current Research Transparency Practices**
+- 2025 🆕 | [SEC] Florian Schaub | IEEE Symposium on Security and Privacy — **Restricting the Link: Effects of Focused Attention and Time Delay on Phishing Warning Effectiveness**
+- 2025 🆕 | [SEC] Florian Schaub | IEEE Symposium on Security and Privacy — **Transparency in Usable Privacy and Security Research: Scholars' Perspectives, Practices, and Recommendations**
+- 2025 | [SEC] Florian Schaub | Proceedings on Privacy Enhancing Technol — **User-Centric Textual Descriptions of Privacy-Enhancing Technologies for Ad Tracking and Analytics**
+- 2025 🆕 | [SEC] Lorrie Faith Cranor | Conference on Computer and Communication — **'Is this a scam?': The Nature and Quality of Reddit Discussion about Scams**
+- 2025 🆕 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **Rethinking Fingerprinting: An Assessment of Behavior-based Methods at Scale and Implications for Web Tracking**
+- 2025 🆕 | [SEC] Lorrie Faith Cranor | USENIX Security Symposium — **Privacy Solution or Menace? Investigating Perceptions of Radio-Frequency Sensing**
+- 2025 🆕 | [SEC] Lorrie Faith Cranor | Network and Distributed System Security  — **The Kids Are All Right: Investigating the Susceptibility of Teens and Adults to YouTube Giveaway Scams**
+- 2024 | [SEC] Yang Wang, Tanusree Sharma | USENIX Security Symposium — **"I'm not convinced that they don't collect more than is necessary": User-Controlled Data Minimization Design in Search Engines**
+- 2024 | [SEC] Yang Wang, Yaman Yu, Tanusree Sharma | IEEE Symposium on Security and Privacy — **Exploring Parent-Child Perceptions on Safety in Generative AI: Concerns, Mitigation Strategies, and Design Implications** (arXiv:2406.10461)
+- 2024 | [SEC] Yixin Zou, Florian Schaub | Proceedings on Privacy Enhancing Technol — **Cross-Contextual Examination of Older Adults' Privacy Concerns, Behaviors, and Vulnerabilities**
+- 2024 | [SEC] Lorrie Faith Cranor | Symposium On Usable Privacy and Security — **Design and Evaluation of Privacy-Preserving Protocols for Agent-Facilitated Mobile Money Services in Kenya** (arXiv:2412.18716)
+- 2024 | [SEC] Lorrie Faith Cranor | SOUPS @ USENIX Security Symposium — **"It was honestly just gambling": Investigating the Experiences of Teenage Cryptocurrency Users on Reddit**
+- 2024 | [SEC] Lorrie Faith Cranor | SOUPS @ USENIX Security Symposium — **Exploring Expandable-Grid Designs to Make iOS App Privacy Labels More Usable**
+- 2024 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **What Do Privacy Advertisements Communicate to Consumers?** (arXiv:2405.13857)
+- 2024 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US**
+- 2023 | [SEC] Yang Wang, Yaman Yu | IEEE Symposium on Security and Privacy — **Design and Evaluation of Inclusive Email Security Indicators for People with Visual Impairments**
+- 2023 | [SEC] Yang Wang | IEEE Symposium on Security and Privacy — **When and Why Do People Want Ad Targeting Explanations? Evidence from a Four-Week, Mixed-Methods Field Study**
+- 2023 | [SEC] Jingjie Li, Florian Schaub | IEEE Symposium on Security and Privacy — **“It’s up to the Consumer to be Smart”: Understanding the Security and Privacy Attitudes of Smart Home Users on Reddit**
+- 2023 | [SEC] Tanusree Sharma | USENIX Security Symposium — **A Mixed-Methods Study of Security Practices of Smart Contract Developers**
+- 2023 | [SEC] Tanusree Sharma | Symposium On Usable Privacy and Security — **Iterative Design of An Accessible Crypto Wallet for Blind Users** (arXiv:2306.06261)
+- 2023 | [SEC] Florian Schaub | Proceedings on Privacy Enhancing Technol — **Researchers' Experiences in Analyzing Privacy Policies: Challenges and Opportunities**
+- 2023 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **Data Safety vs. App Privacy: Comparing the Usability of Android and iOS Privacy Labels** (arXiv:2312.03918)
+- 2023 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **Speculative Privacy Concerns about AR Glasses Data Collection**
+- 2023 | [SEC] Lorrie Faith Cranor | IEEE Symposium on Security and Privacy — **The Role of User-Agent Interactions on Mobile Money Practices in Kenya and Tanzania** (arXiv:2309.00226)
+- 2023 | [SEC] Lorrie Faith Cranor | USENIX Security Symposium — **Are Consumers Willing to Pay for Security and Privacy of IoT Devices?**
+- 2023 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **Is There a Reverse Privacy Paradox? An Exploratory Analysis of Gaps Between Privacy Perspectives and Privacy-Seeking Behaviors**
+- 2022 | [SEC] Yang Wang | USENIX Security Symposium — **DeepPhish: Understanding User Trust Towards Artificially Generated Profiles in Online Social Networks**
+- 2022 | [SEC] Florian Schaub, Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **Increasing Adoption of Tor Browser Using Informational and Planning Nudges**
+- 2022 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **How Usable Are iOS App Privacy Labels?**
+- 2022 | [SEC] Lorrie Faith Cranor | SOUPS @ USENIX Security Symposium — **Detecting iPhone Security Compromise in Simulated Stalking Scenarios: Strategies and Obstacles**
+- 2022 | [SEC] Lorrie Faith Cranor | SOUPS @ USENIX Security Symposium — **Is it a concern or a preference? An investigation into the ability of privacy scales to capture and distinguish granular privacy constructs**
+- 2022 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **User-friendly yet rarely read: A case study on the redesign of an online HIPAA authorization**

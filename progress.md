@@ -46,8 +46,9 @@ paper/
 ```
 
 ## 待办
-- [ ] `scripts/fetch_experts.py`：按 experts.json 拉每个大牛的新论文，去重，按 venue 归类
-- [ ] 大牛"新方向"检测：对比历史 topic 分布
+- [x] `scripts/fetch_experts.py`：拉每个大牛的论文，多 profile 合并去重，按 venue 归类，直接列最近论文
+- [x] `scripts/find_profiles.py`：扫描同名 SS profile 查漏，补齐漏绑 id（输出 `people/profile_audit.md`）
+- [x] 大牛"新方向"检测 → 改为直接列最近论文标题（自动关键词提炼不可靠，已放弃）
 - [ ] `scripts/fetch_trends.py`：全领域关键词增长 + 引用增速
 - [ ] 补全每个大牛的 DBLP 作者页
 - [ ] GitHub Actions 定时配置
@@ -56,3 +57,4 @@ paper/
 
 ## 进度日志
 - **2026-07-28**：确定架构与数据源；验证 Semantic Scholar API 可用；定位并确认 8 位种子大牛（解决 Yang Wang 5-profile、Schaub/Cranor 2-profile 合并问题）；建目录骨架 + `people/experts.json` + `progress.md`；首次 push。
+- **2026-07-28（续）**：实现 `fetch_experts.py`（多 profile 合并、venue 分类、直接列最近论文、18 月窗口）；新增 `find_profiles.py` 查漏工具，补齐 5 位大牛漏绑 profile（Yixin Zou 领域内 7→35 篇，Jingjie/Tanusree/Schaub/Cranor 各有补绑）；更新全部输出与 `profile_audit.md`。人工排除 Tanusree 的同名误绑（Final Fantasy）与 Yang Wang 合作网补查。

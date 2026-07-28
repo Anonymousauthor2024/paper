@@ -23,25 +23,27 @@
       "affiliation": "MPI-SP",
       "role": "faculty",
       "known_for": "usable privacy, at-risk users, security & privacy advice",
-      "ss_author_ids": ["2301562974"],
+      "ss_author_ids": ["2301562974", "144504948", "2210099720", "2405999618"],
       "dblp": null,
-      "note": "博士导师 Florian Schaub"
+      "note": "博士导师 Florian Schaub；SS 拆成 4 个 profile，已合并"
     },
     {
       "name": "Jingjie Li",
       "affiliation": "University of Edinburgh",
       "role": "faculty",
       "known_for": "usable security, IoT/VR security perceptions, mixed-methods",
-      "ss_author_ids": ["49297766"],
-      "dblp": null
+      "ss_author_ids": ["49297766", "2325102614"],
+      "dblp": null,
+      "note": "SS 拆成 2 个 profile：49297766(2019-2024) + 2325102614(2025-2026)，已合并"
     },
     {
       "name": "Tanusree Sharma",
       "affiliation": "Penn State",
       "role": "faculty",
       "known_for": "usable security, Web3/blockchain, AI governance",
-      "ss_author_ids": ["2270046781"],
-      "dblp": null
+      "ss_author_ids": ["2270046781", "1717671332"],
+      "dblp": null,
+      "note": "1717671332 = 早期 smart contract 安全 profile"
     },
     {
       "name": "Kanye Ye Wang",
@@ -56,7 +58,7 @@
       "affiliation": "University of Michigan",
       "role": "professor",
       "known_for": "usable privacy, privacy notices & choices, at-risk users",
-      "ss_author_ids": ["34949741", "2261515099"],
+      "ss_author_ids": ["34949741", "2261515099", "2330204560", "2340453411"],
       "dblp": null
     },
     {
@@ -64,7 +66,7 @@
       "affiliation": "CMU",
       "role": "professor",
       "known_for": "usable privacy & security (founding figure), privacy policies, passwords, SOUPS",
-      "ss_author_ids": ["1699751", "2106548793"],
+      "ss_author_ids": ["1699751", "2106548793", "1491256745"],
       "dblp": null
     }
   ]

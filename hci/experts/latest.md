@@ -1,0 +1,50 @@
+# 大牛 · HCI(CHI / CSCW)近期论文
+
+_生成于 2026-07-28；🆕 = 最近 18 个月_
+
+- 2026 🆕 | [HCI] Yaman Yu | CHI Extended Abstracts — **Developmentally Safe Generative AI Environment for Youth**
+- 2026 🆕 | [HCI] Yixin Zou | Symposium on Designing Interactive Syste — **Revealed or Reinforced: How Assistive Technologies Shape the Experience with Dark Patterns for Blind and Low-Vision Users**
+- 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **It Shouldn't Be This Difficult: Researcher Perspectives on Diversity and Inclusion in Usable Privacy and Security Research**
+- 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **Do Citizens Agree with the EU AI Act? Public Perspectives on Risk and Regulation of AI Systems**
+- 2026 🆕 | [HCI] Yixin Zou, Jingjie Li | International Conference on Human Factor — **Characterizing Scam-Driven Human Trafficking Across Chinese Borders and Online Community Responses on RedNote** (arXiv:2603.26520)
+- 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **What is Safety? Corporate Discourse, Power, and the Politics of Generative AI Safety** (arXiv:2602.06981)
+- 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **From Harm to Healing: Understanding Individual Resilience after Cybercrimes** (arXiv:2601.16050)
+- 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **“What If My Face Gets Scanned Without Consent”: Older Adults' Experiences with Biometric Payment** (arXiv:2601.12300)
+- 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **Experiencer, Helper, or Observer: Online Fraud Intervention for Older Adults Through a Role-based Simulation Approach** (arXiv:2601.12324)
+- 2026 🆕 | [HCI] Jingjie Li | Symposium on Designing Interactive Syste — **Stepping Into the Black Box: Opening Up LLMs to Public Exploration Through Discursive Design**
+- 2026 🆕 | [HCI] Jingjie Li | International Conference on Human Factor — **Speculative Performance: Staging Intergenerational Speculation to Explore Critical Literacies of Technological Futures**
+- 2026 🆕 | [HCI] Kanye Ye Wang | International Conference on Human Factor — **Exploring the Impacts and Challenges of Vibe Coding Paradigm to Children's Programming Learning and Practices**
+- 2026 🆕 | [HCI] Kanye Ye Wang | International Conference on Human Factor — **Perceived Impacts and Challenges of Agricultural Information on Short-Form Video Platforms as Rural Infrastructure**
+- 2026 🆕 | [HCI] Kanye Ye Wang | International Conference on Human Factor — **User Perceptions of Responsible Gambling Messages as Nudges for Gambling Safety**
+- 2026 🆕 | [HCI] Kanye Ye Wang | International Conference on Human Factor — **"Privacy across the boundary": Examining Perceived Privacy Risk Across Data Transmission and Sharing Ranges of Smart Home Personal Assistants** (arXiv:2601.17373)
+- 2026 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **Privacy and Trust vs. Utility: Adoption of Commercial vs. Institutional AI assistants Among University Users**
+- 2026 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **“Families are messy”: From Parent-Child Tensions to Family-Centered Design of Smart Home Technologies**
+- 2026 🆕 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **Passing Down Passwords: How Older Adults Approach Postmortem Account Access and Digital Estate Planning**
+- 2026 🆕 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **My Money, Your Name: Challenges and Workarounds in ID-Required Mobile Money in East Africa**
+- 2025 🆕 | [HCI] Yang Wang, Yaman Yu | International Conference on Human Factor — **Principles of Safe AI Companions for Youth: Parent and Expert Perspectives** (arXiv:2510.11185)
+- 2025 🆕 | [HCI] Yaman Yu | CHI Extended Abstracts — **"I Am a Blind Seller!": Picture Taking Assistance for Visually Impaired Individuals for Participation as Sellers in Customer to Customer (C2C) Marketplaces**
+- 2025 🆕 | [HCI] Yaman Yu, Kanye Ye Wang | International Conference on Human Factor — **Using Affordance to Understand Usability of Web3 Social Media**
+- 2025 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **Lay Perceptions of Algorithmic Discrimination in the Context of Systemic Injustice**
+- 2025 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **"Auntie, Please Don't Fall for Those Smooth Talkers": How Chinese Younger Family Members Safeguard Seniors from Online Fraud** (arXiv:2501.10803)
+- 2025 🆕 | [HCI] Jingjie Li | International Conference on Human Factor — **``Impressively Scary:' Exploring User Perceptions and Reactions to Unraveling Machine Learning Models in Social Media Applications** (arXiv:2503.03927)
+- 2025 🆕 | [HCI] Kanye Ye Wang | CHI Extended Abstracts — **Exploring the Impact of Chatbot Design on Student Engagement and Cognitive Load: A Case Study on Error-Analysis Chatbots**
+- 2025 🆕 | [HCI] Kanye Ye Wang | International Conference on Human Factor — **Understanding the Challenges Students Face in Non-English Programming Environments Due to the Programming Language Transition: A Case Study of Keywords in the Chinese Version of Scratch**
+- 2025 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **Intriguing, Concerning, and Questioning the Impact on Immersion: An Exploration of VR Users' Advertising Experiences and Attitudes**
+- 2024 | [HCI] Yang Wang, Tanusree Sharma | International Conference on Human Factor — **Designing Accessible Obfuscation Support for Blind Individuals’ Visual Privacy Management**
+- 2024 | [HCI] Yang Wang, Yaman Yu, Yixin Zou, Tanusree Sharma | CHI Extended Abstracts — **Cross-Country Examination of People’s Experience with Targeted Advertising on Social Media**
+- 2024 | [HCI] Yang Wang, Tanusree Sharma | International Conference on Human Factor — **“I Can’t Believe It’s Not Custodial!”: Usable Trustless Decentralized Key Management**
+- 2024 | [HCI] Yang Wang, Yaman Yu, Tanusree Sharma | International Conference on Human Factor — **"Don't put all your eggs in one basket": How Cryptocurrency Users Choose and Secure Their Wallets**
+- 2024 | [HCI] Yang Wang | International Conference on Human Factor — **SEAM-EZ: Simplifying Stateful Analytics through Visual Programming**
+- 2024 | [HCI] Jingjie Li | International Conference on Human Factor — **I see an IC: A Mixed-Methods Approach to Study Human Problem-Solving Processes in Hardware Reverse Engineering** (arXiv:2402.15452)
+- 2024 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **Interdisciplinary Approaches to Cybervulnerability Impact Assessment for Energy Critical Infrastructure**
+- 2024 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **Is a Trustmark and QR Code Enough? The Effect of IoT Security and Privacy Label Information Complexity on Consumer Comprehension and Behavior**
+- 2023 | [HCI] Yang Wang, Yaman Yu, Tanusree Sharma | International Conference on Human Factor — **User Perceptions and Experiences of Targeted Ads on Social Media Platforms: Learning from Bangladesh and India**
+- 2023 | [HCI] Tanusree Sharma | International Conference on Human Factor — **Disability-First Design and Creation of A Dataset Showing Private Visual Information Collected With People Who Are Blind**
+- 2023 | [HCI] Florian Schaub | International Conference on Human Factor — **Emotion AI at Work: Implications for Workplace Surveillance, Emotional Labor, and Emotional Privacy**
+- 2023 | [HCI] Florian Schaub, Lorrie Faith Cranor | International Conference on Human Factor — **Less is Not More: Improving Findability and Actionability of Privacy Controls for Online Behavioral Advertising**
+- 2023 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **A US-UK Usability Evaluation of Consent Management Platform Cookie Consent Interface Design on Desktop and Mobile**
+- 2022 | [HCI] Yixin Zou, Florian Schaub | International Conference on Human Factor — **Trauma-Informed Computing: Towards Safer Technology Experiences for All**
+- 2022 | [HCI] Florian Schaub | CHI Extended Abstracts — **Novel Challenges of Safety, Security and Privacy in Extended Reality**
+- 2022 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **“Okay, whatever”: An Evaluation of Cookie Consent Interfaces**
+- 2022 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **Understanding Challenges for Developers to Create Accurate Privacy Nutrition Labels**
+- 2022 | [HCI] Lorrie Faith Cranor | CHI Extended Abstracts — **Understanding iOS Privacy Nutrition Labels: An Exploratory Large-Scale Analysis of App Store Data**
