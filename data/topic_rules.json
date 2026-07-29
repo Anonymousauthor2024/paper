@@ -1,0 +1,55 @@
+{
+  "note": "2026 新工作的话题归类规则。按 title + venue 做轻量规则匹配；靠前规则优先。用于看板概览，不替代人工文献综述。",
+  "topics": [
+    {
+      "key": "ai_agents_llm_workflows",
+      "label": "AI agents / LLM workflows",
+      "keywords": ["agent", "agents", "agentic", "llm", "large language model", "chatbot", "ai assistant", "workflow", "prompt injection", "gui agents", "reviewer", "inferences"]
+    },
+    {
+      "key": "genai_safety_media",
+      "label": "GenAI safety / synthetic media / deepfake",
+      "keywords": ["generative ai", "genai", "ai-generated", "synthetic", "deepfake", "provenance", "voice generation", "ai safety", "sexual content", "manga", "humor generation"]
+    },
+    {
+      "key": "privacy_advice_policy",
+      "label": "Privacy advice / literacy / policy",
+      "keywords": ["privacy advice", "privacy literacy", "privacy policy", "privacy label", "privacy labels", "privacy risk", "privacy guarantees", "privacy-protected", "privacy control", "privacy perception", "privacy perceptions", "trust vs. utility", "data access permissions"]
+    },
+    {
+      "key": "fraud_scams_online_harms",
+      "label": "Fraud / scams / online harms",
+      "keywords": ["fraud", "scam", "scams", "trafficking", "cybercrime", "cybercrimes", "online harms", "sms scam", "union busting", "harassment", "abuse"]
+    },
+    {
+      "key": "accessibility_older_adults",
+      "label": "Accessibility / older adults / assistive tech",
+      "keywords": ["accessibility", "accessible", "assistive", "blind", "low-vision", "low vision", "deaf", "hard-of-hearing", "older adults", "older adult", "later life", "stroke", "cerebral palsy", "motor impairments", "disability", "disabilities", "biometric payment"]
+    },
+    {
+      "key": "crypto_dao_web3_governance",
+      "label": "Crypto / DAO / Web3 governance",
+      "keywords": ["crypto", "cryptocurrency", "stablecoin", "stablecoins", "web3", "dao", "daos", "decentralized", "blockchain", "digital banking", "mobile money", "algorithmic organization"]
+    },
+    {
+      "key": "digital_labor_platform_power",
+      "label": "Digital labor / platforms / organizational power",
+      "keywords": ["digital labor", "platform", "platforms", "workers", "merchants", "small business", "organizational", "power", "governance", "decision making", "advertising ecosystem"]
+    },
+    {
+      "key": "human_ai_creativity_education_health",
+      "label": "Human-AI collaboration / creativity / education / health",
+      "keywords": ["human-ai", "collaboration", "collaborating", "creativity", "creative", "ideation", "education", "training", "medical students", "clinical", "health", "rehabilitation", "avatar", "family-resembling", "digital twin", "interviewers"]
+    },
+    {
+      "key": "crypto_security_cryptography",
+      "label": "Cryptography / censorship / private advertising",
+      "keywords": ["cryptography", "key transparency", "decryption", "oracle", "oracles", "tee", "tees", "censorship", "steganography", "private advertising", "threat modeling"]
+    },
+    {
+      "key": "other_review",
+      "label": "Other / needs review",
+      "keywords": []
+    }
+  ]
+}

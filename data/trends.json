@@ -1,4 +1,2799 @@
 {
-  "security_n": 1112,
-  "hci_n": 597
+  "generated_at": "2026-07-28",
+  "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；topic migration 用逐年标题话题统计检测 SOUPS/PETS 或 HCI 隐私安全到安全四大的 +1/+2 年滞后。",
+  "blocks": [
+    {
+      "key": "security_sub",
+      "label": "子领域 · usable security（SOUPS + PETS + 四大会 interview/survey）",
+      "sample": {
+        "total": 1112,
+        "baseline": 571,
+        "recent": 541,
+        "baseline_years": "2020-2023",
+        "recent_years": "2024-2026"
+      },
+      "emerging": [
+        {
+          "term": "agents",
+          "recent": 7,
+          "baseline": 0,
+          "growth": 7.4
+        },
+        {
+          "term": "usable privacy",
+          "recent": 7,
+          "baseline": 0,
+          "growth": 7.4
+        },
+        {
+          "term": "chinese",
+          "recent": 6,
+          "baseline": 0,
+          "growth": 6.3
+        },
+        {
+          "term": "local differential",
+          "recent": 6,
+          "baseline": 0,
+          "growth": 6.3
+        },
+        {
+          "term": "llm-based",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 5.3
+        },
+        {
+          "term": "local",
+          "recent": 10,
+          "baseline": 1,
+          "growth": 5.3
+        },
+        {
+          "term": "llms",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 5.3
+        },
+        {
+          "term": "verifiable",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 5.3
+        },
+        {
+          "term": "research",
+          "recent": 8,
+          "baseline": 1,
+          "growth": 4.2
+        },
+        {
+          "term": "decentralized",
+          "recent": 7,
+          "baseline": 1,
+          "growth": 3.7
+        },
+        {
+          "term": "phishing",
+          "recent": 6,
+          "baseline": 1,
+          "growth": 3.2
+        },
+        {
+          "term": "framework",
+          "recent": 18,
+          "baseline": 5,
+          "growth": 3.2
+        },
+        {
+          "term": "graph neural",
+          "recent": 6,
+          "baseline": 1,
+          "growth": 3.2
+        },
+        {
+          "term": "matching",
+          "recent": 6,
+          "baseline": 1,
+          "growth": 3.2
+        },
+        {
+          "term": "oblivious",
+          "recent": 6,
+          "baseline": 1,
+          "growth": 3.2
+        }
+      ],
+      "hottest": [
+        {
+          "term": "privacy",
+          "recent": 181
+        },
+        {
+          "term": "security",
+          "recent": 78
+        },
+        {
+          "term": "data",
+          "recent": 57
+        },
+        {
+          "term": "private",
+          "recent": 31
+        },
+        {
+          "term": "privacy-preserving",
+          "recent": 29
+        },
+        {
+          "term": "secure",
+          "recent": 23
+        },
+        {
+          "term": "learning",
+          "recent": 23
+        },
+        {
+          "term": "security privacy",
+          "recent": 22
+        },
+        {
+          "term": "attacks",
+          "recent": 20
+        },
+        {
+          "term": "perceptions",
+          "recent": 18
+        },
+        {
+          "term": "framework",
+          "recent": 18
+        },
+        {
+          "term": "fingerprinting",
+          "recent": 17
+        },
+        {
+          "term": "you",
+          "recent": 16
+        },
+        {
+          "term": "web",
+          "recent": 15
+        },
+        {
+          "term": "models",
+          "recent": 15
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "897c0aedead3105b7b6cd1afbb6aeb4f62a06e11",
+          "title": "GLAZE: Protecting Artists from Style Mimicry by Text-to-Image Models",
+          "year": 2023,
+          "venue": "USENIX Security Symposium",
+          "citations": 296,
+          "citations_per_year": 74.0,
+          "abstract": "Recent text-to-image diffusion models such as MidJourney and Stable Diffusion threaten to displace many in the professional artist community. In particular, models can learn to mimic the artistic style of specific artists after\"fine-tuning\"on samples of their art. In this paper, we describe the design, implementation and evaluation of Glaze, a tool that enables artists to apply\"style cloaks\"to their art before sharing online. These cloaks apply barely perceptible perturbations to images, and when used as training data, mislead generative models that try to mimic a specific artist. In coordination with the professional artist community, we deploy user studies to more than 1000 artists, assessing their views of AI art, as well as the efficacy of our tool, its usability and tolerability of perturbations, and robustness across different scenarios and against adaptive countermeasures. Both surveyed artists and empirical CLIP-based scores show that even at low perturbation levels (p=0.05), Glaze is highly successful at disrupting mimicry under normal conditions (>92%) and against adaptive countermeasures (>85%).",
+          "url": "https://www.semanticscholar.org/paper/897c0aedead3105b7b6cd1afbb6aeb4f62a06e11",
+          "externalIds": {
+            "DBLP": "conf/uss/ShanCW0HZ23",
+            "ArXiv": "2302.04222",
+            "DOI": "10.48550/arXiv.2302.04222",
+            "CorpusId": 256662278
+          }
+        },
+        {
+          "paperId": "99041957b4d3b3c3f30a79e31c6e54756faa7ca0",
+          "title": "SoK: Taxonomy of Attacks on Open-Source Software Supply Chains",
+          "year": 2022,
+          "venue": "IEEE Symposium on Security and Privacy",
+          "citations": 298,
+          "citations_per_year": 59.6,
+          "abstract": "The widespread dependency on open-source software makes it a fruitful target for malicious actors, as demonstrated by recurring attacks. The complexity of today’s open-source supply chains results in a significant attack surface, giving attackers numerous opportunities to reach the goal of injecting malicious code into open-source artifacts that is then downloaded and executed by victims.This work proposes a general taxonomy for attacks on open-source supply chains, independent of specific programming languages or ecosystems, and covering all supply chain stages from code contributions to package distribution. Taking the form of an attack tree, it covers 107 unique vectors, linked to 94 real-world incidents, and mapped to 33 mitigating safeguards.User surveys conducted with 17 domain experts and 134 software developers positively validated the correctness, comprehensiveness and comprehensibility of the taxonomy, as well as its suitability for various use-cases. Survey participants also assessed the utility and costs of the identified safeguards, and whether they are used.",
+          "url": "https://www.semanticscholar.org/paper/99041957b4d3b3c3f30a79e31c6e54756faa7ca0",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2204-04008",
+            "ArXiv": "2204.04008",
+            "DOI": "10.1109/SP46215.2023.10179304",
+            "CorpusId": 248069148
+          }
+        },
+        {
+          "paperId": "184783fb11908a6884afeef1d155314e3379dc98",
+          "title": "99% False Positives: A Qualitative Study of SOC Analysts' Perspectives on Security Alarms",
+          "year": 2022,
+          "venue": "USENIX Security Symposium",
+          "citations": 222,
+          "citations_per_year": 44.4,
+          "abstract": null,
+          "url": "https://www.semanticscholar.org/paper/184783fb11908a6884afeef1d155314e3379dc98",
+          "externalIds": {
+            "DBLP": "conf/uss/AlAhmadiAM22",
+            "CorpusId": 245130092
+          }
+        },
+        {
+          "paperId": "32bb8b85124e554dd995e1c3a102eb921a710a99",
+          "title": "DeGPT: Optimizing Decompiler Output with LLM",
+          "year": 2024,
+          "venue": "Network and Distributed System Security Symposium",
+          "citations": 108,
+          "citations_per_year": 36.0,
+          "abstract": "—Reverse engineering is essential in malware analysis, vulnerability discovery, etc. Decompilers assist the reverse engineers by lifting the assembly to the high-level programming language, which highly boosts binary comprehension. However, decompilers suffer from problems such as meaningless variable names, redundant variables, and lacking comments describing the purpose of the code. Previous studies have shown promising performance in refining the decompiler output by training the models with huge datasets containing various decompiler outputs. However, even datasets that take much time to construct cover limited binaries in the real world. The performance degrades severely facing the binary migration. In this paper, we present DeGPT, an end-to-end framework aiming to optimize the decompiler output to improve its readability and simplicity and further assist the reverse engineers in understanding the binaries better. The Large Language Model (LLM) can mitigate performance degradation with its extraordinary ability endowed by large model size and training set containing rich multi-modal data. However, its potential is difficult to unlock through one-shot use. Thus, we propose the three-role mechanism, which includes referee (R_ref), advisor (R_adv), and operator (R_ope), to adapt the LLM to our optimization tasks. Specifically, R_ref provides the optimization scheme for the target decompiler output, while R_adv gives the rectification measures based on the scheme, and R_ope inspects whether the optimization changes the original function semantics and concludes the final verdict about whether to accept the optimizations. We evaluate DeGPT on the datasets containing decompiler outputs of various software, such as the practical command line tools, malware, a library for audio processing, and implementations of algorithms. The experimental results show that even on the output of the current top-level decompiler (Ghidra), DeGPT can achieve 24.4% reduction in the cognitive burden of understanding the decompiler outputs and provide comments of which 62.9% can provide practical semantics for the reverse engineers to help the understanding of binaries. Our user surveys also show that the optimizations can significantly simplify the code and add helpful semantic information (variable names and comments), facilitating a quick and accurate understanding of the binary.",
+          "url": "https://www.semanticscholar.org/paper/32bb8b85124e554dd995e1c3a102eb921a710a99",
+          "externalIds": {
+            "DBLP": "conf/ndss/HuL024",
+            "DOI": "10.14722/ndss.2024.24401",
+            "CorpusId": 267622140
+          }
+        },
+        {
+          "paperId": "b7882b7243cfe4b64006f42865e70ebfbf09d6ce",
+          "title": "SoK: Secure Aggregation Based on Cryptographic Schemes for Federated Learning",
+          "year": 2023,
+          "venue": "Proceedings on Privacy Enhancing Technologies",
+          "citations": 128,
+          "citations_per_year": 32.0,
+          "abstract": "Secure aggregation consists of computing the sum of data collected from multiple sources without disclosing these individual inputs. Secure aggregation has been found useful for various applications ranging from electronic voting to smart grid measurements. Recently, federated learning emerged as a new collaborative machine learning technology to train machine learning models. In this work, we study the suitability of secure aggregation based on cryptographic schemes to federated learning. We first provide a formal definition of the problem and suggest a systematic categorization of existing solutions. We further investigate the specific challenges raised by federated learning and analyze the recent dedicated secure aggregation solutions based on cryptographic schemes. We finally share some takeaway messages that would help a secure design of federated learning and identify open research directions in this topic. Based on the takeaway messages, we propose an improved definition of secure aggregation that better fits federated learning.",
+          "url": "https://www.semanticscholar.org/paper/b7882b7243cfe4b64006f42865e70ebfbf09d6ce",
+          "externalIds": {
+            "DBLP": "journals/popets/MansouriOJC23",
+            "DOI": "10.56553/popets-2023-0009",
+            "CorpusId": 253518915
+          }
+        },
+        {
+          "paperId": "7598956efd3cdda714509f02aa1907984525c481",
+          "title": "SoK: History is a Vast Early Warning System: Auditing the Provenance of System Intrusions",
+          "year": 2023,
+          "venue": "IEEE Symposium on Security and Privacy",
+          "citations": 120,
+          "citations_per_year": 30.0,
+          "abstract": "Auditing, a central pillar of operating system security, has only recently come into its own as an active area of public research. This resurgent interest is due in large part to the notion of data provenance, a technique that iteratively parses audit log entries into a dependency graph that explains the history of system execution. Provenance facilitates precise threat detection and investigation through causal analysis of sophisticated intrusion behaviors. However, the absence of a foundational audit literature, combined with the rapid publication of recent findings, makes it difficult to gain a holistic picture of advancements and open challenges in the area.In this work, we survey and categorize the provenance-based system auditing literature, distilling contributions into a layered taxonomy based on the audit log capture and analysis pipeline. Recognizing that the Reduction Layer remains a key obstacle to the further proliferation of causal analysis technologies, we delve further on this issue by conducting an ambitious independent evaluation of 8 exemplar reduction techniques against the recently-released DARPA Transparent Computing datasets. Our experiments uncover that past approaches frequently prune an overlapping set of activities from audit logs, reducing the synergistic benefits from applying them in tandem; further, we observe an inverse relation between storage efficiency and anomaly detection performance. However, we also observe that log reduction techniques are able to synergize effectively with data compression, potentially reducing log retention costs by multiple orders of magnitude. We conclude by discussing promising future directions for the field.",
+          "url": "https://www.semanticscholar.org/paper/7598956efd3cdda714509f02aa1907984525c481",
+          "externalIds": {
+            "DBLP": "conf/sp/InamCGLMMGBH23",
+            "DOI": "10.1109/SP46215.2023.10179405",
+            "CorpusId": 254249142
+          }
+        },
+        {
+          "paperId": "a78b0eb79ddc4b17ac16b4b599e7ee8aca12036d",
+          "title": "Using AI Assistants in Software Development: A Qualitative Study on Security Practices and Concerns",
+          "year": 2024,
+          "venue": "Conference on Computer and Communications Security",
+          "citations": 70,
+          "citations_per_year": 23.3,
+          "abstract": "Following the recent release of AI assistants, such as OpenAI's ChatGPT and GitHub Copilot, the software industry quickly utilized these tools for software development tasks, e.g., generating code or consulting AI for advice. While recent research has demonstrated that AI-generated code can contain security issues, how software professionals balance AI assistant usage and security remains unclear. This paper investigates how software professionals use AI assistants in secure software development, what security implications and considerations arise, and what impact they foresee on security in software development. We conducted 27 semi-structured interviews with software professionals, including software engineers, team leads, and security testers. We also reviewed 190 relevant Reddit posts and comments to gain insights into the current discourse surrounding AI assistants for software development. Our analysis of the interviews and Reddit posts finds that, despite many security and quality concerns, participants widely use AI assistants for security-critical tasks, e.g., code generation, threat modeling, and vulnerability detection. Participants' overall mistrust leads to checking AI suggestions in similar ways to human code. However, they expect improvements and, therefore, a heavier use of AI for security tasks in the future. We conclude with recommendations for software professionals to critically check AI suggestions, for AI creators to improve suggestion security and capabilities for ethical security tasks, and for academic researchers to consider general-purpose AI in software development.",
+          "url": "https://www.semanticscholar.org/paper/a78b0eb79ddc4b17ac16b4b599e7ee8aca12036d",
+          "externalIds": {
+            "DBLP": "conf/ccs/KlemmerHPLBPMRV24",
+            "ArXiv": "2405.06371",
+            "DOI": "10.1145/3658644.3690283",
+            "CorpusId": 269741207
+          }
+        },
+        {
+          "paperId": "993af11f804450e5c6f8aaab4373c9dca362f32e",
+          "title": "A Unified Framework for Quantifying Privacy Risk in Synthetic Data",
+          "year": 2022,
+          "venue": "Proceedings on Privacy Enhancing Technologies",
+          "citations": 113,
+          "citations_per_year": 22.6,
+          "abstract": "Synthetic data is often presented as a method for sharing sensitive information in a privacy-preserving manner by reproducing the global statistical properties of the original data without dis closing sensitive information about any individual. In practice, as with other anonymization methods, synthetic data cannot entirely eliminate privacy risks. These residual privacy risks need instead to be ex-post uncovered and assessed. However, quantifying the actual privacy risks of any synthetic dataset is a hard task, given the multitude of facets of data privacy. We present Anonymeter, a statistical framework to jointly quantify different types of privacy risks in synthetic tabular datasets. We equip this framework with attack-based evaluations for the singling out, linkability, and inference risks, which are the three key indicators of factual anonymization according to data protection regulations, such as the European General Data Protection Regulation (GDPR). To the best of our knowledge, we are the first to introduce a coherent and legally aligned evaluation of these three privacy risks for synthetic data, as well as to design privacy attacks which model directly the singling out and linkability risks. We demonstrate the effectiveness of our methods by conducting an extensive set of experiments that measure the privacy risks of data with deliberately inserted privacy leakages, and of synthetic data generated with and without differential privacy. Our results highlight that the three privacy risks reported by our framework scale linearly with the amount of privacy leakage in the data. Furthermore, we observe that synthetic data exhibits the lowest vulnerability against linkability, indicating one-to-one relationships between real and synthetic data records are not preserved. Finally, with a quantitative comparison we demonstrate that Anonymeter outperforms existing synthetic data privacy evaluation frameworks both in terms of detecting privacy leaks, as well as computation speed. To contribute to a privacy-conscious usage of synthetic data, we publish Anonymeter as an open-source library (https://github.com/statice/anonymeter).",
+          "url": "https://www.semanticscholar.org/paper/993af11f804450e5c6f8aaab4373c9dca362f32e",
+          "externalIds": {
+            "DBLP": "journals/popets/GiomiBWT23",
+            "ArXiv": "2211.10459",
+            "DOI": "10.48550/arXiv.2211.10459",
+            "CorpusId": 253735298
+          }
+        },
+        {
+          "paperId": "260f51e3e503674d077f07463fc69cbd0887988b",
+          "title": "SoK: SGX.Fail: How Stuff Gets eXposed",
+          "year": 2024,
+          "venue": "IEEE Symposium on Security and Privacy",
+          "citations": 57,
+          "citations_per_year": 19.0,
+          "abstract": "Intel’s Software Guard Extensions (SGX) promises an isolated execution environment, protected from all software running on the machine. As such, numerous works have sought to leverage SGX to provide confidentiality and integrity guarantees for code running in adversarial environments. In the past few years however, SGX has come under heavy fire, threatened by numerous hardware attacks. With Intel repeatedly patching SGX to regain security while consistently launching new (micro)architectures, it is increasingly difficult to track the applicability of various attack techniques across the SGX design landscape.Thus, in this paper we set out to survey and categorize various SGX attacks, their applicability to different SGX architectures, as well as the information leaked by them. We then set out to explore the effectiveness of SGX’s update mechanisms in preventing attacks on real-world deployments. Here, we study two commercial SGX applications. First, we investigate the SECRET network, an SGX-backed blockchain aiming to provide privacy-preserving smart contracts. Next, we also consider PowerDVD, a UHD Blu-Ray Digital Rights Management (DRM) software licensed to play discs on PCs. We show that in both cases vendors are unable to meet security goals originally envisioned for their products, presumably due to SGX’s long update timelines and the complexities of a manual update process. This in turn forces vendors to make difficult security/usability trade offs, resulting in security compromises.",
+          "url": "https://www.semanticscholar.org/paper/260f51e3e503674d077f07463fc69cbd0887988b",
+          "externalIds": {
+            "DBLP": "conf/sp/SchaikSYBAGMRYG24",
+            "DOI": "10.1109/SP54263.2024.00260",
+            "CorpusId": 254073280
+          }
+        },
+        {
+          "paperId": "f286a1056c11247990c689778c5b85795846e3ba",
+          "title": "Space Odyssey: An Experimental Software Security Analysis of Satellites",
+          "year": 2023,
+          "venue": "IEEE Symposium on Security and Privacy",
+          "citations": 74,
+          "citations_per_year": 18.5,
+          "abstract": "Satellites are an essential aspect of our modern society and have contributed significantly to the way we live today, most notable through modern telecommunications, global positioning, and Earth observation. In recent years, and especially in the wake of the New Space Era, the number of satellite deployments has seen explosive growth. Despite its critical importance, little academic research has been conducted on satellite security and, in particular, on the security of onboard firmware. This lack likely stems from by now outdated assumptions on achieving security by obscurity, effectively preventing meaningful research on satellite firmware.In this paper, we first provide a taxonomy of threats against satellite firmware. We then conduct an experimental security analysis of three real-world satellite firmware images. We base our analysis on a set of real-world attacker models and find several security-critical vulnerabilities in all analyzed firmware images. The results of our experimental security assessment show that modern in-orbit satellites suffer from different software security vulnerabilities and often a lack of proper access protection mechanisms. They also underline the need to overcome prevailing but obsolete assumptions. To substantiate our observations, we also performed a survey of 19 professional satellite developers to obtain a comprehensive picture of the satellite security landscape.",
+          "url": "https://www.semanticscholar.org/paper/f286a1056c11247990c689778c5b85795846e3ba",
+          "externalIds": {
+            "DBLP": "conf/sp/WillboldSVGH023",
+            "DOI": "10.1109/SP46215.2023.10351029",
+            "CorpusId": 259768809
+          }
+        },
+        {
+          "paperId": "f40ea293fbace3da1617dd49e97806b71001757b",
+          "title": "SoK: Data Privacy in Virtual Reality",
+          "year": 2023,
+          "venue": "Proceedings on Privacy Enhancing Technologies",
+          "citations": 72,
+          "citations_per_year": 18.0,
+          "abstract": "The adoption of virtual reality (VR) technologies has rapidly gained momentum in recent years as companies around the world begin to position the so-called ''metaverse'' as the next major medium for accessing and interacting with the internet. While consumers have become accustomed to a degree of data harvesting on the web, the real-time nature of data sharing in the metaverse indicates that privacy concerns are likely to be even more prevalent in the new ''Web 3.0.'' Research into VR privacy has demonstrated that a plethora of sensitive personal information is observable by various would-be adversaries from just a few minutes of telemetry data. On the other hand, we have yet to see VR parallels for many privacy-preserving tools aimed at mitigating threats on conventional platforms. This paper aims to systematize knowledge on the landscape of VR privacy threats and countermeasures by proposing a comprehensive taxonomy of data attributes, protections, and adversaries based on the study of 74 collected publications. We complement our qualitative discussion with a statistical analysis of the risk associated with various data sources inherent to VR in consideration of the known attacks and defenses. By focusing on highlighting the clear outstanding opportunities, we hope to motivate and guide further research into this increasingly important field.",
+          "url": "https://www.semanticscholar.org/paper/f40ea293fbace3da1617dd49e97806b71001757b",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2301-05940",
+            "ArXiv": "2301.05940",
+            "DOI": "10.48550/arXiv.2301.05940",
+            "CorpusId": 255942392
+          }
+        },
+        {
+          "paperId": "d1c5ddc14b0288104d1bcbc0fdf426a44a4c71f5",
+          "title": "How Usable Are iOS App Privacy Labels?",
+          "year": 2022,
+          "venue": "Proceedings on Privacy Enhancing Technologies",
+          "citations": 87,
+          "citations_per_year": 17.4,
+          "abstract": "Standardized privacy labels that succinctly summarize those data practices that people are most commonly concerned about offer the promise of providing users with more effective privacy notices than full-length privacy policies. With their introduction by Apple in iOS 14 and Google’s recent adoption in its Play Store, mobile app privacy labels are for the first time available at scale to users. We report the first indepth interview study with 24 lay iPhone users to investigate their experiences, understanding, and perceptions of Apple’s privacy labels. We uncovered misunderstandings of and dissatisfaction with the iOS privacy labels that hinder their effectiveness, including confusing structure, unfamiliar terms, and disconnection from permission settings and controls. We identify areas where app privacy labels might be improved and propose suggestions to address shortcomings to make them more understandable, usable, and useful.",
+          "url": "https://www.semanticscholar.org/paper/d1c5ddc14b0288104d1bcbc0fdf426a44a4c71f5",
+          "externalIds": {
+            "DBLP": "journals/popets/ZhangFYCS22",
+            "DOI": "10.56553/popets-2022-0106",
+            "CorpusId": 251998775
+          }
+        },
+        {
+          "paperId": "4f77cfb29a583418e80f719e9c3df6d9316813f2",
+          "title": "What Are the Chances? Explaining the Epsilon Parameter in Differential Privacy",
+          "year": 2023,
+          "venue": "USENIX Security Symposium",
+          "citations": 68,
+          "citations_per_year": 17.0,
+          "abstract": "Differential privacy (DP) is a mathematical privacy notion increasingly deployed across government and industry. With DP, privacy protections are probabilistic: they are bounded by the privacy budget parameter, $\\epsilon$. Prior work in health and computational science finds that people struggle to reason about probabilistic risks. Yet, communicating the implications of $\\epsilon$ to people contributing their data is vital to avoiding privacy theater -- presenting meaningless privacy protection as meaningful -- and empowering more informed data-sharing decisions. Drawing on best practices in risk communication and usability, we develop three methods to convey probabilistic DP guarantees to end users: two that communicate odds and one offering concrete examples of DP outputs. We quantitatively evaluate these explanation methods in a vignette survey study ($n=963$) via three metrics: objective risk comprehension, subjective privacy understanding of DP guarantees, and self-efficacy. We find that odds-based explanation methods are more effective than (1) output-based methods and (2) state-of-the-art approaches that gloss over information about $\\epsilon$. Further, when offered information about $\\epsilon$, respondents are more willing to share their data than when presented with a state-of-the-art DP explanation; this willingness to share is sensitive to $\\epsilon$ values: as privacy protections weaken, respondents are less likely to share data.",
+          "url": "https://www.semanticscholar.org/paper/4f77cfb29a583418e80f719e9c3df6d9316813f2",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2303-00738",
+            "ArXiv": "2303.00738",
+            "DOI": "10.48550/arXiv.2303.00738",
+            "CorpusId": 257255484
+          }
+        },
+        {
+          "paperId": "a02a3315313b34b910b36cd909800094804d614f",
+          "title": "Exploring User Security and Privacy Attitudes and Concerns Toward the Use of General-Purpose LLM Chatbots for Mental Health",
+          "year": 2025,
+          "venue": "USENIX Security Symposium",
+          "citations": 31,
+          "citations_per_year": 15.5,
+          "abstract": "Individuals are increasingly relying on large language model (LLM)-enabled conversational agents for emotional support. While prior research has examined privacy and security issues in chatbots specifically designed for mental health purposes, these chatbots are overwhelmingly\"rule-based\"offerings that do not leverage generative AI. Little empirical research currently measures users'privacy and security concerns, attitudes, and expectations when using general-purpose LLM-enabled chatbots to manage and improve mental health. Through 21 semi-structured interviews with U.S. participants, we identified critical misconceptions and a general lack of risk awareness. Participants conflated the human-like empathy exhibited by LLMs with human-like accountability and mistakenly believed that their interactions with these chatbots were safeguarded by the same regulations (e.g., HIPAA) as disclosures with a licensed therapist. We introduce the concept of\"intangible vulnerability,\"where emotional or psychological disclosures are undervalued compared to more tangible forms of information (e.g., financial or location-based data). To address this, we propose recommendations to safeguard user mental health disclosures with general-purpose LLM-enabled chatbots more effectively.",
+          "url": "https://www.semanticscholar.org/paper/a02a3315313b34b910b36cd909800094804d614f",
+          "externalIds": {
+            "ArXiv": "2507.10695",
+            "DBLP": "journals/corr/abs-2507-10695",
+            "DOI": "10.48550/arXiv.2507.10695",
+            "CorpusId": 280275232
+          }
+        },
+        {
+          "paperId": "d32aae4307b5df1094f56bfa716ca856d415f842",
+          "title": "Beyond Typosquatting: An In-depth Look at Package Confusion",
+          "year": 2023,
+          "venue": "USENIX Security Symposium",
+          "citations": 59,
+          "citations_per_year": 14.8,
+          "abstract": null,
+          "url": "https://www.semanticscholar.org/paper/d32aae4307b5df1094f56bfa716ca856d415f842",
+          "externalIds": {
+            "DBLP": "conf/uss/NeupaneHWDC23",
+            "CorpusId": 263161934
+          }
+        }
+      ]
+    },
+    {
+      "key": "security_all",
+      "label": "整体 · 安全四大会全部（USENIX / S&P / CCS / NDSS）",
+      "sample": {
+        "total": 5539,
+        "baseline": 2880,
+        "recent": 2659,
+        "baseline_years": "2020-2023",
+        "recent_years": "2024-2026"
+      },
+      "emerging": [
+        {
+          "term": "llm",
+          "recent": 40,
+          "baseline": 0,
+          "growth": 43.3
+        },
+        {
+          "term": "llm-based",
+          "recent": 12,
+          "baseline": 0,
+          "growth": 13.0
+        },
+        {
+          "term": "llms",
+          "recent": 35,
+          "baseline": 2,
+          "growth": 12.6
+        },
+        {
+          "term": "retrieval-augmented",
+          "recent": 11,
+          "baseline": 0,
+          "growth": 11.9
+        },
+        {
+          "term": "co2",
+          "recent": 11,
+          "baseline": 0,
+          "growth": 11.9
+        },
+        {
+          "term": "scam",
+          "recent": 8,
+          "baseline": 0,
+          "growth": 8.7
+        },
+        {
+          "term": "addressing",
+          "recent": 8,
+          "baseline": 0,
+          "growth": 8.7
+        },
+        {
+          "term": "retrieval-augmented generation",
+          "recent": 8,
+          "baseline": 0,
+          "growth": 8.7
+        },
+        {
+          "term": "basalt",
+          "recent": 8,
+          "baseline": 0,
+          "growth": 8.7
+        },
+        {
+          "term": "agents",
+          "recent": 14,
+          "baseline": 1,
+          "growth": 7.6
+        },
+        {
+          "term": "explainable",
+          "recent": 7,
+          "baseline": 0,
+          "growth": 7.6
+        },
+        {
+          "term": "multi-party private",
+          "recent": 7,
+          "baseline": 0,
+          "growth": 7.6
+        },
+        {
+          "term": "chinese",
+          "recent": 7,
+          "baseline": 0,
+          "growth": 7.6
+        },
+        {
+          "term": "agentic",
+          "recent": 7,
+          "baseline": 0,
+          "growth": 7.6
+        },
+        {
+          "term": "deccan",
+          "recent": 7,
+          "baseline": 0,
+          "growth": 7.6
+        }
+      ],
+      "hottest": [
+        {
+          "term": "attacks",
+          "recent": 270
+        },
+        {
+          "term": "security",
+          "recent": 256
+        },
+        {
+          "term": "privacy",
+          "recent": 193
+        },
+        {
+          "term": "detection",
+          "recent": 153
+        },
+        {
+          "term": "data",
+          "recent": 134
+        },
+        {
+          "term": "learning",
+          "recent": 128
+        },
+        {
+          "term": "attack",
+          "recent": 126
+        },
+        {
+          "term": "models",
+          "recent": 124
+        },
+        {
+          "term": "efficient",
+          "recent": 110
+        },
+        {
+          "term": "fuzzing",
+          "recent": 107
+        },
+        {
+          "term": "secure",
+          "recent": 99
+        },
+        {
+          "term": "vulnerabilities",
+          "recent": 90
+        },
+        {
+          "term": "poster",
+          "recent": 89
+        },
+        {
+          "term": "language",
+          "recent": 87
+        },
+        {
+          "term": "large",
+          "recent": 80
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "2e965b5d97c2d6fb4af284307735be39283792ba",
+          "title": "Extracting Training Data from Diffusion Models",
+          "year": 2023,
+          "venue": "USENIX Security Symposium",
+          "citations": 995,
+          "citations_per_year": 248.8,
+          "abstract": "Image diffusion models such as DALL-E 2, Imagen, and Stable Diffusion have attracted significant attention due to their ability to generate high-quality synthetic images. In this work, we show that diffusion models memorize individual images from their training data and emit them at generation time. With a generate-and-filter pipeline, we extract over a thousand training examples from state-of-the-art models, ranging from photographs of individual people to trademarked company logos. We also train hundreds of diffusion models in various settings to analyze how different modeling and data decisions affect privacy. Overall, our results show that diffusion models are much less private than prior generative models such as GANs, and that mitigating these vulnerabilities may require new advances in privacy-preserving training.",
+          "url": "https://www.semanticscholar.org/paper/2e965b5d97c2d6fb4af284307735be39283792ba",
+          "externalIds": {
+            "ArXiv": "2301.13188",
+            "DBLP": "conf/uss/CarliniHNJSTBIW23",
+            "DOI": "10.48550/arXiv.2301.13188",
+            "CorpusId": 256389993
+          }
+        },
+        {
+          "paperId": "1104d766527dead44a40532e8a89444d9cef5c65",
+          "title": "\"Do Anything Now\": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models",
+          "year": 2023,
+          "venue": "Conference on Computer and Communications Security",
+          "citations": 679,
+          "citations_per_year": 169.8,
+          "abstract": "The misuse of large language models (LLMs) has drawn significant attention from the general public and LLM vendors. One particular type of adversarial prompt, known as jailbreak prompt, has emerged as the main attack vector to bypass the safeguards and elicit harmful content from LLMs. In this paper, employing our new framework JailbreakHub, we conduct a comprehensive analysis of 1,405 jailbreak prompts spanning from December 2022 to December 2023. We identify 131 jailbreak communities and discover unique characteristics of jailbreak prompts and their major attack strategies, such as prompt injection and privilege escalation. We also observe that jailbreak prompts increasingly shift from online Web communities to prompt-aggregation websites and 28 user accounts have consistently optimized jailbreak prompts over 100 days. To assess the potential harm caused by jailbreak prompts, we create a question set comprising 107,250 samples across 13 forbidden scenarios. Leveraging this dataset, our experiments on six popular LLMs show that their safeguards cannot adequately defend jailbreak prompts in all scenarios. Particularly, we identify five highly effective jailbreak prompts that achieve 0.95 attack success rates on ChatGPT (GPT-3.5) and GPT-4, and the earliest one has persisted online for over 240 days. We hope that our study can facilitate the research community and LLM vendors in promoting safer and regulated LLMs.",
+          "url": "https://www.semanticscholar.org/paper/1104d766527dead44a40532e8a89444d9cef5c65",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2308-03825",
+            "ArXiv": "2308.03825",
+            "DOI": "10.1145/3658644.3670388",
+            "CorpusId": 260704242
+          }
+        },
+        {
+          "paperId": "2c4d2d889a1f0ff9598de829a001df11a95d3294",
+          "title": "Great, Now Write an Article About That: The Crescendo Multi-Turn LLM Jailbreak Attack",
+          "year": 2024,
+          "venue": "USENIX Security Symposium",
+          "citations": 377,
+          "citations_per_year": 125.7,
+          "abstract": "Large Language Models (LLMs) have risen significantly in popularity and are increasingly being adopted across multiple applications. These LLMs are heavily aligned to resist engaging in illegal or unethical topics as a means to avoid contributing to responsible AI harms. However, a recent line of attacks, known as jailbreaks, seek to overcome this alignment. Intuitively, jailbreak attacks aim to narrow the gap between what the model can do and what it is willing to do. In this paper, we introduce a novel jailbreak attack called Crescendo. Unlike existing jailbreak methods, Crescendo is a simple multi-turn jailbreak that interacts with the model in a seemingly benign manner. It begins with a general prompt or question about the task at hand and then gradually escalates the dialogue by referencing the model's replies progressively leading to a successful jailbreak. We evaluate Crescendo on various public systems, including ChatGPT, Gemini Pro, Gemini-Ultra, LlaMA-2 70b and LlaMA-3 70b Chat, and Anthropic Chat. Our results demonstrate the strong efficacy of Crescendo, with it achieving high attack success rates across all evaluated models and tasks. Furthermore, we present Crescendomation, a tool that automates the Crescendo attack and demonstrate its efficacy against state-of-the-art models through our evaluations. Crescendomation surpasses other state-of-the-art jailbreaking techniques on the AdvBench subset dataset, achieving 29-61% higher performance on GPT-4 and 49-71% on Gemini-Pro. Finally, we also demonstrate Crescendo's ability to jailbreak multimodal models.",
+          "url": "https://www.semanticscholar.org/paper/2c4d2d889a1f0ff9598de829a001df11a95d3294",
+          "externalIds": {
+            "ArXiv": "2404.01833",
+            "DBLP": "journals/corr/abs-2404-01833",
+            "DOI": "10.48550/arXiv.2404.01833",
+            "CorpusId": 268856920
+          }
+        },
+        {
+          "paperId": "f5e7e22036c3fe7d6660eee90642f716c3b303f5",
+          "title": "StruQ: Defending Against Prompt Injection with Structured Queries",
+          "year": 2024,
+          "venue": "USENIX Security Symposium",
+          "citations": 346,
+          "citations_per_year": 115.3,
+          "abstract": "Recent advances in Large Language Models (LLMs) enable exciting LLM-integrated applications, which perform text-based tasks by utilizing their advanced language understanding capabilities. However, as LLMs have improved, so have the attacks against them. Prompt injection attacks are an important threat: they trick the model into deviating from the original application's instructions and instead follow user directives. These attacks rely on the LLM's ability to follow instructions and inability to separate prompts and user data. We introduce structured queries, a general approach to tackle this problem. Structured queries separate prompts and data into two channels. We implement a system that supports structured queries. This system is made of (1) a secure front-end that formats a prompt and user data into a special format, and (2) a specially trained LLM that can produce high-quality outputs from these inputs. The LLM is trained using a novel fine-tuning strategy: we convert a base (non-instruction-tuned) LLM to a structured instruction-tuned model that will only follow instructions in the prompt portion of a query. To do so, we augment standard instruction tuning datasets with examples that also include instructions in the data portion of the query, and fine-tune the model to ignore these. Our system significantly improves resistance to prompt injection attacks, with little or no impact on utility. Our code is released at https://github.com/Sizhe-Chen/StruQ.",
+          "url": "https://www.semanticscholar.org/paper/f5e7e22036c3fe7d6660eee90642f716c3b303f5",
+          "externalIds": {
+            "DBLP": "conf/uss/ChenPS025",
+            "ArXiv": "2402.06363",
+            "DOI": "10.48550/arXiv.2402.06363",
+            "CorpusId": 267616771
+          }
+        },
+        {
+          "paperId": "4fcd49afa8d0a960c6d07aa4e7a37956f5307a8a",
+          "title": "Large Language Model guided Protocol Fuzzing",
+          "year": 2024,
+          "venue": "Network and Distributed System Security Symposium",
+          "citations": 319,
+          "citations_per_year": 106.3,
+          "abstract": "—How to find security flaws in a protocol implementation without a machine-readable specification of the protocol? Facing the internet, protocol implementations are particularly security-critical software systems where inputs must adhere to a specific structure and order that is often informally specified in hundreds of pages in natural language (RFC). Without some machine-readable version of that protocol, it is difficult to automatically generate valid test inputs for its implementation that follow the required structure and order. It is possible to partially alleviate this challenge using mutational fuzzing on a set of recorded message sequences as seed inputs. However, the set of available seeds is often quite limited and will hardly cover the great diversity of protocol states and input structures. In this paper, we explore the opportunities of systematic interaction with pre-trained large language models (LLMs), which have ingested millions of pages of human-readable protocol specifications, to draw out machine-readable information about the protocol that can be used during protocol fuzzing. We use the knowledge of the LLMs about protocol message types for well-known protocols. We also checked the LLM’s capability in detecting “states” for stateful protocol implementations by generating sequences of messages and predicting response codes. Based on these observations, we have developed an LLM-guided protocol implementation fuzzing engine. Our protocol fuzzer C HAT AFL constructs grammars for each message type in a protocol, and then mutates messages or predicts the next messages in a message sequence via interactions with LLMs. Experiments on a wide range of real-world protocols from P RO F UZZ B ENCH show significant efficacy in state and code coverage. Our LLM-guided stateful fuzzer was compared with state-of-the-art fuzzers AFLN ET and NSF UZZ . C HAT AFL covers 47.60% and 42.69% more state transitions, 29.55% and 25.75% more",
+          "url": "https://www.semanticscholar.org/paper/4fcd49afa8d0a960c6d07aa4e7a37956f5307a8a",
+          "externalIds": {
+            "DBLP": "conf/ndss/MengMBR24",
+            "DOI": "10.14722/ndss.2024.24556",
+            "CorpusId": 265296188
+          }
+        },
+        {
+          "paperId": "d1101476c85ae324142440e9f568ecbf41625be5",
+          "title": "Analyzing Leakage of Personally Identifiable Information in Language Models",
+          "year": 2023,
+          "venue": "IEEE Symposium on Security and Privacy",
+          "citations": 413,
+          "citations_per_year": 103.2,
+          "abstract": "Language Models (LMs) have been shown to leak information about training data through sentence-level membership inference and reconstruction attacks. Understanding the risk of LMs leaking Personally Identifiable Information (PII) has received less attention, which can be attributed to the false assumption that dataset curation techniques such as scrubbing are sufficient to prevent PII leakage. Scrubbing techniques reduce but do not prevent the risk of PII leakage: in practice scrubbing is imperfect and must balance the trade-off between minimizing disclosure and preserving the utility of the dataset. On the other hand, it is unclear to which extent algorithmic defenses such as differential privacy, designed to guarantee sentence-or user-level privacy, prevent PII disclosure. In this work, we introduce rigorous game-based definitions for three types of PII leakage via black-box extraction, inference, and reconstruction attacks with only API access to an LM. We empirically evaluate the attacks against GPT-2 models fine-tuned with and without defenses in three domains: case law, health care, and e-mails. Our main contributions are (i) novel attacks that can extract up to 10× more PII sequences than existing attacks, (ii) showing that sentence-level differential privacy reduces the risk of PII disclosure but still leaks about 3% of PII sequences, and (iii) a subtle connection between record-level membership inference and PII reconstruction. Code to reproduce all experiments in the paper is available at https://github.com/microsoft/analysing_pii_leakage.",
+          "url": "https://www.semanticscholar.org/paper/d1101476c85ae324142440e9f568ecbf41625be5",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2302-00539",
+            "ArXiv": "2302.00539",
+            "DOI": "10.1109/SP46215.2023.10179300",
+            "CorpusId": 256459554
+          }
+        },
+        {
+          "paperId": "9adddfe5a596d20b534a29d9937efcd3cb85d3cf",
+          "title": "Formalizing and Benchmarking Prompt Injection Attacks and Defenses",
+          "year": 2023,
+          "venue": "USENIX Security Symposium",
+          "citations": 409,
+          "citations_per_year": 102.2,
+          "abstract": "A prompt injection attack aims to inject malicious instruction/data into the input of an LLM-Integrated Application such that it produces results as an attacker desires. Existing works are limited to case studies. As a result, the literature lacks a systematic understanding of prompt injection attacks and their defenses. We aim to bridge the gap in this work. In particular, we propose a framework to formalize prompt injection attacks. Existing attacks are special cases in our framework. Moreover, based on our framework, we design a new attack by combining existing ones. Using our framework, we conduct a systematic evaluation on 5 prompt injection attacks and 10 defenses with 10 LLMs and 7 tasks. Our work provides a common benchmark for quantitatively evaluating future prompt injection attacks and defenses. To facilitate research on this topic, we make our platform public at https://github.com/liu00222/Open-Prompt-Injection.",
+          "url": "https://www.semanticscholar.org/paper/9adddfe5a596d20b534a29d9937efcd3cb85d3cf",
+          "externalIds": {
+            "ArXiv": "2310.12815",
+            "DBLP": "conf/uss/LiuJGJG24",
+            "CorpusId": 264305943
+          }
+        },
+        {
+          "paperId": "4089197a8fef8935bab8b879adc08dc5fdf53c6d",
+          "title": "FLAME: Taming Backdoors in Federated Learning",
+          "year": 2022,
+          "venue": "USENIX Security Symposium",
+          "citations": 496,
+          "citations_per_year": 99.2,
+          "abstract": null,
+          "url": "https://www.semanticscholar.org/paper/4089197a8fef8935bab8b879adc08dc5fdf53c6d",
+          "externalIds": {
+            "DBLP": "conf/uss/NguyenRCYMFMMMZ22",
+            "CorpusId": 263886687
+          }
+        },
+        {
+          "paperId": "2cf43a61d0937ad25f23eaef7c90253ab799b3c7",
+          "title": "Poisoning Web-Scale Training Datasets is Practical",
+          "year": 2023,
+          "venue": "IEEE Symposium on Security and Privacy",
+          "citations": 364,
+          "citations_per_year": 91.0,
+          "abstract": "Deep learning models are often trained on distributed, web-scale datasets crawled from the internet. In this paper, we introduce two new dataset poisoning attacks that intentionally introduce malicious examples to a model’s performance. Our attacks are immediately practical and could, today, poison 10 popular datasets. Our first attack, split-view poisoning, exploits the mutable nature of internet content to ensure a dataset annotator’s initial view of the dataset differs from the view downloaded by subsequent clients. By exploiting specific invalid trust assumptions, we show how we could have poisoned 0.01% of the LAION-400M or COYO-700M datasets for just $60 USD. Our second attack, frontrunning poisoning, targets web-scale datasets that periodically snapshot crowd-sourced content—such as Wikipedia—where an attacker only needs a time-limited window to inject malicious examples. In light of both attacks, we notify the maintainers of each affected dataset and recommended several low-overhead defenses.",
+          "url": "https://www.semanticscholar.org/paper/2cf43a61d0937ad25f23eaef7c90253ab799b3c7",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2302-10149",
+            "ArXiv": "2302.10149",
+            "DOI": "10.1109/SP54263.2024.00179",
+            "CorpusId": 257038404
+          }
+        },
+        {
+          "paperId": "27d0561813c6134d62a48cdc42e1aede23e76f98",
+          "title": "PentestGPT: Evaluating and Harnessing Large Language Models for Automated Penetration Testing",
+          "year": 2024,
+          "venue": "USENIX Security Symposium",
+          "citations": 258,
+          "citations_per_year": 86.0,
+          "abstract": null,
+          "url": "https://www.semanticscholar.org/paper/27d0561813c6134d62a48cdc42e1aede23e76f98",
+          "externalIds": {
+            "DBLP": "conf/uss/DengLVLLX0R0024",
+            "CorpusId": 271325673
+          }
+        },
+        {
+          "paperId": "f4e06256ab07727ff4e0465deea83fcf45012354",
+          "title": "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models",
+          "year": 2024,
+          "venue": "USENIX Security Symposium",
+          "citations": 253,
+          "citations_per_year": 84.3,
+          "abstract": "Large language models (LLMs) have achieved remarkable success due to their exceptional generative capabilities. Despite their success, they also have inherent limitations such as a lack of up-to-date knowledge and hallucination. Retrieval-Augmented Generation (RAG) is a state-of-the-art technique to mitigate these limitations. The key idea of RAG is to ground the answer generation of an LLM on external knowledge retrieved from a knowledge database. Existing studies mainly focus on improving the accuracy or efficiency of RAG, leaving its security largely unexplored. We aim to bridge the gap in this work. We find that the knowledge database in a RAG system introduces a new and practical attack surface. Based on this attack surface, we propose PoisonedRAG, the first knowledge corruption attack to RAG, where an attacker could inject a few malicious texts into the knowledge database of a RAG system to induce an LLM to generate an attacker-chosen target answer for an attacker-chosen target question. We formulate knowledge corruption attacks as an optimization problem, whose solution is a set of malicious texts. Depending on the background knowledge (e.g., black-box and white-box settings) of an attacker on a RAG system, we propose two solutions to solve the optimization problem, respectively. Our results show PoisonedRAG could achieve a 90% attack success rate when injecting five malicious texts for each target question into a knowledge database with millions of texts. We also evaluate several defenses and our results show they are insufficient to defend against PoisonedRAG, highlighting the need for new defenses.",
+          "url": "https://www.semanticscholar.org/paper/f4e06256ab07727ff4e0465deea83fcf45012354",
+          "externalIds": {
+            "ArXiv": "2402.07867",
+            "DBLP": "conf/uss/ZouGW025",
+            "CorpusId": 271854736
+          }
+        },
+        {
+          "paperId": "ce3f027b68dad014a58aa35f52380932c8d0b209",
+          "title": "Do Users Write More Insecure Code with AI Assistants?",
+          "year": 2022,
+          "venue": "Conference on Computer and Communications Security",
+          "citations": 403,
+          "citations_per_year": 80.6,
+          "abstract": "AI code assistants have emerged as powerful tools that can aid in the software development life-cycle and can improve developer productivity. Unfortunately, such assistants have also been found to produce insecure code in lab environments, raising significant concerns about their usage in practice. In this paper, we conduct a user study to examine how users interact with AI code assistants to solve a variety of security related tasks. Overall, we find that participants who had access to an AI assistant wrote significantly less secure code than those without access to an assistant. Participants with access to an AI assistant were also more likely to believe they wrote secure code, suggesting that such tools may lead users to be overconfident about security flaws in their code. To better inform the design of future AI-based code assistants, we release our user-study apparatus to researchers seeking to build on our work.",
+          "url": "https://www.semanticscholar.org/paper/ce3f027b68dad014a58aa35f52380932c8d0b209",
+          "externalIds": {
+            "DBLP": "conf/ccs/PerryS0B23",
+            "ArXiv": "2211.03622",
+            "DOI": "10.1145/3576915.3623157",
+            "CorpusId": 253384456
+          }
+        },
+        {
+          "paperId": "897c0aedead3105b7b6cd1afbb6aeb4f62a06e11",
+          "title": "GLAZE: Protecting Artists from Style Mimicry by Text-to-Image Models",
+          "year": 2023,
+          "venue": "USENIX Security Symposium",
+          "citations": 296,
+          "citations_per_year": 74.0,
+          "abstract": "Recent text-to-image diffusion models such as MidJourney and Stable Diffusion threaten to displace many in the professional artist community. In particular, models can learn to mimic the artistic style of specific artists after\"fine-tuning\"on samples of their art. In this paper, we describe the design, implementation and evaluation of Glaze, a tool that enables artists to apply\"style cloaks\"to their art before sharing online. These cloaks apply barely perceptible perturbations to images, and when used as training data, mislead generative models that try to mimic a specific artist. In coordination with the professional artist community, we deploy user studies to more than 1000 artists, assessing their views of AI art, as well as the efficacy of our tool, its usability and tolerability of perturbations, and robustness across different scenarios and against adaptive countermeasures. Both surveyed artists and empirical CLIP-based scores show that even at low perturbation levels (p=0.05), Glaze is highly successful at disrupting mimicry under normal conditions (>92%) and against adaptive countermeasures (>85%).",
+          "url": "https://www.semanticscholar.org/paper/897c0aedead3105b7b6cd1afbb6aeb4f62a06e11",
+          "externalIds": {
+            "DBLP": "conf/uss/ShanCW0HZ23",
+            "ArXiv": "2302.04222",
+            "DOI": "10.48550/arXiv.2302.04222",
+            "CorpusId": 256662278
+          }
+        },
+        {
+          "paperId": "63e2740dc581b4186b4e277a9955e8048c414521",
+          "title": "Large Language Models for Code: Security Hardening and Adversarial Testing",
+          "year": 2023,
+          "venue": "Conference on Computer and Communications Security",
+          "citations": 291,
+          "citations_per_year": 72.8,
+          "abstract": "Large language models (large LMs) are increasingly trained on massive codebases and used to generate code. However, LMs lack awareness of security and are found to frequently produce unsafe code. This work studies the security of LMs along two important axes: (i) security hardening, which aims to enhance LMs' reliability in generating secure code, and (ii) adversarial testing, which seeks to evaluate LMs' security at an adversarial standpoint. We address both of these by formulating a new security task called controlled code generation. The task is parametric and takes as input a binary property to guide the LM to generate secure or unsafe code, while preserving the LM's capability of generating functionally correct code. We propose a novel learning-based approach called SVEN to solve this task. SVEN leverages property-specific continuous vectors to guide program generation towards the given property, without modifying the LM's weights. Our training procedure optimizes these continuous vectors by enforcing specialized loss terms on different regions of code, using a high-quality dataset carefully curated by us. Our extensive evaluation shows that SVEN is highly effective in achieving strong security control. For instance, a state-of-the-art CodeGen LM with 2.7B parameters generates secure code for 59.1% of the time. When we employ SVEN to perform security hardening (or adversarial testing) on this LM, the ratio is significantly boosted to 92.3% (or degraded to 36.8%). Importantly, SVEN closely matches the original LMs in functional correctness.",
+          "url": "https://www.semanticscholar.org/paper/63e2740dc581b4186b4e277a9955e8048c414521",
+          "externalIds": {
+            "DBLP": "conf/ccs/HeV23",
+            "ArXiv": "2302.05319",
+            "DOI": "10.1145/3576915.3623175",
+            "CorpusId": 258557402
+          }
+        },
+        {
+          "paperId": "a90068513bf2eae66c81ff80b5060ce115097176",
+          "title": "DataSentinel: A Game-Theoretic Detection of Prompt Injection Attacks",
+          "year": 2025,
+          "venue": "IEEE Symposium on Security and Privacy",
+          "citations": 138,
+          "citations_per_year": 69.0,
+          "abstract": "LLM-integrated applications and agents are vulnerable to prompt injection attacks, where an attacker injects prompts into their inputs to induce attacker-desired outputs. A detection method aims to determine whether a given input is contaminated by an injected prompt. However, existing detection methods have limited effectiveness against state-of-the-art attacks, let alone adaptive ones. In this work, we propose DataSentinel, a game-theoretic method to detect prompt injection attacks. Specifically, DataSentinel fine-tunes an LLM to detect inputs contaminated with injected prompts that are strategically adapted to evade detection. We formulate this as a minimax optimization problem, with the objective of fine-tuning the LLM to detect strong adaptive attacks. Furthermore, we propose a gradient-based method to solve the minimax optimization problem by alternating between the inner max and outer min problems. Our evaluation results on multiple benchmark datasets and LLMs show that DataSentinel effectively detects both existing and adaptive prompt injection attacks. Our code and data are available at: https://github.com/liu00222/Open-Prompt-Injection.",
+          "url": "https://www.semanticscholar.org/paper/a90068513bf2eae66c81ff80b5060ce115097176",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2504-11358",
+            "ArXiv": "2504.11358",
+            "DOI": "10.1109/SP61157.2025.00250",
+            "CorpusId": 277787029
+          }
+        }
+      ]
+    },
+    {
+      "key": "hci_sub",
+      "label": "子领域 · 隐私安全（CHI + privacy/security 过滤）",
+      "sample": {
+        "total": 597,
+        "baseline": 264,
+        "recent": 333,
+        "baseline_years": "2020-2023",
+        "recent_years": "2024-2026"
+      },
+      "emerging": [
+        {
+          "term": "generative",
+          "recent": 8,
+          "baseline": 0,
+          "growth": 6.3
+        },
+        {
+          "term": "large language",
+          "recent": 6,
+          "baseline": 0,
+          "growth": 4.8
+        },
+        {
+          "term": "large",
+          "recent": 6,
+          "baseline": 0,
+          "growth": 4.8
+        },
+        {
+          "term": "chatbots",
+          "recent": 6,
+          "baseline": 0,
+          "growth": 4.8
+        },
+        {
+          "term": "collaborative",
+          "recent": 6,
+          "baseline": 0,
+          "growth": 4.8
+        },
+        {
+          "term": "llms",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 4.0
+        },
+        {
+          "term": "llm",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 4.0
+        },
+        {
+          "term": "tracking",
+          "recent": 12,
+          "baseline": 2,
+          "growth": 3.2
+        },
+        {
+          "term": "mental",
+          "recent": 8,
+          "baseline": 1,
+          "growth": 3.2
+        },
+        {
+          "term": "policies",
+          "recent": 7,
+          "baseline": 1,
+          "growth": 2.8
+        },
+        {
+          "term": "older adults",
+          "recent": 7,
+          "baseline": 1,
+          "growth": 2.8
+        },
+        {
+          "term": "women",
+          "recent": 10,
+          "baseline": 2,
+          "growth": 2.6
+        },
+        {
+          "term": "usable",
+          "recent": 6,
+          "baseline": 1,
+          "growth": 2.4
+        },
+        {
+          "term": "know",
+          "recent": 6,
+          "baseline": 1,
+          "growth": 2.4
+        },
+        {
+          "term": "behavior",
+          "recent": 6,
+          "baseline": 1,
+          "growth": 2.4
+        }
+      ],
+      "hottest": [
+        {
+          "term": "privacy",
+          "recent": 100
+        },
+        {
+          "term": "security",
+          "recent": 34
+        },
+        {
+          "term": "data",
+          "recent": 28
+        },
+        {
+          "term": "health",
+          "recent": 17
+        },
+        {
+          "term": "smart",
+          "recent": 15
+        },
+        {
+          "term": "social",
+          "recent": 14
+        },
+        {
+          "term": "perceptions",
+          "recent": 13
+        },
+        {
+          "term": "information",
+          "recent": 13
+        },
+        {
+          "term": "concerns",
+          "recent": 13
+        },
+        {
+          "term": "online",
+          "recent": 12
+        },
+        {
+          "term": "home",
+          "recent": 12
+        },
+        {
+          "term": "tracking",
+          "recent": 12
+        },
+        {
+          "term": "mobile",
+          "recent": 11
+        },
+        {
+          "term": "you",
+          "recent": 11
+        },
+        {
+          "term": "reality",
+          "recent": 11
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "91f657c27946a6a96d122c2beace6d3068ee5df6",
+          "title": "The Dark Side of AI Companionship: A Taxonomy of Harmful Algorithmic Behaviors in Human-AI Relationships",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 174,
+          "citations_per_year": 58.0,
+          "abstract": "As conversational AI systems increasingly engage with people socially and emotionally, they bring notable risks and harms, particularly in human-AI relationships. However, these harms remain underexplored due to the private and sensitive nature of such interactions. This study investigates the harmful behaviors and roles of AI companions through an analysis of 35,390 conversation excerpts between 10,149 users and the AI companion Replika. We develop a taxonomy of AI companion harms encompassing six categories of harmful algorithmic behaviors: relational transgression, harassment, verbal abuse, self-harm, mis/disinformation, and privacy violations. These harmful behaviors stem from four distinct roles that AI plays: perpetrator, instigator, facilitator, and enabler. Our findings highlight relational harm as a critical yet understudied type of AI harm and emphasize the importance of examining AI’s roles in harmful interactions to address root causes. We provide actionable insights for designing ethical and responsible AI companions that prioritize user safety and well-being.",
+          "url": "https://www.semanticscholar.org/paper/91f657c27946a6a96d122c2beace6d3068ee5df6",
+          "externalIds": {
+            "DBLP": "conf/chi/ZhangLMZGL25",
+            "ArXiv": "2410.20130",
+            "DOI": "10.1145/3706598.3713429",
+            "CorpusId": 273653956
+          }
+        },
+        {
+          "paperId": "b39f4819c7d94b13cc195732dbf66beb047b45c0",
+          "title": "“It's a Fair Game”, or Is It? Examining How Users Navigate Disclosure Risks and Benefits When Using LLM-Based Conversational Agents",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 202,
+          "citations_per_year": 50.5,
+          "abstract": "The widespread use of Large Language Model (LLM)-based conversational agents (CAs), especially in high-stakes domains, raises many privacy concerns. Building ethical LLM-based CAs that respect user privacy requires an in-depth understanding of the privacy risks that concern users the most. However, existing research, primarily model-centered, does not provide insight into users’ perspectives. To bridge this gap, we analyzed sensitive disclosures in real-world ChatGPT conversations and conducted semi-structured interviews with 19 LLM-based CA users. We found that users are constantly faced with trade-offs between privacy, utility, and convenience when using LLM-based CAs. However, users’ erroneous mental models and the dark patterns in system design limited their awareness and comprehension of the privacy risks. Additionally, the human-like interactions encouraged more sensitive disclosures, which complicated users’ ability to navigate the trade-offs. We discuss practical design guidelines and the needs for paradigm shifts to protect the privacy of LLM-based CA users.",
+          "url": "https://www.semanticscholar.org/paper/b39f4819c7d94b13cc195732dbf66beb047b45c0",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2309-11653",
+            "ArXiv": "2309.11653",
+            "DOI": "10.1145/3613904.3642385",
+            "CorpusId": 262084423
+          }
+        },
+        {
+          "paperId": "5e88bb415c99be08f969bda11392268e52e88f56",
+          "title": "Trauma-Informed Computing: Towards Safer Technology Experiences for All",
+          "year": 2022,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 191,
+          "citations_per_year": 38.2,
+          "abstract": "Trauma is the physical, emotional, or psychological harm caused by deeply distressing experiences. Research with communities that may experience high rates of trauma has shown that digital technologies can create or exacerbate traumatic experiences. Via three vignettes, we discuss how considering the possible effects of trauma and traumatic stress reactions provides an explanatory lens with new insights into people’s technology experiences. Then, we present a framework—trauma-informed computing—in which we adapt and show how to apply six key principles of trauma-informed approaches to computing: safety, trust, peer support, collaboration, enablement, and intersectionality. Through specific examples, we describe how to apply trauma-informed computing in four areas of computing research and practice: user experience research & design, security & privacy, artificial intelligence & machine learning, and organizational culture in tech companies. We conclude by discussing how adopting trauma-informed computing will lead to benefits for all users, not only those experiencing trauma.",
+          "url": "https://www.semanticscholar.org/paper/5e88bb415c99be08f969bda11392268e52e88f56",
+          "externalIds": {
+            "DBLP": "conf/chi/ChenMZTRTSRD22",
+            "DOI": "10.1145/3491102.3517475",
+            "CorpusId": 247626250
+          }
+        },
+        {
+          "paperId": "8bd4f4ad1206682b244957080af1f5485b5d21c2",
+          "title": "Deepfakes, Phrenology, Surveillance, and More! A Taxonomy of AI Privacy Risks",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 136,
+          "citations_per_year": 34.0,
+          "abstract": "Privacy is a key principle for developing ethical AI technologies, but how does including AI technologies in products and services change privacy risks? We constructed a taxonomy of AI privacy risks by analyzing 321 documented AI privacy incidents. We codified how the unique capabilities and requirements of AI technologies described in those incidents generated new privacy risks, exacerbated known ones, or otherwise did not meaningfully alter the risk. We present 12 high-level privacy risks that AI technologies either newly created (e.g., exposure risks from deepfake pornography) or exacerbated (e.g., surveillance risks from collecting training data). One upshot of our work is that incorporating AI technologies into a product can alter the privacy risks it entails. Yet, current approaches to privacy-preserving AI/ML (e.g., federated learning, differential privacy, checklists) only address a subset of the privacy risks arising from the capabilities and data requirements of AI.",
+          "url": "https://www.semanticscholar.org/paper/8bd4f4ad1206682b244957080af1f5485b5d21c2",
+          "externalIds": {
+            "DBLP": "conf/chi/LeeYDFD24",
+            "ArXiv": "2310.07879",
+            "DOI": "10.1145/3613904.3642116",
+            "CorpusId": 263908826
+          }
+        },
+        {
+          "paperId": "450550d3222db165c33be910c517537b1f569f9b",
+          "title": "Emotion AI at Work: Implications for Workplace Surveillance, Emotional Labor, and Emotional Privacy",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 119,
+          "citations_per_year": 29.8,
+          "abstract": "Workplaces are increasingly adopting emotion AI, promising benefits to organizations. However, little is known about the perceptions and experiences of workers subject to emotion AI in the workplace. Our interview study with (n=15) US adult workers addresses this gap, finding that (1) participants viewed emotion AI as a deep privacy violation over the privacy of workers’ sensitive emotional information; (2) emotion AI may function to enforce workers’ compliance with emotional labor expectations, and that workers may engage in emotional labor as a mechanism to preserve privacy over their emotions; (3) workers may be exposed to a wide range of harms as a consequence of emotion AI in the workplace. Findings reveal the need to recognize and define an individual right to what we introduce as emotional privacy, as well as raise important research and policy questions on how to protect and preserve emotional privacy within and beyond the workplace.",
+          "url": "https://www.semanticscholar.org/paper/450550d3222db165c33be910c517537b1f569f9b",
+          "externalIds": {
+            "DBLP": "conf/chi/RoemmichSA23",
+            "DOI": "10.1145/3544548.3580950",
+            "CorpusId": 258216724
+          }
+        },
+        {
+          "paperId": "db2c80017284d8492026868aeba957efdaae7cf3",
+          "title": "UX Research on Conversational Human-AI Interaction: A Literature Review of the ACM Digital Library",
+          "year": 2022,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 123,
+          "citations_per_year": 24.6,
+          "abstract": "Early conversational agents (CAs) focused on dyadic human-AI interaction between humans and the CAs, followed by the increasing popularity of polyadic human-AI interaction, in which CAs are designed to mediate human-human interactions. CAs for polyadic interactions are unique because they encompass hybrid social interactions, i.e., human-CA, human-to-human, and human-to-group behaviors. However, research on polyadic CAs is scattered across different fields, making it challenging to identify, compare, and accumulate existing knowledge. To promote the future design of CA systems, we conducted a literature review of ACM publications and identified a set of works that conducted UX (user experience) research. We qualitatively synthesized the effects of polyadic CAs into four aspects of human-human interactions, i.e., communication, engagement, connection, and relationship maintenance. Through a mixed-method analysis of the selected polyadic and dyadic CA studies, we developed a suite of evaluation measurements on the effects. Our findings show that designing with social boundaries, such as privacy, disclosure, and identification, is crucial for ethical polyadic CAs. Future research should also advance usability testing methods and trust-building guidelines for conversational AI.",
+          "url": "https://www.semanticscholar.org/paper/db2c80017284d8492026868aeba957efdaae7cf3",
+          "externalIds": {
+            "ArXiv": "2202.09895",
+            "DBLP": "conf/chi/ZhengTLLH22",
+            "DOI": "10.1145/3491102.3501855",
+            "CorpusId": 247011359
+          }
+        },
+        {
+          "paperId": "8474164eda27baede5da93d8b73b3b77301374ee",
+          "title": "Understanding the Impact of Long-Term Memory on Self-Disclosure with Large Language Model-Driven Chatbots for Public Health Intervention",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 72,
+          "citations_per_year": 24.0,
+          "abstract": "Recent large language models (LLMs) offer the potential to support public health monitoring by facilitating health disclosure through open-ended conversations but rarely preserve the knowledge gained about individuals across repeated interactions. Augmenting LLMs with long-term memory (LTM) presents an opportunity to improve engagement and self-disclosure, but we lack an understanding of how LTM impacts people’s interaction with LLM-driven chatbots in public health interventions. We examine the case of CareCall—an LLM-driven voice chatbot with LTM—through the analysis of 1,252 call logs and interviews with nine users. We found that LTM enhanced health disclosure and fostered positive perceptions of the chatbot by offering familiarity. However, we also observed challenges in promoting self-disclosure through LTM, particularly around addressing chronic health conditions and privacy concerns. We discuss considerations for LTM integration in LLM-driven chatbots for public health monitoring, including carefully deciding what topics need to be remembered in light of public health goals.",
+          "url": "https://www.semanticscholar.org/paper/8474164eda27baede5da93d8b73b3b77301374ee",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2402-11353",
+            "ArXiv": "2402.11353",
+            "DOI": "10.1145/3613904.3642420",
+            "CorpusId": 267751317
+          }
+        },
+        {
+          "paperId": "5211f6ffb9ec50ee8fb2ff2543b8c4be8f7fbebc",
+          "title": "“Okay, whatever”: An Evaluation of Cookie Consent Interfaces",
+          "year": 2022,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 119,
+          "citations_per_year": 23.8,
+          "abstract": "Many websites have added cookie consent interfaces to meet regulatory consent requirements. While prior work has demonstrated that they often use dark patterns — design techniques that lead users to less privacy-protective options — other usability aspects of these interfaces have been less explored. This study contributes a comprehensive, two-stage usability assessment of cookie consent interfaces. We first inspected 191 consent interfaces against five dark pattern heuristics and identified design choices that may impact usability. We then conducted a 1,109-participant online between-subjects experiment exploring the usability impact of seven design parameters. Participants were exposed to one of 12 consent interface variants during a shopping task on a prototype e-commerce website and answered a survey about their experience. Our findings suggest that a fully-blocking consent interface with in-line cookie options accompanied by a persistent button enabling users to later change their consent decision best meets several design objectives.",
+          "url": "https://www.semanticscholar.org/paper/5211f6ffb9ec50ee8fb2ff2543b8c4be8f7fbebc",
+          "externalIds": {
+            "DBLP": "conf/chi/HabibLYC22",
+            "DOI": "10.1145/3491102.3501985",
+            "CorpusId": 248419472
+          }
+        },
+        {
+          "paperId": "0461e4536ae3dbf1dc17d92bd6b815a79311310a",
+          "title": "Defining and Identifying Attention Capture Deceptive Designs in Digital Interfaces",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 88,
+          "citations_per_year": 22.0,
+          "abstract": "Many tech companies exploit psychological vulnerabilities to design digital interfaces that maximize the frequency and duration of user visits. Consequently, users often report feeling dissatisfied with time spent on such services. Prior work has developed typologies of damaging design patterns (or dark patterns) that contribute to financial and privacy harms, which has helped designers to resist these patterns and policymakers to regulate them. However, we are missing a collection of similar problematic patterns that lead to attentional harms. To close this gap, we conducted a systematic literature review for what we call ‘attention capture damaging patterns’ (ACDPs). We analyzed 43 papers to identify their characteristics, the psychological vulnerabilities they exploit, and their impact on digital wellbeing. We propose a definition of ACDPs and identify eleven common types, from Time Fog to Infinite Scroll. Our typology offers technologists and policymakers a common reference to advocate, design, and regulate against attentional harms.",
+          "url": "https://www.semanticscholar.org/paper/0461e4536ae3dbf1dc17d92bd6b815a79311310a",
+          "externalIds": {
+            "DBLP": "conf/chi/RoffarelloLR23",
+            "DOI": "10.1145/3544548.3580729",
+            "CorpusId": 258218296
+          }
+        },
+        {
+          "paperId": "ab9c1b4cbe4c8806b60130b070537ff4a464b1b1",
+          "title": "Social Virtual Reality as a Mental Health Tool: How People Use VRChat to Support Social Connectedness and Wellbeing",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 87,
+          "citations_per_year": 21.8,
+          "abstract": "Social virtual reality (VR) platforms have increased in popularity with many people turning to these platforms to experience social connection, including a rapid influx of users during the COVID-19 pandemic. However, there is limited understanding of how people appropriate and use emerging social VR applications to actively support their mental health and wellbeing in daily life. Through an online questionnaire and exploratory interviews conducted within the social VR app VRChat during the COVID-19 pandemic, we document how social VR is being used explicitly as a mental health support tool. Participants reported positive wellbeing benefits, mostly attributed to the anonymity provided by avatars and perceived safety within digital worlds and communities of practice. We also report how people use social VR to practice social interaction, reduce negative thoughts and form strong social bonds and connections with others.",
+          "url": "https://www.semanticscholar.org/paper/ab9c1b4cbe4c8806b60130b070537ff4a464b1b1",
+          "externalIds": {
+            "DBLP": "conf/chi/DeighanAO23",
+            "DOI": "10.1145/3544548.3581103",
+            "CorpusId": 258217919
+          }
+        },
+        {
+          "paperId": "b964388e4e974016df60b48a2d131e5478c6b322",
+          "title": "Understanding Challenges for Developers to Create Accurate Privacy Nutrition Labels",
+          "year": 2022,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 102,
+          "citations_per_year": 20.4,
+          "abstract": "Apple announced the introduction of app privacy details to their App Store in December 2020, marking the first ever real-world, large-scale deployment of the privacy nutrition label concept, which had been introduced by researchers over a decade earlier. The Apple labels are created by app developers, who self-report their app’s data practices. In this paper, we present the first study examining the usability and understandability of Apple’s privacy nutrition label creation process from the developer’s perspective. By observing and interviewing 12 iOS app developers about how they created the privacy label for a real-world app that they developed, we identified common challenges for correctly and efficiently creating privacy labels. We discuss design implications both for improving Apple’s privacy label design and for future deployment of other standardized privacy notices.",
+          "url": "https://www.semanticscholar.org/paper/b964388e4e974016df60b48a2d131e5478c6b322",
+          "externalIds": {
+            "DBLP": "conf/chi/LiRACH22",
+            "DOI": "10.1145/3491102.3502012",
+            "CorpusId": 248419415
+          }
+        },
+        {
+          "paperId": "a0fbc51a357826a3afdc14d33ca1209ae774fe95",
+          "title": "Governance of Generative AI in Creative Work: Consent, Credit, Compensation, and Beyond",
+          "year": 2025,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 40,
+          "citations_per_year": 20.0,
+          "abstract": "Since the emergence of generative AI, creative workers have spoken up about the career-based harms they have experienced arising from this new technology. A common theme in these accounts of harm is that generative AI models are trained on workers’ creative output without their consent and without giving credit or compensation to the original creators. This paper reports findings from 20 interviews with creative workers in three domains: visual art and design, writing, and programming. We investigate the gaps between current AI governance strategies, what creative workers want out of generative AI governance, and the nuanced role of creative workers’ consent, compensation and credit for training AI models on their work. Finally, we make recommendations for how generative AI can be governed and how operators of generative AI systems might more ethically train models on creative output in the future.",
+          "url": "https://www.semanticscholar.org/paper/a0fbc51a357826a3afdc14d33ca1209ae774fe95",
+          "externalIds": {
+            "ArXiv": "2501.11457",
+            "DBLP": "conf/ci/KyiMSB0B25",
+            "DOI": "10.1145/3706598.3713799",
+            "CorpusId": 275757882
+          }
+        },
+        {
+          "paperId": "d50346dc6a45daadd75da8b729af46c532b456ab",
+          "title": "Care Infrastructures for Digital Security in Intimate Partner Violence",
+          "year": 2022,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 96,
+          "citations_per_year": 19.2,
+          "abstract": "Survivors of intimate partner violence (IPV) face complex threats to their digital privacy and security. Prior work has established protocols for directly helping them mitigate these harms; however, there remains a need for flexible and pluralistic systems that can support survivors’ long-term needs. This paper describes the design and development of sociotechnical infrastructure that incorporates feminist notions of care to connect IPV survivors experiencing technology abuse with volunteer computer security consultants. We present findings from a mixed methods study that draws on data from an 8-month, real-world deployment, as well as interviews with 7 volunteer technology consultants and 18 IPV professionals. Our findings illuminate emergent challenges in safely and adaptively providing computer security advice as care. We discuss implications of these findings for feminist approaches to computer security and privacy, and provide broader lessons for interventions that aim to directly assist at-risk and marginalized people experiencing digital insecurity.",
+          "url": "https://www.semanticscholar.org/paper/d50346dc6a45daadd75da8b729af46c532b456ab",
+          "externalIds": {
+            "DBLP": "conf/chi/TsengSBSRD22",
+            "DOI": "10.1145/3491102.3502038",
+            "CorpusId": 247127094
+          }
+        },
+        {
+          "paperId": "287fb631a45d80475f40ce40c94707a5f49be20e",
+          "title": "The Deskilling of Domain Expertise in AI Development",
+          "year": 2022,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 95,
+          "citations_per_year": 19.0,
+          "abstract": "Field workers, like farmers and radiologists, play a crucial role in dataset collection for AI models in low-resource settings. However, we know little about how field workers’ expertise is leveraged in dataset and model development. Based on 68 interviews with AI developers building for low-resource contexts, we find that developers reduced field workers to data collectors. Attributing poor data quality to worker practices, developers conceived of workers as corrupt, lazy, non-compliant, and as datasets themselves, pursuing surveillance and gamification to discipline workers to collect better quality data. Even though models sought to emulate the expertise of field workers, AI developers treated workers as non-essential and deskilled their expertise in service of building machine intelligence. We make the case for why field workers should be recognised as domain experts and re-imagine domain expertise as an essential partnership for AI development.",
+          "url": "https://www.semanticscholar.org/paper/287fb631a45d80475f40ce40c94707a5f49be20e",
+          "externalIds": {
+            "DBLP": "conf/chi/SambasivanV22",
+            "DOI": "10.1145/3491102.3517578",
+            "CorpusId": 248419993
+          }
+        },
+        {
+          "paperId": "f1fb142ea51716d8f7506d3055b44fd9631eec89",
+          "title": "\"I Deleted It After the Overturn of Roe v. Wade\": Understanding Women's Privacy Concerns Toward Period-Tracking Apps in the Post Roe v. Wade Era",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 57,
+          "citations_per_year": 19.0,
+          "abstract": "The overturn of Roe v. Wade has taken away the constitutional right to abortion. Prior work shows that period-tracking apps’ data practices can be used to detect pregnancy and abortion, hence putting women at risk of being prosecuted. It is unclear how much women know about the privacy practices of such apps and how concerned they are after the overturn. Such knowledge is critical to designing effective strategies for stakeholders to enhance women’s reproductive privacy. We conducted an online 183-participant vignette survey with US women from states with diverse policies on abortion. Participants were significantly concerned about the privacy practices of the period-tracking apps, such as data access by law enforcement and third parties. However, participants felt uninformed and powerless about risk mitigation practices. We provide several recommendations to enhance women’s privacy awareness toward their period-tracking practices.",
+          "url": "https://www.semanticscholar.org/paper/f1fb142ea51716d8f7506d3055b44fd9631eec89",
+          "externalIds": {
+            "DBLP": "conf/chi/CaoLMSN24",
+            "DOI": "10.1145/3613904.3642042",
+            "CorpusId": 268325524
+          }
+        }
+      ]
+    },
+    {
+      "key": "hci_all",
+      "label": "整体 · 全 CHI",
+      "sample": {
+        "total": 6000,
+        "baseline": 2660,
+        "recent": 3340,
+        "baseline_years": "2020-2023",
+        "recent_years": "2024-2026"
+      },
+      "emerging": [
+        {
+          "term": "llm-powered",
+          "recent": 22,
+          "baseline": 0,
+          "growth": 17.5
+        },
+        {
+          "term": "learners",
+          "recent": 19,
+          "baseline": 0,
+          "growth": 15.1
+        },
+        {
+          "term": "genai",
+          "recent": 18,
+          "baseline": 0,
+          "growth": 14.3
+        },
+        {
+          "term": "llm",
+          "recent": 46,
+          "baseline": 2,
+          "growth": 12.2
+        },
+        {
+          "term": "llms",
+          "recent": 45,
+          "baseline": 2,
+          "growth": 11.9
+        },
+        {
+          "term": "multi-agent",
+          "recent": 15,
+          "baseline": 0,
+          "growth": 11.9
+        },
+        {
+          "term": "unveiling",
+          "recent": 9,
+          "baseline": 0,
+          "growth": 7.2
+        },
+        {
+          "term": "context-aware",
+          "recent": 18,
+          "baseline": 1,
+          "growth": 7.2
+        },
+        {
+          "term": "character",
+          "recent": 9,
+          "baseline": 0,
+          "growth": 7.2
+        },
+        {
+          "term": "advancing",
+          "recent": 9,
+          "baseline": 0,
+          "growth": 7.2
+        },
+        {
+          "term": "ai-generated",
+          "recent": 26,
+          "baseline": 2,
+          "growth": 6.9
+        },
+        {
+          "term": "in-car",
+          "recent": 8,
+          "baseline": 0,
+          "growth": 6.4
+        },
+        {
+          "term": "actions",
+          "recent": 8,
+          "baseline": 0,
+          "growth": 6.4
+        },
+        {
+          "term": "llm-based",
+          "recent": 22,
+          "baseline": 2,
+          "growth": 5.8
+        },
+        {
+          "term": "noise",
+          "recent": 7,
+          "baseline": 0,
+          "growth": 5.6
+        }
+      ],
+      "hottest": [
+        {
+          "term": "reality",
+          "recent": 207
+        },
+        {
+          "term": "social",
+          "recent": 170
+        },
+        {
+          "term": "virtual",
+          "recent": 164
+        },
+        {
+          "term": "data",
+          "recent": 156
+        },
+        {
+          "term": "interaction",
+          "recent": 140
+        },
+        {
+          "term": "learning",
+          "recent": 121
+        },
+        {
+          "term": "generative",
+          "recent": 112
+        },
+        {
+          "term": "digital",
+          "recent": 112
+        },
+        {
+          "term": "language",
+          "recent": 105
+        },
+        {
+          "term": "virtual reality",
+          "recent": 102
+        },
+        {
+          "term": "system",
+          "recent": 90
+        },
+        {
+          "term": "privacy",
+          "recent": 86
+        },
+        {
+          "term": "adults",
+          "recent": 85
+        },
+        {
+          "term": "interactive",
+          "recent": 84
+        },
+        {
+          "term": "online",
+          "recent": 82
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "8f9e864fab09bbae4a46a2a62bb954db1a88eb3e",
+          "title": "Why Johnny Can’t Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 1203,
+          "citations_per_year": 300.8,
+          "abstract": "Pre-trained large language models (“LLMs”) like GPT-3 can engage in fluent, multi-turn instruction-taking out-of-the-box, making them attractive materials for designing natural language interactions. Using natural language to steer LLM outputs (“prompting”) has emerged as an important design technique potentially accessible to non-AI-experts. Crafting effective prompts can be challenging, however, and prompt-based interactions are brittle. Here, we explore whether non-AI-experts can successfully engage in “end-user prompt engineering” using a design probe—a prototype LLM-based chatbot design tool supporting development and systematic evaluation of prompting strategies. Ultimately, our probe participants explored prompt designs opportunistically, not systematically, and struggled in ways echoing end-user programming systems and interactive machine learning systems. Expectations stemming from human-to-human instructional experiences, and a tendency to overgeneralize, were barriers to effective prompt design. These findings have implications for non-AI-expert-facing LLM-based tool design and for improving LLM-and-prompt literacy among programmers and the public, and present opportunities for further research.",
+          "url": "https://www.semanticscholar.org/paper/8f9e864fab09bbae4a46a2a62bb954db1a88eb3e",
+          "externalIds": {
+            "DBLP": "conf/chi/Zamfirescu-Pereira23",
+            "DOI": "10.1145/3544548.3581388",
+            "CorpusId": 258217984
+          }
+        },
+        {
+          "paperId": "93a07d548608d2368ae2e3287275e3caf42a562c",
+          "title": "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers",
+          "year": 2025,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 525,
+          "citations_per_year": 262.5,
+          "abstract": "The rise of Generative AI (GenAI) in knowledge workflows raises questions about its impact on critical thinking skills and practices. We survey 319 knowledge workers to investigate 1) when and how they perceive the enaction of critical thinking when using GenAI, and 2) when and why GenAI affects their effort to do so. Participants shared 936 first-hand examples of using GenAI in work tasks. Quantitatively, when considering both task- and user-specific factors, a user’s task-specific self-confidence and confidence in GenAI are predictive of whether critical thinking is enacted and the effort of doing so in GenAI-assisted tasks. Specifically, higher confidence in GenAI is associated with less critical thinking, while higher self-confidence is associated with more critical thinking. Qualitatively, GenAI shifts the nature of critical thinking toward information verification, response integration, and task stewardship. Our insights reveal new design challenges and opportunities for developing GenAI tools for knowledge work.",
+          "url": "https://www.semanticscholar.org/paper/93a07d548608d2368ae2e3287275e3caf42a562c",
+          "externalIds": {
+            "DBLP": "conf/chi/LeeSTDRBW25",
+            "DOI": "10.1145/3706598.3713778",
+            "CorpusId": 276391316
+          }
+        },
+        {
+          "paperId": "61c723e7d91ca308b9eeacab35a2fce7548ef9fc",
+          "title": "AppAgent: Multimodal Agents as Smartphone Users",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 482,
+          "citations_per_year": 120.5,
+          "abstract": "Recent advancements in large language models (LLMs) have led to the creation of intelligent agents capable of performing complex tasks. This paper introduces a novel LLM-based multimodal agent framework designed to operate smartphone applications. Our framework allows the agent to mimic human-like interactions such as tapping and swiping through a simplified action space, eliminating the need for system back-end access and enhancing its versatility across various apps. Central to the agent’s functionality is an innovative in-context learning method, where it either autonomously explores or learns from human demonstrations, creating a knowledge base used to execute complex tasks across diverse applications. We conducted extensive testing with our agent on over 50 tasks spanning 10 applications, ranging from social media to sophisticated image editing tools. Additionally, a user study confirmed the agent’s superior performance and practicality in handling a diverse array of high-level tasks, demonstrating its effectiveness in real-world settings. Our project page is available at https://appagent-official.github.io/.",
+          "url": "https://www.semanticscholar.org/paper/61c723e7d91ca308b9eeacab35a2fce7548ef9fc",
+          "externalIds": {
+            "ArXiv": "2312.13771",
+            "DBLP": "journals/corr/abs-2312-13771",
+            "DOI": "10.1145/3706598.3713600",
+            "CorpusId": 266435868
+          }
+        },
+        {
+          "paperId": "2b5d234efd26e7377698cf16c901601a3d3c4e56",
+          "title": "CoAuthor: Designing a Human-AI Collaborative Writing Dataset for Exploring Language Model Capabilities",
+          "year": 2022,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 553,
+          "citations_per_year": 110.6,
+          "abstract": "Large language models (LMs) offer unprecedented language generation capabilities and exciting opportunities for interaction design. However, their highly context-dependent capabilities are difficult to grasp and are often subjectively interpreted. In this paper, we argue that by curating and analyzing large interaction datasets, the HCI community can foster more incisive examinations of LMs’ generative capabilities. Exemplifying this approach, we present CoAuthor, a dataset designed for revealing GPT-3’s capabilities in assisting creative and argumentative writing. CoAuthor captures rich interactions between 63 writers and four instances of GPT-3 across 1445 writing sessions. We demonstrate that CoAuthor can address questions about GPT-3’s language, ideation, and collaboration capabilities, and reveal its contribution as a writing “collaborator” under various definitions of good collaboration. Finally, we discuss how this work may facilitate a more principled discussion around LMs’ promises and pitfalls in relation to interaction design. The dataset and an interface for replaying the writing sessions are publicly available at https://coauthor.stanford.edu.",
+          "url": "https://www.semanticscholar.org/paper/2b5d234efd26e7377698cf16c901601a3d3c4e56",
+          "externalIds": {
+            "DBLP": "conf/chi/0002LY22",
+            "ArXiv": "2201.06796",
+            "DOI": "10.1145/3491102.3502030",
+            "CorpusId": 246016439
+          }
+        },
+        {
+          "paperId": "7c04ab297b59d4fe29285f339350882a3120b27f",
+          "title": "CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 330,
+          "citations_per_year": 110.0,
+          "abstract": "Timely, personalized feedback is essential for students learning programming. LLM-powered tools like ChatGPT offer instant support, but reveal direct answers with code, which may hinder deep conceptual engagement. We developed CodeAid, an LLM-powered programming assistant delivering helpful, technically correct responses, without revealing code solutions. CodeAid answers conceptual questions, generates pseudo-code with line-by-line explanations, and annotates student’s incorrect code with fix suggestions. We deployed CodeAid in a programming class of 700 students for a 12-week semester. A thematic analysis of 8,000 usages of CodeAid was performed, further enriched by weekly surveys, and 22 student interviews. We then interviewed eight programming educators to gain further insights. Our findings reveal four design considerations for future educational AI assistants: D1) exploiting AI’s unique benefits; D2) simplifying query formulation while promoting cognitive engagement; D3) avoiding direct responses while encouraging motivated learning; and D4) maintaining transparency and control for students to asses and steer AI responses.",
+          "url": "https://www.semanticscholar.org/paper/7c04ab297b59d4fe29285f339350882a3120b27f",
+          "externalIds": {
+            "ArXiv": "2401.11314",
+            "DBLP": "conf/chi/KazemitabaarYWH24",
+            "DOI": "10.1145/3613904.3642773",
+            "CorpusId": 267069469
+          }
+        },
+        {
+          "paperId": "515db5fefd215c05649aaa5adc4d64075d2518ab",
+          "title": "Design Principles for Generative AI Applications",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 303,
+          "citations_per_year": 101.0,
+          "abstract": "Generative AI applications present unique design challenges. As generative AI technologies are increasingly being incorporated into mainstream applications, there is an urgent need for guidance on how to design user experiences that foster effective and safe use. We present six principles for the design of generative AI applications that address unique characteristics of generative AI UX and offer new interpretations and extensions of known issues in the design of AI applications. Each principle is coupled with a set of design strategies for implementing that principle via UX capabilities or through the design process. The principles and strategies were developed through an iterative process involving literature review, feedback from design practitioners, validation against real-world generative AI applications, and incorporation into the design process of two generative AI applications. We anticipate the principles to usefully inform the design of generative AI applications by driving actionable design recommendations.",
+          "url": "https://www.semanticscholar.org/paper/515db5fefd215c05649aaa5adc4d64075d2518ab",
+          "externalIds": {
+            "ArXiv": "2401.14484",
+            "DBLP": "conf/chi/WeiszHMHMG24",
+            "DOI": "10.1145/3613904.3642466",
+            "CorpusId": 267301068
+          }
+        },
+        {
+          "paperId": "92999f7a304e866a2be7176e59c745481ed01042",
+          "title": "Co-Writing with Opinionated Language Models Affects Users’ Views",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 392,
+          "citations_per_year": 98.0,
+          "abstract": "If large language models like GPT-3 preferably produce a particular point of view, they may influence people’s opinions on an unknown scale. This study investigates whether a language-model-powered writing assistant that generates some opinions more often than others impacts what users write – and what they think. In an online experiment, we asked participants (N=1,506) to write a post discussing whether social media is good for society. Treatment group participants used a language-model-powered writing assistant configured to argue that social media is good or bad for society. Participants then completed a social media attitude survey, and independent judges (N=500) evaluated the opinions expressed in their writing. Using the opinionated language model affected the opinions expressed in participants’ writing and shifted their opinions in the subsequent attitude survey. We discuss the wider implications of our results and argue that the opinions built into AI language technologies need to be monitored and engineered more carefully.",
+          "url": "https://www.semanticscholar.org/paper/92999f7a304e866a2be7176e59c745481ed01042",
+          "externalIds": {
+            "DBLP": "conf/chi/JakeschBBZN23",
+            "ArXiv": "2302.00560",
+            "DOI": "10.1145/3544548.3581196",
+            "CorpusId": 256459801
+          }
+        },
+        {
+          "paperId": "a1ba4bbc0ec996278d8dc9acbcf64e444e2ada39",
+          "title": "The Metacognitive Demands and Opportunities of Generative AI",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 362,
+          "citations_per_year": 90.5,
+          "abstract": "Generative AI (GenAI) systems offer unprecedented opportunities for transforming professional and personal work, yet present challenges around prompting, evaluating and relying on outputs, and optimizing workflows. We argue that metacognition—the psychological ability to monitor and control one’s thoughts and behavior—offers a valuable lens to understand and design for these usability challenges. Drawing on research in psychology and cognitive science, and recent GenAI user studies, we illustrate how GenAI systems impose metacognitive demands on users, requiring a high degree of metacognitive monitoring and control. We propose these demands could be addressed by integrating metacognitive support strategies into GenAI systems, and by designing GenAI systems to reduce their metacognitive demand by targeting explainability and customizability. Metacognition offers a coherent framework for understanding the usability challenges posed by GenAI, and provides novel research and design directions to advance human-AI interaction.",
+          "url": "https://www.semanticscholar.org/paper/a1ba4bbc0ec996278d8dc9acbcf64e444e2ada39",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2312-10893",
+            "ArXiv": "2312.10893",
+            "DOI": "10.1145/3613904.3642902",
+            "CorpusId": 266359743
+          }
+        },
+        {
+          "paperId": "0ffd57884d7957f6b5634b9fa24843dc3759668f",
+          "title": "Evaluating Large Language Models in Generating Synthetic HCI Research Data: a Case Study",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 331,
+          "citations_per_year": 82.8,
+          "abstract": "Collecting data is one of the bottlenecks of Human-Computer Interaction (HCI) research. Motivated by this, we explore the potential of large language models (LLMs) in generating synthetic user research data. We use OpenAI’s GPT-3 model to generate open-ended questionnaire responses about experiencing video games as art, a topic not tractable with traditional computational user models. We test whether synthetic responses can be distinguished from real responses, analyze errors of synthetic data, and investigate content similarities between synthetic and real data. We conclude that GPT-3 can, in this context, yield believable accounts of HCI experiences. Given the low cost and high speed of LLM data generation, synthetic data should be useful in ideating and piloting new experiments, although any findings must obviously always be validated with real data. The results also raise concerns: if employed by malicious users of crowdsourcing services, LLMs may make crowdsourcing of self-report data fundamentally unreliable.",
+          "url": "https://www.semanticscholar.org/paper/0ffd57884d7957f6b5634b9fa24843dc3759668f",
+          "externalIds": {
+            "DBLP": "conf/chi/HamalainenTK23",
+            "DOI": "10.1145/3544548.3580688",
+            "CorpusId": 258218228
+          }
+        },
+        {
+          "paperId": "61d134b99099b21cc88b700229140023507ce848",
+          "title": "Human-LLM Collaborative Annotation Through Effective Verification of LLM Labels",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 225,
+          "citations_per_year": 75.0,
+          "abstract": "Large language models (LLMs) have shown remarkable performance across various natural language processing (NLP) tasks, indicating their significant potential as data annotators. Although LLM-generated annotations are more cost-effective and efficient to obtain, they are often erroneous for complex or domain-specific tasks and may introduce bias when compared to human annotations. Therefore, instead of completely replacing human annotators with LLMs, we need to leverage the strengths of both LLMs and humans to ensure the accuracy and reliability of annotations. This paper presents a multi-step human-LLM collaborative approach where (1) LLMs generate labels and provide explanations, (2) a verifier assesses the quality of LLM-generated labels, and (3) human annotators re-annotate a subset of labels with lower verification scores. To facilitate human-LLM collaboration, we make use of LLM’s ability to rationalize its decisions. LLM-generated explanations can provide additional information to the verifier model as well as help humans better understand LLM labels. We demonstrate that our verifier is able to identify potentially incorrect LLM labels for human re-annotation. Furthermore, we investigate the impact of presenting LLM labels and explanations on human re-annotation through crowdsourced studies.",
+          "url": "https://www.semanticscholar.org/paper/61d134b99099b21cc88b700229140023507ce848",
+          "externalIds": {
+            "DBLP": "conf/chi/Wang0RMM24",
+            "DOI": "10.1145/3613904.3641960",
+            "CorpusId": 269751990
+          }
+        },
+        {
+          "paperId": "2a814b6605b137a9b2705fe68feae6c47248cddf",
+          "title": "The Effects of Generative AI on Design Fixation and Divergent Thinking",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 216,
+          "citations_per_year": 72.0,
+          "abstract": "Generative AI systems have been heralded as tools for augmenting human creativity and inspiring divergent thinking, though with little empirical evidence for these claims. This paper explores the effects of exposure to AI-generated images on measures of design fixation and divergent thinking in a visual ideation task. Through a between-participants experiment (N=60), we found that support from an AI image generator during ideation leads to higher fixation on an initial example. Participants who used AI produced fewer ideas, with less variety and lower originality compared to a baseline. Our qualitative analysis suggests that the effectiveness of co-ideation with AI rests on participants’ chosen approach to prompt creation and on the strategies used by participants to generate ideas in response to the AI’s suggestions. We discuss opportunities for designing generative AI systems for ideation support and incorporating these AI tools into ideation workflows.",
+          "url": "https://www.semanticscholar.org/paper/2a814b6605b137a9b2705fe68feae6c47248cddf",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2403-11164",
+            "ArXiv": "2403.11164",
+            "DOI": "10.1145/3613904.3642919",
+            "CorpusId": 268513121
+          }
+        },
+        {
+          "paperId": "61221e6714d939111dcc8dae9f4050f384ec99f7",
+          "title": "A Design Space for Intelligent and Interactive Writing Assistants",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 210,
+          "citations_per_year": 70.0,
+          "abstract": "In our era of rapid technological advancement, the research landscape for writing assistants has become increasingly fragmented across various research communities. We seek to address this challenge by proposing a design space as a structured way to examine and explore the multidimensional space of intelligent and interactive writing assistants. Through community collaboration, we explore five aspects of writing assistants: task, user, technology, interaction, and ecosystem. Within each aspect, we define dimensions and codes by systematically reviewing 115 papers, while leveraging the expertise of researchers in various disciplines. Our design space aims to offer researchers and designers a practical tool to navigate, comprehend, and compare the various possibilities of writing assistants, and aid in the design of new writing assistants.",
+          "url": "https://www.semanticscholar.org/paper/61221e6714d939111dcc8dae9f4050f384ec99f7",
+          "externalIds": {
+            "ArXiv": "2403.14117",
+            "DBLP": "journals/corr/abs-2403-14117",
+            "DOI": "10.1145/3613904.3642697",
+            "CorpusId": 268553985
+          }
+        },
+        {
+          "paperId": "7b1a6db0909856a345f055a9607f43711b3df375",
+          "title": "Art or Artifice? Large Language Models and the False Promise of Creativity",
+          "year": 2023,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 277,
+          "citations_per_year": 69.2,
+          "abstract": "Researchers have argued that large language models (LLMs) exhibit high-quality writing capabilities from blogs to stories. However, evaluating objectively the creativity of a piece of writing is challenging. Inspired by the Torrance Test of Creative Thinking (TTCT) [64], which measures creativity as a process, we use the Consensual Assessment Technique [3] and propose Torrance Test of Creative Writing (TTCW) to evaluate creativity as product. TTCW consists of 14 binary tests organized into the original dimensions of Fluency, Flexibility, Originality, and Elaboration. We recruit 10 creative writers and implement a human assessment of 48 stories written either by professional authors or LLMs using TTCW. Our analysis shows that LLM-generated stories pass 3-10X less TTCW tests than stories written by professionals. In addition, we explore the use of LLMs as assessors to automate the TTCW evaluation, revealing that none of the LLMs positively correlate with the expert assessments.",
+          "url": "https://www.semanticscholar.org/paper/7b1a6db0909856a345f055a9607f43711b3df375",
+          "externalIds": {
+            "ArXiv": "2309.14556",
+            "DBLP": "conf/chi/ChakrabartyLAMW24",
+            "DOI": "10.1145/3613904.3642731",
+            "CorpusId": 262826094
+          }
+        },
+        {
+          "paperId": "0b26abcbb54394c79234eeefe9cb1da5f183d47b",
+          "title": "Generative Echo Chamber? Effect of LLM-Powered Search Systems on Diverse Information Seeking",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 195,
+          "citations_per_year": 65.0,
+          "abstract": "Large language models (LLMs) powered conversational search systems have already been used by hundreds of millions of people, and are believed to bring many benefits over conventional search. However, while decades of research and public discourse interrogated the risk of search systems in increasing selective exposure and creating echo chambers—limiting exposure to diverse opinions and leading to opinion polarization, little is known about such a risk of LLM-powered conversational search. We conduct two experiments to investigate: 1) whether and how LLM-powered conversational search increases selective exposure compared to conventional search; 2) whether and how LLMs with opinion biases that either reinforce or challenge the user’s view change the effect. Overall, we found that participants engaged in more biased information querying with LLM-powered conversational search, and an opinionated LLM reinforcing their views exacerbated this bias. These results present critical implications for the development of LLMs and conversational search systems, and the policy governing these technologies.",
+          "url": "https://www.semanticscholar.org/paper/0b26abcbb54394c79234eeefe9cb1da5f183d47b",
+          "externalIds": {
+            "DBLP": "conf/chi/SharmaLX24",
+            "DOI": "10.1145/3613904.3642459",
+            "CorpusId": 269747685
+          }
+        },
+        {
+          "paperId": "c6e2837894bb545fc62ef41d7dadcd6e1bb51dc5",
+          "title": "PromptCharm: Text-to-Image Generation through Multi-modal Prompting and Refinement",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 175,
+          "citations_per_year": 58.3,
+          "abstract": "The recent advancements in Generative AI have significantly advanced the field of text-to-image generation. The state-of-the-art text-to-image model, Stable Diffusion, is now capable of synthesizing high-quality images with a strong sense of aesthetics. Crafting text prompts that align with the model’s interpretation and the user’s intent thus becomes crucial. However, prompting remains challenging for novice users due to the complexity of the stable diffusion model and the non-trivial efforts required for iteratively editing and refining the text prompts. To address these challenges, we propose PromptCharm, a mixed-initiative system that facilitates text-to-image creation through multi-modal prompt engineering and refinement. To assist novice users in prompting, PromptCharm first automatically refines and optimizes the user’s initial prompt. Furthermore, PromptCharm supports the user in exploring and selecting different image styles within a large database. To assist users in effectively refining their prompts and images, PromptCharm renders model explanations by visualizing the model’s attention values. If the user notices any unsatisfactory areas in the generated images, they can further refine the images through model attention adjustment or image inpainting within the rich feedback loop of PromptCharm. To evaluate the effectiveness and usability of PromptCharm, we conducted a controlled user study with 12 participants and an exploratory user study with another 12 participants. These two studies show that participants using PromptCharm were able to create images with higher quality and better aligned with the user’s expectations compared with using two variants of PromptCharm that lacked interaction or visualization support.",
+          "url": "https://www.semanticscholar.org/paper/c6e2837894bb545fc62ef41d7dadcd6e1bb51dc5",
+          "externalIds": {
+            "DBLP": "conf/chi/WangHS0024",
+            "ArXiv": "2403.04014",
+            "DOI": "10.1145/3613904.3642803",
+            "CorpusId": 268264261
+          }
+        }
+      ]
+    }
+  ],
+  "yearly_topics": {
+    "security_big4_all": {
+      "totals": {
+        "2023": 968,
+        "2025": 1171,
+        "2024": 1118,
+        "2022": 703,
+        "2021": 633,
+        "2020": 576,
+        "2026": 370
+      },
+      "topics": {
+        "2023": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 865
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 7
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 16
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 13
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 8
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 14
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 14
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 16
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 4
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 11
+          }
+        },
+        "2025": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 949
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 92
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 14
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 7
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 25
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 25
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 18
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 15
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 19
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 7
+          }
+        },
+        "2024": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 921
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 20
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 25
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 26
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 20
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 56
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 16
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 9
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 5
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 20
+          }
+        },
+        "2022": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 638
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 5
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 13
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 7
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 13
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 5
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 6
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 4
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 10
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 2
+          }
+        },
+        "2021": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 573
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 5
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 12
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 3
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 10
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 3
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 4
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 11
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 8
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 4
+          }
+        },
+        "2020": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 525
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 11
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 5
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 4
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 6
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 3
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 8
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 12
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 2
+          }
+        },
+        "2026": {
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 6
+          },
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 304
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 29
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 4
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 10
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 4
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 4
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 2
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 6
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 1
+          }
+        }
+      }
+    },
+    "security_big4_usable": {
+      "totals": {
+        "2024": 63,
+        "2025": 63,
+        "2021": 27,
+        "2023": 83,
+        "2020": 19,
+        "2022": 38,
+        "2026": 11
+      },
+      "topics": {
+        "2024": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 47
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 4
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 3
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 2
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 2
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 1
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 1
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 2
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 1
+          }
+        },
+        "2025": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 46
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 3
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 2
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 3
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 1
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 1
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 2
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 2
+          }
+        },
+        "2021": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 20
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 1
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 2
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 2
+          }
+        },
+        "2023": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 72
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 2
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 2
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 2
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 1
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 1
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 2
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 1
+          }
+        },
+        "2020": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 17
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 2
+          }
+        },
+        "2022": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 32
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 3
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 1
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 1
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 1
+          }
+        },
+        "2026": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 4
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 1
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 1
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 1
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 1
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 1
+          }
+        }
+      }
+    },
+    "soups_pets": {
+      "totals": {
+        "2025": 166,
+        "2023": 132,
+        "2024": 120,
+        "2022": 103,
+        "2021": 88,
+        "2026": 118,
+        "2020": 81
+      },
+      "topics": {
+        "2025": {
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 10
+          },
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 131
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 4
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 4
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 10
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 3
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 3
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          }
+        },
+        "2023": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 112
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 3
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 3
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 4
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 2
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 3
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 1
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 4
+          }
+        },
+        "2024": {
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 1
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 3
+          },
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 102
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 1
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 2
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 4
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 5
+          }
+        },
+        "2022": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 93
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 5
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 2
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 1
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 1
+          }
+        },
+        "2021": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 79
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 2
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 2
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 1
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 1
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          }
+        },
+        "2026": {
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 5
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 2
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 1
+          },
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 86
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 4
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 10
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 6
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 3
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 1
+          }
+        },
+        "2020": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 75
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 3
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 1
+          }
+        }
+      }
+    },
+    "hci_privacy_security": {
+      "totals": {
+        "2021": 68,
+        "2022": 51,
+        "2024": 91,
+        "2025": 109,
+        "2026": 133,
+        "2023": 78,
+        "2020": 67
+      },
+      "topics": {
+        "2021": {
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 3
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 4
+          },
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 52
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 5
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 2
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 1
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          }
+        },
+        "2022": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 41
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 1
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 1
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 2
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 3
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 1
+          }
+        },
+        "2024": {
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 2
+          },
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 64
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 7
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 4
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 4
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 7
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 2
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 1
+          }
+        },
+        "2025": {
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 6
+          },
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 77
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 6
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 8
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 3
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 5
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 2
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 1
+          }
+        },
+        "2026": {
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 4
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 1
+          },
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 86
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 14
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 7
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 8
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 7
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 4
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 2
+          }
+        },
+        "2023": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 54
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 8
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 3
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 5
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 3
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 3
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 1
+          }
+        },
+        "2020": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 60
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 1
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 1
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 2
+          }
+        }
+      }
+    }
+  },
+  "migration_method": "source first-hot + Big4 user-study zero-to-one: first popular year in SOUPS/PETS or HCI privacy/security must be earlier than the first year where the topic appears at least once in the security Big4 interview/survey subset, and the lag must be 1-2 years.",
+  "topic_migration": {
+    "migrations": [
+      {
+        "topic": "privacy_advice_policy",
+        "label": "Privacy advice / literacy / policy",
+        "source_group": "soups_pets",
+        "source_label": "SOUPS/PETS",
+        "source_year": 2020,
+        "source_count": 2,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2021,
+        "target_count": 2,
+        "lag_years": 1,
+        "signal": "strong",
+        "judgment": "source_first_then_big4_breakthrough"
+      },
+      {
+        "topic": "privacy_advice_policy",
+        "label": "Privacy advice / literacy / policy",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2020,
+        "source_count": 2,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2021,
+        "target_count": 2,
+        "lag_years": 1,
+        "signal": "strong",
+        "judgment": "source_first_then_big4_breakthrough"
+      },
+      {
+        "topic": "human_ai_creativity_education_health",
+        "label": "Human-AI collaboration / creativity / education / health",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2021,
+        "source_count": 5,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2023,
+        "target_count": 1,
+        "lag_years": 2,
+        "signal": "medium",
+        "judgment": "source_first_then_big4_breakthrough"
+      },
+      {
+        "topic": "crypto_security_cryptography",
+        "label": "Cryptography / censorship / private advertising",
+        "source_group": "soups_pets",
+        "source_label": "SOUPS/PETS",
+        "source_year": 2020,
+        "source_count": 3,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2022,
+        "target_count": 1,
+        "lag_years": 2,
+        "signal": "medium",
+        "judgment": "source_first_then_big4_breakthrough"
+      }
+    ],
+    "verified_transmissions": [
+      {
+        "topic": "privacy_advice_policy",
+        "label": "Privacy advice / literacy / policy",
+        "source_group": "soups_pets",
+        "source_label": "SOUPS/PETS",
+        "source_year": 2020,
+        "source_count": 2,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2021,
+        "target_count": 2,
+        "lag_years": 1,
+        "signal": "strong",
+        "judgment": "source_first_then_big4_breakthrough"
+      },
+      {
+        "topic": "privacy_advice_policy",
+        "label": "Privacy advice / literacy / policy",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2020,
+        "source_count": 2,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2021,
+        "target_count": 2,
+        "lag_years": 1,
+        "signal": "strong",
+        "judgment": "source_first_then_big4_breakthrough"
+      },
+      {
+        "topic": "human_ai_creativity_education_health",
+        "label": "Human-AI collaboration / creativity / education / health",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2021,
+        "source_count": 5,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2023,
+        "target_count": 1,
+        "lag_years": 2,
+        "signal": "medium",
+        "judgment": "source_first_then_big4_breakthrough"
+      },
+      {
+        "topic": "crypto_security_cryptography",
+        "label": "Cryptography / censorship / private advertising",
+        "source_group": "soups_pets",
+        "source_label": "SOUPS/PETS",
+        "source_year": 2020,
+        "source_count": 3,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2022,
+        "target_count": 1,
+        "lag_years": 2,
+        "signal": "medium",
+        "judgment": "source_first_then_big4_breakthrough"
+      }
+    ],
+    "source_only_watchlist": [],
+    "big4_first_or_mainstream": [
+      {
+        "topic": "accessibility_older_adults",
+        "label": "Accessibility / older adults / assistive tech",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2020,
+        "source_count": 2,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2020,
+        "target_count": 2,
+        "lag_years": 0,
+        "reason": "big4_first_or_lag_too_long"
+      },
+      {
+        "topic": "ai_agents_llm_workflows",
+        "label": "AI agents / LLM workflows",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2021,
+        "source_count": 2,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2021,
+        "target_count": 1,
+        "lag_years": 0,
+        "reason": "big4_first_or_lag_too_long"
+      },
+      {
+        "topic": "digital_labor_platform_power",
+        "label": "Digital labor / platforms / organizational power",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2021,
+        "source_count": 3,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2021,
+        "target_count": 2,
+        "lag_years": 0,
+        "reason": "big4_first_or_lag_too_long"
+      },
+      {
+        "topic": "fraud_scams_online_harms",
+        "label": "Fraud / scams / online harms",
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2021,
+        "target_count": 2,
+        "reason": "big4_only_or_first"
+      },
+      {
+        "topic": "crypto_dao_web3_governance",
+        "label": "Crypto / DAO / Web3 governance",
+        "source_group": "soups_pets",
+        "source_label": "SOUPS/PETS",
+        "source_year": 2024,
+        "source_count": 5,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2023,
+        "target_count": 2,
+        "lag_years": -1,
+        "reason": "big4_first_or_lag_too_long"
+      },
+      {
+        "topic": "genai_safety_media",
+        "label": "GenAI safety / synthetic media / deepfake",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2025,
+        "source_count": 3,
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2023,
+        "target_count": 2,
+        "lag_years": -2,
+        "reason": "big4_first_or_lag_too_long"
+      }
+    ],
+    "method": "source first-hot + Big4 user-study zero-to-one: source first-hot must be earlier than the first Big4 interview/survey appearance, with a 1-2 year lag."
+  }
 }

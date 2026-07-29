@@ -1,0 +1,27 @@
+{
+ "note": "个人主页/CSAuthors 抓取的 2026 论文，补充 S2 更新滞后的部分。focus_area 按内容/venue 归类（IJHCI/ASSETS/FAccT=hci; PEPR/FOCI/ConPro=security; WACV/TWeb/Nature 按作者主页方向）。url 待补 DOI/arXiv。",
+ "source_updated": "2026-07-28",
+ "entries": [
+  {"author": "Tanusree Sharma", "title": "VOICE: Data-Driven Risk Taxonomy for Synthetic Voice Generation", "year": 2026, "venue": "PEPR 2026", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Tanusree Sharma", "title": "Hierarchical Instance Tracking to Balance Privacy Preservation with Accessible Information", "year": 2026, "venue": "WACV 2026", "focus_area": "hci", "url": null, "source": "homepage"},
+  {"author": "Tanusree Sharma", "title": "Future of Algorithmic Organization: Large-Scale Analysis of Decentralized Autonomous Organizations (DAOs)", "year": 2026, "venue": "ACM TWeb 2026", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Tanusree Sharma", "title": "Democratic Governance Through DAO-Based Deliberation and Voting for Inclusive Decision Making in AI Model", "year": 2026, "venue": "Nature Scientific Reports", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Tanusree Sharma", "title": "Signals of Provenance: Practices & Challenges of Navigating Indicators in AI-Generated Media for Sighted and Blind Individuals", "year": 2026, "venue": "Preprint", "focus_area": "hci", "url": null, "source": "homepage"},
+  {"author": "Tanusree Sharma", "title": "Culturally Aware GenAI Risks for Youth: Perspectives from Youth, Parents, and Teachers in a Non-Western Context", "year": 2026, "venue": "Preprint", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Tanusree Sharma", "title": "Essential, yet overlooked: Identity verification barriers for blind and low vision people in government services", "year": 2026, "venue": "Preprint", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Gabriel Kaptchuk", "title": "Analyzing Cryptography in Context: A Cryptography-Native Approach to Threat Modeling", "year": 2026, "venue": "USENIX Security 2026", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Gabriel Kaptchuk", "title": "Making Sense of Private Advertising: A Principled Approach to a Complex Ecosystem", "year": 2026, "venue": "PoPETS 2026", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Gabriel Kaptchuk", "title": "Assemblage: Chipping Away at Censorship with Generative Steganography", "year": 2026, "venue": "FOCI 2026", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Gabriel Kaptchuk", "title": "“Having Confidence in My Confidence Intervals”: How Data Users Engage with Privacy-Protected Wikipedia Data", "year": 2026, "venue": "CHI 2026", "focus_area": "hci", "url": null, "source": "homepage"},
+  {"author": "Gabriel Kaptchuk", "title": "Forget-me-not Trees: Mass-scale Auditable Key Transparency from Hash Functions", "year": 2026, "venue": "Preprint", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Gabriel Kaptchuk", "title": "Deploying decryption oracles for fun and non-profit: Backing up with friends and TEEs", "year": 2026, "venue": "Preprint", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Elissa M. Redmiles", "title": "The Role of Privacy Guarantees in Voluntary Donation of Private Health Data for Altruistic Goals", "year": 2026, "venue": "NDSS 2026", "focus_area": "security", "url": null, "source": "csauthors"},
+  {"author": "Elissa M. Redmiles", "title": "“Unlimited Realm of Exploration and Experimentation”: Methods and Motivations of AI-Generated Sexual Content Creators", "year": 2026, "venue": "FAccT 2026", "focus_area": "hci", "url": null, "source": "csauthors"},
+  {"author": "Elissa M. Redmiles", "title": "“Having Confidence in My Confidence Intervals”: How Data Users Engage with Privacy-Protected Wikipedia Data", "year": 2026, "venue": "CHI 2026", "focus_area": "hci", "url": null, "source": "csauthors"},
+  {"author": "Adam J. Aviv", "title": "SoK: Mapping Threats to Defenses in Online Survey Fraud", "year": 2026, "venue": "SOUPS 2026", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Adam J. Aviv", "title": "“Because I didn't touch these and even don't know why I should to change these”: Why App Developers Do (Not) Update Apple's Privacy Labels", "year": 2026, "venue": "PoPETS 2026", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Adam J. Aviv", "title": "How Probing for Problems and Bias Affects Perceptions of AI Chatbot Trustworthiness", "year": 2026, "venue": "FAccT 2026", "focus_area": "hci", "url": null, "source": "homepage"},
+  {"author": "Adam J. Aviv", "title": "Small Business Adoption of Gen-AI Services", "year": 2026, "venue": "ConPro 2026", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Adam J. Aviv", "title": "Re-Examining the Examiners: Changes in Privacy and Security Perceptions of Exam Proctoring", "year": 2026, "venue": "CHI 2026", "focus_area": "hci", "url": null, "source": "homepage"}
+ ]
+}

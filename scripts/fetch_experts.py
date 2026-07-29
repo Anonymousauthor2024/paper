@@ -3,6 +3,7 @@
 """
 fetch_experts.py — 拉取大牛库(people/experts.json)中每位学者的论文,
 跨 profile 去重、按 venue 归类(security / hci / preprint / other),
+并为 2026+ 新工作模块补充 focus_area(security / hci / other),
 直接呈现每位大牛的最近论文(方向从标题一目了然,不做机器关键词提炼)。
 
 只用标准库,方便在 GitHub Actions 上跑。
@@ -50,6 +51,17 @@ misinformation disinformation warning warnings harassment sextortion cyberbullyi
 trafficking gambling deaf disability disabilities accessibility children child elder
 senior anonymity anonymous""".split())
 
+SECURITY_WORDS = set("""privacy security secure surveillance phishing scam scams fraud
+authentication password encryption biometric deepfake consent misinformation disinformation
+warning warnings harassment sextortion cyberbullying trafficking gambling anonymity anonymous
+malware vulnerability vulnerabilities threat threats risk risks safety online abuse abuse
+policy policies""".split())
+
+HCI_WORDS = set("""hci human computer interaction interactions user users usability usable
+accessibility accessible disability disabilities deaf elder senior child children chatbot
+llm ai agent agents vr ar mobile wearable embodied social community communities moderation
+human-ai interface interfaces design study interview survey qualitative experiment""".split())
+
 def classify(venue, ext, title):
     v = " " + (venue or "").lower() + " "
     for p in SEC_PATTERNS:
@@ -62,6 +74,20 @@ def classify(venue, ext, title):
         toks = set(re.findall(r"[a-z]+", (title or "").lower()))
         return "preprint" if toks & DOMAIN_WORDS else "other"
     return "other"
+
+def focus_area(category, title):
+    if category == "security":
+        return "security"
+    if category == "hci":
+        return "hci"
+    if category != "preprint":
+        return "other"
+    toks = set(re.findall(r"[a-z]+", (title or "").lower()))
+    sec_score = len(toks & SECURITY_WORDS)
+    hci_score = len(toks & HCI_WORDS)
+    if sec_score == 0 and hci_score == 0:
+        return "other"
+    return "security" if sec_score > hci_score else "hci"
 
 # ---------- 时间 ----------
 TODAY = datetime.now(timezone.utc).date()
@@ -121,6 +147,7 @@ def main():
         papers = list(by_id.values())
         for p in papers:
             p["category"] = classify(p.get("venue"), p.get("externalIds"), p.get("title"))
+            p["focus_area"] = focus_area(p["category"], p.get("title"))
         papers.sort(key=lambda x: (paper_date(x) or date(1900, 1, 1)), reverse=True)
 
         in_field = [p for p in papers if p["category"] != "other"]

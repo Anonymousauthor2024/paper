@@ -46,12 +46,120 @@
       "note": "1717671332 = 早期 smart contract 安全 profile"
     },
     {
-      "name": "Kanye Ye Wang",
-      "affiliation": "University of Macau",
+      "name": "Elissa M. Redmiles",
+      "affiliation": "Georgetown University",
+      "role": "assistant professor",
+      "known_for": "equitable usable privacy & security, online safety, digital labor and intimacy",
+      "ss_author_ids": ["2391370"],
+      "dblp": "https://dblp.org/pid/141/9244",
+      "note": "核心新增；研究覆盖 security/privacy、HCI 与高风险人群"
+    },
+    {
+      "name": "Michelle L. Mazurek",
+      "affiliation": "University of Maryland",
+      "role": "professor",
+      "known_for": "human-centered security, security advice, developer and end-user security",
+      "ss_author_ids": ["37176218", "2066542394"],
+      "dblp": "https://dblp.org/pid/20/7983",
+      "note": "Elissa 的长期高频合作者；SS 拆成 2 个已确认 profile"
+    },
+    {
+      "name": "Gabriel Kaptchuk",
+      "affiliation": "University of Maryland",
+      "role": "assistant professor",
+      "known_for": "cryptography and privacy in social context, differential privacy, algorithmic governance",
+      "ss_author_ids": ["3452395", "2321974449"],
+      "dblp": "https://dblp.org/pid/185/1661",
+      "note": "Elissa 的高频合作者；SS 拆成 2 个已确认 profile"
+    },
+    {
+      "name": "Vaughn Hamilton",
+      "affiliation": "Independent / formerly MPI-SWS",
+      "role": "researcher",
+      "known_for": "digital intimacy, sex-worker safety, at-risk populations, qualitative HCI",
+      "ss_author_ids": ["1820919795"],
+      "dblp": "https://dblp.org/pid/314/5946"
+    },
+    {
+      "name": "Allison McDonald",
+      "affiliation": "Boston University",
+      "role": "assistant professor",
+      "known_for": "digital safety, high-risk populations, usable privacy & security, HCI",
+      "ss_author_ids": ["143890973", "46479224", "2292260114"],
+      "dblp": "https://dblp.org/pid/205/2107",
+      "note": "Elissa 的高频合作者；SS 拆成 3 个已确认 profile"
+    },
+    {
+      "name": "Miranda Wei",
+      "affiliation": "Princeton CITP",
+      "role": "postdoctoral research associate",
+      "known_for": "online abuse, sociotechnical safety, gender, security & privacy HCI",
+      "ss_author_ids": ["40917180", "2291802233", "2307999214"],
+      "dblp": "https://dblp.org/pid/217/4562",
+      "note": "Elissa 的高频合作者；SS 拆成 3 个已确认 profile"
+    },
+    {
+      "name": "Tadayoshi Kohno",
+      "affiliation": "University of Washington",
+      "role": "professor",
+      "known_for": "emerging-technology security, human factors, AI harms, security ethics",
+      "ss_author_ids": ["1769675", "2238332466", "2312304883"],
+      "dblp": "https://dblp.org/pid/k/TadayoshiKohno",
+      "note": "Elissa 的高频合作者；SS 拆成 3 个已确认 profile"
+    },
+    {
+      "name": "Zhicong Lu",
+      "affiliation": "City University of Hong Kong",
       "role": "faculty",
-      "known_for": "privacy perceptions, smart home, HCI qualitative",
-      "ss_author_ids": ["2292090978"],
-      "dblp": null
+      "known_for": "social computing, AI-mediated communities, HCI, online safety and misinformation",
+      "ss_author_ids": ["2380993742", "2274059261", "2110326898", "2290025575", "10682650", "2319388146", "2304442295", "2344960065"],
+      "dblp": "https://dblp.org/pid/157/4304",
+      "note": "用户点名新增；S2 存在多个同名 profile，已按 profile_audit 合并 HCI/social-computing 相关候选"
+    },
+    {
+      "name": "Xin Tong",
+      "affiliation": "HKUST(GZ)",
+      "role": "faculty",
+      "known_for": "HCI, VR/AR, assistive technology, embodied interaction",
+      "ss_author_ids": ["47632675"],
+      "dblp": null,
+      "note": "用户点名新增；S2 同名过多，已按 profile_audit 先绑定含 HCI 论文的候选"
+    },
+    {
+      "name": "Yi Xin",
+      "affiliation": "Tsinghua University",
+      "role": "faculty",
+      "known_for": "HCI, usable privacy and security, VR/AR and human-AI interaction",
+      "ss_author_ids": ["2067673640"],
+      "dblp": null,
+      "note": "用户点名新增；中文名易鑫，S2 profile 待 profile_audit 继续补齐"
+    },
+    {
+      "name": "Shuning Zhang",
+      "affiliation": "Tsinghua University",
+      "role": "phd",
+      "known_for": "HCI, usable privacy, human-AI interaction",
+      "ss_author_ids": ["2214812586", "2316101018", "2327003527"],
+      "dblp": null,
+      "note": "用户点名新增；清华 UP Lab，已按 profile_audit 先绑定含 HCI/privacy/AI-agent 论文的候选"
+    },
+    {
+      "name": "Chun Yu",
+      "affiliation": "Tsinghua University",
+      "role": "faculty",
+      "known_for": "HCI, human-computer interaction, input techniques, mobile and wearable interaction",
+      "ss_author_ids": ["32263975"],
+      "dblp": "https://dblp.org/pid/76/3566",
+      "note": "用户点名新增；S2 同名很多，32263975 为初步候选，需 profile_audit 复核"
+    },
+    {
+      "name": "Liyi Zhou",
+      "affiliation": "University of Sydney",
+      "role": "faculty",
+      "known_for": "HCI, human-AI interaction, social computing",
+      "ss_author_ids": ["3138957"],
+      "dblp": null,
+      "note": "用户点名新增；已按 profile_audit 先绑定含领域论文的候选，仍需后续核对是否为悉尼大学 Liyi Zhou"
     },
     {
       "name": "Florian Schaub",
