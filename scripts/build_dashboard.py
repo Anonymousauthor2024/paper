@@ -707,7 +707,44 @@ def advice_learning_html(data):
     )
 
 
-def user_experiments_html(data):
+def normalize_paper_title(title):
+    return re.sub(r"\W+", "", (title or "").lower())
+
+
+def collect_automatic_experiment_candidates(raw_data, curated_data):
+    curated_titles = {
+        normalize_paper_title(p.get("title"))
+        for p in curated_data.get("papers", [])
+    }
+    seen = set()
+    candidates = []
+    for venue, venue_data in (raw_data.get("venues") or {}).items():
+        for paper in venue_data.get("user_experiment_candidates") or []:
+            key = normalize_paper_title(paper.get("title"))
+            if not key or key in curated_titles or key in seen:
+                continue
+            seen.add(key)
+            text = f"{paper.get('title') or ''} {paper.get('abstract') or ''}".lower()
+            design = next((x for x in (
+                "between-subjects", "within-subjects", "field experiment",
+                "online experiment", "controlled experiment", "experiment",
+            ) if x in text), "experiment")
+            human = next((x for x in (
+                "human participants", "participants", "user study", "end users", "users",
+            ) if x in text), "human-study evidence")
+            outcome = next((x for x in (
+                "click-through", "click", "decision", "performance", "trust",
+                "usability", "knowledge", "awareness",
+            ) if x in text), "user-facing outcome")
+            candidates.append({
+                **paper,
+                "venue": venue,
+                "matched_evidence": [design, human, outcome],
+            })
+    return candidates
+
+
+def user_experiments_html(data, automatic_candidates=None):
     strength_labels = {
         "strong_experiment": "强实验",
         "controlled_comparison": "受控比较",
@@ -722,6 +759,30 @@ def user_experiments_html(data):
     grouped = {}
     for paper in data.get("papers", []):
         grouped.setdefault((paper.get("year"), paper.get("tier")), []).append(paper)
+    for paper in automatic_candidates or []:
+        details = paper.get("experiment_details") or {}
+        design = details.get("design") or "摘要未说明"
+        strength = (
+            "strong_experiment"
+            if any(term in design for term in ("现场实验", "组间实验", "组内实验", "行为实验", "欺骗性在线实验", "受控实验"))
+            else "controlled_comparison"
+        )
+        grouped.setdefault((2026, "core_big4"), []).append({
+            "year": 2026,
+            "venue": paper.get("venue"),
+            "tier": "core_big4",
+            "cycle": paper.get("cycle"),
+            "title": paper.get("title"),
+            "topic": details.get("topic") or "用户实验",
+            "strength": strength,
+            "design": design,
+            "sample": details.get("sample") or "摘要未说明",
+            "intervention": details.get("intervention") or "摘要未说明",
+            "comparison": details.get("comparison") or "摘要未说明",
+            "outcomes": details.get("outcomes") or "摘要未说明",
+            "takeaway_zh": details.get("result") or "摘要未说明",
+            "url": paper.get("paper_url"),
+        })
     sections = []
     tier_order = {"core_big4": 0, "soups_showcase": 1, "adjacent_workshop": 2, "adjacent_hci": 3}
     for (year, tier), papers in sorted(
@@ -730,9 +791,10 @@ def user_experiments_html(data):
         cards = []
         for p in papers:
             strength = strength_labels.get(p.get("strength"), p.get("strength") or "")
+            cycle = f' · {html.escape(p.get("cycle"))}' if p.get("cycle") else ""
             cards.append(
                 '<article class="experiment-paper">'
-                f'<div class="paper-meta">{year} · {html.escape(p.get("venue") or "")}</div>'
+                f'<div class="paper-meta">{year} · {html.escape(p.get("venue") or "")}{cycle}</div>'
                 f'<h4><a href="{html.escape(p.get("url") or p.get("source_url") or "#")}" target="_blank">'
                 f'{html.escape(p.get("title") or "")}</a></h4>'
                 f'<div><span class="experiment-badge {html.escape(p.get("strength") or "")}">'
@@ -753,9 +815,442 @@ def user_experiments_html(data):
         '<div class="coverage-note"><strong>纳入口径</strong><p>'
         '必须同时存在用户侧操纵或干预、比较条件、真实参与者，以及安全行为、判断、知识、'
         '信任、理解或可用性结果。强实验、受控比较和探索性比较分开标注，避免把任务访谈误当作 A/B 因果证据。'
-        '当前为 2025–2026 代表性人工核验集合，不等同于系统综述或完整论文数据库。'
+        '当前结果结合人工核验与官方 abstract 的结构化抽取，不等同于系统综述或完整论文数据库。'
         f'</p></div>{"".join(sections)}'
     )
+
+
+BIG4_VENUE_TERMS = (
+    "ieee symposium on security and privacy",
+    "ieee s&p",
+    "usenix security",
+    "computer and communications security",
+    "acm ccs",
+    "network and distributed system security",
+    "ndss",
+)
+
+OTHER_SECURITY_VENUE_TERMS = (
+    "symposium on usable privacy and security",
+    "usable privacy and security",
+    "soups",
+    "privacy enhancing technologies",
+    "popets",
+    "pets",
+    "usec",
+    "usable security and privacy",
+)
+
+
+def is_allowed_hci_venue(venue):
+    """Only the HCI sources explicitly selected for this dashboard."""
+    v = (venue or "").strip().lower()
+    if not v:
+        return False
+    # IJHCI / International Journal of Human-Computer Interaction is excluded.
+    if "human-computer interaction" in v and "human-computer studies" not in v:
+        return False
+    return any(term in v for term in (
+        "international conference on human factors in computing systems",
+        "chi conference on human factors",
+        "acm chi",
+        "computer supported cooperative work",
+        "computer-supported cooperative work",
+        "cscw",
+        "proc. acm hum. comput. interact",
+        "proceedings of the acm on human-computer interaction",
+        "acm transactions on computer-human interaction",
+        "acm trans. comput. hum. interact",
+        "tochi",
+        "ubiquitous computing",
+        "ubicomp",
+        "interactive mobile wearable and ubiquitous technologies",
+        "imwut",
+        "international journal of human-computer studies",
+        "ijhcs",
+    ))
+
+
+def usable_source_family(venue):
+    v = (venue or "").lower()
+    if any(term in v for term in BIG4_VENUE_TERMS):
+        return "big4"
+    if any(term in v for term in OTHER_SECURITY_VENUE_TERMS):
+        return "other_security"
+    if is_allowed_hci_venue(venue):
+        return "hci"
+    return None
+
+
+def paper_default_topic_tags(paper, forced=None):
+    tags = set(forced or [])
+    text = " ".join(str(paper.get(k) or "") for k in (
+        "title", "topic", "summary_zh", "abstract", "method",
+        "design", "intervention", "comparison", "outcomes", "takeaway_zh",
+    )).lower()
+    if any(term in text for term in GENAI_AI_TERMS + ["xai", "explainable ai"]):
+        tags.add("GenAI")
+    if any(term in text for term in (
+        "security advice", "privacy advice", "advice", "warning", "warnings",
+        "awareness", "literacy", "learning", "education", "training",
+        "安全建议", "知识", "学习", "警告", "意识", "教育",
+    )):
+        tags.add("安全建议与学习")
+    return tags
+
+
+def collect_usable_hub_papers(official, advice, experiments, automatic, genai_rows):
+    """Merge the curated usable-security datasets without altering their source files."""
+    rows = {}
+
+    def add(paper, forced_tags=None):
+        title = paper.get("title") or ""
+        key = _norm_title(title)
+        family = usable_source_family(paper.get("venue"))
+        if not key or not family:
+            return
+        tags = paper_default_topic_tags(paper, {"Usable Security", *(forced_tags or [])})
+        themes = usable_theme_labels(paper, tags)
+        row = rows.setdefault(key, {
+            "id": key,
+            "title": title,
+            "year": paper.get("year") or 0,
+            "venue": paper.get("venue") or "",
+            "url": paper.get("url") or paper.get("source_url") or "#",
+            "topic": paper.get("topic") or "",
+            "summary": paper.get("summary_zh") or paper.get("takeaway_zh") or "",
+            "method": paper.get("method") or paper.get("design") or "",
+            "source_family": family,
+            "tags": set(),
+            "themes": set(),
+        })
+        row["tags"].update(tags)
+        row["themes"].update(themes)
+        if (paper.get("year") or 0) > row["year"]:
+            row["year"] = paper.get("year") or 0
+        for field, candidates in (
+            ("url", [paper.get("url"), paper.get("source_url")]),
+            ("topic", [paper.get("topic")]),
+            ("summary", [paper.get("summary_zh"), paper.get("takeaway_zh")]),
+            ("method", [paper.get("method"), paper.get("design")]),
+        ):
+            if not row.get(field):
+                row[field] = next((value for value in candidates if value), row.get(field) or "")
+
+    for paper in official.get("papers", []):
+        tags = {"安全建议与学习"} if paper.get("advice_learning_relevant") else set()
+        add(paper, tags)
+    for paper in advice.get("papers", []):
+        add(paper, {"安全建议与学习"})
+    for paper in experiments.get("papers", []):
+        add(paper, {"用户实验"})
+    for paper in automatic or []:
+        details = paper.get("experiment_details") or {}
+        add({
+            **paper,
+            "url": paper.get("paper_url"),
+            "topic": details.get("topic"),
+            "method": details.get("design"),
+            "summary_zh": details.get("result"),
+        }, {"用户实验"})
+    for row in genai_rows:
+        paper = row.get("paper") or {}
+        if (paper.get("year") or 0) >= 2025:
+            add(paper, {"GenAI"})
+
+    result = list(rows.values())
+    for row in result:
+        if len(row["themes"]) > 1:
+            row["themes"].discard("其他新方向")
+    result.sort(key=lambda row: (row["year"], row["title"]), reverse=True)
+    return result
+
+
+def tag_attr(tags):
+    return html.escape(json.dumps(sorted(tags), ensure_ascii=False), quote=True)
+
+
+def usable_paper_card(row):
+    visible_tags = set(row["themes"])
+    if "用户实验" in row["tags"]:
+        visible_tags.add("用户实验")
+    tags = "".join(f'<span class="topic-chip">{html.escape(tag)}</span>' for tag in sorted(visible_tags))
+    summary = f'<p>{html.escape(row["summary"])}</p>' if row.get("summary") else ""
+    method = f'<div class="method-line">{html.escape(row["method"])}</div>' if row.get("method") else ""
+    default_tags = set(row["tags"]) | set(row["themes"])
+    return (
+        f'<article class="usable-paper paper-entry" data-paper-id="{html.escape(row["id"])}" '
+        f'data-default-tags="{tag_attr(default_tags)}">'
+        f'<div class="paper-meta">{row["year"] or "?"} · {html.escape(row["venue"])}</div>'
+        f'<h4><a href="{html.escape(row["url"])}" target="_blank">{html.escape(row["title"])}</a></h4>'
+        f'<div class="default-topic-tags">{tags}</div>{method}{summary}</article>'
+    )
+
+
+def usable_security_hub_html(rows):
+    sources = [
+        ("big4", "安全四大", "IEEE S&P、USENIX Security、ACM CCS、NDSS"),
+        ("other_security", "其他安全会议", "SOUPS、PETS/PoPETS、USEC 等"),
+        ("hci", "HCI 来源", "CHI、CSCW、TOCHI、UbiComp/IMWUT、IJHCS；不含 IJHCI"),
+    ]
+    themes = [label for label, _ in EXPERT_THEME_RULES] + ["其他新方向"]
+    source_sections = []
+    for source_key, source_label, source_note in sources:
+        source_rows = [row for row in rows if row["source_family"] == source_key]
+        theme_sections = []
+        for theme_label in themes:
+            items = [row for row in source_rows if theme_label in row["themes"]]
+            if not items:
+                continue
+            theme_sections.append(
+                f'<section class="usable-theme"><h4>{html.escape(theme_label)}'
+                f'<span>{len(items)} 篇</span></h4><div class="usable-grid">'
+                f'{"".join(usable_paper_card(row) for row in items)}</div></section>'
+            )
+        source_sections.append(
+            f'<section class="usable-source"><h3>{html.escape(source_label)}'
+            f'<span>{len(source_rows)} 篇去重论文</span></h3>'
+            f'<p class="source-note">{html.escape(source_note)}</p>{"".join(theme_sections)}</section>'
+        )
+    return (
+        '<div class="coverage-note"><strong>阅读顺序：先看来源，再看主题</strong><p>'
+        '主题分类复用网络安全专题的口径；同一论文可以同时进入多个研究主题。'
+        '“用户实验”等方法标签继续显示，但不作为互斥主题。</p></div>' + "".join(source_sections)
+    )
+
+
+EXPERT_THEME_RULES = [
+    ("GenAI / LLM 与人机协作", ("llm", "large language", "generative ai", "chatbot", "agent", "deepfake", "xai", "artificial intelligence")),
+    ("安全建议、警告与知识学习", ("advice", "warning", "awareness", "literacy", "learning", "training", "education", "rationale")),
+    ("诈骗、钓鱼与在线伤害", ("phishing", "scam", "fraud", "abuse", "harassment", "harm", "deception")),
+    ("隐私、同意与数据控制", ("privacy", "consent", "disclosure", "tracking", "data control", "anonym")),
+    ("认证、账户与访问控制", ("authentication", "password", "passkey", "account", "permission", "access control", "mfa")),
+    ("开发者、组织与安全工作流", ("developer", "organization", "workplace", "workflow", "security operations", "soc", "vulnerability")),
+    ("可访问性与包容性安全", ("accessible", "accessibility", "deaf", "blind", "disability", "older adult", "inclusive")),
+]
+
+
+def usable_theme_labels(paper, existing_tags=None):
+    text = " ".join(str(paper.get(k) or "") for k in (
+        "title", "topic", "summary_zh", "abstract", "method",
+        "design", "intervention", "comparison", "outcomes", "takeaway_zh",
+    )).lower()
+    labels = {
+        label for label, keywords in EXPERT_THEME_RULES
+        if any(keyword in text for keyword in keywords)
+    }
+    existing_tags = set(existing_tags or [])
+    if "GenAI" in existing_tags:
+        labels.add("GenAI / LLM 与人机协作")
+    if "安全建议与学习" in existing_tags:
+        labels.add("安全建议、警告与知识学习")
+    return labels or {"其他新方向"}
+
+
+def expert_topic_labels(title):
+    text = (title or "").lower()
+    labels = [label for label, keywords in EXPERT_THEME_RULES if any(keyword in text for keyword in keywords)]
+    return labels or ["其他新方向"]
+
+
+def collect_expert_theme_rows(experts, area):
+    rows = {}
+    for expert in experts:
+        for paper in expert.get("papers", []):
+            if paper.get("year") not in {2025, 2026}:
+                continue
+            venue = paper.get("venue") or ""
+            if area == "hci":
+                if not is_allowed_hci_venue(venue):
+                    continue
+            elif usable_source_family(venue) == "hci":
+                continue
+            elif not (
+                paper.get("focus_area") == "security"
+                or paper.get("category") == "security"
+                or usable_source_family(venue) in {"big4", "other_security"}
+            ):
+                continue
+            key = _norm_title(paper.get("title"))
+            if not key:
+                continue
+            row = rows.setdefault(key, {
+                "paper": paper,
+                "people": set(),
+                "themes": set(expert_topic_labels(paper.get("title"))),
+            })
+            row["people"].add(expert.get("name") or "")
+    return list(rows.values())
+
+
+def expert_themes_html(experts, area, tz):
+    rows = collect_expert_theme_rows(experts, area)
+    grouped = {}
+    for row in rows:
+        for theme in row["themes"]:
+            grouped.setdefault(theme, []).append(row)
+    blocks = []
+    for theme, items in sorted(grouped.items(), key=lambda pair: (-len(pair[1]), pair[0])):
+        year_counts = Counter((row["paper"].get("year") or 0) for row in items)
+        paper_items = []
+        for row in sorted(items, key=lambda item: (item["paper"].get("year") or 0, item["paper"].get("title") or ""), reverse=True)[:8]:
+            paper = row["paper"]
+            zh = html.escape((tz.get(paper.get("paperId", "")) or {}).get("zh", ""))
+            zh_html = f'<span class="zh">{zh}</span>' if zh else ""
+            default_tags = {"大牛 2025–2026"}
+            default_tags.update(paper_default_topic_tags(paper))
+            paper_items.append(
+                f'<li class="paper-entry" data-default-tags="{tag_attr(default_tags)}">'
+                f'<span class="yr">{paper.get("year") or "?"}</span> '
+                f'<a href="{html.escape(paper_url(paper))}" target="_blank">{html.escape(paper.get("title") or "")}</a>'
+                f'{zh_html}<span class="venue">{html.escape(paper.get("venue") or "")} · '
+                f'{html.escape("、".join(sorted(x for x in row["people"] if x)))}</span></li>'
+            )
+        blocks.append(
+            '<article class="expert-theme-card">'
+            f'<h4>{html.escape(theme)}<span>{len(items)} 篇</span></h4>'
+            f'<p class="year-split">2025：{year_counts.get(2025, 0)} 篇 · 2026：{year_counts.get(2026, 0)} 篇</p>'
+            f'<ul class="expert-theme-list">{"".join(paper_items)}</ul></article>'
+        )
+    scope = (
+        "安全会议与安全领域论文"
+        if area == "security"
+        else "CHI、CSCW、TOCHI、UbiComp/IMWUT、IJHCS（不含 IJHCI）"
+    )
+    return (
+        f'<div class="coverage-note"><strong>大牛库 2025–2026 主题切片</strong>'
+        f'<p>按论文题名做多标签主题聚合；范围为{scope}。这是导航性归类，不替代摘要级人工综述。</p></div>'
+        f'<div class="expert-theme-grid">{"".join(blocks)}</div>'
+    )
+
+
+def tag_interaction_assets(seed):
+    seed_json = json.dumps(seed or {}, ensure_ascii=False).replace("</", "<\\/")
+    return """
+<style>
+.workspace-intro{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px}
+.workspace-intro a{display:block;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:12px;color:var(--fg);text-decoration:none}
+.workspace-intro b,.workspace-intro span{display:block}.workspace-intro span{color:var(--mut);font-size:12px;margin-top:3px}
+.usable-source{border-top:2px solid var(--line);padding-top:12px}.usable-source>h3,.usable-theme>h4,.expert-theme-card h4{display:flex;justify-content:space-between;gap:10px}
+.usable-source>h3 span,.usable-theme>h4 span,.expert-theme-card h4 span{color:var(--mut);font-size:12px;font-weight:400}
+.source-note,.year-split{color:var(--mut);font-size:12px}.usable-theme{margin:14px 0 24px}.usable-theme>h4{font-size:14px;color:var(--acc)}
+.usable-grid,.expert-theme-grid,.ongoing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+.usable-paper,.expert-theme-card,.ongoing-paper{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:12px}
+.usable-paper h4,.ongoing-paper h4{margin:4px 0 7px;font-size:14px}.usable-paper h4 a,.ongoing-paper a{color:var(--fg);text-decoration:none}
+.usable-paper p{font-size:12.5px;color:var(--mut)}.default-topic-tags{display:flex;gap:5px;flex-wrap:wrap;margin:5px 0}
+.expert-theme-card h4{font-size:14px;margin:0}.expert-theme-list{list-style:none;margin:8px 0 0;padding:0}
+.expert-theme-list li{padding:7px 0;border-top:1px dashed var(--line);font-size:13px}.expert-theme-list a{color:var(--fg);text-decoration:none}
+.tag-toolbar{position:sticky;top:42px;z-index:4;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px;margin:0 0 18px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.tag-toolbar button,.tag-add{border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:999px;padding:3px 9px;cursor:pointer;font-size:11px}
+.tag-toolbar button.active{border-color:var(--acc);color:var(--acc)}.tag-toolbar .spacer{flex:1}
+.paper-tag-editor{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-top:8px;padding-top:7px;border-top:1px dashed var(--line)}
+.paper-user-tag{border:0;border-radius:999px;padding:2px 7px;font-size:11px;background:#eef2ff;color:#3849a3}
+button.paper-user-tag.custom{cursor:pointer}.tag-help{font-size:11px;color:var(--mut)}
+@media(max-width:760px){.workspace-intro{grid-template-columns:1fr 1fr}.tag-toolbar{top:62px}}
+</style>
+<script>
+window.PAPER_TAG_SEED = __SEED__;
+(function(){
+  const storageKey = "paper-dashboard-tags-v1";
+  const seed = window.PAPER_TAG_SEED || {};
+  const preset = seed.preset_tags || ["安全建议与学习","GenAI","用户实验","Usable Security","重点阅读","待读"];
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(storageKey) || "{}"); } catch (_) { saved = {}; }
+  const normalize = s => (s || "").toLowerCase().normalize("NFKC").replace(/[^\\p{L}\\p{N}]+/gu, "");
+  const selectors = [
+    ".paper-entry", "article.trend-paper", "article.official-paper", "article.advice-paper",
+    "article.experiment-paper", ".new-work-list li", ".genai-list li", ".rest-papers li", "ul.papers li"
+  ].join(",");
+  const entries = [];
+  document.querySelectorAll(selectors).forEach(node => {
+    if (node.closest("#ongoing-dynamic")) return;
+    const link = node.querySelector('a[target="_blank"]');
+    if (!link) return;
+    node.classList.add("paper-entry");
+    const title = link.textContent.trim();
+    const id = node.dataset.paperId || normalize(title);
+    if (!id) return;
+    node.dataset.paperId = id;
+    let defaults = [];
+    try { defaults = JSON.parse(node.dataset.defaultTags || "[]"); } catch (_) {}
+    entries.push({node, link, title, id, defaults});
+  });
+  const defaultsById = {};
+  entries.forEach(entry => {
+    defaultsById[entry.id] = [...new Set([...(defaultsById[entry.id] || []), ...(entry.defaults || [])])];
+  });
+  const combined = entry => new Set([...(defaultsById[entry.id] || []), ...((saved[entry.id] || []))]);
+  const persist = () => localStorage.setItem(storageKey, JSON.stringify(saved));
+  function renderEditor(entry) {
+    let box = entry.node.querySelector(":scope > .paper-tag-editor");
+    if (!box) { box = document.createElement("div"); box.className = "paper-tag-editor"; entry.node.appendChild(box); }
+    box.innerHTML = "";
+    combined(entry).forEach(tag => {
+      const custom = (saved[entry.id] || []).includes(tag);
+      const chip = document.createElement("button");
+      chip.type = "button"; chip.className = "paper-user-tag" + (custom ? " custom" : "");
+      chip.textContent = tag + (custom ? " ×" : "");
+      chip.title = custom ? "点击删除自定义标签" : "数据自带标签";
+      if (custom) chip.onclick = () => {
+        saved[entry.id] = (saved[entry.id] || []).filter(value => value !== tag);
+        if (!saved[entry.id].length) delete saved[entry.id];
+        persist(); renderAll();
+      };
+      box.appendChild(chip);
+    });
+    const add = document.createElement("button");
+    add.type = "button"; add.className = "tag-add"; add.textContent = "＋标签";
+    add.onclick = () => {
+      const value = prompt("输入标签，例如：安全建议与学习、GenAI、重点阅读");
+      const tag = (value || "").trim();
+      if (!tag) return;
+      saved[entry.id] = [...new Set([...(saved[entry.id] || []), tag])];
+      persist(); renderAll();
+    };
+    box.appendChild(add);
+  }
+  function renderOngoing() {
+    const target = document.getElementById("ongoing-dynamic");
+    if (!target) return;
+    const unique = new Map();
+    entries.forEach(entry => {
+      if (combined(entry).has("安全建议与学习") && !unique.has(entry.id)) unique.set(entry.id, entry);
+    });
+    target.innerHTML = "";
+    [...unique.values()].forEach(entry => {
+      const card = document.createElement("article"); card.className = "ongoing-paper";
+      const h = document.createElement("h4"); const a = document.createElement("a");
+      a.href = entry.link.href; a.target = "_blank"; a.textContent = entry.title; h.appendChild(a); card.appendChild(h);
+      const tags = document.createElement("div"); tags.className = "default-topic-tags";
+      combined(entry).forEach(tag => { const s=document.createElement("span"); s.className="topic-chip"; s.textContent=tag; tags.appendChild(s); });
+      card.appendChild(tags); target.appendChild(card);
+    });
+  }
+  let activeTag = "";
+  function applyFilter() {
+    entries.forEach(entry => { entry.node.hidden = !!activeTag && !combined(entry).has(activeTag); });
+  }
+  function renderToolbar() {
+    const bar = document.getElementById("tag-toolbar"); if (!bar) return;
+    const allTags = new Set(preset); entries.forEach(entry => combined(entry).forEach(tag => allTags.add(tag)));
+    bar.innerHTML = '<span class="tag-help">标签筛选</span>';
+    ["", ...allTags].forEach(tag => {
+      const b=document.createElement("button"); b.type="button"; b.textContent=tag || "全部";
+      b.className=(activeTag===tag ? "active" : ""); b.onclick=()=>{activeTag=tag; renderToolbar(); applyFilter();}; bar.appendChild(b);
+    });
+    const spacer=document.createElement("span"); spacer.className="spacer"; bar.appendChild(spacer);
+    const exp=document.createElement("button"); exp.type="button"; exp.textContent="导出标签";
+    exp.onclick=()=>{const blob=new Blob([JSON.stringify(saved,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="paper-tags.json";a.click();URL.revokeObjectURL(a.href);};bar.appendChild(exp);
+    const imp=document.createElement("button"); imp.type="button"; imp.textContent="导入标签";
+    imp.onclick=()=>document.getElementById("tag-import").click();bar.appendChild(imp);
+  }
+  function renderAll(){ entries.forEach(renderEditor); renderToolbar(); renderOngoing(); applyFilter(); }
+  const input=document.getElementById("tag-import");
+  if(input) input.onchange=async()=>{const file=input.files[0];if(!file)return;try{saved=JSON.parse(await file.text());persist();renderAll();}catch(_){alert("标签 JSON 无法读取");}input.value="";};
+  renderAll();
+})();
+</script>
+""".replace("__SEED__", seed_json)
 
 
 def expert_card(e, tz):
@@ -820,13 +1315,24 @@ def main():
         )
     sec_migration_html = security_migration_html(trends)
     genai_html = genai_topic_html(experts, trends, tz)
+    genai_rows = collect_genai_rows(experts, trends)
     hci_html = "".join(trend_block_html(b, curated_trends) for b in trend_blocks[2:4])
     official_usable = json.loads(read("data/usable_security_2026.json") or "{}")
     official_usable_section = official_usable_html(official_usable)
     advice_learning = json.loads(read("data/end_user_advice_learning_2025_2026.json") or "{}")
     advice_learning_section = advice_learning_html(advice_learning)
     user_experiments = json.loads(read("data/usable_security_experiments_2025_2026.json") or "{}")
-    user_experiments_section = user_experiments_html(user_experiments)
+    official_raw = json.loads(read("data/official_accepted_2026_raw.json") or "{}")
+    automatic_experiments = collect_automatic_experiment_candidates(official_raw, user_experiments)
+    user_experiments_section = user_experiments_html(user_experiments, automatic_experiments)
+    usable_rows = collect_usable_hub_papers(
+        official_usable, advice_learning, user_experiments, automatic_experiments, genai_rows
+    )
+    usable_hub_section = usable_security_hub_html(usable_rows)
+    expert_security_themes = expert_themes_html(experts, "security", tz)
+    expert_hci_themes = expert_themes_html(experts, "hci", tz)
+    paper_tag_seed = json.loads(read("data/paper_tags.json") or "{}")
+    tag_assets = tag_interaction_assets(paper_tag_seed)
 
     doc = f"""<!doctype html>
 <html lang="zh"><head><meta charset="utf-8">
@@ -958,32 +1464,53 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
     style_match = re.search(r"(?s)<style>.*?</style>", doc)
     style_tag = style_match.group(0) if style_match else ""
 
-    # Main dashboard: research signals first; full expert library moves to experts.html.
+    # Main dashboard: four research workspaces; full expert library stays on experts.html.
     doc = re.sub(
         r"(?s)<nav>.*?</nav>",
-        '<nav><a href="#latest2026">2026 Big4 最新</a>'
-        '<a href="#advice">安全建议与学习</a><a href="#experiments">用户实验</a><a href="#sec">安全趋势</a>'
-        '<a href="#genai">GenAI 专题</a><a href="#hci">HCI 趋势</a>'
+        '<nav><a href="#ongoing">On-going</a><a href="#usable">Usable Security</a>'
+        '<a href="#cybersecurity">网络安全</a><a href="#hci">HCI</a>'
         '<a href="experts.html">大牛库 ↗</a></nav>',
         doc,
         count=1,
     )
-    doc = re.sub(
-        r'(?s)<section id="experts">.*?</section>\s*<section id="new">.*?</section>',
-        "",
-        doc,
-        count=1,
+    main_content = (
+        '<main>'
+        '<div class="workspace-intro">'
+        '<a href="#ongoing"><b>On-going</b><span>正在推进的安全建议与知识学习</span></a>'
+        '<a href="#usable"><b>Usable Security</b><span>按来源，再按 GenAI / 建议学习 / 其他主题</span></a>'
+        '<a href="#cybersecurity"><b>网络安全</b><span>趋势、话题传导与大牛主题</span></a>'
+        '<a href="#hci"><b>HCI</b><span>指定 HCI 来源趋势与大牛主题</span></a>'
+        '</div>'
+        '<div id="tag-toolbar" class="tag-toolbar"></div>'
+        '<input id="tag-import" type="file" accept="application/json" hidden>'
+        '<section id="ongoing"><h2>On-going · 终端用户安全建议与安全知识学习</h2>'
+        '<div class="coverage-note"><strong>当前工作区</strong><p>'
+        '这里自动汇总所有带“安全建议与学习”标签的论文；您在其他专题给论文增加该标签后，它会立即进入这里。'
+        '</p></div><div id="ongoing-dynamic" class="ongoing-grid"></div>'
+        '<details class="deep-dive"><summary>查看人工整理的 2025–2026 证据详情</summary>'
+        f'{advice_learning_section}</details></section>'
+        '<section id="usable"><h2>Usable Security 专题</h2>'
+        f'{usable_hub_section}'
+        '<details class="deep-dive"><summary>查看用户实验 / A-B Test 方法详情</summary>'
+        f'{user_experiments_section}</details>'
+        '<details class="deep-dive"><summary>查看 GenAI × Usable Security 扩展证据</summary>'
+        f'{genai_html}</details></section>'
+        '<section id="cybersecurity" class="trend"><h2>网络安全专题</h2>'
+        '<h3>大牛库 · 2025–2026 网络安全论文主题</h3>'
+        f'{expert_security_themes}'
+        '<h3>安全四大与 SOUPS/PETS · 话题传导</h3>'
+        f'{sec_migration_html}'
+        '<h3>网络安全趋势</h3>'
+        f'{sec_html}</section>'
+        '<section id="hci" class="trend"><h2>HCI 专题</h2>'
+        '<h3>大牛库 · 2025–2026 HCI 论文主题</h3>'
+        f'{expert_hci_themes}'
+        '<h3>HCI 隐私与安全趋势</h3>'
+        f'{hci_html}</section>'
+        '</main>'
     )
-    doc = doc.replace(
-        "<main>",
-        '<main><section id="latest2026"><h2>2026 安全四大 · 最新 Usable Security</h2>'
-        f'{official_usable_section}</section>'
-        '<section id="advice"><h2>终端用户安全建议与安全知识学习 · 2025–2026</h2>'
-        f'{advice_learning_section}</section>'
-        '<section id="experiments"><h2>用户实验 / A-B Test · Usable Security 2025–2026</h2>'
-        f'{user_experiments_section}</section>',
-        1,
-    )
+    doc = re.sub(r"(?s)<main>.*?</main>", main_content, doc, count=1)
+    doc = doc.replace("</body>", f"{tag_assets}</body>", 1)
 
     experts_doc = f"""<!doctype html>
 <html lang="zh"><head><meta charset="utf-8">
@@ -1004,6 +1531,13 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
 <section id="experts"><h2>完整大牛库 · 各学者最近论文</h2>
 <div class="grid">{cards}</div></section>
 </main></body></html>"""
+    experts_doc = experts_doc.replace(
+        "<main>",
+        '<main><div id="tag-toolbar" class="tag-toolbar"></div>'
+        '<input id="tag-import" type="file" accept="application/json" hidden>',
+        1,
+    )
+    experts_doc = experts_doc.replace("</body>", f"{tag_assets}</body>", 1)
 
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(doc)
     open(os.path.join(ROOT, "experts.html"), "w", encoding="utf-8").write(experts_doc)

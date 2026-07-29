@@ -137,3 +137,28 @@ python scripts/build_dashboard.py  # 重新生成 index.html
   相邻 workshop/HCI 分开。
 - USENIX 2026 来源同时覆盖 Cycle accepted 页面和官方 Technical Sessions /
   presentation 页面；程序页用于补链接与摘要，Cycle 标签优先采用 accepted 页面。
+- `scripts/fetch_official_accepted.py` 从官方 abstract 自动抽取实验设计、样本、操纵、
+  比较、结果指标、主要结果与话题；没有摘要证据时才写“摘要未说明”。
+- `scripts/build_dashboard.py` 将规则命中的实验论文直接并入对应年份和来源的论文网格，
+  与人工条目采用相同卡片样式、不显示自动抓取标签；按规范化标题去重，且不会反向写入人工数据。
+
+## 2026-07-29 四专题与论文标签架构
+
+- 主看板按研究用途拆成四个工作区：
+  - `On-going`：动态汇总所有带“安全建议与学习”标签的论文。
+  - `Usable Security`：先分安全四大、其他安全会议、HCI 来源，再在每个来源下分
+    GenAI、安全建议与学习、其他 Usable Security；主题允许交叉。
+  - `网络安全`：保留安全趋势与 SOUPS/PETS → Big4 话题传导，并加入大牛库
+    2025–2026 网络安全论文的多标签主题切片。
+  - `HCI`：保留 HCI 隐私安全趋势，并加入大牛库 2025–2026 HCI 论文主题。
+- HCI 来源白名单为 CHI、CSCW/PACM HCI、TOCHI、UbiComp/IMWUT、IJHCS；
+  明确排除 IJHCI（International Journal of Human-Computer Interaction）。
+- `data/paper_tags.json` 保存预设标签和可选的构建时基础标签。页面以规范化论文题名作为
+  本地论文 ID，把相同论文在不同专题中的标签状态合并。
+- 页面上的自定义标签保存在浏览器 `localStorage`。用户可以给任意论文增加或删除标签，
+  按标签过滤，并导出/导入 JSON。静态 `file://` 页面不会直接写回仓库 JSON。
+- 原始抓取与人工核验 JSON 保持不变；来源归并、交叉主题和大牛主题仅发生在展示层。
+- Usable Security 与网络安全的大牛主题共用同一套多标签分类规则：GenAI / LLM 与人机协作、
+  安全建议/警告/知识学习、诈骗/钓鱼/在线伤害、隐私/同意/数据控制、认证/账户/访问控制、
+  开发者/组织/安全工作流、可访问性/包容性安全。只有没有命中任何主题的论文才进入
+  “其他新方向”；合并后若已命中具体主题，会移除该兜底标签。

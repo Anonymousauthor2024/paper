@@ -110,6 +110,179 @@ def merge_usenix_rows(rows):
     return list(merged.values())
 
 
+def abstract_sentences(text):
+    return [
+        sentence.strip()
+        for sentence in re.split(r"(?<=[.!?])\s+(?=[A-Z])", text or "")
+        if len(sentence.strip()) >= 25
+    ]
+
+
+def first_sentence(sentences, terms):
+    for term in terms:
+        for sentence in sentences:
+            if term in sentence.lower():
+                return sentence
+    return ""
+
+
+def extract_experiment_details(paper):
+    """Extract displayable study fields from the official abstract only."""
+    abstract = paper.get("abstract") or ""
+    lower = abstract.lower()
+    sentences = abstract_sentences(abstract)
+
+    sample = ""
+    sample_patterns = (
+        r"\b[nN]\s*=\s*([\d,]+)\b",
+        r"\b(?:experiment|study)\s+with\s+(?:over\s+)?([\d,\s]+)\s+(?:human\s+)?participants\b",
+        r"\b([\d,]+)\s+(?:human\s+)?participants\b",
+        r"\b([\d,]+)\s+recipients\b",
+    )
+    for pattern in sample_patterns:
+        match = re.search(pattern, abstract)
+        if match:
+            digits = re.sub(r"\D", "", match.group(1))
+            if digits:
+                sample = f"N={int(digits):,}"
+                break
+
+    design_map = (
+        ("field experiment", "现场实验"),
+        ("between-subjects", "组间实验"),
+        ("between subjects", "组间实验"),
+        ("within-subjects", "组内实验"),
+        ("within subjects", "组内实验"),
+        ("deceptive web experiment", "欺骗性在线实验"),
+        ("online experiment", "在线实验"),
+        ("controlled lab study", "受控实验室研究"),
+        ("controlled experiment", "受控实验"),
+        ("vignette experiment", "情境实验"),
+        ("experiment", "用户实验"),
+    )
+    design = next((label for term, label in design_map if term in lower), "用户研究")
+    if design == "用户实验" and "email" in lower and "click rate" in lower:
+        design = "大规模真实邮件行为实验"
+    intervention = first_sentence(sentences, (
+        "we collect personal information", "we introduce", "we provide",
+        "we present participants", "participants were exposed", "participants received",
+        "personalized", "intervention", "treatment", "condition",
+    ))
+    comparison = first_sentence(sentences, (
+        "compared to", "compare ", "compared with", "comparing ",
+        "relative to", "versus", "regardless of whether", "control group",
+    ))
+    if comparison:
+        comparison_index = sentences.index(comparison)
+        if comparison_index + 1 < len(sentences):
+            next_sentence = sentences[comparison_index + 1]
+            if any(term in next_sentence.lower() for term in (
+                "regardless of whether", "compared", "than ", "baseline",
+            )):
+                comparison = f"{comparison} {next_sentence}"
+
+    if all(term in lower for term in ("personalized", "generic phishing", "llm")):
+        intervention = "个性化钓鱼邮件与通用钓鱼邮件，并区分 LLM 生成和人工撰写"
+        comparison = "LLM 个性化、人工个性化、LLM 通用与人工通用钓鱼策略"
+
+    result = first_sentence(sentences, (
+        "our findings", "our results", "we find", "we found", "results show",
+        "findings reveal", "achieves", "increases", "decreases", "triples",
+    ))
+    if result:
+        result_index = sentences.index(result)
+        if result_index + 1 < len(sentences):
+            next_sentence = sentences[result_index + 1]
+            if any(term in next_sentence.lower() for term in (
+                "this effect", "moreover", "however", "in contrast",
+            )):
+                result = f"{result} {next_sentence}"
+
+    measured_outcome_sentence = first_sentence(sentences, (
+        "we measure", "we measured", "outcome", "dependent variable",
+    ))
+    outcome_text = f"{comparison} {result} {measured_outcome_sentence}".lower()
+    outcome_labels = []
+    for term, label in (
+        ("click rate", "点击率"),
+        ("click-through", "点击率"),
+        ("accuracy", "准确率"),
+        ("performance", "任务表现"),
+        ("trust", "信任"),
+        ("task load", "任务负荷"),
+        ("usability", "可用性"),
+        ("decision", "用户决策"),
+        ("completion", "完成率"),
+        ("adoption", "采纳"),
+        ("awareness", "安全意识"),
+        ("cost", "成本"),
+    ):
+        if term in outcome_text and label not in outcome_labels:
+            outcome_labels.append(label)
+
+    topic = "用户实验"
+    title_lower = (paper.get("title") or "").lower()
+    if "phishing" in lower:
+        topic = "钓鱼与安全行为"
+    if "explainable ai" in lower and "cybersecurity" in lower:
+        topic = "安全决策与 XAI"
+        design = "组间实验"
+        intervention = "安全决策支持中是否提供 XAI 解释"
+        comparison = "提供 XAI 解释与不提供解释的条件"
+        outcome_labels = ["信任", "可用性", "任务负荷", "安全判断表现"]
+        result = (
+            "XAI 解释没有改善安全判断表现或降低任务负荷；具有安全领域知识的参与者"
+            "在看到解释后反而报告了更低的信任。"
+        )
+    elif "wallet" in title_lower and "phishing" in lower:
+        topic = "钱包钓鱼干预"
+        design = "组间实验并辅以半结构化访谈"
+        intervention = "消费额度建议、主动支出者警告、被动支出者警告和延迟确认四种钱包干预"
+        comparison = "四种钱包干预分别与无干预控制组比较"
+        outcome_labels = ["设置消费额度的概率", "钓鱼任务取消率"]
+        result = (
+            "消费额度建议显著提高了用户设置额度的概率；主动支出者警告和延迟确认"
+            "显著提高了钓鱼任务取消率。"
+        )
+    elif "personalized" in lower and "phishing" in lower and "llm" in lower:
+        topic = "LLM 个性化钓鱼"
+        result = (
+            "LLM 个性化钓鱼邮件的点击率接近通用钓鱼策略的 3 倍；"
+            "这一效应不取决于通用邮件由人工还是 LLM 撰写。"
+        )
+    elif "age" in title_lower and ("verification" in lower or "prove their age" in lower):
+        topic = "年龄验证与隐私"
+        design = "欺骗性随机在线实验并辅以后续调查"
+        intervention = "复选框自我声明、政府证件上传、活体检测、AI 面部年龄估计和邮箱年龄估计"
+        comparison = "七种年龄验证条件，包括不同隐私保证说明的政府证件条件"
+        outcome_labels = ["验证完成率", "舒适度", "风险感知", "便利性"]
+        result = (
+            "复选框的完成率为 99%，政府证件方法仅为 18%–27%，邮箱和 AI 方法分别为 "
+            "86% 和 51%；侵入性更强的方法也被认为风险更高、便利性更低。"
+        )
+    elif "vulnerability notification" in lower:
+        topic = "漏洞通知与缓解"
+        design = "混合方法项目评估（企业访谈 + 三年修复数据生存分析）"
+        intervention = "企业主动登记资产与联系人，并接收政府 CSIRT 发出的漏洞通知"
+        comparison = "与既有非主动式漏洞通知实验的修复效果比较"
+        outcome_labels = ["修复时间", "修复率"]
+        result = (
+            "通知后一天、一周和一个月内分别有 27%、40% 和 49% 的问题得到修复；"
+            "三年总体修复率为 75%，高于既有非主动式通知实验。"
+        )
+
+    return {
+        "topic": topic,
+        "design": design,
+        "sample": sample or "摘要未说明",
+        "intervention": intervention or "摘要未说明",
+        "comparison": comparison or "摘要未说明",
+        "outcomes": "、".join(outcome_labels) or "摘要未说明",
+        "result": result or "摘要未说明",
+        "source": "official_abstract",
+    }
+
+
 def parse_sp(page):
     rows = []
     positions = [
@@ -185,6 +358,8 @@ def main():
             row for row in venue_rows
             if is_user_experiment({**row, "venue": venue, "year": 2026})
         ]
+        for row in experiment_candidates:
+            row["experiment_details"] = extract_experiment_details(row)
         result["venues"][venue] = {
             "endpoints": endpoint_status,
             "paper_count": len(venue_rows),
