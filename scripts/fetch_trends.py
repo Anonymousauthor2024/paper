@@ -50,6 +50,9 @@ BIG4_QUERIES = (
     "interview | survey | questionnaire",
     "usable | usability",
     '"user study" | "user studies" | "human-centered"',
+    '"between-subjects" | "within-subjects" | "controlled experiment"',
+    '"field experiment" | "online experiment" | "A/B test" | randomized',
+    "experiment | experiments",
 )
 USER_STUDY_METHOD_TERMS = (
     "interview", "interviews", "interviewed", "survey", "surveys", "surveyed",
@@ -65,6 +68,32 @@ USABLE_SCOPE_TERMS = (
     "practitioners", "clinician", "analyst", "awareness", "advice",
     "warning", "warnings", "perception", "perceptions", "behavior",
     "behaviour", "practice", "practices", "experience", "experiences",
+)
+EXPERIMENT_DESIGN_TERMS = (
+    "experiment", "experiments", "a/b test", "a/b testing",
+    "randomized experiment", "randomised experiment",
+    "randomized controlled", "randomised controlled", "controlled experiment",
+    "controlled study", "between-subjects", "between subjects", "between-groups",
+    "between groups", "within-subjects", "within subjects", "factorial experiment",
+    "factorial design", "field experiment", "lab experiment", "laboratory experiment",
+    "online experiment", "user experiment", "vignette experiment", "experimental condition",
+    "experimental conditions", "control group", "treatment group",
+)
+EXPERIMENT_PARTICIPANT_TERMS = (
+    "participant", "participants", "human subject", "human subjects", "end user",
+    "end users", "user study", "users",
+)
+HUMAN_EXPERIMENT_TERMS = (
+    "user study", "user studies", "human participant", "human participants",
+    "human subject", "human subjects", "end user", "end users", "users with",
+    "participants were", "participants completed", "participants interacted",
+    "participants viewed", "participants assessed", "participants received",
+    "participants performed", "recruited participants", "enrolled participants",
+)
+EXPERIMENT_OUTCOME_TERMS = (
+    "behavior", "behaviour", "decision", "decisions", "performance", "accuracy",
+    "click", "click-through", "completion", "adoption", "trust", "usability",
+    "comprehension", "understanding", "knowledge", "awareness", "risk perception",
 )
 HCI_VENUE = "International Conference on Human Factors in Computing Systems"
 # 全用单词 OR;多词短语(如 data protection)会被 SS 当成 AND,不要放进来
@@ -92,6 +121,25 @@ def terms(title):
 
 def norm_text(s):
     return (s or "").lower()
+
+
+def is_user_experiment(p):
+    """High-precision heuristic: design + participants + user-facing outcome."""
+    text = norm_text(" ".join((p.get("title") or "", p.get("abstract") or "")))
+    numbered_human_study = any((
+        re.search(r"\b(?:experiment|study)\s+with\s+(?:over\s+)?[\d,\s]+\s+(?:human\s+)?participants\b", text),
+        re.search(r"\bn\s*=\s*[\d,]+\b", text),
+        re.search(r"\b[\d,]+\s+(?:human\s+)?participants\b", text),
+    ))
+    human_evidence = numbered_human_study or any(
+        term in text for term in HUMAN_EXPERIMENT_TERMS
+    )
+    return (
+        any(term in text for term in EXPERIMENT_DESIGN_TERMS)
+        and human_evidence
+        and any(term in text for term in EXPERIMENT_OUTCOME_TERMS)
+        and any(term in text for term in USABLE_SCOPE_TERMS)
+    )
 
 def load_topic_rules():
     try:
@@ -529,6 +577,9 @@ def main():
     big4_usable = bulk_big4_usable()
     print("安全·子领域: SOUPS+PETS + 四大会 usable/user-study ...")
     sec_sub = dedup(soups_pets + big4_usable)
+    experiment_candidates = [
+        p for p in sec_sub if (p.get("year") or 0) >= 2025 and is_user_experiment(p)
+    ]
     print("安全·整体: 四大会全部 ...")
     sec_all = bulk_big4()
     print("HCI·子领域: CHI 隐私安全 ...")
@@ -565,13 +616,21 @@ def main():
     with open(os.path.join(ROOT, "data", "trends.json"), "w", encoding="utf-8") as f:
         json.dump({
             "generated_at": time.strftime("%Y-%m-%d"),
-            "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；四大会 usable 子集先用 interview/survey/questionnaire/usable/user study/human-centered 宽检索，再要求摘要同时出现人本范围和用户研究方法证据。",
+            "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；四大会 usable 子集使用访谈、问卷、可用性与用户实验宽检索，再要求摘要同时出现人本范围和方法证据。用户实验候选进一步要求实验设计、真实参与者和用户结果指标三类证据。",
             "big4_definition": {
                 "venues": list(SEC_BIG4_VENUES.keys()),
                 "venue_aliases": SEC_BIG4_VENUES,
                 "queries": list(BIG4_QUERIES),
                 "filter": "human/usability scope term AND user-study method term",
                 "counts_by_venue_year": venue_year_counts(big4_usable),
+            },
+            "user_experiment_method": {
+                "design_terms": list(EXPERIMENT_DESIGN_TERMS),
+                "participant_terms": list(EXPERIMENT_PARTICIPANT_TERMS),
+                "outcome_terms": list(EXPERIMENT_OUTCOME_TERMS),
+                "filter": "experiment design AND human participants AND user-facing outcome AND usable-security scope",
+                "candidate_count": len(experiment_candidates),
+                "candidates": experiment_candidates,
             },
             "blocks": blocks,
             "yearly_topics": yearly,

@@ -707,6 +707,57 @@ def advice_learning_html(data):
     )
 
 
+def user_experiments_html(data):
+    strength_labels = {
+        "strong_experiment": "强实验",
+        "controlled_comparison": "受控比较",
+        "exploratory_comparison": "探索性比较",
+    }
+    tier_labels = {
+        "core_big4": "安全四大主会",
+        "soups_showcase": "SOUPS Published Work",
+        "adjacent_workshop": "相邻可用安全 Workshop",
+        "adjacent_hci": "相邻 HCI",
+    }
+    grouped = {}
+    for paper in data.get("papers", []):
+        grouped.setdefault((paper.get("year"), paper.get("tier")), []).append(paper)
+    sections = []
+    tier_order = {"core_big4": 0, "soups_showcase": 1, "adjacent_workshop": 2, "adjacent_hci": 3}
+    for (year, tier), papers in sorted(
+        grouped.items(), key=lambda x: (-int(x[0][0]), tier_order.get(x[0][1], 9))
+    ):
+        cards = []
+        for p in papers:
+            strength = strength_labels.get(p.get("strength"), p.get("strength") or "")
+            cards.append(
+                '<article class="experiment-paper">'
+                f'<div class="paper-meta">{year} · {html.escape(p.get("venue") or "")}</div>'
+                f'<h4><a href="{html.escape(p.get("url") or p.get("source_url") or "#")}" target="_blank">'
+                f'{html.escape(p.get("title") or "")}</a></h4>'
+                f'<div><span class="experiment-badge {html.escape(p.get("strength") or "")}">'
+                f'{html.escape(strength)}</span><span class="topic-chip">{html.escape(p.get("topic") or "")}</span></div>'
+                f'<p><strong>设计：</strong>{html.escape(p.get("design") or "")} · '
+                f'{html.escape(p.get("sample") or "")}</p>'
+                f'<p><strong>操纵：</strong>{html.escape(p.get("intervention") or "")}</p>'
+                f'<p><strong>比较：</strong>{html.escape(p.get("comparison") or "")}</p>'
+                f'<p><strong>结果指标：</strong>{html.escape(p.get("outcomes") or "")}</p>'
+                f'<p class="experiment-takeaway">{html.escape(p.get("takeaway_zh") or "")}</p>'
+                '</article>'
+            )
+        sections.append(
+            f'<section class="experiment-group"><h3>{year} · {tier_labels.get(tier, tier)}'
+            f'<span>{len(papers)} 篇</span></h3><div class="experiment-grid">{"".join(cards)}</div></section>'
+        )
+    return (
+        '<div class="coverage-note"><strong>纳入口径</strong><p>'
+        '必须同时存在用户侧操纵或干预、比较条件、真实参与者，以及安全行为、判断、知识、'
+        '信任、理解或可用性结果。强实验、受控比较和探索性比较分开标注，避免把任务访谈误当作 A/B 因果证据。'
+        '当前为 2025–2026 代表性人工核验集合，不等同于系统综述或完整论文数据库。'
+        f'</p></div>{"".join(sections)}'
+    )
+
+
 def expert_card(e, tz):
     recent = [p for p in e.get("papers", [])
               if p.get("category") != "other" and (p.get("year") or 0) >= 2025]
@@ -774,6 +825,8 @@ def main():
     official_usable_section = official_usable_html(official_usable)
     advice_learning = json.loads(read("data/end_user_advice_learning_2025_2026.json") or "{}")
     advice_learning_section = advice_learning_html(advice_learning)
+    user_experiments = json.loads(read("data/usable_security_experiments_2025_2026.json") or "{}")
+    user_experiments_section = user_experiments_html(user_experiments)
 
     doc = f"""<!doctype html>
 <html lang="zh"><head><meta charset="utf-8">
@@ -876,8 +929,19 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
 .official-paper p,.advice-paper p{{margin:7px 0;color:var(--mut);font-size:12.5px}}
 .author-line,.method-line{{font-size:11.5px;color:var(--mut);margin-top:5px}}
 .topic-chip{{display:inline-block;background:#e5edff;color:#2050c0;border-radius:999px;padding:2px 7px;font-size:11px}}
+.experiment-group{{margin:18px 0}}.experiment-group h3{{display:flex;justify-content:space-between;gap:10px;font-size:14px}}
+.experiment-group h3 span{{color:var(--mut);font-size:12px;font-weight:400}}
+.experiment-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px}}
+.experiment-paper{{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:12px}}
+.experiment-paper h4{{margin:4px 0 8px;font-size:14px;line-height:1.4}}
+.experiment-paper h4 a{{color:var(--fg);text-decoration:none}}.experiment-paper h4 a:hover{{color:var(--acc)}}
+.experiment-paper p{{margin:6px 0;color:var(--mut);font-size:12.5px}}
+.experiment-paper p strong{{color:var(--fg)}}.experiment-takeaway{{border-top:1px dashed var(--line);padding-top:7px}}
+.experiment-badge{{display:inline-block;border-radius:999px;padding:2px 7px;font-size:11px;margin-right:5px;background:#e7f5ed;color:#137333}}
+.experiment-badge.controlled_comparison{{background:#fff4df;color:#9a5b00}}
+.experiment-badge.exploratory_comparison{{background:#f3e9ff;color:#7a3ec0}}
 .tracking{{color:var(--acc);font-size:11px;margin:3px 0}}
-@media(prefers-color-scheme:dark){{.topic-chip{{background:#22345e;color:#9dbcff}}}}
+@media(prefers-color-scheme:dark){{.topic-chip{{background:#22345e;color:#9dbcff}}.experiment-badge{{background:#193a25;color:#8fe0a5}}.experiment-badge.controlled_comparison{{background:#3d2d12;color:#f1c27d}}.experiment-badge.exploratory_comparison{{background:#33234d;color:#c8a6ff}}}}
 </style></head><body>
 <header><h1>Usable Security / HCI 论文追踪看板</h1>
 <div class="sub">大牛库 {len(experts)} 人 · 领域内论文 {total_infield} 篇 · 数据更新 {gen}</div></header>
@@ -898,7 +962,7 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
     doc = re.sub(
         r"(?s)<nav>.*?</nav>",
         '<nav><a href="#latest2026">2026 Big4 最新</a>'
-        '<a href="#advice">安全建议与学习</a><a href="#sec">安全趋势</a>'
+        '<a href="#advice">安全建议与学习</a><a href="#experiments">用户实验</a><a href="#sec">安全趋势</a>'
         '<a href="#genai">GenAI 专题</a><a href="#hci">HCI 趋势</a>'
         '<a href="experts.html">大牛库 ↗</a></nav>',
         doc,
@@ -915,7 +979,9 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
         '<main><section id="latest2026"><h2>2026 安全四大 · 最新 Usable Security</h2>'
         f'{official_usable_section}</section>'
         '<section id="advice"><h2>终端用户安全建议与安全知识学习 · 2025–2026</h2>'
-        f'{advice_learning_section}</section>',
+        f'{advice_learning_section}</section>'
+        '<section id="experiments"><h2>用户实验 / A-B Test · Usable Security 2025–2026</h2>'
+        f'{user_experiments_section}</section>',
         1,
     )
 

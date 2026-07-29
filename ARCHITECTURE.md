@@ -123,3 +123,17 @@ python scripts/build_dashboard.py  # 重新生成 index.html
   - `index.html`：2026 Big4 最新工作、建议/学习专题、趋势和 GenAI 专题；
   - `experts.html`：大牛 2026 新工作置顶，其后为 2026 新增作者和完整大牛库。
 - 通讯作者只在论文 PDF、出版页或作者主页明确标注时认定；不以末位作者自动推断。
+
+## 2026-07-29 用户实验专题
+
+- `scripts/fetch_trends.py` 增加用户实验检索词，并使用四重证据过滤：
+  实验设计、明确的人类研究表达、用户侧结果指标、usable-security 范围。
+  通用 `experiment` 只有与 `N=...`、`experiment with ... participants`、`user study`
+  等证据共同出现时才纳入，避免把联邦学习节点误判为用户参与者。
+- `data/usable_security_experiments_2025_2026.json` 保存人工核验的 2025–2026 用户实验，
+  记录干预、比较条件、样本、结果指标和实验强度。
+- 实验强度分为强实验、受控比较、探索性比较；任务式访谈不与随机 A/B 实验混算。
+- `index.html#experiments` 单独展示该专题，并将安全四大主会、SOUPS 展示论文、
+  相邻 workshop/HCI 分开。
+- USENIX 2026 来源同时覆盖 Cycle accepted 页面和官方 Technical Sessions /
+  presentation 页面；程序页用于补链接与摘要，Cycle 标签优先采用 accepted 页面。

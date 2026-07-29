@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-07-28",
-  "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；安全四大 usable-security 候选使用 interview/survey/questionnaire、usable/usability、user study/user studies/human-centered 扩展检索，并要求标题或摘要中同时存在用户研究方法证据与可用安全/隐私范围证据。",
+  "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；安全四大 usable-security 候选使用访谈、问卷、可用性与用户实验扩展检索，并要求标题或摘要中同时存在用户研究方法证据与可用安全/隐私范围证据。用户实验候选进一步要求实验设计、真实参与者与用户结果指标三类证据。",
   "big4_definition": {
     "venues": [
       "IEEE Symposium on Security and Privacy (IEEE S&P)",
@@ -9,6 +9,13 @@
       "ACM Conference on Computer and Communications Security (ACM CCS)"
     ],
     "sample_status": "当前趋势计数仍为 2026-07-28 Semantic Scholar 快照；检索与过滤代码已于 2026-07-29 更新，完整重算等待 API 可用。"
+  },
+  "user_experiment_method": {
+    "design_terms": ["experiment", "A/B test", "randomized experiment", "controlled experiment", "between-subjects", "within-subjects", "factorial experiment", "field experiment", "lab experiment", "online experiment", "vignette experiment", "control group", "treatment group"],
+    "human_evidence": ["experiment/study with N participants", "N=...", "user study", "human participants", "end users", "participants performed/interacted/assessed", "users with ..."],
+    "filter": "experiment design AND explicit human-study evidence AND user-facing outcome AND usable-security scope",
+    "curated_data": "data/usable_security_experiments_2025_2026.json",
+    "sample_status": "自动检索代码已更新；当前专题展示的是 2026-07-29 人工核验集合。"
   },
   "blocks": [
     {
