@@ -176,6 +176,156 @@
       "known_for": "usable privacy & security (founding figure), privacy policies, passwords, SOUPS",
       "ss_author_ids": ["1699751", "2106548793", "1491256745"],
       "dblp": null
+    },
+    {
+      "name": "Collins W. Munyendo",
+      "affiliation": "The George Washington University",
+      "role": "researcher",
+      "known_for": "security and privacy advice, cross-cultural usable security, Majority World",
+      "ss_author_ids": ["2106415744"],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "IEEE S&P 2026 Cycle 1 安全建议论文一作；该论文共同通讯作者 Elissa M. Redmiles 与 Yixin Zou 已在库中"
+    },
+    {
+      "name": "Elijah Bouma-Sims",
+      "affiliation": "Carnegie Mellon University",
+      "role": "researcher",
+      "known_for": "scam warnings, security reasoning, usable security",
+      "ss_author_ids": ["1887618805", "2318803644"],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "IEEE S&P 2026 Cycle 2 短信诈骗警告论文一作；通讯作者未在官方页面明确标注"
+    },
+    {
+      "name": "Warda Usman",
+      "affiliation": "Brigham Young University",
+      "role": "researcher",
+      "known_for": "human-centered threat modeling, usable security research practice",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "IEEE S&P 2026 Cycle 2 人本威胁建模论文一作；S2 profile 待核验"
+    },
+    {
+      "name": "David Langer",
+      "affiliation": "Justus Liebig University Giessen",
+      "role": "researcher",
+      "known_for": "information security awareness measurement, psychometrics",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "IEEE S&P 2026 Cycle 2 LISA 安全意识量表论文一作；同名较多，S2 profile 待核验"
+    },
+    {
+      "name": "Mindy Tran",
+      "affiliation": "Max Planck Institute for Security and Privacy",
+      "role": "researcher",
+      "known_for": "accessible security and privacy, Deaf and hard-of-hearing communities",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "IEEE S&P 2026 Cycle 1 DHH 社区访谈论文一作；同名 profile 待核验"
+    },
+    {
+      "name": "Tobias Reittinger",
+      "affiliation": "University of Regensburg",
+      "role": "researcher",
+      "known_for": "passkey adoption, cybersecurity motivation, authentication usability",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "IEEE S&P 2026 Cycle 1 passkey 纵向田野研究一作；S2 profile 待核验"
+    },
+    {
+      "name": "Kelechi G. Kalu",
+      "affiliation": "Purdue University",
+      "role": "researcher",
+      "known_for": "software supply-chain usability, identity-based signing, Sigstore",
+      "ss_author_ids": ["2229562943"],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "USENIX Security 2026 Cycle 1 Sigstore 可用性研究一作"
+    },
+    {
+      "name": "Arkaprabha Bhattacharya",
+      "affiliation": "Cornell University",
+      "role": "researcher",
+      "known_for": "account security interfaces, interpersonal security, usable security",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "USENIX Security 2026 Cycle 1 账户安全界面研究一作；S2 profile 待核验"
+    },
+    {
+      "name": "Yusuke Kubo",
+      "affiliation": "NTT DOCOMO BUSINESS / Waseda University",
+      "role": "researcher",
+      "known_for": "developer security practices, GitHub Actions, mixed methods",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "NDSS 2026 GitHub Actions 安全实践研究一作；同名较多，S2 profile 待核验"
+    },
+    {
+      "name": "Kunlin Cai",
+      "affiliation": "University of California, Los Angeles",
+      "role": "researcher",
+      "known_for": "developer-centered security and privacy, extended reality",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "NDSS 2026 XR 开发者安全隐私研究一作；同名 profile 待核验"
+    },
+    {
+      "name": "Erwin Kupris",
+      "affiliation": "Munich University of Applied Sciences",
+      "role": "researcher",
+      "known_for": "passkeys, MFA usability, authentication",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "IEEE S&P 2026 Cycle 1 passkey 对比可用性研究一作；S2 profile 待核验"
+    },
+    {
+      "name": "Vijay Prakash",
+      "affiliation": "New York University",
+      "role": "researcher",
+      "known_for": "technology-facilitated abuse, LLM safety advice, survivor support",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "USENIX Security 2026 Cycle 1 LLM 与技术促成虐待研究一作；S2 profile 待核验"
+    },
+    {
+      "name": "Neele Roch",
+      "affiliation": "ETH Zurich",
+      "role": "researcher",
+      "known_for": "explainable AI, cybersecurity decision-making, human-AI trust",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "USENIX Security 2026 Cycle 1 XAI 与安全决策研究一作；S2 profile 待核验"
+    },
+    {
+      "name": "Ronald E. Thompson III",
+      "affiliation": "Tufts University",
+      "role": "researcher",
+      "known_for": "clinical security risk perception, usable security",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "USENIX Security 2026 Cycle 1 临床人员安全故障感知研究一作；S2 profile 待核验"
+    },
+    {
+      "name": "Xin Zhang",
+      "affiliation": "Fudan University",
+      "role": "researcher",
+      "known_for": "cross-device authentication, user awareness and consent",
+      "ss_author_ids": [],
+      "dblp": null,
+      "tracking_role": ["2026 Big4 first author"],
+      "note": "NDSS 2026 跨设备认证可用性研究一作；同名较多，S2 profile 待核验"
     }
   ]
 }

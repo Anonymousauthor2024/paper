@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-07-29",
+  "scope": "2025-2026 papers directly about end-user security advice, security knowledge acquisition, awareness, education, warning comprehension, or community knowledge sharing. Core venues are SOUPS and security Big4; adjacent HCI evidence must be displayed separately.",
+  "papers": [
+    {
+      "year": 2026,
+      "venue": "IEEE S&P",
+      "tier": "core_big4",
+      "title": "\"I Wonder if These Warnings Are Accurate\": Security and Privacy Advice in Nine Majority World Countries",
+      "topic": "建议来源与文化情境",
+      "method": "跨国访谈",
+      "summary_zh": "研究比较九个 Majority World 国家中安全与隐私建议的来源、可信度和实际可执行性。建议能否被采用受到语言、文化、本地威胁经验和社会关系共同影响。",
+      "url": "https://collinsmunyendo.github.io/papers/2026_Oakland_Security_Advice.pdf"
+    },
+    {
+      "year": 2026,
+      "venue": "IEEE S&P",
+      "tier": "core_big4",
+      "title": "From \"Be Careful\" to \"Here's Why\": Investigating User Reasoning with Context-Specific SMS Scam Warnings",
+      "topic": "诈骗警告与知识迁移",
+      "method": "用户实验",
+      "summary_zh": "论文检验带有具体原因解释的短信诈骗警告，是否比泛化提醒更能帮助用户判断风险。核心问题是警告能否形成可迁移的安全推理，而不只是让用户完成一次正确选择。",
+      "url": "https://sp2026.ieee-security.org/accepted-papers.html"
+    },
+    {
+      "year": 2026,
+      "venue": "IEEE S&P",
+      "tier": "core_big4",
+      "title": "Toward Inclusive Security and Privacy for Deaf and Hard-of-Hearing People: A Community-Based Interview Study",
+      "topic": "可访问安全知识",
+      "method": "社区访谈",
+      "summary_zh": "聋人和听障用户往往依赖可信关系网络学习如何应对诈骗和隐私风险。现有资源缺少手语支持，支持者自身的安全知识和翻译能力也会限制知识传播。",
+      "url": "https://yixinzou.github.io/publications/pdf/sp2026-tran-preprint.pdf"
+    },
+    {
+      "year": 2026,
+      "venue": "IEEE S&P",
+      "tier": "core_big4",
+      "title": "LISA: A Scale-Optimized and Psychometrically-Validated Instrument for the Lightweight Assessment of Organizational Information Security Awareness in Heterogeneous Organizations",
+      "topic": "安全意识测量",
+      "method": "量表开发与验证",
+      "summary_zh": "论文提供一个轻量、跨语言的信息安全意识测量工具，并在大规模在线样本和医院员工中验证。它可以用于安全教育前后测，但测量的是知识、态度和行为构念，而不是单一知识题得分。",
+      "url": "https://doi.org/10.1109/SP63933.2026.00174"
+    },
+    {
+      "year": 2026,
+      "venue": "USENIX Security",
+      "tier": "core_big4",
+      "title": "Assessing LLM Response Quality in the Context of Technology-Facilitated Abuse",
+      "topic": "AI 安全建议",
+      "method": "专家评估与用户研究",
+      "summary_zh": "论文评估 LLM 面对技术促成虐待问题时提供的建议是否安全、准确且可行动。它提示 AI 建议系统需要同时接受领域专家和目标用户检验，尤其要关注错误建议带来的二次伤害。",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/cycle1-accepted-papers"
+    },
+    {
+      "year": 2026,
+      "venue": "USENIX Security",
+      "tier": "core_big4",
+      "title": "Inconsistent, Incomplete, and Insecure: A Survey of Account Security Interfaces",
+      "topic": "界面证据与安全判断",
+      "method": "100 个服务的测量研究",
+      "summary_zh": "研究显示，账户访问日志和通知常常不完整、不一致且难以理解。用户的安全判断能力不仅取决于知识，还取决于平台是否提供可靠、可解释的证据。",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/cycle1-accepted-papers"
+    },
+    {
+      "year": 2026,
+      "venue": "SOUPS",
+      "tier": "core_soups",
+      "title": "Who Can Actually Follow IT-Security Advice? Exploring the Usability of IT-Security Advice",
+      "topic": "建议可执行性",
+      "method": "待正式论文公开后补充",
+      "summary_zh": "论文直接研究哪些用户能够真正执行 IT 安全建议，以及建议中的能力、资源和情境假设。它与您的课题最接近，应作为 2026 核心工作持续跟踪。",
+      "url": "https://soups.page/2026/program.html"
+    },
+    {
+      "year": 2026,
+      "venue": "SOUPS",
+      "tier": "core_soups",
+      "title": "CyQured: Design, Development, and Empirical Evaluation of a Tabletop Game for Personal Cybersecurity Education",
+      "topic": "游戏化安全教育",
+      "method": "设计与实证评估",
+      "summary_zh": "研究通过桌游支持个人网络安全学习，并对教育效果进行实证评估。值得重点观察其学习目标、知识保持、行为迁移和共同讨论机制如何设计。",
+      "url": "https://soups.page/2026/program.html"
+    },
+    {
+      "year": 2026,
+      "venue": "SOUPS",
+      "tier": "core_soups",
+      "title": "Nice to Know You're Not Alone: Co-designing Community-centered Online Safety and Privacy Education with Librarians",
+      "topic": "社区安全教育",
+      "method": "与图书管理员共创",
+      "summary_zh": "论文将图书管理员视为社区安全知识中介，共创在线安全与隐私教育。它强调学习并非孤立的信息接收，而是嵌入可信机构、同伴支持和本地资源的社会过程。",
+      "url": "https://soups.page/2026/program.html"
+    },
+    {
+      "year": 2026,
+      "venue": "SOUPS",
+      "tier": "core_soups",
+      "title": "Reproductive Security & Privacy Advice on TikTok after the Overturn of Roe",
+      "topic": "社交媒体安全建议",
+      "method": "内容与传播分析，待正式论文补充",
+      "summary_zh": "研究考察 Roe 被推翻后 TikTok 上生殖安全与隐私建议的内容和传播。其价值在于分析高风险环境中由非正式创作者生产的建议，如何在可见性、可信度和潜在伤害之间权衡。",
+      "url": "https://soups.page/2026/program.html"
+    },
+    {
+      "year": 2025,
+      "venue": "SOUPS",
+      "tier": "core_soups",
+      "title": "Replication: “No one can hack my mind” - 10 years later: An update and outlook on experts’ and non-experts’ security practices and advice",
+      "topic": "专家建议与用户行为差距",
+      "method": "调查复现与专家访谈",
+      "summary_zh": "论文复现专家与非专家安全行为研究，显示认证实践有所变化，但建议与实际行为之间的差距仍然存在。作者主张安全建议需要针对具体用户和设备情境，而不是继续提供通用清单。",
+      "url": "https://www.usenix.org/conference/soups2025/accepted-papers"
+    },
+    {
+      "year": 2025,
+      "venue": "SOUPS",
+      "tier": "core_soups",
+      "title": "More than Usability: Differential Access to Digital Security and Privacy",
+      "topic": "安全信息获得不平等",
+      "method": "47 人访谈",
+      "summary_zh": "论文指出，安全行为差距不仅来自界面可用性，还来自用户获得保护资源、社会支持和安全信息的机会不同。它把“安全知识不足”重新解释为关系和资源分配问题。",
+      "url": "https://www.usenix.org/conference/soups2025/accepted-papers"
+    },
+    {
+      "year": 2025,
+      "venue": "SOUPS",
+      "tier": "core_soups",
+      "title": "Victims, Vigilantes, and Advice Givers: An Analysis of Scam-Related Discourse on Reddit",
+      "topic": "社区知识共享与诈骗恢复",
+      "method": "2,435 篇 Reddit 帖子的主题分析",
+      "summary_zh": "论文研究诈骗受害者如何在 Reddit 寻求建议、验证和情感支持，并识别社区中的知识缺口。结果区分以预防教育为导向的社区和以表演性反制为导向的社区。",
+      "url": "https://www.usenix.org/conference/soups2025/accepted-papers"
+    },
+    {
+      "year": 2025,
+      "venue": "SOUPS",
+      "tier": "core_soups",
+      "title": "The more accounts I use, the less I have to think: A Longitudinal Study on the Usability of Password Managers for Novice Users",
+      "topic": "在使用中学习安全工具",
+      "method": "37 名新手、三个月纵向研究",
+      "summary_zh": "论文跟踪新手长期使用密码管理器的学习过程，发现初次体验强烈影响后续采用。即使信任增加，用户仍可能忽略凭据审计警告，说明工具使用经验不会自动转化为完整安全知识。",
+      "url": "https://www.usenix.org/conference/soups2025/accepted-papers"
+    }
+  ]
+}

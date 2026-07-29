@@ -1,10 +1,19 @@
 {
   "generated_at": "2026-07-28",
-  "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；topic migration 用逐年标题话题统计检测 SOUPS/PETS 或 HCI 隐私安全到安全四大的 +1/+2 年滞后。",
+  "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；安全四大 usable-security 候选使用 interview/survey/questionnaire、usable/usability、user study/user studies/human-centered 扩展检索，并要求标题或摘要中同时存在用户研究方法证据与可用安全/隐私范围证据。",
+  "big4_definition": {
+    "venues": [
+      "IEEE Symposium on Security and Privacy (IEEE S&P)",
+      "Network and Distributed System Security Symposium (NDSS)",
+      "USENIX Security Symposium",
+      "ACM Conference on Computer and Communications Security (ACM CCS)"
+    ],
+    "sample_status": "当前趋势计数仍为 2026-07-28 Semantic Scholar 快照；检索与过滤代码已于 2026-07-29 更新，完整重算等待 API 可用。"
+  },
   "blocks": [
     {
       "key": "security_sub",
-      "label": "子领域 · usable security（SOUPS + PETS + 四大会 interview/survey）",
+      "label": "子领域 · usable security（SOUPS + PETS + 四大会 usable/user study）",
       "sample": {
         "total": 1112,
         "baseline": 571,
@@ -2586,7 +2595,7 @@
       }
     }
   },
-  "migration_method": "source first-hot + Big4 user-study zero-to-one: first popular year in SOUPS/PETS or HCI privacy/security must be earlier than the first year where the topic appears at least once in the security Big4 interview/survey subset, and the lag must be 1-2 years.",
+  "migration_method": "source first-hot + Big4 usable/user-study zero-to-one: first popular year in SOUPS/PETS or HCI privacy/security must be earlier than the first year where the topic appears at least once in the security Big4 usable/user-study subset, and the lag must be 1-2 years.",
   "topic_migration": {
     "migrations": [
       {
@@ -2794,6 +2803,6 @@
         "reason": "big4_first_or_lag_too_long"
       }
     ],
-    "method": "source first-hot + Big4 user-study zero-to-one: source first-hot must be earlier than the first Big4 interview/survey appearance, with a 1-2 year lag."
+    "method": "source first-hot + Big4 usable/user-study zero-to-one: source first-hot must be earlier than the first Big4 usable/user-study appearance, with a 1-2 year lag."
   }
 }

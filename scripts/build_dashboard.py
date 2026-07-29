@@ -263,7 +263,8 @@ def security_migration_html(trends):
         '<div class="migration-block">'
         '<h3>安全四大投稿导向 · 话题传导判断</h3>'
         '<p class="muted">判定口径：先算每个话题在 SOUPS/PETS、HCI privacy/security、'
-        '安全四大用户研究子集里的时间顺序。源领域仍用 first-hot；安全四大目标端只看 interview/survey/questionnaire 子集，且只要求从 0 到 ≥1 篇。'
+        '安全四大用户研究子集里的时间顺序。源领域仍用 first-hot；安全四大目标端使用 interview/survey/questionnaire/usable/user study/human-centered 宽检索，'
+        '再要求摘要同时出现人本范围与用户研究方法证据，且只要求从 0 到 ≥1 篇。'
         '只有源领域先热，且安全四大用户研究在 1–2 年内首次出现，才算“可能以用户研究方式突破进入 Big4”。</p>'
         '<div class="migration-section"><h4>1. 已验证突破：可参考四大吸收路径</h4>'
         f'<div class="migration-cards">{verified_html}</div></div>'
@@ -609,8 +610,105 @@ def genai_topic_html(experts, trends, tz):
         '<div class="genai-grid">' + "".join(blocks) + '</div>'
     )
 
+def merge_seed_experts(experts):
+    """Keep tracked authors visible before their Semantic Scholar profiles are resolved."""
+    seeds = json.loads(read("people/experts.json") or "{}").get("experts", [])
+    by_name = {e.get("name"): e for e in experts}
+    for seed in seeds:
+        name = seed.get("name")
+        if not name:
+            continue
+        if name not in by_name:
+            row = {
+                "name": name,
+                "affiliation": seed.get("affiliation"),
+                "paper_count": 0,
+                "in_field_count": 0,
+                "recent_count": 0,
+                "papers": [],
+            }
+            experts.append(row)
+            by_name[name] = row
+        by_name[name]["known_for"] = seed.get("known_for")
+        by_name[name]["tracking_role"] = seed.get("tracking_role") or []
+        by_name[name]["profile_pending"] = not bool(seed.get("ss_author_ids"))
+    return experts
+
+
+def official_usable_html(data):
+    availability = data.get("availability") or {}
+    availability_html = "".join(
+        f"<li><strong>{html.escape(venue)}</strong><span>{html.escape(status)}</span></li>"
+        for venue, status in availability.items()
+    )
+    grouped = {}
+    for paper in data.get("papers", []):
+        grouped.setdefault((paper.get("venue"), paper.get("cycle")), []).append(paper)
+    sections = []
+    for (venue, cycle), papers in grouped.items():
+        cards = []
+        for p in papers:
+            first = p.get("first_author") or "待核验"
+            corresponding = "、".join(p.get("corresponding_authors") or []) or "官方未标注"
+            advice = '<span class="topic-chip">与建议/学习直接相关</span>' if p.get("advice_learning_relevant") else ""
+            cards.append(
+                '<article class="official-paper">'
+                f'<div class="paper-meta">{html.escape(venue or "")} · {html.escape(cycle or "")} · '
+                f'{html.escape(p.get("status") or "")}</div>'
+                f'<h4><a href="{html.escape(p.get("url") or p.get("source_url") or "#")}" target="_blank">'
+                f'{html.escape(p.get("title") or "")}</a></h4>'
+                f'<p>{html.escape(p.get("summary_zh") or "")}</p>'
+                f'<div class="author-line">一作：{html.escape(first)} · 通讯作者：{html.escape(corresponding)}</div>'
+                f'<div class="method-line">{html.escape(p.get("method") or "")} {advice}</div>'
+                '</article>'
+            )
+        sections.append(
+            f'<section class="official-group"><h3>{html.escape(venue or "")} · {html.escape(cycle or "")}'
+            f'<span>{len(papers)} 篇</span></h3><div class="official-grid">{"".join(cards)}</div></section>'
+        )
+    return (
+        '<div class="coverage-note"><strong>公开状态与覆盖边界</strong>'
+        f'<ul>{availability_html}</ul></div>{"".join(sections)}'
+    )
+
+
+def advice_learning_html(data):
+    grouped = {}
+    for paper in data.get("papers", []):
+        grouped.setdefault((paper.get("year"), paper.get("tier")), []).append(paper)
+    tier_labels = {
+        "core_big4": "安全四大 · 核心证据",
+        "core_soups": "SOUPS · 核心证据",
+        "adjacent_hci": "HCI · 相邻证据",
+    }
+    sections = []
+    for (year, tier), papers in sorted(grouped.items(), key=lambda x: (-int(x[0][0]), x[0][1])):
+        rows = []
+        for p in papers:
+            rows.append(
+                '<article class="advice-paper">'
+                f'<div class="paper-meta">{year} · {html.escape(p.get("venue") or "")} · '
+                f'{html.escape(p.get("method") or "")}</div>'
+                f'<h4><a href="{html.escape(p.get("url") or "#")}" target="_blank">'
+                f'{html.escape(p.get("title") or "")}</a></h4>'
+                f'<span class="topic-chip">{html.escape(p.get("topic") or "")}</span>'
+                f'<p>{html.escape(p.get("summary_zh") or "")}</p>'
+                '</article>'
+            )
+        sections.append(
+            f'<section class="advice-group"><h3>{year} · {tier_labels.get(tier, tier)}'
+            f'<span>{len(papers)} 篇</span></h3><div class="advice-grid">{"".join(rows)}</div></section>'
+        )
+    return (
+        '<div class="coverage-note"><strong>专题口径</strong><p>'
+        '核心范围为 2025–2026 SOUPS 与安全四大中直接研究终端用户安全建议、知识获得、'
+        '安全意识、教育干预或警告理解的论文；相邻 HCI 证据单独显示，不与核心会议混算。'
+        f'</p></div>{"".join(sections)}'
+    )
+
+
 def expert_card(e, tz):
-    recent = [p for p in e["papers"]
+    recent = [p for p in e.get("papers", [])
               if p.get("category") != "other" and (p.get("year") or 0) >= 2025]
     items = []
     for p in recent:
@@ -625,9 +723,13 @@ def expert_card(e, tz):
             f'<span class="yr">{p.get("year") or "?"}</span>{new} '
             f'<a href="{html.escape(paper_url(p))}" target="_blank">{title}</a>'
             f'{zh_html}<span class="venue">{venue}</span></li>')
+    tracking = " · ".join(e.get("tracking_role") or [])
+    pending = " · S2 profile 待核验" if e.get("profile_pending") else ""
+    tracking_html = f'<div class="tracking">{html.escape(tracking + pending)}</div>' if tracking or pending else ""
     return f"""<div class="card">
       <div class="chead"><b>{html.escape(e['name'])}</b>
         <span class="aff">{html.escape(e.get('affiliation') or '')}</span></div>
+      {tracking_html}
       <div class="stat">2025 年以来 {len(recent)} 篇</div>
       <ul class="papers">{''.join(items)}</ul>
     </div>"""
@@ -646,11 +748,12 @@ def _is_recent(p):
 
 def main():
     data = json.loads(read("data/experts_papers.json") or "{}")
-    experts = data.get("experts", [])
+    experts = merge_seed_experts(data.get("experts", []))
     gen = data.get("generated_at", "")
     total_infield = sum(e["in_field_count"] for e in experts)
     tz = json.loads(read("data/title_zh.json") or "{}")
     cards = "\n".join(expert_card(e, tz) for e in experts)
+    tracked_cards = "\n".join(expert_card(e, tz) for e in experts if e.get("tracking_role"))
     new_work_rows = collect_new_work(experts, since=2026)
     new_work_rows = merge_homepage(new_work_rows)
     new_work = new_work_html(new_work_rows, tz)
@@ -658,9 +761,19 @@ def main():
     curated_trends = json.loads(read("data/trend_summaries_zh.json") or "{}")
     trend_blocks = trends.get("blocks", [])
     sec_html = "".join(trend_block_html(b, curated_trends) for b in trend_blocks[:2])
+    trend_sample_status = (trends.get("big4_definition") or {}).get("sample_status", "")
+    if trend_sample_status:
+        sec_html = (
+            f'<div class="coverage-note"><strong>趋势样本状态：</strong>'
+            f'{html.escape(trend_sample_status)}</div>' + sec_html
+        )
     sec_migration_html = security_migration_html(trends)
     genai_html = genai_topic_html(experts, trends, tz)
     hci_html = "".join(trend_block_html(b, curated_trends) for b in trend_blocks[2:4])
+    official_usable = json.loads(read("data/usable_security_2026.json") or "{}")
+    official_usable_section = official_usable_html(official_usable)
+    advice_learning = json.loads(read("data/end_user_advice_learning_2025_2026.json") or "{}")
+    advice_learning_section = advice_learning_html(advice_learning)
 
     doc = f"""<!doctype html>
 <html lang="zh"><head><meta charset="utf-8">
@@ -750,6 +863,21 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
 .genai-card p{{font-size:13px;margin:6px 0;color:var(--mut)}}.big4-hint{{border-left:3px solid var(--acc);padding-left:8px;color:var(--fg)!important}}
 .genai-list{{list-style:none;margin:8px 0 0;padding:0}}.genai-list li{{padding:7px 0;border-top:1px dashed var(--line);font-size:13px}}
 .genai-list a{{color:var(--fg);text-decoration:none}}.genai-list a:hover{{color:var(--acc)}}
+.coverage-note{{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:12px;margin:0 0 16px}}
+.coverage-note p{{margin:6px 0 0;color:var(--mut);font-size:13px}}.coverage-note ul{{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:5px}}
+.coverage-note li{{display:grid;grid-template-columns:130px 1fr;gap:8px;font-size:12px}}.coverage-note li span{{color:var(--mut)}}
+.official-group,.advice-group{{margin:18px 0}}.official-group h3,.advice-group h3{{display:flex;justify-content:space-between;gap:10px;font-size:14px}}
+.official-group h3 span,.advice-group h3 span{{color:var(--mut);font-size:12px;font-weight:400}}
+.official-grid,.advice-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:12px}}
+.official-paper,.advice-paper{{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:12px}}
+.official-paper h4,.advice-paper h4{{margin:4px 0 7px;font-size:14px;line-height:1.4}}
+.official-paper h4 a,.advice-paper h4 a{{color:var(--fg);text-decoration:none}}
+.official-paper h4 a:hover,.advice-paper h4 a:hover{{color:var(--acc)}}
+.official-paper p,.advice-paper p{{margin:7px 0;color:var(--mut);font-size:12.5px}}
+.author-line,.method-line{{font-size:11.5px;color:var(--mut);margin-top:5px}}
+.topic-chip{{display:inline-block;background:#e5edff;color:#2050c0;border-radius:999px;padding:2px 7px;font-size:11px}}
+.tracking{{color:var(--acc);font-size:11px;margin:3px 0}}
+@media(prefers-color-scheme:dark){{.topic-chip{{background:#22345e;color:#9dbcff}}}}
 </style></head><body>
 <header><h1>Usable Security / HCI 论文追踪看板</h1>
 <div class="sub">大牛库 {len(experts)} 人 · 领域内论文 {total_infield} 篇 · 数据更新 {gen}</div></header>
@@ -763,8 +891,57 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
 <section id="genai"><h2>GenAI / LLM / Chatbot × Usable Security 专题</h2>{genai_html}</section>
 <section id="hci" class="trend"><h2>HCI 领域 · 隐私安全新趋势</h2>{hci_html}</section>
 </main></body></html>"""
+    style_match = re.search(r"(?s)<style>.*?</style>", doc)
+    style_tag = style_match.group(0) if style_match else ""
+
+    # Main dashboard: research signals first; full expert library moves to experts.html.
+    doc = re.sub(
+        r"(?s)<nav>.*?</nav>",
+        '<nav><a href="#latest2026">2026 Big4 最新</a>'
+        '<a href="#advice">安全建议与学习</a><a href="#sec">安全趋势</a>'
+        '<a href="#genai">GenAI 专题</a><a href="#hci">HCI 趋势</a>'
+        '<a href="experts.html">大牛库 ↗</a></nav>',
+        doc,
+        count=1,
+    )
+    doc = re.sub(
+        r'(?s)<section id="experts">.*?</section>\s*<section id="new">.*?</section>',
+        "",
+        doc,
+        count=1,
+    )
+    doc = doc.replace(
+        "<main>",
+        '<main><section id="latest2026"><h2>2026 安全四大 · 最新 Usable Security</h2>'
+        f'{official_usable_section}</section>'
+        '<section id="advice"><h2>终端用户安全建议与安全知识学习 · 2025–2026</h2>'
+        f'{advice_learning_section}</section>',
+        1,
+    )
+
+    experts_doc = f"""<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大牛库 · Usable Security / HCI</title>
+{style_tag}</head><body>
+<header><h1>大牛库 · Usable Security / HCI</h1>
+<div class="sub">{len(experts)} 人 · 领域内论文 {total_infield} 篇 · 数据更新 {gen}</div></header>
+<nav><a href="index.html">← 主看板</a><a href="#new">2026 新工作</a>
+<a href="#new-authors">2026 新增作者</a><a href="#experts">完整大牛库</a></nav>
+<main>
+<section id="new"><h2>大牛 2026 年以来新工作</h2>
+<div class="new-work">{new_work}</div></section>
+<section id="new-authors"><h2>2026 最新 Usable Security · 新增一作与通讯作者</h2>
+<div class="coverage-note"><p>一作按官方作者顺序加入；通讯作者仅在论文 PDF 或作者主页明确标注时认定。
+没有可靠 Semantic Scholar ID 的作者标为“待核验”，不会自动绑定同名 profile。</p></div>
+<div class="grid">{tracked_cards}</div></section>
+<section id="experts"><h2>完整大牛库 · 各学者最近论文</h2>
+<div class="grid">{cards}</div></section>
+</main></body></html>"""
+
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(doc)
-    print(f"看板已生成 index.html（{len(experts)} 位大牛，{total_infield} 篇领域内论文）")
+    open(os.path.join(ROOT, "experts.html"), "w", encoding="utf-8").write(experts_doc)
+    print(f"看板已生成 index.html + experts.html（{len(experts)} 位追踪作者，{total_infield} 篇领域内论文）")
 
 if __name__ == "__main__":
     main()

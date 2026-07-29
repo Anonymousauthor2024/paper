@@ -25,15 +25,47 @@ CUR_YEAR = 2026
 SPLIT_YEAR = 2024          # >= 为 recent, < 为 baseline
 FIELDS = "paperId,title,year,venue,citationCount,abstract,url,externalIds"
 
-# SOUPS/PETS 全收(usable/隐私专会);四大会只收 interview/survey 论文(usable 方法学标志,
-# 能滤掉系统安全论文,把标题不含 "usable" 但其实是用户研究的论文也抓进来)
+# SOUPS/PETS 全收（usable/privacy 专会）；四大会先做宽检索，再用摘要方法证据二次筛选。
 SEC_FULL_VENUES = ["Symposium On Usable Privacy and Security",
                    "Proceedings on Privacy Enhancing Technologies"]
-SEC_BIG4_VENUES = ["USENIX Security Symposium",
-                   "IEEE Symposium on Security and Privacy",
-                   "Conference on Computer and Communications Security",
-                   "Network and Distributed System Security Symposium"]
-BIG4_QUERY = "interview | survey | questionnaire"
+SEC_BIG4_VENUES = {
+    "USENIX Security": [
+        "USENIX Security Symposium",
+    ],
+    "IEEE S&P": [
+        "IEEE Symposium on Security and Privacy",
+        "Symposium on Security and Privacy",
+    ],
+    "ACM CCS": [
+        "Conference on Computer and Communications Security",
+        "ACM Conference on Computer and Communications Security",
+    ],
+    "NDSS": [
+        "Network and Distributed System Security Symposium",
+        "Network and Distributed Systems Security Symposium",
+        "NDSS Symposium",
+    ],
+}
+BIG4_QUERIES = (
+    "interview | survey | questionnaire",
+    "usable | usability",
+    '"user study" | "user studies" | "human-centered"',
+)
+USER_STUDY_METHOD_TERMS = (
+    "interview", "interviews", "interviewed", "survey", "surveys", "surveyed",
+    "questionnaire", "questionnaires", "user study", "user studies",
+    "participant", "participants", "human subject", "human subjects",
+    "focus group", "focus groups", "field study", "field studies",
+    "qualitative study", "mixed-method", "mixed method", "controlled study",
+    "usability study", "usability evaluation", "human-centered",
+)
+USABLE_SCOPE_TERMS = (
+    "usable", "usability", "user", "users", "human", "people", "participant",
+    "developer", "developers", "operator", "operators", "practitioner",
+    "practitioners", "clinician", "analyst", "awareness", "advice",
+    "warning", "warnings", "perception", "perceptions", "behavior",
+    "behaviour", "practice", "practices", "experience", "experiences",
+)
 HCI_VENUE = "International Conference on Human Factors in Computing Systems"
 # 全用单词 OR;多词短语(如 data protection)会被 SS 当成 AND,不要放进来
 HCI_QUERY = "privacy | security | surveillance | consent | confidentiality | anonymity"
@@ -113,6 +145,37 @@ def bulk(venue, query=None):
             break
         time.sleep(0.3 if API_KEY else 1.0)
     return out
+
+def is_big4_usable_user_study(p):
+    """Keep papers with both a human/usability scope signal and a user-study method signal."""
+    text = f"{p.get('title') or ''} {p.get('abstract') or ''}".lower()
+    method_hit = any(term in text for term in USER_STUDY_METHOD_TERMS)
+    scope_hit = any(term in text for term in USABLE_SCOPE_TERMS)
+    return method_hit and scope_hit
+
+def bulk_big4(query=None):
+    rows = []
+    for canonical, aliases in SEC_BIG4_VENUES.items():
+        for venue in aliases:
+            for p in bulk(venue, query):
+                p["_big4_venue"] = canonical
+                rows.append(p)
+    return dedup(rows)
+
+def bulk_big4_usable():
+    candidates = []
+    for query in BIG4_QUERIES:
+        candidates.extend(bulk_big4(query))
+    return [p for p in dedup(candidates) if is_big4_usable_user_study(p)]
+
+def venue_year_counts(papers):
+    counts = {}
+    for p in papers:
+        venue = p.get("_big4_venue") or p.get("venue") or "Unknown"
+        year = str(p.get("year") or "unknown")
+        counts.setdefault(venue, {})
+        counts[venue][year] = counts[venue].get(year, 0) + 1
+    return counts
 
 def dedup(papers):
     seen = {}
@@ -308,7 +371,7 @@ def topic_count(yearly, group, year, topic):
     return (((yearly.get(group) or {}).get("topics") or {}).get(str(year)) or {}).get(topic, {}).get("count", 0)
 
 def first_big4_usable_appearance(yearly, topic):
-    """Return first Big4 interview/survey year where topic appears at least once."""
+    """Return first Big4 usable/user-study year where topic appears at least once."""
     for year in range(2020, CUR_YEAR + 1):
         count = topic_count(yearly, "security_big4_usable", year, topic)
         if count > 0:
@@ -414,7 +477,7 @@ def first_hot_migration(yearly):
         "verified_transmissions": verified[:20],
         "source_only_watchlist": watchlist[:20],
         "big4_first_or_mainstream": mainstream[:20],
-        "method": "source first-hot + Big4 user-study zero-to-one: source first-hot must be earlier than the first Big4 interview/survey appearance, with a 1-2 year lag.",
+        "method": "source first-hot + Big4 user-study zero-to-one: source first-hot must be earlier than the first Big4 usable/user-study appearance, with a 1-2 year lag.",
     }
 
 # ---------- 输出 ----------
@@ -462,12 +525,12 @@ def render_block(block, curated):
 def main():
     print("安全·SOUPS/PETS ...")
     soups_pets = dedup(sum((bulk(v) for v in SEC_FULL_VENUES), []))
-    print("安全·四大会 interview/survey ...")
-    big4_usable = dedup(sum((bulk(v, BIG4_QUERY) for v in SEC_BIG4_VENUES), []))
-    print("安全·子领域: SOUPS+PETS + 四大会 interview/survey ...")
+    print("安全·四大会 usable/user-study 宽检索 + 方法证据筛选 ...")
+    big4_usable = bulk_big4_usable()
+    print("安全·子领域: SOUPS+PETS + 四大会 usable/user-study ...")
     sec_sub = dedup(soups_pets + big4_usable)
     print("安全·整体: 四大会全部 ...")
-    sec_all = dedup(sum((bulk(v) for v in SEC_BIG4_VENUES), []))
+    sec_all = bulk_big4()
     print("HCI·子领域: CHI 隐私安全 ...")
     hci_sub = dedup(bulk(HCI_VENUE, HCI_QUERY))
     print("HCI·整体: 全 CHI ...")
@@ -475,7 +538,7 @@ def main():
     print(f"  样本 安全 子{len(sec_sub)}/整体{len(sec_all)} · HCI 子{len(hci_sub)}/整体{len(hci_all)}")
 
     blocks = [
-        block_data("security_sub", "子领域 · usable security（SOUPS + PETS + 四大会 interview/survey）", sec_sub),
+        block_data("security_sub", "子领域 · usable security（SOUPS + PETS + 四大会 usable/user study）", sec_sub),
         block_data("security_all", "整体 · 安全四大会全部（USENIX / S&P / CCS / NDSS）", sec_all),
         block_data("hci_sub", "子领域 · 隐私安全（CHI + privacy/security 过滤）", hci_sub),
         block_data("hci_all", "整体 · 全 CHI", hci_all),
@@ -502,10 +565,17 @@ def main():
     with open(os.path.join(ROOT, "data", "trends.json"), "w", encoding="utf-8") as f:
         json.dump({
             "generated_at": time.strftime("%Y-%m-%d"),
-            "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；topic migration 用逐年标题话题统计检测 SOUPS/PETS 或 HCI 隐私安全到安全四大的 +1/+2 年滞后。",
+            "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；四大会 usable 子集先用 interview/survey/questionnaire/usable/user study/human-centered 宽检索，再要求摘要同时出现人本范围和用户研究方法证据。",
+            "big4_definition": {
+                "venues": list(SEC_BIG4_VENUES.keys()),
+                "venue_aliases": SEC_BIG4_VENUES,
+                "queries": list(BIG4_QUERIES),
+                "filter": "human/usability scope term AND user-study method term",
+                "counts_by_venue_year": venue_year_counts(big4_usable),
+            },
             "blocks": blocks,
             "yearly_topics": yearly,
-            "migration_method": "source first-hot + Big4 user-study zero-to-one: first popular year in SOUPS/PETS or HCI privacy/security must be earlier than the first year where the topic appears at least once in the security Big4 interview/survey subset, and the lag must be 1-2 years.",
+            "migration_method": "source first-hot + Big4 user-study zero-to-one: first popular year in SOUPS/PETS or HCI privacy/security must be earlier than the first year where the topic appears at least once in the security Big4 usable/user-study subset, and the lag must be 1-2 years.",
             "topic_migration": migration,
         }, f, ensure_ascii=False, indent=2)
     print("输出已写入 security/trends/ · hci/trends/ · data/")

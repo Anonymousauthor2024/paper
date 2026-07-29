@@ -58,3 +58,8 @@ paper/
 ## 进度日志
 - **2026-07-28**：确定架构与数据源；验证 Semantic Scholar API 可用；定位并确认 8 位种子大牛（解决 Yang Wang 5-profile、Schaub/Cranor 2-profile 合并问题）；建目录骨架 + `people/experts.json` + `progress.md`；首次 push。
 - **2026-07-28（续）**：实现 `fetch_experts.py`（多 profile 合并、venue 分类、直接列最近论文、18 月窗口）；新增 `find_profiles.py` 查漏工具，补齐 5 位大牛漏绑 profile（Yixin Zou 领域内 7→35 篇，Jingjie/Tanusree/Schaub/Cranor 各有补绑）；更新全部输出与 `profile_audit.md`。人工排除 Tanusree 的同名误绑（Final Fantasy）与 Yang Wang 合作网补查。
+- **2026-07-29**：确认安全四大为 IEEE S&P / NDSS / USENIX Security / ACM CCS；扩展
+  Big4 usable-security 检索到 `usable / usability / user study / human-centered`，并增加摘要方法证据筛选。
+  新增官方 accepted-paper 审计脚本、2026 Big4 人工核验子集和 2025–2026 终端用户安全建议/
+  安全知识学习专题。看板拆分为 `index.html` 与 `experts.html`，大牛 2026 新工作在大牛页置顶。
+  新增作者按官方一作顺序加入；通讯作者仅在有明确证据时标注。

@@ -105,3 +105,21 @@ python scripts/build_dashboard.py  # 重新生成 index.html
 - GitHub Actions 定时自动跑上面四个脚本并 push
 - 整体趋势（整个安全 / 整个 HCI，与 usable / 隐私安全子领域对比）
 - GitHub Pages 发布看板
+
+## 2026-07-29 架构更新
+
+- 安全四大固定为：IEEE S&P、NDSS、USENIX Security、ACM CCS。`scripts/fetch_trends.py`
+  为每个会议维护 Semantic Scholar venue 别名。
+- 四大会 usable-security 子集采用两阶段方法：先检索
+  `interview / survey / questionnaire / usable / usability / user study / human-centered`，
+  再要求标题或摘要同时出现人本研究范围和用户研究方法证据。
+- `scripts/fetch_official_accepted.py` 只抓取官方 2026 accepted-paper 页面，输出
+  `data/official_accepted_2026_raw.json`；页面不存在表示“尚未公开”，不表示零篇论文。
+- `data/usable_security_2026.json` 是人工核验的 2026 Big4 usable-security 子集，记录会议、
+  Cycle、方法、一作、通讯作者证据和中文简介。
+- `data/end_user_advice_learning_2025_2026.json` 单独维护终端用户安全建议、安全知识获得、
+  意识测量、教育干预和警告理解相关论文。
+- `scripts/build_dashboard.py` 生成两个本地页面：
+  - `index.html`：2026 Big4 最新工作、建议/学习专题、趋势和 GenAI 专题；
+  - `experts.html`：大牛 2026 新工作置顶，其后为 2026 新增作者和完整大牛库。
+- 通讯作者只在论文 PDF、出版页或作者主页明确标注时认定；不以末位作者自动推断。
