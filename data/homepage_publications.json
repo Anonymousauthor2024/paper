@@ -1,6 +1,6 @@
 {
  "note": "个人主页/CSAuthors 抓取的 2026 论文，补充 S2 更新滞后的部分。focus_area 按内容/venue 归类（IJHCI/ASSETS/FAccT=hci; PEPR/FOCI/ConPro=security; WACV/TWeb/Nature 按作者主页方向）。url 待补 DOI/arXiv。",
- "source_updated": "2026-07-28",
+ "source_updated": "2026-08-03",
  "entries": [
   {"author": "Tanusree Sharma", "title": "VOICE: Data-Driven Risk Taxonomy for Synthetic Voice Generation", "year": 2026, "venue": "PEPR 2026", "focus_area": "security", "url": null, "source": "homepage"},
   {"author": "Tanusree Sharma", "title": "Hierarchical Instance Tracking to Balance Privacy Preservation with Accessible Information", "year": 2026, "venue": "WACV 2026", "focus_area": "hci", "url": null, "source": "homepage"},
@@ -15,6 +15,8 @@
   {"author": "Gabriel Kaptchuk", "title": "“Having Confidence in My Confidence Intervals”: How Data Users Engage with Privacy-Protected Wikipedia Data", "year": 2026, "venue": "CHI 2026", "focus_area": "hci", "url": null, "source": "homepage"},
   {"author": "Gabriel Kaptchuk", "title": "Forget-me-not Trees: Mass-scale Auditable Key Transparency from Hash Functions", "year": 2026, "venue": "Preprint", "focus_area": "security", "url": null, "source": "homepage"},
   {"author": "Gabriel Kaptchuk", "title": "Deploying decryption oracles for fun and non-profit: Backing up with friends and TEEs", "year": 2026, "venue": "Preprint", "focus_area": "security", "url": null, "source": "homepage"},
+  {"author": "Gabriel Kaptchuk", "title": "A Cryptographic Perspective on California’s Delete Request and Opt-out Platform", "year": 2026, "venue": "Preprint", "focus_area": "security", "url": "https://eprint.iacr.org/2026/1421", "source": "homepage"},
+  {"author": "Gabriel Kaptchuk", "title": "ThriftyMPC: Reducing the Cost of Large-Scale MPC in the Cloud", "year": 2026, "venue": "Preprint", "focus_area": "security", "url": "https://eprint.iacr.org/2026/977", "source": "homepage"},
   {"author": "Elissa M. Redmiles", "title": "The Role of Privacy Guarantees in Voluntary Donation of Private Health Data for Altruistic Goals", "year": 2026, "venue": "NDSS 2026", "focus_area": "security", "url": null, "source": "csauthors"},
   {"author": "Elissa M. Redmiles", "title": "“Unlimited Realm of Exploration and Experimentation”: Methods and Motivations of AI-Generated Sexual Content Creators", "year": 2026, "venue": "FAccT 2026", "focus_area": "hci", "url": null, "source": "csauthors"},
   {"author": "Elissa M. Redmiles", "title": "“Having Confidence in My Confidence Intervals”: How Data Users Engage with Privacy-Protected Wikipedia Data", "year": 2026, "venue": "CHI 2026", "focus_area": "hci", "url": null, "source": "csauthors"},

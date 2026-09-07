@@ -1,160 +1,746 @@
 {
-  "generated_at": "2026-07-28",
-  "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；安全四大 usable-security 候选使用访谈、问卷、可用性与用户实验扩展检索，并要求标题或摘要中同时存在用户研究方法证据与可用安全/隐私范围证据。用户实验候选进一步要求实验设计、真实参与者与用户结果指标三类证据。",
+  "generated_at": "2026-08-03",
+  "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；四大会 usable 子集使用访谈、问卷、可用性与用户实验宽检索，再要求摘要同时出现人本范围和方法证据。用户实验候选进一步要求实验设计、真实参与者和用户结果指标三类证据。",
   "big4_definition": {
     "venues": [
-      "IEEE Symposium on Security and Privacy (IEEE S&P)",
-      "Network and Distributed System Security Symposium (NDSS)",
-      "USENIX Security Symposium",
-      "ACM Conference on Computer and Communications Security (ACM CCS)"
+      "USENIX Security",
+      "IEEE S&P",
+      "ACM CCS",
+      "NDSS"
     ],
-    "sample_status": "当前趋势计数仍为 2026-07-28 Semantic Scholar 快照；检索与过滤代码已于 2026-07-29 更新，完整重算等待 API 可用。"
+    "venue_aliases": {
+      "USENIX Security": [
+        "USENIX Security Symposium"
+      ],
+      "IEEE S&P": [
+        "IEEE Symposium on Security and Privacy",
+        "Symposium on Security and Privacy"
+      ],
+      "ACM CCS": [
+        "Conference on Computer and Communications Security",
+        "ACM Conference on Computer and Communications Security"
+      ],
+      "NDSS": [
+        "Network and Distributed System Security Symposium",
+        "Network and Distributed Systems Security Symposium",
+        "NDSS Symposium"
+      ]
+    },
+    "queries": [
+      "interview | survey | questionnaire",
+      "usable | usability",
+      "\"user study\" | \"user studies\" | \"human-centered\"",
+      "\"between-subjects\" | \"within-subjects\" | \"controlled experiment\"",
+      "\"field experiment\" | \"online experiment\" | \"A/B test\" | randomized",
+      "experiment | experiments"
+    ],
+    "filter": "human/usability scope term AND user-study method term",
+    "counts_by_venue_year": {
+      "USENIX Security": {
+        "2023": 15,
+        "2020": 4,
+        "2024": 19,
+        "2022": 12,
+        "2021": 6,
+        "2025": 7
+      },
+      "IEEE S&P": {
+        "2025": 44,
+        "2023": 33,
+        "2022": 16,
+        "2021": 4,
+        "2024": 18,
+        "2020": 8,
+        "2026": 18
+      },
+      "ACM CCS": {
+        "2025": 19,
+        "2024": 23,
+        "2020": 8,
+        "2023": 15,
+        "2021": 6,
+        "2022": 16
+      },
+      "NDSS": {
+        "2024": 11,
+        "2023": 8,
+        "2022": 9,
+        "2025": 11,
+        "2026": 7,
+        "2020": 5,
+        "2021": 4
+      }
+    }
   },
   "user_experiment_method": {
-    "design_terms": ["experiment", "A/B test", "randomized experiment", "controlled experiment", "between-subjects", "within-subjects", "factorial experiment", "field experiment", "lab experiment", "online experiment", "vignette experiment", "control group", "treatment group"],
-    "human_evidence": ["experiment/study with N participants", "N=...", "user study", "human participants", "end users", "participants performed/interacted/assessed", "users with ..."],
-    "filter": "experiment design AND explicit human-study evidence AND user-facing outcome AND usable-security scope",
-    "curated_data": "data/usable_security_experiments_2025_2026.json",
-    "sample_status": "自动检索代码已更新；当前专题展示的是 2026-07-29 人工核验集合。"
+    "design_terms": [
+      "experiment",
+      "experiments",
+      "a/b test",
+      "a/b testing",
+      "randomized experiment",
+      "randomised experiment",
+      "randomized controlled",
+      "randomised controlled",
+      "controlled experiment",
+      "controlled study",
+      "between-subjects",
+      "between subjects",
+      "between-groups",
+      "between groups",
+      "within-subjects",
+      "within subjects",
+      "factorial experiment",
+      "factorial design",
+      "field experiment",
+      "lab experiment",
+      "laboratory experiment",
+      "online experiment",
+      "user experiment",
+      "vignette experiment",
+      "experimental condition",
+      "experimental conditions",
+      "control group",
+      "treatment group"
+    ],
+    "participant_terms": [
+      "participant",
+      "participants",
+      "human subject",
+      "human subjects",
+      "end user",
+      "end users",
+      "user study",
+      "users"
+    ],
+    "outcome_terms": [
+      "behavior",
+      "behaviour",
+      "decision",
+      "decisions",
+      "performance",
+      "accuracy",
+      "click",
+      "click-through",
+      "completion",
+      "adoption",
+      "trust",
+      "usability",
+      "comprehension",
+      "understanding",
+      "knowledge",
+      "awareness",
+      "risk perception"
+    ],
+    "filter": "experiment design AND human participants AND user-facing outcome AND usable-security scope",
+    "candidate_count": 11,
+    "candidates": [
+      {
+        "paperId": "c761a38a4e4294cc0bf7c039381b11ab72ca5c85",
+        "externalIds": {
+          "DBLP": "journals/popets/MenonVSHJ26",
+          "ArXiv": "2509.04700",
+          "DOI": "10.48550/arXiv.2509.04700",
+          "CorpusId": 281195132
+        },
+        "url": "https://www.semanticscholar.org/paper/c761a38a4e4294cc0bf7c039381b11ab72ca5c85",
+        "title": "Linguistic Hooks: Investigating The Role of Language Triggers in Phishing Emails Targeting African Refugees and Students",
+        "venue": "Proceedings on Privacy Enhancing Technologies",
+        "year": 2025,
+        "citationCount": 0,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2509.04700, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "2299338444",
+            "name": "M. Menon"
+          },
+          {
+            "authorId": "1413956873",
+            "name": "Nisha Vinayaga-Sureshkanth"
+          },
+          {
+            "authorId": "2379546762",
+            "name": "Alec Schon"
+          },
+          {
+            "authorId": "2299345685",
+            "name": "Kaitlyn S. Hemberger"
+          },
+          {
+            "authorId": "2235825",
+            "name": "Murtuza Jadliwala"
+          }
+        ],
+        "abstract": "Phishing and sophisticated email-based social engineering attacks disproportionately affect vulnerable populations, such as refugees and immigrant students. However, these groups remain understudied in cybersecurity research. This gap in understanding, coupled with their exclusion from broader security and privacy policies, increases their susceptibility to phishing and widens the digital security divide between marginalized and non-marginalized populations. To address this gap, we first conducted digital literacy workshops with newly resettled African refugee populations (n = 48) in the US to improve their understanding of how to safeguard sensitive and private information. Following the workshops, we conducted a real-world phishing deception study using carefully designed emails with linguistic cues for three participant groups: a subset of the African US-refugees recruited from the digital literacy workshops (n = 19), African immigrant students in the US (n = 142), and a control group of monolingual US-born students (n = 184). Our findings indicate that while digital literacy training for refugees improves awareness of safe cybersecurity practices, recently resettled African US-refugees still face significant challenges due to low digital literacy skills and limited English proficiency. This often leads them to ignore or fail to recognize phishing emails as phishing. Both African immigrant students and US-born students showed greater caution, though instances of data disclosure remained prevalent across groups. Our findings highlight, irrespective of literacy, the need to be trained to think critically about digital security. We conclude by discussing how the security and privacy community can better include marginalized populations in policy making and offer recommendations for designing equitable, inclusive cybersecurity initiatives."
+      },
+      {
+        "paperId": "f9181a3a83eefe8385251a3bf00d5e37acd300ed",
+        "externalIds": {
+          "DBLP": "journals/popets/ElfaresRKB26",
+          "ArXiv": "2507.00596",
+          "DOI": "10.48550/arXiv.2507.00596",
+          "CorpusId": 280150435
+        },
+        "url": "https://www.semanticscholar.org/paper/f9181a3a83eefe8385251a3bf00d5e37acd300ed",
+        "title": "Gaze3P: Gaze-Based Prediction of User-Perceived Privacy",
+        "venue": "Proceedings on Privacy Enhancing Technologies",
+        "year": 2025,
+        "citationCount": 2,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2507.00596, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "2190626471",
+            "name": "Mayar Elfares"
+          },
+          {
+            "authorId": "2162974690",
+            "name": "Pascal Reisert"
+          },
+          {
+            "authorId": "2275855095",
+            "name": "Ralf Küsters"
+          },
+          {
+            "authorId": "2237786979",
+            "name": "Andreas Bulling"
+          }
+        ],
+        "abstract": "Privacy is a highly subjective concept and perceived variably by different individuals. Previous research on quantifying user-perceived privacy has primarily relied on questionnaires. Furthermore, applying user-perceived privacy to optimise the parameters of privacy-preserving techniques (PPT) remains insufficiently explored. To address these limitations, we introduce Gaze3P-- the first dataset specifically designed to facilitate systematic investigations into user-perceived privacy. Our dataset comprises gaze data from 100 participants and 1,000 stimuli, encompassing a range of private and safe attributes. With Gaze3P we train a machine learning model to implicitly and dynamically predict perceived privacy from human eye gaze. Through comprehensive experiments, we show that the resulting models achieve high accuracy. Finally, we illustrate how predicted privacy can be used to optimise the parameters of differentially private mechanisms, thereby enhancing their alignment with user expectations."
+      },
+      {
+        "paperId": "172733cc74a888b1a02692f38d8cbd3316064b20",
+        "externalIds": {
+          "DBLP": "conf/sp/AgahariDJRF25",
+          "DOI": "10.1109/SP61157.2025.00150",
+          "CorpusId": 278788081
+        },
+        "url": "https://www.semanticscholar.org/paper/172733cc74a888b1a02692f38d8cbd3316064b20",
+        "title": "The Importance of Being Earnest: Shedding Light on Johnny's (False) Sense of Privacy",
+        "venue": "IEEE Symposium on Security and Privacy",
+        "year": 2025,
+        "citationCount": 1,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/SP61157.2025.00150?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/SP61157.2025.00150, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "122952499",
+            "name": "Wirawan Agahari"
+          },
+          {
+            "authorId": "2008142550",
+            "name": "Alexandra Dirksen"
+          },
+          {
+            "authorId": "2340452946",
+            "name": "Martin Johns"
+          },
+          {
+            "authorId": "1773594",
+            "name": "M. A. Reuver"
+          },
+          {
+            "authorId": "2367331840",
+            "name": "Tobias Fiebig"
+          }
+        ],
+        "abstract": "As privacy concerns grow, organizations and policy makers promote the use of privacy-enhancing technologies (PETs) to improve user trust and data-sharing behaviors. However, privacy-enhancing technologies (PETs) are often technologically complex and opaque to lay users. It is challenging to understand and effectively communicate the functionality of complex PETs to the users, such as Secure Multi-Party Computation (MPC). Studies typically assess the impact of new PETs by presenting users with a high-level description of the technology before measuring how this treatment changed their attitude or behavior. These results influence business and regulatory decisions (see Gartner's Hype Cycle for Emerging Technology [123]). In the present study, we question this approach. We assess whether naming specific PETs and providing generic descriptions impact users' willingness to put trust in service providers and share their data. Our survey presented three randomized controlled trials with 1,457 participants in a data marketplace scenario. The first group was treated with a PET (MPC), the second group with a fictional PET, and the third with a non-PET, serving as a control group. Our findings reveal that user trust and data-sharing willingness increased with MPC and the fictional PET, indicating that the high-level description, rather than the technology name, shapes user perception. We conclude that claiming the use of a PET is not an effective method to measure the impact of actually using this technology. However, given their mental model, lay users cannot verify the privacy claims of such descriptions presented in studies or by service providers. This increases the risks of users being deceived into a false sense of privacy, leading them to expose more private data than they otherwise would.",
+        "_big4_venue": "IEEE S&P"
+      },
+      {
+        "paperId": "4046b09ce318b5c119cb7427fedc01073f7b8fbe",
+        "externalIds": {
+          "DOI": "10.1109/SP63933.2026.00058",
+          "CorpusId": 289702433
+        },
+        "url": "https://www.semanticscholar.org/paper/4046b09ce318b5c119cb7427fedc01073f7b8fbe",
+        "title": "CBUE: Conclusion Based Utility Evaluation for Differentially Private Categorical Data",
+        "venue": "IEEE Symposium on Security and Privacy",
+        "year": 2026,
+        "citationCount": 0,
+        "openAccessPdf": {
+          "url": "",
+          "status": "CLOSED",
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/SP63933.2026.00058?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/SP63933.2026.00058, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "2327411024",
+            "name": "Furkan Sarıkaya"
+          },
+          {
+            "authorId": "2446313310",
+            "name": "Shaohua Lu"
+          },
+          {
+            "authorId": "40810506",
+            "name": "Johes Bater"
+          },
+          {
+            "authorId": "1719748",
+            "name": "Mark Hempstead"
+          }
+        ],
+        "abstract": "This work provides a method for analyzing the privacy implications of categorical data, with a finite set of elements, for a broad range of human subjects research. The specific target of this work is the field of learning sciences (LS). These researchers need privacy-preserving methods that maintain the accuracy of the conclusions drawn from datasets, conclusions that impact real people through education policies, rules, and funding decisions. Since the concepts of privacy and utility cannot be examined independently of the context, there is a need for an evaluation method that measures the correctness of the conclusions drawn from the dataset. In order to evaluate DP (Differential Privacy) mechanisms, we present Conclusion Based Utility Evaluation (CBUE). In this new evaluation method, it is possible to make a detailed analysis of many scenarios by using a large language model (LLM) to mimic the ability of humans to come to a conclusion. The method includes tokenized conclusions and metrics for evaluating the magnitude of error. We evaluate various DP methods, such as Laplace, Gaussian, and RR (Randomized Response), for reducing privacy risks inherent in databases by building noisy datasets. Experiments are conducted on two different learning sciences datasets to show the flexibility and adaptivity of this method. The results show that CBUE is effective at detecting edge cases, which makes it a more comprehensive utility evaluation method than statistical methods. We observe that CBUE provides a better quantification of the utilityprivacy trade-off by providing a more accurate understanding of the utility for different DP mechanisms.",
+        "_big4_venue": "IEEE S&P"
+      },
+      {
+        "paperId": "783dd67184e4b999bc9b00056b3531c3f749b0a6",
+        "externalIds": {
+          "DBLP": "conf/sp/LeeC25",
+          "DOI": "10.1109/SP61157.2025.00227",
+          "CorpusId": 279417629
+        },
+        "url": "https://www.semanticscholar.org/paper/783dd67184e4b999bc9b00056b3531c3f749b0a6",
+        "title": "Eyes on your Typing: Snooping Finger Motions on Virtual Keyboards",
+        "venue": "IEEE Symposium on Security and Privacy",
+        "year": 2025,
+        "citationCount": 1,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/SP61157.2025.00227?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/SP61157.2025.00227, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "2108192881",
+            "name": "Sunwoo Lee"
+          },
+          {
+            "authorId": "2367523541",
+            "name": "Wonsuk Choi"
+          }
+        ],
+        "abstract": "The rapid growth of augmented reality (AR) and virtual reality (VR) technologies has introduced immersive digital experiences for consumers across numerous fields, including banking, education, and professional spheres. In these environments, head-mounted displays (HMDs) enable users to interact with virtual objects through head and hand tracking. In particular, virtual keyboards are emerging as a primary input method, allowing users to type directly with their hands-eliminating the need for additional devices and adding convenience for portable HMD use. However, this direct hand-based typing introduces new security concerns, namely subtle head movements that occur during direct hand-based typing can unintentionally reveal private information. In this paper, we propose SNOOPFINGER, a novel side-channel attack that leverages head movement data, which is accessible without additional user permissions, to estimate typed inputs on a virtual keyboard. Unlike previous methods, SNOOPFINGER uniquely employs a cross-modality approach, relying solely on head movement data to infer hand-typed inputs without the use of controllers. Additionally, our approach is designed to identify a victim's typed inputs without requiring prior access to extensive head movement data from the victim or other users. In an experiment involving 24 participants, SNOOPFING ER achieved high inference accuracy rates, with an average Top-1 accuracy of 55.2% for word inference and 68.8% for sentence reconstruction. Finally, we discuss potential mitigation strategies to counteract such attacks. Our findings reveal critical privacy risks associated with direct hand-based typing in AR/VR environments, demonstrating how zero-permission sensor data can be exploited to obtain private information.",
+        "_big4_venue": "IEEE S&P"
+      },
+      {
+        "paperId": "9175075f70e0b3ab2abcc8f4a25082fffd9fcde3",
+        "externalIds": {
+          "DBLP": "conf/sp/ZimmermannTSFIH25",
+          "DOI": "10.1109/SP61157.2025.00240",
+          "CorpusId": 279416320
+        },
+        "url": "https://www.semanticscholar.org/paper/9175075f70e0b3ab2abcc8f4a25082fffd9fcde3",
+        "title": "Let's Get Visual - Testing Visual Analogies and Metaphors for Conveying Privacy Policies and Data Handling Information",
+        "venue": "IEEE Symposium on Security and Privacy",
+        "year": 2025,
+        "citationCount": 5,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/SP61157.2025.00240?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/SP61157.2025.00240, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "2270130836",
+            "name": "Verena Zimmermann"
+          },
+          {
+            "authorId": "2308665744",
+            "name": "Adrienn Toth"
+          },
+          {
+            "authorId": "2319664773",
+            "name": "Hannah Sievers"
+          },
+          {
+            "authorId": "2367335731",
+            "name": "Linda Fanconi"
+          },
+          {
+            "authorId": "2367336902",
+            "name": "Yanis Isenring"
+          },
+          {
+            "authorId": "2273476358",
+            "name": "Mona Henz"
+          },
+          {
+            "authorId": "1666561124",
+            "name": "Alina Stöver"
+          },
+          {
+            "authorId": "2319737023",
+            "name": "Nina Gerber"
+          }
+        ],
+        "abstract": "With EU-GDPR and related regulations, the respon-sibility to make privacy-related decisions such as to provide informed consent to data handling practices mainly rests with the user. However, current lengthy privacy policies and often deceptive cookie notices rarely facilitate truly informed consent. Related work on privacy icons or structuring privacy policies aims to enhance users' understanding but achieve mixed results. In a between-subjects study with N=379 participants we thus explored the potential of embedding privacy information in visual metaphors and analogies to support informed decision-making. Additionally, we explored whether dynamic feedback helped users understand the implications of their decisions. While both visual and textual information and feedback appeared to support users' understanding of data handling practices and alignment with personal preferences, with no significant differences between conditions, users per-ceived visualizations as more suitable and aesthetically pleasing than text. This indicates potential for using visual contexts to enhance informed consent not only within existing cookie notices but also in emerging tools such as privacy assistants or related privacy-enhancing technologies. Future work should investigate differences to currently deployed solutions and the effect of perceived pleasantness of design variants on users' understanding and decisions.",
+        "_big4_venue": "IEEE S&P"
+      },
+      {
+        "paperId": "c3902914797265f9880faf10a4a9e69f8c29a48f",
+        "externalIds": {
+          "DOI": "10.1109/SP63933.2026.00232",
+          "CorpusId": 289702594
+        },
+        "url": "https://www.semanticscholar.org/paper/c3902914797265f9880faf10a4a9e69f8c29a48f",
+        "title": "Your Eyes Won't Lie: Snooping Online Voting Privacy from User Webcam",
+        "venue": "IEEE Symposium on Security and Privacy",
+        "year": 2026,
+        "citationCount": 0,
+        "openAccessPdf": {
+          "url": "",
+          "status": "CLOSED",
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/SP63933.2026.00232?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/SP63933.2026.00232, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "2152158619",
+            "name": "Zeyu Deng"
+          },
+          {
+            "authorId": "2376363126",
+            "name": "Jingwei Zhang"
+          },
+          {
+            "authorId": "2401005314",
+            "name": "Chen Wang"
+          }
+        ],
+        "abstract": "Voting within video conferences has gained popularity among organizations for its convenience and efficiency, promoting voting participation by removing physical boundaries. During online voting events, participants typically enable their web cameras to formally engage, prove their identities, and demonstrate that they are voting without coercion. Moreover, many Internet voting platforms start video streaming the voter throughout the process to provide continuous authentication, prevent voter fraud, and ensure no external parties influence voting decisions. However, when participants interact with an online voting platform by reading prompts, making selections, and submitting ballots, their eye movements captured by the webcam may already disclose their secret choices. This paper investigates privacy leakage from eye movements during video streaming, specifically in the context of online voting and online form selections. We find that existing webcam-based methods (also dedicated eye-trackers) cannot discern users' onscreen selections from their eye gazes, even under ideal camera calibration. Since on-screen choices may be separated by only a small distance (e.g., 1 cm), such inference requires sub-centimeter gaze localization, which in turn demands sub-pixel-level angular eye-movement accuracy from the webcam, given the eye-camera distance (e.g., 50 cm). Thus, this work addresses the challenge of inferring on-screen choices by capturing how users look, rather than where they look. We show that eye motion behaviors captured by a webcam can leak on-screen selection secrets, although the screen itself is not visible in the video frame. The key insight is that, as users align the mouse with their chosen checkbox and confirm their selection, subtle eye motions occur in coordination with hand movements. To capture the eye-based voting behaviors, we derive the gaze direction and rotation features to recognize the voting actions, including reading questions, browsing options, electing choices, and confirming. Based on the voting action periods, we use the facial landmarks for calibrating the eye behavioral features and a pre-trained general eye motion model to reduce the noise caused by head orientations, facial movements, and low-quality webcam streams. Further, we develop a transformer model to infer voting choices based on the eye-behavioral features. Experiments show that our method achieves up to 96.6% accuracy in inferring web-based voting forms and up to 94.2% accuracy for video conference polls.",
+        "_big4_venue": "IEEE S&P"
+      },
+      {
+        "paperId": "f9907b9f16f7ea49311418509667f568a4298dd5",
+        "externalIds": {
+          "DBLP": "conf/sp/PetelkaBSVS25",
+          "DOI": "10.1109/SP61157.2025.00007",
+          "CorpusId": 279416372
+        },
+        "url": "https://www.semanticscholar.org/paper/f9907b9f16f7ea49311418509667f568a4298dd5",
+        "title": "Restricting the Link: Effects of Focused Attention and Time Delay on Phishing Warning Effectiveness",
+        "venue": "IEEE Symposium on Security and Privacy",
+        "year": 2025,
+        "citationCount": 7,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/SP61157.2025.00007?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/SP61157.2025.00007, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "115760463",
+            "name": "Justin Petelka"
+          },
+          {
+            "authorId": "2138751573",
+            "name": "B. Berens"
+          },
+          {
+            "authorId": "72390443",
+            "name": "Carlo Sugatan"
+          },
+          {
+            "authorId": "2316750613",
+            "name": "Melanie Volkamer"
+          },
+          {
+            "authorId": "2261515099",
+            "name": "Florian Schaub"
+          }
+        ],
+        "abstract": "Phishing warning researchers have proposed two forms of hyperlink restrictions for reducing phishing click-through rates: focused attention, which prevents users from proceeding to a suspicious URL until they click the uncovered link inside the warning; and time delay, which disables link clicking for a short period of time. Both measures aim to draw user attention to the warning and nudge them to carefully evaluate the respective link's URL. However, the effectiveness of these measures has so far not been comparatively evaluated. We conducted a mixed-methods online experiment (n=1,320) to understand differences in the effectiveness of focused attention and time delay both independently and together. Our study used an instrumented email inbox environment, in which participants were asked to assess emails and email hyper-links. We found that, while both focused attention and time delay reduced click-through rates independently, the strength of these effects were significantly different from each other with focused attention being more effective than time delay. Combining both measures reduced CTR even further. We also found that participants who saw a warning with a time delay were more likely to hover over hyperlinks for longer than those who saw a focused attention warning. We discuss the implications of our findings for the design of anti-phishing warnings.",
+        "_big4_venue": "IEEE S&P"
+      },
+      {
+        "paperId": "65be77a1e4283692cf53f4aa4c63a55fb509346f",
+        "externalIds": {
+          "DBLP": "conf/ccs/Pan0ZCZ25",
+          "DOI": "10.1145/3719027.3744850",
+          "CorpusId": 283265846
+        },
+        "url": "https://www.semanticscholar.org/paper/65be77a1e4283692cf53f4aa4c63a55fb509346f",
+        "title": "PipID: Light-Pupillary Response Based User Authentication for Virtual Reality",
+        "venue": "Conference on Computer and Communications Security",
+        "year": 2025,
+        "citationCount": 0,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3719027.3744850?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3719027.3744850, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "2394987508",
+            "name": "Muchen Pan"
+          },
+          {
+            "authorId": "2104408194",
+            "name": "Yan Meng"
+          },
+          {
+            "authorId": "2236480680",
+            "name": "Yuxia Zhan"
+          },
+          {
+            "authorId": "2155229551",
+            "name": "Guoxing Chen"
+          },
+          {
+            "authorId": "2238128921",
+            "name": "Haojin Zhu"
+          }
+        ],
+        "abstract": "During the use of Virtual Reality (VR) applications such as gaming, education, and military training, sensitive information may be generated or collected by VR sensors, raising user concerns about potential data leakage. This highlights the critical need for effective user authentication to prevent unauthorized access. Existing authentication methods for VR are often either cumbersome (e.g., entering passwords via handheld controllers), reliant on specialized hardware (e.g., iris recognition), or vulnerable to credential replay attacks. In this study, we propose PipID, a lightweight VR authentication approach that leverages commercial off-the-shelf (COTS) eye trackers integrated into VR headsets. PipID is based on the fact that users' pupillary responses to visual stimuli vary uniquely. Thus, by displaying lights of randomly selected colors (i.e., wavelengths) on the VR screen, PipID can utilize pupil diameter responses to these wavelengths as the basis for authentication. For pupil data collected by precision-limited COTS eye trackers, PipID mitigates the impact of unrelated eye movements (e.g., blinks) and leverages pupillary response differences between the left and right eyes to further enhance the granularity of authentication features. Additionally, the randomized sequence of light colors helps prevent replay attacks. We implemented PipID on a COTS VR headset and tested it with 52 participants. Experimental results show that PipID achieves an accuracy of 98.65% and maintains robust performance under various conditions (e.g., keeping 98% and 91% accuracy after 7 and 14 days respectively).",
+        "_big4_venue": "ACM CCS"
+      },
+      {
+        "paperId": "0b4bada8af1e9eeeaa7243ab143a8e10ad40ffc3",
+        "externalIds": {
+          "DBLP": "conf/sp/MohammadiKT0MJ25",
+          "DOI": "10.1109/SP61157.2025.00113",
+          "CorpusId": 279416446
+        },
+        "url": "https://www.semanticscholar.org/paper/0b4bada8af1e9eeeaa7243ab143a8e10ad40ffc3",
+        "title": "Connecting the Extra Dots (Contexts): Correlating External Information about Point of Interest for Attack Investigation",
+        "venue": "IEEE Symposium on Security and Privacy",
+        "year": 2025,
+        "citationCount": 2,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/SP61157.2025.00113?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/SP61157.2025.00113, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "27569104",
+            "name": "S. Mohammadi"
+          },
+          {
+            "authorId": "2162541179",
+            "name": "Hugo Kermabon-Bobinnec"
+          },
+          {
+            "authorId": "51194365",
+            "name": "Azadeh Tabiban"
+          },
+          {
+            "authorId": "2249157385",
+            "name": "Lingyu Wang"
+          },
+          {
+            "authorId": "2367338144",
+            "name": "Tomás Navarro Múnera"
+          },
+          {
+            "authorId": "1825183",
+            "name": "Yosr Jarraya"
+          }
+        ],
+        "abstract": "Provenance analysis is one of the go-to solutions today for human analysts to investigate security incidents. To assist analysts in managing the sheer size of provenance graphs, many pruning solutions have been proposed. Such solutions rely on graph-theory features, anomaly detection, and other techniques to identify nodes and edges that are irrelevant to the detected incident. Despite differences in their methodologies, those solutions typically share a common approach when it comes to the detected incident, i.e., they merely regard the incident as an abstract starting point, without tapping into it further. However, we observe that this may lead to missed opportunities for pruning, since the incident is typically associated with external information, e.g., knowledge about the exploit or the vulnerability, which may provide extra contextual insights for effective pruning. Based on such an observation, we propose Contexts, a solution that complements existing pruning approaches by leveraging external information about the incident. Specifically, the solution extracts contextual information from external sources, maps such information to provenance graph nodes, and then correlates those nodes to form a subgraph relevant to the incident. Our implementation and experiments based on real-world attacks demonstrate its effectiveness, e.g., working as the pre-processor of an existing pruning approach, it helps to reduce the false positives from more than 150k to less than ten, and as a standalone pruning solution, Contextsachieves 100% TPR for 19 out of 20 attacks, with an FPR below 0.6% for 16 out of 20 attacks. Finally, its real-world practicality is illustrated through a user study where 94.4% of participants agreed with its usefulness in attack investigation.",
+        "_big4_venue": "IEEE S&P"
+      },
+      {
+        "paperId": "57119b10926baac978f00bd43be49da1de61a0e5",
+        "externalIds": {
+          "DOI": "10.1109/SP63933.2026.00087",
+          "CorpusId": 289704026
+        },
+        "url": "https://www.semanticscholar.org/paper/57119b10926baac978f00bd43be49da1de61a0e5",
+        "title": "2FiA: Towards WiFi Sensing-Based Authentication with Unique Biometrics",
+        "venue": "IEEE Symposium on Security and Privacy",
+        "year": 2026,
+        "citationCount": 0,
+        "openAccessPdf": {
+          "url": "",
+          "status": "CLOSED",
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/SP63933.2026.00087?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/SP63933.2026.00087, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "authors": [
+          {
+            "authorId": "2338661379",
+            "name": "Li Bofan"
+          },
+          {
+            "authorId": "2402503067",
+            "name": "Zhankai Ye"
+          },
+          {
+            "authorId": "2278629597",
+            "name": "Wei Yu"
+          },
+          {
+            "authorId": "2306251172",
+            "name": "Yongning Tang"
+          },
+          {
+            "authorId": "2445987082",
+            "name": "Liu Xiu"
+          }
+        ],
+        "abstract": "The emerging IEEE 802.11bf standard positions WiFi sensing as a key enabler of human biometric sensing for authentication. However, existing WiFi sensing-based authentication systems primarily depend on voluntary or semivoluntary biometric traits, such as body motions or respiration. While effective, these traits lack strong uniqueness and are susceptible to imitation, making WiFi sensing systems vulnerable to behavioral mimicry attacks. In this paper, we introduce 2FiA, the first dual-biometrics WiFi sensing-based authentication system integrating semi-voluntary respiration and involuntary heartbeat. Respiration serves as the primary factor, offering efficient and continuous identity verification, while heartbeat reinforces system robustness through its highly unique and hard-to-imitate nature. For the first time, we propose a novel WiFi sensing pipeline to extract weak heartbeat signals by statistically localizing the thoracic region, effectively suppressing non-thoracic interference, and separating co-located respiration to refine the heartbeat signals. Furthermore, we leverage Respiratory Sinus Arrhythmia (RSA) as a physiological constraint to validate and enhance the extracted heartbeat signals by exploiting the intrinsic coupling between respiration and heartbeat. We then build the authentication model by integrating features from both respiration and heartbeat signals in a unified framework. Through extensive experiments involving 36 participants across diverse environments, we demonstrate that $\\mathbf{2} \\mathbf{F i A}$ delivers reliable authentication performance, particularly in multi-user and impersonation attack scenarios.",
+        "_big4_venue": "IEEE S&P"
+      }
+    ]
   },
   "blocks": [
     {
       "key": "security_sub",
       "label": "子领域 · usable security（SOUPS + PETS + 四大会 usable/user study）",
       "sample": {
-        "total": 1112,
-        "baseline": 571,
-        "recent": 541,
+        "total": 1154,
+        "baseline": 573,
+        "recent": 581,
         "baseline_years": "2020-2023",
         "recent_years": "2024-2026"
       },
       "emerging": [
         {
           "term": "agents",
-          "recent": 7,
+          "recent": 8,
           "baseline": 0,
-          "growth": 7.4
+          "growth": 7.9
         },
         {
-          "term": "usable privacy",
-          "recent": 7,
-          "baseline": 0,
-          "growth": 7.4
-        },
-        {
-          "term": "chinese",
+          "term": "llm-based",
           "recent": 6,
           "baseline": 0,
-          "growth": 6.3
+          "growth": 5.9
         },
         {
           "term": "local differential",
           "recent": 6,
           "baseline": 0,
-          "growth": 6.3
+          "growth": 5.9
         },
         {
-          "term": "llm-based",
+          "term": "proofs",
+          "recent": 6,
+          "baseline": 0,
+          "growth": 5.9
+        },
+        {
+          "term": "conversational",
           "recent": 5,
           "baseline": 0,
-          "growth": 5.3
+          "growth": 4.9
         },
         {
-          "term": "local",
-          "recent": 10,
-          "baseline": 1,
-          "growth": 5.3
+          "term": "uncovering",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 4.9
+        },
+        {
+          "term": "scams",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 4.9
+        },
+        {
+          "term": "chinese",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 4.9
+        },
+        {
+          "term": "permission",
+          "recent": 5,
+          "baseline": 0,
+          "growth": 4.9
         },
         {
           "term": "llms",
           "recent": 5,
           "baseline": 0,
-          "growth": 5.3
+          "growth": 4.9
         },
         {
-          "term": "verifiable",
-          "recent": 5,
-          "baseline": 0,
-          "growth": 5.3
-        },
-        {
-          "term": "research",
+          "term": "phishing",
           "recent": 8,
           "baseline": 1,
-          "growth": 4.2
+          "growth": 3.9
         },
         {
           "term": "decentralized",
           "recent": 7,
           "baseline": 1,
-          "growth": 3.7
+          "growth": 3.5
         },
         {
-          "term": "phishing",
+          "term": "usable privacy",
           "recent": 6,
           "baseline": 1,
-          "growth": 3.2
+          "growth": 3.0
         },
         {
-          "term": "framework",
-          "recent": 18,
-          "baseline": 5,
-          "growth": 3.2
+          "term": "training",
+          "recent": 9,
+          "baseline": 2,
+          "growth": 3.0
         },
         {
           "term": "graph neural",
           "recent": 6,
           "baseline": 1,
-          "growth": 3.2
-        },
-        {
-          "term": "matching",
-          "recent": 6,
-          "baseline": 1,
-          "growth": 3.2
-        },
-        {
-          "term": "oblivious",
-          "recent": 6,
-          "baseline": 1,
-          "growth": 3.2
+          "growth": 3.0
         }
       ],
       "hottest": [
         {
           "term": "privacy",
-          "recent": 181
+          "recent": 187
         },
         {
           "term": "security",
-          "recent": 78
+          "recent": 73
         },
         {
           "term": "data",
-          "recent": 57
+          "recent": 61
         },
         {
           "term": "private",
-          "recent": 31
+          "recent": 34
         },
         {
           "term": "privacy-preserving",
-          "recent": 29
-        },
-        {
-          "term": "secure",
-          "recent": 23
+          "recent": 30
         },
         {
           "term": "learning",
-          "recent": 23
+          "recent": 27
         },
         {
-          "term": "security privacy",
-          "recent": 22
+          "term": "secure",
+          "recent": 25
         },
         {
           "term": "attacks",
+          "recent": 22
+        },
+        {
+          "term": "security privacy",
+          "recent": 21
+        },
+        {
+          "term": "models",
+          "recent": 21
+        },
+        {
+          "term": "framework",
           "recent": 20
         },
         {
@@ -162,7 +748,7 @@
           "recent": 18
         },
         {
-          "term": "framework",
+          "term": "inference",
           "recent": 18
         },
         {
@@ -170,26 +756,34 @@
           "recent": 17
         },
         {
-          "term": "you",
-          "recent": 16
-        },
-        {
-          "term": "web",
-          "recent": 15
-        },
-        {
-          "term": "models",
-          "recent": 15
+          "term": "federated",
+          "recent": 17
         }
       ],
       "papers": [
+        {
+          "paperId": "ce3f027b68dad014a58aa35f52380932c8d0b209",
+          "title": "Do Users Write More Insecure Code with AI Assistants?",
+          "year": 2022,
+          "venue": "Conference on Computer and Communications Security",
+          "citations": 405,
+          "citations_per_year": 81.0,
+          "abstract": "AI code assistants have emerged as powerful tools that can aid in the software development life-cycle and can improve developer productivity. Unfortunately, such assistants have also been found to produce insecure code in lab environments, raising significant concerns about their usage in practice. In this paper, we conduct a user study to examine how users interact with AI code assistants to solve a variety of security related tasks. Overall, we find that participants who had access to an AI assistant wrote significantly less secure code than those without access to an assistant. Participants with access to an AI assistant were also more likely to believe they wrote secure code, suggesting that such tools may lead users to be overconfident about security flaws in their code. To better inform the design of future AI-based code assistants, we release our user-study apparatus to researchers seeking to build on our work.",
+          "url": "https://www.semanticscholar.org/paper/ce3f027b68dad014a58aa35f52380932c8d0b209",
+          "externalIds": {
+            "DBLP": "conf/ccs/PerryS0B23",
+            "ArXiv": "2211.03622",
+            "DOI": "10.1145/3576915.3623157",
+            "CorpusId": 253384456
+          }
+        },
         {
           "paperId": "897c0aedead3105b7b6cd1afbb6aeb4f62a06e11",
           "title": "GLAZE: Protecting Artists from Style Mimicry by Text-to-Image Models",
           "year": 2023,
           "venue": "USENIX Security Symposium",
-          "citations": 296,
-          "citations_per_year": 74.0,
+          "citations": 298,
+          "citations_per_year": 74.5,
           "abstract": "Recent text-to-image diffusion models such as MidJourney and Stable Diffusion threaten to displace many in the professional artist community. In particular, models can learn to mimic the artistic style of specific artists after\"fine-tuning\"on samples of their art. In this paper, we describe the design, implementation and evaluation of Glaze, a tool that enables artists to apply\"style cloaks\"to their art before sharing online. These cloaks apply barely perceptible perturbations to images, and when used as training data, mislead generative models that try to mimic a specific artist. In coordination with the professional artist community, we deploy user studies to more than 1000 artists, assessing their views of AI art, as well as the efficacy of our tool, its usability and tolerability of perturbations, and robustness across different scenarios and against adaptive countermeasures. Both surveyed artists and empirical CLIP-based scores show that even at low perturbation levels (p=0.05), Glaze is highly successful at disrupting mimicry under normal conditions (>92%) and against adaptive countermeasures (>85%).",
           "url": "https://www.semanticscholar.org/paper/897c0aedead3105b7b6cd1afbb6aeb4f62a06e11",
           "externalIds": {
@@ -204,8 +798,8 @@
           "title": "SoK: Taxonomy of Attacks on Open-Source Software Supply Chains",
           "year": 2022,
           "venue": "IEEE Symposium on Security and Privacy",
-          "citations": 298,
-          "citations_per_year": 59.6,
+          "citations": 300,
+          "citations_per_year": 60.0,
           "abstract": "The widespread dependency on open-source software makes it a fruitful target for malicious actors, as demonstrated by recurring attacks. The complexity of today’s open-source supply chains results in a significant attack surface, giving attackers numerous opportunities to reach the goal of injecting malicious code into open-source artifacts that is then downloaded and executed by victims.This work proposes a general taxonomy for attacks on open-source supply chains, independent of specific programming languages or ecosystems, and covering all supply chain stages from code contributions to package distribution. Taking the form of an attack tree, it covers 107 unique vectors, linked to 94 real-world incidents, and mapped to 33 mitigating safeguards.User surveys conducted with 17 domain experts and 134 software developers positively validated the correctness, comprehensiveness and comprehensibility of the taxonomy, as well as its suitability for various use-cases. Survey participants also assessed the utility and costs of the identified safeguards, and whether they are used.",
           "url": "https://www.semanticscholar.org/paper/99041957b4d3b3c3f30a79e31c6e54756faa7ca0",
           "externalIds": {
@@ -220,8 +814,8 @@
           "title": "99% False Positives: A Qualitative Study of SOC Analysts' Perspectives on Security Alarms",
           "year": 2022,
           "venue": "USENIX Security Symposium",
-          "citations": 222,
-          "citations_per_year": 44.4,
+          "citations": 225,
+          "citations_per_year": 45.0,
           "abstract": null,
           "url": "https://www.semanticscholar.org/paper/184783fb11908a6884afeef1d155314e3379dc98",
           "externalIds": {
@@ -230,12 +824,43 @@
           }
         },
         {
+          "paperId": "dfc73a8a906e2e72a52eec35912bf7e87b1693da",
+          "title": "Don't Listen To Me: Understanding and Exploring Jailbreak Prompts of Large Language Models",
+          "year": 2024,
+          "venue": "USENIX Security Symposium",
+          "citations": 123,
+          "citations_per_year": 41.0,
+          "abstract": "Recent advancements in generative AI have enabled ubiquitous access to large language models (LLMs). Empowered by their exceptional capabilities to understand and generate human-like text, these models are being increasingly integrated into our society. At the same time, there are also concerns on the potential misuse of this powerful technology, prompting defensive measures from service providers. To overcome such protection, jailbreaking prompts have recently emerged as one of the most effective mechanisms to circumvent security restrictions and elicit harmful content originally designed to be prohibited. Due to the rapid development of LLMs and their ease of access via natural languages, the frontline of jailbreak prompts is largely seen in online forums and among hobbyists. To gain a better understanding of the threat landscape of semantically meaningful jailbreak prompts, we systemized existing prompts and measured their jailbreak effectiveness empirically. Further, we conducted a user study involving 92 participants with diverse backgrounds to unveil the process of manually creating jailbreak prompts. We observed that users often succeeded in jailbreak prompts generation regardless of their expertise in LLMs. Building on the insights from the user study, we also developed a system using AI as the assistant to automate the process of jailbreak prompt generation.",
+          "url": "https://www.semanticscholar.org/paper/dfc73a8a906e2e72a52eec35912bf7e87b1693da",
+          "externalIds": {
+            "DBLP": "conf/uss/YuLLCXZ24",
+            "ArXiv": "2403.17336",
+            "DOI": "10.48550/arXiv.2403.17336",
+            "CorpusId": 268692197
+          }
+        },
+        {
+          "paperId": "a889a606734cd47f802765866487c677497a70d6",
+          "title": "Lost at C: A User Study on the Security Implications of Large Language Model Code Assistants",
+          "year": 2022,
+          "venue": "USENIX Security Symposium",
+          "citations": 187,
+          "citations_per_year": 37.4,
+          "abstract": "Large Language Models (LLMs) such as OpenAI Codex are increasingly being used as AI-based coding assistants. Understanding the impact of these tools on developers' code is paramount, especially as recent work showed that LLMs may suggest cybersecurity vulnerabilities. We conduct a security-driven user study (N=58) to assess code written by student programmers when assisted by LLMs. Given the potential severity of low-level bugs as well as their relative frequency in real-world projects, we tasked participants with implementing a singly-linked 'shopping list' structure in C. Our results indicate that the security impact in this setting (low-level C with pointer and array manipulations) is small: AI-assisted users produce critical security bugs at a rate no greater than 10% more than the control, indicating the use of LLMs does not introduce new security risks.",
+          "url": "https://www.semanticscholar.org/paper/a889a606734cd47f802765866487c677497a70d6",
+          "externalIds": {
+            "ArXiv": "2208.09727",
+            "DBLP": "conf/uss/SandovalPNKGD23",
+            "CorpusId": 257219623
+          }
+        },
+        {
           "paperId": "32bb8b85124e554dd995e1c3a102eb921a710a99",
           "title": "DeGPT: Optimizing Decompiler Output with LLM",
           "year": 2024,
           "venue": "Network and Distributed System Security Symposium",
-          "citations": 108,
-          "citations_per_year": 36.0,
+          "citations": 110,
+          "citations_per_year": 36.7,
           "abstract": "—Reverse engineering is essential in malware analysis, vulnerability discovery, etc. Decompilers assist the reverse engineers by lifting the assembly to the high-level programming language, which highly boosts binary comprehension. However, decompilers suffer from problems such as meaningless variable names, redundant variables, and lacking comments describing the purpose of the code. Previous studies have shown promising performance in refining the decompiler output by training the models with huge datasets containing various decompiler outputs. However, even datasets that take much time to construct cover limited binaries in the real world. The performance degrades severely facing the binary migration. In this paper, we present DeGPT, an end-to-end framework aiming to optimize the decompiler output to improve its readability and simplicity and further assist the reverse engineers in understanding the binaries better. The Large Language Model (LLM) can mitigate performance degradation with its extraordinary ability endowed by large model size and training set containing rich multi-modal data. However, its potential is difficult to unlock through one-shot use. Thus, we propose the three-role mechanism, which includes referee (R_ref), advisor (R_adv), and operator (R_ope), to adapt the LLM to our optimization tasks. Specifically, R_ref provides the optimization scheme for the target decompiler output, while R_adv gives the rectification measures based on the scheme, and R_ope inspects whether the optimization changes the original function semantics and concludes the final verdict about whether to accept the optimizations. We evaluate DeGPT on the datasets containing decompiler outputs of various software, such as the practical command line tools, malware, a library for audio processing, and implementations of algorithms. The experimental results show that even on the output of the current top-level decompiler (Ghidra), DeGPT can achieve 24.4% reduction in the cognitive burden of understanding the decompiler outputs and provide comments of which 62.9% can provide practical semantics for the reverse engineers to help the understanding of binaries. Our user surveys also show that the optimizations can significantly simplify the code and add helpful semantic information (variable names and comments), facilitating a quick and accurate understanding of the binary.",
           "url": "https://www.semanticscholar.org/paper/32bb8b85124e554dd995e1c3a102eb921a710a99",
           "externalIds": {
@@ -249,8 +874,8 @@
           "title": "SoK: Secure Aggregation Based on Cryptographic Schemes for Federated Learning",
           "year": 2023,
           "venue": "Proceedings on Privacy Enhancing Technologies",
-          "citations": 128,
-          "citations_per_year": 32.0,
+          "citations": 130,
+          "citations_per_year": 32.5,
           "abstract": "Secure aggregation consists of computing the sum of data collected from multiple sources without disclosing these individual inputs. Secure aggregation has been found useful for various applications ranging from electronic voting to smart grid measurements. Recently, federated learning emerged as a new collaborative machine learning technology to train machine learning models. In this work, we study the suitability of secure aggregation based on cryptographic schemes to federated learning. We first provide a formal definition of the problem and suggest a systematic categorization of existing solutions. We further investigate the specific challenges raised by federated learning and analyze the recent dedicated secure aggregation solutions based on cryptographic schemes. We finally share some takeaway messages that would help a secure design of federated learning and identify open research directions in this topic. Based on the takeaway messages, we propose an improved definition of secure aggregation that better fits federated learning.",
           "url": "https://www.semanticscholar.org/paper/b7882b7243cfe4b64006f42865e70ebfbf09d6ce",
           "externalIds": {
@@ -264,8 +889,8 @@
           "title": "SoK: History is a Vast Early Warning System: Auditing the Provenance of System Intrusions",
           "year": 2023,
           "venue": "IEEE Symposium on Security and Privacy",
-          "citations": 120,
-          "citations_per_year": 30.0,
+          "citations": 121,
+          "citations_per_year": 30.2,
           "abstract": "Auditing, a central pillar of operating system security, has only recently come into its own as an active area of public research. This resurgent interest is due in large part to the notion of data provenance, a technique that iteratively parses audit log entries into a dependency graph that explains the history of system execution. Provenance facilitates precise threat detection and investigation through causal analysis of sophisticated intrusion behaviors. However, the absence of a foundational audit literature, combined with the rapid publication of recent findings, makes it difficult to gain a holistic picture of advancements and open challenges in the area.In this work, we survey and categorize the provenance-based system auditing literature, distilling contributions into a layered taxonomy based on the audit log capture and analysis pipeline. Recognizing that the Reduction Layer remains a key obstacle to the further proliferation of causal analysis technologies, we delve further on this issue by conducting an ambitious independent evaluation of 8 exemplar reduction techniques against the recently-released DARPA Transparent Computing datasets. Our experiments uncover that past approaches frequently prune an overlapping set of activities from audit logs, reducing the synergistic benefits from applying them in tandem; further, we observe an inverse relation between storage efficiency and anomaly detection performance. However, we also observe that log reduction techniques are able to synergize effectively with data compression, potentially reducing log retention costs by multiple orders of magnitude. We conclude by discussing promising future directions for the field.",
           "url": "https://www.semanticscholar.org/paper/7598956efd3cdda714509f02aa1907984525c481",
           "externalIds": {
@@ -275,12 +900,59 @@
           }
         },
         {
+          "paperId": "b361a12c714b2d5cf8a6239ed37d01a332878952",
+          "title": "Universal Atomic Swaps: Secure Exchange of Coins Across All Blockchains",
+          "year": 2022,
+          "venue": "IEEE Symposium on Security and Privacy",
+          "citations": 129,
+          "citations_per_year": 25.8,
+          "abstract": "Trading goods lies at the backbone of the modern economy and the recent advent of cryptocurrencies has opened the door for trading decentralized (digital) assets: A large fraction of the value of cryptocurrencies comes from the inter-currency exchange and trading, which has been arguably the most successful application of decentralized money. The security issues observed with centralized, custodial cryptocurrency exchanges have motivated the design of atomic swaps, a protocol for coin exchanges between any two users. Yet, somewhat surprisingly, no atomic swap protocol exists that simultaneously satisfies the following simple but desired properties: (i) non-custodial, departing from a third party trusted holding the coins from users during the exchange; (ii) universal that is, compatible with all (current and future) cryptocurrencies; (iii) multi-asset, supporting the exchange of multiple coins in a single atomic swap.From a theoretical standpoint, in this work we show a generic protocol to securely swap n coins from any (possible multiple) currencies for $\\tilde{n}$ coins of any other currencies, for any n and $\\tilde{n}$. We do not require any custom scripting language supported by the corresponding blockchains, besides the bare minimum ability to verify signatures on transactions. For the special case when the blockchains use ECDSA or Schnorr signatures, we design a practically efficient protocol based on adaptor signatures and time-lock puzzles. As a byproduct of our approach, atomic swaps transactions no longer include custom scripts and are identical to standard one-to-one transactions. We also show that our protocol naturally generalizes to any cycle of users, i.e., atomic swaps with more than two participants. To demonstrate the practicality of our approach, we have evaluated a prototypical implementation of our protocol for Schnorr/ECDSA signatures and observed that an atomic swap requires below one second on commodity machines. Even on blockchains with expressive smart contract support (e.g., Ethereum), our approach reduces the on-chain cost both in terms of transaction size and gas cost.",
+          "url": "https://www.semanticscholar.org/paper/b361a12c714b2d5cf8a6239ed37d01a332878952",
+          "externalIds": {
+            "DBLP": "conf/sp/ThyagarajanMM22",
+            "DOI": "10.1109/sp46214.2022.9833731",
+            "CorpusId": 245908636
+          }
+        },
+        {
+          "paperId": "e72a1b8e5e297e71c5e559502381ea2a35e05a31",
+          "title": "An LLM-Assisted Easy-to-Trigger Backdoor Attack on Code Completion Models: Injecting Disguised Vulnerabilities against Strong Detection",
+          "year": 2024,
+          "venue": "USENIX Security Symposium",
+          "citations": 74,
+          "citations_per_year": 24.7,
+          "abstract": "Large Language Models (LLMs) have transformed code completion tasks, providing context-based suggestions to boost developer productivity in software engineering. As users often fine-tune these models for specific applications, poisoning and backdoor attacks can covertly alter the model outputs. To address this critical security challenge, we introduce CodeBreaker, a pioneering LLM-assisted backdoor attack framework on code completion models. Unlike recent attacks that embed malicious payloads in detectable or irrelevant sections of the code (e.g., comments), CodeBreaker leverages LLMs (e.g., GPT-4) for sophisticated payload transformation (without affecting functionalities), ensuring that both the poisoned data for fine-tuning and generated code can evade strong vulnerability detection. CodeBreaker stands out with its comprehensive coverage of vulnerabilities, making it the first to provide such an extensive set for evaluation. Our extensive experimental evaluations and user studies underline the strong attack performance of CodeBreaker across various settings, validating its superiority over existing approaches. By integrating malicious payloads directly into the source code with minimal transformation, CodeBreaker challenges current security measures, underscoring the critical need for more robust defenses for code completion.",
+          "url": "https://www.semanticscholar.org/paper/e72a1b8e5e297e71c5e559502381ea2a35e05a31",
+          "externalIds": {
+            "DBLP": "conf/uss/YanWDHLKH24",
+            "ArXiv": "2406.06822",
+            "DOI": "10.48550/arXiv.2406.06822",
+            "CorpusId": 270379824
+          }
+        },
+        {
+          "paperId": "970111f19cbb20af52a8a1772e8d4b36570b5679",
+          "title": "SafeGen: Mitigating Sexually Explicit Content Generation in Text-to-Image Models",
+          "year": 2024,
+          "venue": "Conference on Computer and Communications Security",
+          "citations": 73,
+          "citations_per_year": 24.3,
+          "abstract": "Text-to-image (T2I) models, such as Stable Diffusion, have exhibited remarkable performance in generating high-quality images from text descriptions in recent years. However, text-to-image models may be tricked into generating not-safe-for-work (NSFW) content, particularly in sexually explicit scenarios. Existing countermeasures mostly focus on filtering inappropriate inputs and outputs, or suppressing improper text embeddings, which can block sexually explicit content (e.g., naked) but may still be vulnerable to adversarial prompts-inputs that appear innocent but are ill-intended. In this paper, we present SafeGen, a framework to mitigate sexual content generation by text-to-image models in a text-agnostic manner. The key idea is to eliminate explicit visual representations from the model regardless of the text input. In this way, the text-to-image model is resistant to adversarial prompts since such unsafe visual representations are obstructed from within. Extensive experiments conducted on four datasets and large-scale user studies demonstrate SafeGen's effectiveness in mitigating sexually explicit content generation while preserving the high-fidelity of benign images. SafeGen outperforms eight state-of-the-art baseline methods and achieves 99.4% sexual content removal performance.",
+          "url": "https://www.semanticscholar.org/paper/970111f19cbb20af52a8a1772e8d4b36570b5679",
+          "externalIds": {
+            "ArXiv": "2404.06666",
+            "DBLP": "conf/ccs/LiYD0C0024",
+            "DOI": "10.1145/3658644.3670295",
+            "CorpusId": 269033441
+          }
+        },
+        {
           "paperId": "a78b0eb79ddc4b17ac16b4b599e7ee8aca12036d",
           "title": "Using AI Assistants in Software Development: A Qualitative Study on Security Practices and Concerns",
           "year": 2024,
           "venue": "Conference on Computer and Communications Security",
-          "citations": 70,
-          "citations_per_year": 23.3,
+          "citations": 71,
+          "citations_per_year": 23.7,
           "abstract": "Following the recent release of AI assistants, such as OpenAI's ChatGPT and GitHub Copilot, the software industry quickly utilized these tools for software development tasks, e.g., generating code or consulting AI for advice. While recent research has demonstrated that AI-generated code can contain security issues, how software professionals balance AI assistant usage and security remains unclear. This paper investigates how software professionals use AI assistants in secure software development, what security implications and considerations arise, and what impact they foresee on security in software development. We conducted 27 semi-structured interviews with software professionals, including software engineers, team leads, and security testers. We also reviewed 190 relevant Reddit posts and comments to gain insights into the current discourse surrounding AI assistants for software development. Our analysis of the interviews and Reddit posts finds that, despite many security and quality concerns, participants widely use AI assistants for security-critical tasks, e.g., code generation, threat modeling, and vulnerability detection. Participants' overall mistrust leads to checking AI suggestions in similar ways to human code. However, they expect improvements and, therefore, a heavier use of AI for security tasks in the future. We conclude with recommendations for software professionals to critically check AI suggestions, for AI creators to improve suggestion security and capabilities for ethical security tasks, and for academic researchers to consider general-purpose AI in software development.",
           "url": "https://www.semanticscholar.org/paper/a78b0eb79ddc4b17ac16b4b599e7ee8aca12036d",
           "externalIds": {
@@ -295,8 +967,8 @@
           "title": "A Unified Framework for Quantifying Privacy Risk in Synthetic Data",
           "year": 2022,
           "venue": "Proceedings on Privacy Enhancing Technologies",
-          "citations": 113,
-          "citations_per_year": 22.6,
+          "citations": 115,
+          "citations_per_year": 23.0,
           "abstract": "Synthetic data is often presented as a method for sharing sensitive information in a privacy-preserving manner by reproducing the global statistical properties of the original data without dis closing sensitive information about any individual. In practice, as with other anonymization methods, synthetic data cannot entirely eliminate privacy risks. These residual privacy risks need instead to be ex-post uncovered and assessed. However, quantifying the actual privacy risks of any synthetic dataset is a hard task, given the multitude of facets of data privacy. We present Anonymeter, a statistical framework to jointly quantify different types of privacy risks in synthetic tabular datasets. We equip this framework with attack-based evaluations for the singling out, linkability, and inference risks, which are the three key indicators of factual anonymization according to data protection regulations, such as the European General Data Protection Regulation (GDPR). To the best of our knowledge, we are the first to introduce a coherent and legally aligned evaluation of these three privacy risks for synthetic data, as well as to design privacy attacks which model directly the singling out and linkability risks. We demonstrate the effectiveness of our methods by conducting an extensive set of experiments that measure the privacy risks of data with deliberately inserted privacy leakages, and of synthetic data generated with and without differential privacy. Our results highlight that the three privacy risks reported by our framework scale linearly with the amount of privacy leakage in the data. Furthermore, we observe that synthetic data exhibits the lowest vulnerability against linkability, indicating one-to-one relationships between real and synthetic data records are not preserved. Finally, with a quantitative comparison we demonstrate that Anonymeter outperforms existing synthetic data privacy evaluation frameworks both in terms of detecting privacy leaks, as well as computation speed. To contribute to a privacy-conscious usage of synthetic data, we publish Anonymeter as an open-source library (https://github.com/statice/anonymeter).",
           "url": "https://www.semanticscholar.org/paper/993af11f804450e5c6f8aaab4373c9dca362f32e",
           "externalIds": {
@@ -307,110 +979,19 @@
           }
         },
         {
-          "paperId": "260f51e3e503674d077f07463fc69cbd0887988b",
-          "title": "SoK: SGX.Fail: How Stuff Gets eXposed",
+          "paperId": "b510bd9ed8c36d8a8dd9991e6ae8de7812eb3a33",
+          "title": "SafeEar: Content Privacy-Preserving Audio Deepfake Detection",
           "year": 2024,
-          "venue": "IEEE Symposium on Security and Privacy",
-          "citations": 57,
-          "citations_per_year": 19.0,
-          "abstract": "Intel’s Software Guard Extensions (SGX) promises an isolated execution environment, protected from all software running on the machine. As such, numerous works have sought to leverage SGX to provide confidentiality and integrity guarantees for code running in adversarial environments. In the past few years however, SGX has come under heavy fire, threatened by numerous hardware attacks. With Intel repeatedly patching SGX to regain security while consistently launching new (micro)architectures, it is increasingly difficult to track the applicability of various attack techniques across the SGX design landscape.Thus, in this paper we set out to survey and categorize various SGX attacks, their applicability to different SGX architectures, as well as the information leaked by them. We then set out to explore the effectiveness of SGX’s update mechanisms in preventing attacks on real-world deployments. Here, we study two commercial SGX applications. First, we investigate the SECRET network, an SGX-backed blockchain aiming to provide privacy-preserving smart contracts. Next, we also consider PowerDVD, a UHD Blu-Ray Digital Rights Management (DRM) software licensed to play discs on PCs. We show that in both cases vendors are unable to meet security goals originally envisioned for their products, presumably due to SGX’s long update timelines and the complexities of a manual update process. This in turn forces vendors to make difficult security/usability trade offs, resulting in security compromises.",
-          "url": "https://www.semanticscholar.org/paper/260f51e3e503674d077f07463fc69cbd0887988b",
+          "venue": "Conference on Computer and Communications Security",
+          "citations": 63,
+          "citations_per_year": 21.0,
+          "abstract": "Text-to-Speech (TTS) and Voice Conversion (VC) models have exhibited remarkable performance in generating realistic and natural audio. However, their dark side, audio deepfake poses a significant threat to both society and individuals. Existing countermeasures largely focus on determining the genuineness of speech based on complete original audio recordings, which however often contain private content. This oversight may refrain deepfake detection from many applications, particularly in scenarios involving sensitive information like business secrets. In this paper, we propose SafeEar, a novel framework that aims to detect deepfake audios without relying on accessing the speech content within. Our key idea is to devise a neural audio codec into a novel decoupling model that well separates the semantic and acoustic information from audio samples, and only use the acoustic information (e.g., prosody and timbre) for deepfake detection. In this way, no semantic content will be exposed to the detector. To overcome the challenge of identifying diverse deepfake audio without semantic clues, we enhance our deepfake detector with real-world codec augmentation. Extensive experiments conducted on four benchmark datasets demonstrate SafeEar's effectiveness in detecting various deepfake techniques with an equal error rate (EER) down to 2.02%. Simultaneously, it shields five-language speech content from being deciphered by both machine and human auditory analysis, demonstrated by word error rates (WERs) all above 93.93% and our user study. Furthermore, our benchmark constructed for anti-deepfake and anti-content recovery evaluation helps provide a basis for future research in the realms of audio privacy preservation and deepfake detection.",
+          "url": "https://www.semanticscholar.org/paper/b510bd9ed8c36d8a8dd9991e6ae8de7812eb3a33",
           "externalIds": {
-            "DBLP": "conf/sp/SchaikSYBAGMRYG24",
-            "DOI": "10.1109/SP54263.2024.00260",
-            "CorpusId": 254073280
-          }
-        },
-        {
-          "paperId": "f286a1056c11247990c689778c5b85795846e3ba",
-          "title": "Space Odyssey: An Experimental Software Security Analysis of Satellites",
-          "year": 2023,
-          "venue": "IEEE Symposium on Security and Privacy",
-          "citations": 74,
-          "citations_per_year": 18.5,
-          "abstract": "Satellites are an essential aspect of our modern society and have contributed significantly to the way we live today, most notable through modern telecommunications, global positioning, and Earth observation. In recent years, and especially in the wake of the New Space Era, the number of satellite deployments has seen explosive growth. Despite its critical importance, little academic research has been conducted on satellite security and, in particular, on the security of onboard firmware. This lack likely stems from by now outdated assumptions on achieving security by obscurity, effectively preventing meaningful research on satellite firmware.In this paper, we first provide a taxonomy of threats against satellite firmware. We then conduct an experimental security analysis of three real-world satellite firmware images. We base our analysis on a set of real-world attacker models and find several security-critical vulnerabilities in all analyzed firmware images. The results of our experimental security assessment show that modern in-orbit satellites suffer from different software security vulnerabilities and often a lack of proper access protection mechanisms. They also underline the need to overcome prevailing but obsolete assumptions. To substantiate our observations, we also performed a survey of 19 professional satellite developers to obtain a comprehensive picture of the satellite security landscape.",
-          "url": "https://www.semanticscholar.org/paper/f286a1056c11247990c689778c5b85795846e3ba",
-          "externalIds": {
-            "DBLP": "conf/sp/WillboldSVGH023",
-            "DOI": "10.1109/SP46215.2023.10351029",
-            "CorpusId": 259768809
-          }
-        },
-        {
-          "paperId": "f40ea293fbace3da1617dd49e97806b71001757b",
-          "title": "SoK: Data Privacy in Virtual Reality",
-          "year": 2023,
-          "venue": "Proceedings on Privacy Enhancing Technologies",
-          "citations": 72,
-          "citations_per_year": 18.0,
-          "abstract": "The adoption of virtual reality (VR) technologies has rapidly gained momentum in recent years as companies around the world begin to position the so-called ''metaverse'' as the next major medium for accessing and interacting with the internet. While consumers have become accustomed to a degree of data harvesting on the web, the real-time nature of data sharing in the metaverse indicates that privacy concerns are likely to be even more prevalent in the new ''Web 3.0.'' Research into VR privacy has demonstrated that a plethora of sensitive personal information is observable by various would-be adversaries from just a few minutes of telemetry data. On the other hand, we have yet to see VR parallels for many privacy-preserving tools aimed at mitigating threats on conventional platforms. This paper aims to systematize knowledge on the landscape of VR privacy threats and countermeasures by proposing a comprehensive taxonomy of data attributes, protections, and adversaries based on the study of 74 collected publications. We complement our qualitative discussion with a statistical analysis of the risk associated with various data sources inherent to VR in consideration of the known attacks and defenses. By focusing on highlighting the clear outstanding opportunities, we hope to motivate and guide further research into this increasingly important field.",
-          "url": "https://www.semanticscholar.org/paper/f40ea293fbace3da1617dd49e97806b71001757b",
-          "externalIds": {
-            "DBLP": "journals/corr/abs-2301-05940",
-            "ArXiv": "2301.05940",
-            "DOI": "10.48550/arXiv.2301.05940",
-            "CorpusId": 255942392
-          }
-        },
-        {
-          "paperId": "d1c5ddc14b0288104d1bcbc0fdf426a44a4c71f5",
-          "title": "How Usable Are iOS App Privacy Labels?",
-          "year": 2022,
-          "venue": "Proceedings on Privacy Enhancing Technologies",
-          "citations": 87,
-          "citations_per_year": 17.4,
-          "abstract": "Standardized privacy labels that succinctly summarize those data practices that people are most commonly concerned about offer the promise of providing users with more effective privacy notices than full-length privacy policies. With their introduction by Apple in iOS 14 and Google’s recent adoption in its Play Store, mobile app privacy labels are for the first time available at scale to users. We report the first indepth interview study with 24 lay iPhone users to investigate their experiences, understanding, and perceptions of Apple’s privacy labels. We uncovered misunderstandings of and dissatisfaction with the iOS privacy labels that hinder their effectiveness, including confusing structure, unfamiliar terms, and disconnection from permission settings and controls. We identify areas where app privacy labels might be improved and propose suggestions to address shortcomings to make them more understandable, usable, and useful.",
-          "url": "https://www.semanticscholar.org/paper/d1c5ddc14b0288104d1bcbc0fdf426a44a4c71f5",
-          "externalIds": {
-            "DBLP": "journals/popets/ZhangFYCS22",
-            "DOI": "10.56553/popets-2022-0106",
-            "CorpusId": 251998775
-          }
-        },
-        {
-          "paperId": "4f77cfb29a583418e80f719e9c3df6d9316813f2",
-          "title": "What Are the Chances? Explaining the Epsilon Parameter in Differential Privacy",
-          "year": 2023,
-          "venue": "USENIX Security Symposium",
-          "citations": 68,
-          "citations_per_year": 17.0,
-          "abstract": "Differential privacy (DP) is a mathematical privacy notion increasingly deployed across government and industry. With DP, privacy protections are probabilistic: they are bounded by the privacy budget parameter, $\\epsilon$. Prior work in health and computational science finds that people struggle to reason about probabilistic risks. Yet, communicating the implications of $\\epsilon$ to people contributing their data is vital to avoiding privacy theater -- presenting meaningless privacy protection as meaningful -- and empowering more informed data-sharing decisions. Drawing on best practices in risk communication and usability, we develop three methods to convey probabilistic DP guarantees to end users: two that communicate odds and one offering concrete examples of DP outputs. We quantitatively evaluate these explanation methods in a vignette survey study ($n=963$) via three metrics: objective risk comprehension, subjective privacy understanding of DP guarantees, and self-efficacy. We find that odds-based explanation methods are more effective than (1) output-based methods and (2) state-of-the-art approaches that gloss over information about $\\epsilon$. Further, when offered information about $\\epsilon$, respondents are more willing to share their data than when presented with a state-of-the-art DP explanation; this willingness to share is sensitive to $\\epsilon$ values: as privacy protections weaken, respondents are less likely to share data.",
-          "url": "https://www.semanticscholar.org/paper/4f77cfb29a583418e80f719e9c3df6d9316813f2",
-          "externalIds": {
-            "DBLP": "journals/corr/abs-2303-00738",
-            "ArXiv": "2303.00738",
-            "DOI": "10.48550/arXiv.2303.00738",
-            "CorpusId": 257255484
-          }
-        },
-        {
-          "paperId": "a02a3315313b34b910b36cd909800094804d614f",
-          "title": "Exploring User Security and Privacy Attitudes and Concerns Toward the Use of General-Purpose LLM Chatbots for Mental Health",
-          "year": 2025,
-          "venue": "USENIX Security Symposium",
-          "citations": 31,
-          "citations_per_year": 15.5,
-          "abstract": "Individuals are increasingly relying on large language model (LLM)-enabled conversational agents for emotional support. While prior research has examined privacy and security issues in chatbots specifically designed for mental health purposes, these chatbots are overwhelmingly\"rule-based\"offerings that do not leverage generative AI. Little empirical research currently measures users'privacy and security concerns, attitudes, and expectations when using general-purpose LLM-enabled chatbots to manage and improve mental health. Through 21 semi-structured interviews with U.S. participants, we identified critical misconceptions and a general lack of risk awareness. Participants conflated the human-like empathy exhibited by LLMs with human-like accountability and mistakenly believed that their interactions with these chatbots were safeguarded by the same regulations (e.g., HIPAA) as disclosures with a licensed therapist. We introduce the concept of\"intangible vulnerability,\"where emotional or psychological disclosures are undervalued compared to more tangible forms of information (e.g., financial or location-based data). To address this, we propose recommendations to safeguard user mental health disclosures with general-purpose LLM-enabled chatbots more effectively.",
-          "url": "https://www.semanticscholar.org/paper/a02a3315313b34b910b36cd909800094804d614f",
-          "externalIds": {
-            "ArXiv": "2507.10695",
-            "DBLP": "journals/corr/abs-2507-10695",
-            "DOI": "10.48550/arXiv.2507.10695",
-            "CorpusId": 280275232
-          }
-        },
-        {
-          "paperId": "d32aae4307b5df1094f56bfa716ca856d415f842",
-          "title": "Beyond Typosquatting: An In-depth Look at Package Confusion",
-          "year": 2023,
-          "venue": "USENIX Security Symposium",
-          "citations": 59,
-          "citations_per_year": 14.8,
-          "abstract": null,
-          "url": "https://www.semanticscholar.org/paper/d32aae4307b5df1094f56bfa716ca856d415f842",
-          "externalIds": {
-            "DBLP": "conf/uss/NeupaneHWDC23",
-            "CorpusId": 263161934
+            "ArXiv": "2409.09272",
+            "DBLP": "journals/corr/abs-2409-09272",
+            "DOI": "10.1145/3658644.3670285",
+            "CorpusId": 272689640
           }
         }
       ]
@@ -585,8 +1166,8 @@
           "title": "Extracting Training Data from Diffusion Models",
           "year": 2023,
           "venue": "USENIX Security Symposium",
-          "citations": 995,
-          "citations_per_year": 248.8,
+          "citations": 998,
+          "citations_per_year": 249.5,
           "abstract": "Image diffusion models such as DALL-E 2, Imagen, and Stable Diffusion have attracted significant attention due to their ability to generate high-quality synthetic images. In this work, we show that diffusion models memorize individual images from their training data and emit them at generation time. With a generate-and-filter pipeline, we extract over a thousand training examples from state-of-the-art models, ranging from photographs of individual people to trademarked company logos. We also train hundreds of diffusion models in various settings to analyze how different modeling and data decisions affect privacy. Overall, our results show that diffusion models are much less private than prior generative models such as GANs, and that mitigating these vulnerabilities may require new advances in privacy-preserving training.",
           "url": "https://www.semanticscholar.org/paper/2e965b5d97c2d6fb4af284307735be39283792ba",
           "externalIds": {
@@ -601,8 +1182,8 @@
           "title": "\"Do Anything Now\": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models",
           "year": 2023,
           "venue": "Conference on Computer and Communications Security",
-          "citations": 679,
-          "citations_per_year": 169.8,
+          "citations": 682,
+          "citations_per_year": 170.5,
           "abstract": "The misuse of large language models (LLMs) has drawn significant attention from the general public and LLM vendors. One particular type of adversarial prompt, known as jailbreak prompt, has emerged as the main attack vector to bypass the safeguards and elicit harmful content from LLMs. In this paper, employing our new framework JailbreakHub, we conduct a comprehensive analysis of 1,405 jailbreak prompts spanning from December 2022 to December 2023. We identify 131 jailbreak communities and discover unique characteristics of jailbreak prompts and their major attack strategies, such as prompt injection and privilege escalation. We also observe that jailbreak prompts increasingly shift from online Web communities to prompt-aggregation websites and 28 user accounts have consistently optimized jailbreak prompts over 100 days. To assess the potential harm caused by jailbreak prompts, we create a question set comprising 107,250 samples across 13 forbidden scenarios. Leveraging this dataset, our experiments on six popular LLMs show that their safeguards cannot adequately defend jailbreak prompts in all scenarios. Particularly, we identify five highly effective jailbreak prompts that achieve 0.95 attack success rates on ChatGPT (GPT-3.5) and GPT-4, and the earliest one has persisted online for over 240 days. We hope that our study can facilitate the research community and LLM vendors in promoting safer and regulated LLMs.",
           "url": "https://www.semanticscholar.org/paper/1104d766527dead44a40532e8a89444d9cef5c65",
           "externalIds": {
@@ -617,8 +1198,8 @@
           "title": "Great, Now Write an Article About That: The Crescendo Multi-Turn LLM Jailbreak Attack",
           "year": 2024,
           "venue": "USENIX Security Symposium",
-          "citations": 377,
-          "citations_per_year": 125.7,
+          "citations": 382,
+          "citations_per_year": 127.3,
           "abstract": "Large Language Models (LLMs) have risen significantly in popularity and are increasingly being adopted across multiple applications. These LLMs are heavily aligned to resist engaging in illegal or unethical topics as a means to avoid contributing to responsible AI harms. However, a recent line of attacks, known as jailbreaks, seek to overcome this alignment. Intuitively, jailbreak attacks aim to narrow the gap between what the model can do and what it is willing to do. In this paper, we introduce a novel jailbreak attack called Crescendo. Unlike existing jailbreak methods, Crescendo is a simple multi-turn jailbreak that interacts with the model in a seemingly benign manner. It begins with a general prompt or question about the task at hand and then gradually escalates the dialogue by referencing the model's replies progressively leading to a successful jailbreak. We evaluate Crescendo on various public systems, including ChatGPT, Gemini Pro, Gemini-Ultra, LlaMA-2 70b and LlaMA-3 70b Chat, and Anthropic Chat. Our results demonstrate the strong efficacy of Crescendo, with it achieving high attack success rates across all evaluated models and tasks. Furthermore, we present Crescendomation, a tool that automates the Crescendo attack and demonstrate its efficacy against state-of-the-art models through our evaluations. Crescendomation surpasses other state-of-the-art jailbreaking techniques on the AdvBench subset dataset, achieving 29-61% higher performance on GPT-4 and 49-71% on Gemini-Pro. Finally, we also demonstrate Crescendo's ability to jailbreak multimodal models.",
           "url": "https://www.semanticscholar.org/paper/2c4d2d889a1f0ff9598de829a001df11a95d3294",
           "externalIds": {
@@ -633,8 +1214,8 @@
           "title": "StruQ: Defending Against Prompt Injection with Structured Queries",
           "year": 2024,
           "venue": "USENIX Security Symposium",
-          "citations": 346,
-          "citations_per_year": 115.3,
+          "citations": 354,
+          "citations_per_year": 118.0,
           "abstract": "Recent advances in Large Language Models (LLMs) enable exciting LLM-integrated applications, which perform text-based tasks by utilizing their advanced language understanding capabilities. However, as LLMs have improved, so have the attacks against them. Prompt injection attacks are an important threat: they trick the model into deviating from the original application's instructions and instead follow user directives. These attacks rely on the LLM's ability to follow instructions and inability to separate prompts and user data. We introduce structured queries, a general approach to tackle this problem. Structured queries separate prompts and data into two channels. We implement a system that supports structured queries. This system is made of (1) a secure front-end that formats a prompt and user data into a special format, and (2) a specially trained LLM that can produce high-quality outputs from these inputs. The LLM is trained using a novel fine-tuning strategy: we convert a base (non-instruction-tuned) LLM to a structured instruction-tuned model that will only follow instructions in the prompt portion of a query. To do so, we augment standard instruction tuning datasets with examples that also include instructions in the data portion of the query, and fine-tune the model to ignore these. Our system significantly improves resistance to prompt injection attacks, with little or no impact on utility. Our code is released at https://github.com/Sizhe-Chen/StruQ.",
           "url": "https://www.semanticscholar.org/paper/f5e7e22036c3fe7d6660eee90642f716c3b303f5",
           "externalIds": {
@@ -649,8 +1230,8 @@
           "title": "Large Language Model guided Protocol Fuzzing",
           "year": 2024,
           "venue": "Network and Distributed System Security Symposium",
-          "citations": 319,
-          "citations_per_year": 106.3,
+          "citations": 322,
+          "citations_per_year": 107.3,
           "abstract": "—How to find security flaws in a protocol implementation without a machine-readable specification of the protocol? Facing the internet, protocol implementations are particularly security-critical software systems where inputs must adhere to a specific structure and order that is often informally specified in hundreds of pages in natural language (RFC). Without some machine-readable version of that protocol, it is difficult to automatically generate valid test inputs for its implementation that follow the required structure and order. It is possible to partially alleviate this challenge using mutational fuzzing on a set of recorded message sequences as seed inputs. However, the set of available seeds is often quite limited and will hardly cover the great diversity of protocol states and input structures. In this paper, we explore the opportunities of systematic interaction with pre-trained large language models (LLMs), which have ingested millions of pages of human-readable protocol specifications, to draw out machine-readable information about the protocol that can be used during protocol fuzzing. We use the knowledge of the LLMs about protocol message types for well-known protocols. We also checked the LLM’s capability in detecting “states” for stateful protocol implementations by generating sequences of messages and predicting response codes. Based on these observations, we have developed an LLM-guided protocol implementation fuzzing engine. Our protocol fuzzer C HAT AFL constructs grammars for each message type in a protocol, and then mutates messages or predicts the next messages in a message sequence via interactions with LLMs. Experiments on a wide range of real-world protocols from P RO F UZZ B ENCH show significant efficacy in state and code coverage. Our LLM-guided stateful fuzzer was compared with state-of-the-art fuzzers AFLN ET and NSF UZZ . C HAT AFL covers 47.60% and 42.69% more state transitions, 29.55% and 25.75% more",
           "url": "https://www.semanticscholar.org/paper/4fcd49afa8d0a960c6d07aa4e7a37956f5307a8a",
           "externalIds": {
@@ -664,8 +1245,8 @@
           "title": "Analyzing Leakage of Personally Identifiable Information in Language Models",
           "year": 2023,
           "venue": "IEEE Symposium on Security and Privacy",
-          "citations": 413,
-          "citations_per_year": 103.2,
+          "citations": 415,
+          "citations_per_year": 103.8,
           "abstract": "Language Models (LMs) have been shown to leak information about training data through sentence-level membership inference and reconstruction attacks. Understanding the risk of LMs leaking Personally Identifiable Information (PII) has received less attention, which can be attributed to the false assumption that dataset curation techniques such as scrubbing are sufficient to prevent PII leakage. Scrubbing techniques reduce but do not prevent the risk of PII leakage: in practice scrubbing is imperfect and must balance the trade-off between minimizing disclosure and preserving the utility of the dataset. On the other hand, it is unclear to which extent algorithmic defenses such as differential privacy, designed to guarantee sentence-or user-level privacy, prevent PII disclosure. In this work, we introduce rigorous game-based definitions for three types of PII leakage via black-box extraction, inference, and reconstruction attacks with only API access to an LM. We empirically evaluate the attacks against GPT-2 models fine-tuned with and without defenses in three domains: case law, health care, and e-mails. Our main contributions are (i) novel attacks that can extract up to 10× more PII sequences than existing attacks, (ii) showing that sentence-level differential privacy reduces the risk of PII disclosure but still leaks about 3% of PII sequences, and (iii) a subtle connection between record-level membership inference and PII reconstruction. Code to reproduce all experiments in the paper is available at https://github.com/microsoft/analysing_pii_leakage.",
           "url": "https://www.semanticscholar.org/paper/d1101476c85ae324142440e9f568ecbf41625be5",
           "externalIds": {
@@ -680,8 +1261,8 @@
           "title": "Formalizing and Benchmarking Prompt Injection Attacks and Defenses",
           "year": 2023,
           "venue": "USENIX Security Symposium",
-          "citations": 409,
-          "citations_per_year": 102.2,
+          "citations": 410,
+          "citations_per_year": 102.5,
           "abstract": "A prompt injection attack aims to inject malicious instruction/data into the input of an LLM-Integrated Application such that it produces results as an attacker desires. Existing works are limited to case studies. As a result, the literature lacks a systematic understanding of prompt injection attacks and their defenses. We aim to bridge the gap in this work. In particular, we propose a framework to formalize prompt injection attacks. Existing attacks are special cases in our framework. Moreover, based on our framework, we design a new attack by combining existing ones. Using our framework, we conduct a systematic evaluation on 5 prompt injection attacks and 10 defenses with 10 LLMs and 7 tasks. Our work provides a common benchmark for quantitatively evaluating future prompt injection attacks and defenses. To facilitate research on this topic, we make our platform public at https://github.com/liu00222/Open-Prompt-Injection.",
           "url": "https://www.semanticscholar.org/paper/9adddfe5a596d20b534a29d9937efcd3cb85d3cf",
           "externalIds": {
@@ -695,8 +1276,8 @@
           "title": "FLAME: Taming Backdoors in Federated Learning",
           "year": 2022,
           "venue": "USENIX Security Symposium",
-          "citations": 496,
-          "citations_per_year": 99.2,
+          "citations": 506,
+          "citations_per_year": 101.2,
           "abstract": null,
           "url": "https://www.semanticscholar.org/paper/4089197a8fef8935bab8b879adc08dc5fdf53c6d",
           "externalIds": {
@@ -709,8 +1290,8 @@
           "title": "Poisoning Web-Scale Training Datasets is Practical",
           "year": 2023,
           "venue": "IEEE Symposium on Security and Privacy",
-          "citations": 364,
-          "citations_per_year": 91.0,
+          "citations": 365,
+          "citations_per_year": 91.2,
           "abstract": "Deep learning models are often trained on distributed, web-scale datasets crawled from the internet. In this paper, we introduce two new dataset poisoning attacks that intentionally introduce malicious examples to a model’s performance. Our attacks are immediately practical and could, today, poison 10 popular datasets. Our first attack, split-view poisoning, exploits the mutable nature of internet content to ensure a dataset annotator’s initial view of the dataset differs from the view downloaded by subsequent clients. By exploiting specific invalid trust assumptions, we show how we could have poisoned 0.01% of the LAION-400M or COYO-700M datasets for just $60 USD. Our second attack, frontrunning poisoning, targets web-scale datasets that periodically snapshot crowd-sourced content—such as Wikipedia—where an attacker only needs a time-limited window to inject malicious examples. In light of both attacks, we notify the maintainers of each affected dataset and recommended several low-overhead defenses.",
           "url": "https://www.semanticscholar.org/paper/2cf43a61d0937ad25f23eaef7c90253ab799b3c7",
           "externalIds": {
@@ -725,8 +1306,8 @@
           "title": "PentestGPT: Evaluating and Harnessing Large Language Models for Automated Penetration Testing",
           "year": 2024,
           "venue": "USENIX Security Symposium",
-          "citations": 258,
-          "citations_per_year": 86.0,
+          "citations": 261,
+          "citations_per_year": 87.0,
           "abstract": null,
           "url": "https://www.semanticscholar.org/paper/27d0561813c6134d62a48cdc42e1aede23e76f98",
           "externalIds": {
@@ -739,8 +1320,8 @@
           "title": "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models",
           "year": 2024,
           "venue": "USENIX Security Symposium",
-          "citations": 253,
-          "citations_per_year": 84.3,
+          "citations": 254,
+          "citations_per_year": 84.7,
           "abstract": "Large language models (LLMs) have achieved remarkable success due to their exceptional generative capabilities. Despite their success, they also have inherent limitations such as a lack of up-to-date knowledge and hallucination. Retrieval-Augmented Generation (RAG) is a state-of-the-art technique to mitigate these limitations. The key idea of RAG is to ground the answer generation of an LLM on external knowledge retrieved from a knowledge database. Existing studies mainly focus on improving the accuracy or efficiency of RAG, leaving its security largely unexplored. We aim to bridge the gap in this work. We find that the knowledge database in a RAG system introduces a new and practical attack surface. Based on this attack surface, we propose PoisonedRAG, the first knowledge corruption attack to RAG, where an attacker could inject a few malicious texts into the knowledge database of a RAG system to induce an LLM to generate an attacker-chosen target answer for an attacker-chosen target question. We formulate knowledge corruption attacks as an optimization problem, whose solution is a set of malicious texts. Depending on the background knowledge (e.g., black-box and white-box settings) of an attacker on a RAG system, we propose two solutions to solve the optimization problem, respectively. Our results show PoisonedRAG could achieve a 90% attack success rate when injecting five malicious texts for each target question into a knowledge database with millions of texts. We also evaluate several defenses and our results show they are insufficient to defend against PoisonedRAG, highlighting the need for new defenses.",
           "url": "https://www.semanticscholar.org/paper/f4e06256ab07727ff4e0465deea83fcf45012354",
           "externalIds": {
@@ -754,8 +1335,8 @@
           "title": "Do Users Write More Insecure Code with AI Assistants?",
           "year": 2022,
           "venue": "Conference on Computer and Communications Security",
-          "citations": 403,
-          "citations_per_year": 80.6,
+          "citations": 405,
+          "citations_per_year": 81.0,
           "abstract": "AI code assistants have emerged as powerful tools that can aid in the software development life-cycle and can improve developer productivity. Unfortunately, such assistants have also been found to produce insecure code in lab environments, raising significant concerns about their usage in practice. In this paper, we conduct a user study to examine how users interact with AI code assistants to solve a variety of security related tasks. Overall, we find that participants who had access to an AI assistant wrote significantly less secure code than those without access to an assistant. Participants with access to an AI assistant were also more likely to believe they wrote secure code, suggesting that such tools may lead users to be overconfident about security flaws in their code. To better inform the design of future AI-based code assistants, we release our user-study apparatus to researchers seeking to build on our work.",
           "url": "https://www.semanticscholar.org/paper/ce3f027b68dad014a58aa35f52380932c8d0b209",
           "externalIds": {
@@ -770,8 +1351,8 @@
           "title": "GLAZE: Protecting Artists from Style Mimicry by Text-to-Image Models",
           "year": 2023,
           "venue": "USENIX Security Symposium",
-          "citations": 296,
-          "citations_per_year": 74.0,
+          "citations": 298,
+          "citations_per_year": 74.5,
           "abstract": "Recent text-to-image diffusion models such as MidJourney and Stable Diffusion threaten to displace many in the professional artist community. In particular, models can learn to mimic the artistic style of specific artists after\"fine-tuning\"on samples of their art. In this paper, we describe the design, implementation and evaluation of Glaze, a tool that enables artists to apply\"style cloaks\"to their art before sharing online. These cloaks apply barely perceptible perturbations to images, and when used as training data, mislead generative models that try to mimic a specific artist. In coordination with the professional artist community, we deploy user studies to more than 1000 artists, assessing their views of AI art, as well as the efficacy of our tool, its usability and tolerability of perturbations, and robustness across different scenarios and against adaptive countermeasures. Both surveyed artists and empirical CLIP-based scores show that even at low perturbation levels (p=0.05), Glaze is highly successful at disrupting mimicry under normal conditions (>92%) and against adaptive countermeasures (>85%).",
           "url": "https://www.semanticscholar.org/paper/897c0aedead3105b7b6cd1afbb6aeb4f62a06e11",
           "externalIds": {
@@ -786,8 +1367,8 @@
           "title": "Large Language Models for Code: Security Hardening and Adversarial Testing",
           "year": 2023,
           "venue": "Conference on Computer and Communications Security",
-          "citations": 291,
-          "citations_per_year": 72.8,
+          "citations": 293,
+          "citations_per_year": 73.2,
           "abstract": "Large language models (large LMs) are increasingly trained on massive codebases and used to generate code. However, LMs lack awareness of security and are found to frequently produce unsafe code. This work studies the security of LMs along two important axes: (i) security hardening, which aims to enhance LMs' reliability in generating secure code, and (ii) adversarial testing, which seeks to evaluate LMs' security at an adversarial standpoint. We address both of these by formulating a new security task called controlled code generation. The task is parametric and takes as input a binary property to guide the LM to generate secure or unsafe code, while preserving the LM's capability of generating functionally correct code. We propose a novel learning-based approach called SVEN to solve this task. SVEN leverages property-specific continuous vectors to guide program generation towards the given property, without modifying the LM's weights. Our training procedure optimizes these continuous vectors by enforcing specialized loss terms on different regions of code, using a high-quality dataset carefully curated by us. Our extensive evaluation shows that SVEN is highly effective in achieving strong security control. For instance, a state-of-the-art CodeGen LM with 2.7B parameters generates secure code for 59.1% of the time. When we employ SVEN to perform security hardening (or adversarial testing) on this LM, the ratio is significantly boosted to 92.3% (or degraded to 36.8%). Importantly, SVEN closely matches the original LMs in functional correctness.",
           "url": "https://www.semanticscholar.org/paper/63e2740dc581b4186b4e277a9955e8048c414521",
           "externalIds": {
@@ -802,8 +1383,8 @@
           "title": "DataSentinel: A Game-Theoretic Detection of Prompt Injection Attacks",
           "year": 2025,
           "venue": "IEEE Symposium on Security and Privacy",
-          "citations": 138,
-          "citations_per_year": 69.0,
+          "citations": 139,
+          "citations_per_year": 69.5,
           "abstract": "LLM-integrated applications and agents are vulnerable to prompt injection attacks, where an attacker injects prompts into their inputs to induce attacker-desired outputs. A detection method aims to determine whether a given input is contaminated by an injected prompt. However, existing detection methods have limited effectiveness against state-of-the-art attacks, let alone adaptive ones. In this work, we propose DataSentinel, a game-theoretic method to detect prompt injection attacks. Specifically, DataSentinel fine-tunes an LLM to detect inputs contaminated with injected prompts that are strategically adapted to evade detection. We formulate this as a minimax optimization problem, with the objective of fine-tuning the LLM to detect strong adaptive attacks. Furthermore, we propose a gradient-based method to solve the minimax optimization problem by alternating between the inner max and outer min problems. Our evaluation results on multiple benchmark datasets and LLMs show that DataSentinel effectively detects both existing and adaptive prompt injection attacks. Our code and data are available at: https://github.com/liu00222/Open-Prompt-Injection.",
           "url": "https://www.semanticscholar.org/paper/a90068513bf2eae66c81ff80b5060ce115097176",
           "externalIds": {
@@ -985,8 +1566,8 @@
           "title": "The Dark Side of AI Companionship: A Taxonomy of Harmful Algorithmic Behaviors in Human-AI Relationships",
           "year": 2024,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 174,
-          "citations_per_year": 58.0,
+          "citations": 176,
+          "citations_per_year": 58.7,
           "abstract": "As conversational AI systems increasingly engage with people socially and emotionally, they bring notable risks and harms, particularly in human-AI relationships. However, these harms remain underexplored due to the private and sensitive nature of such interactions. This study investigates the harmful behaviors and roles of AI companions through an analysis of 35,390 conversation excerpts between 10,149 users and the AI companion Replika. We develop a taxonomy of AI companion harms encompassing six categories of harmful algorithmic behaviors: relational transgression, harassment, verbal abuse, self-harm, mis/disinformation, and privacy violations. These harmful behaviors stem from four distinct roles that AI plays: perpetrator, instigator, facilitator, and enabler. Our findings highlight relational harm as a critical yet understudied type of AI harm and emphasize the importance of examining AI’s roles in harmful interactions to address root causes. We provide actionable insights for designing ethical and responsible AI companions that prioritize user safety and well-being.",
           "url": "https://www.semanticscholar.org/paper/91f657c27946a6a96d122c2beace6d3068ee5df6",
           "externalIds": {
@@ -1017,8 +1598,8 @@
           "title": "Trauma-Informed Computing: Towards Safer Technology Experiences for All",
           "year": 2022,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 191,
-          "citations_per_year": 38.2,
+          "citations": 192,
+          "citations_per_year": 38.4,
           "abstract": "Trauma is the physical, emotional, or psychological harm caused by deeply distressing experiences. Research with communities that may experience high rates of trauma has shown that digital technologies can create or exacerbate traumatic experiences. Via three vignettes, we discuss how considering the possible effects of trauma and traumatic stress reactions provides an explanatory lens with new insights into people’s technology experiences. Then, we present a framework—trauma-informed computing—in which we adapt and show how to apply six key principles of trauma-informed approaches to computing: safety, trust, peer support, collaboration, enablement, and intersectionality. Through specific examples, we describe how to apply trauma-informed computing in four areas of computing research and practice: user experience research & design, security & privacy, artificial intelligence & machine learning, and organizational culture in tech companies. We conclude by discussing how adopting trauma-informed computing will lead to benefits for all users, not only those experiencing trauma.",
           "url": "https://www.semanticscholar.org/paper/5e88bb415c99be08f969bda11392268e52e88f56",
           "externalIds": {
@@ -1032,8 +1613,8 @@
           "title": "Deepfakes, Phrenology, Surveillance, and More! A Taxonomy of AI Privacy Risks",
           "year": 2023,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 136,
-          "citations_per_year": 34.0,
+          "citations": 137,
+          "citations_per_year": 34.2,
           "abstract": "Privacy is a key principle for developing ethical AI technologies, but how does including AI technologies in products and services change privacy risks? We constructed a taxonomy of AI privacy risks by analyzing 321 documented AI privacy incidents. We codified how the unique capabilities and requirements of AI technologies described in those incidents generated new privacy risks, exacerbated known ones, or otherwise did not meaningfully alter the risk. We present 12 high-level privacy risks that AI technologies either newly created (e.g., exposure risks from deepfake pornography) or exacerbated (e.g., surveillance risks from collecting training data). One upshot of our work is that incorporating AI technologies into a product can alter the privacy risks it entails. Yet, current approaches to privacy-preserving AI/ML (e.g., federated learning, differential privacy, checklists) only address a subset of the privacy risks arising from the capabilities and data requirements of AI.",
           "url": "https://www.semanticscholar.org/paper/8bd4f4ad1206682b244957080af1f5485b5d21c2",
           "externalIds": {
@@ -1048,8 +1629,8 @@
           "title": "Emotion AI at Work: Implications for Workplace Surveillance, Emotional Labor, and Emotional Privacy",
           "year": 2023,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 119,
-          "citations_per_year": 29.8,
+          "citations": 120,
+          "citations_per_year": 30.0,
           "abstract": "Workplaces are increasingly adopting emotion AI, promising benefits to organizations. However, little is known about the perceptions and experiences of workers subject to emotion AI in the workplace. Our interview study with (n=15) US adult workers addresses this gap, finding that (1) participants viewed emotion AI as a deep privacy violation over the privacy of workers’ sensitive emotional information; (2) emotion AI may function to enforce workers’ compliance with emotional labor expectations, and that workers may engage in emotional labor as a mechanism to preserve privacy over their emotions; (3) workers may be exposed to a wide range of harms as a consequence of emotion AI in the workplace. Findings reveal the need to recognize and define an individual right to what we introduce as emotional privacy, as well as raise important research and policy questions on how to protect and preserve emotional privacy within and beyond the workplace.",
           "url": "https://www.semanticscholar.org/paper/450550d3222db165c33be910c517537b1f569f9b",
           "externalIds": {
@@ -1063,8 +1644,8 @@
           "title": "UX Research on Conversational Human-AI Interaction: A Literature Review of the ACM Digital Library",
           "year": 2022,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 123,
-          "citations_per_year": 24.6,
+          "citations": 124,
+          "citations_per_year": 24.8,
           "abstract": "Early conversational agents (CAs) focused on dyadic human-AI interaction between humans and the CAs, followed by the increasing popularity of polyadic human-AI interaction, in which CAs are designed to mediate human-human interactions. CAs for polyadic interactions are unique because they encompass hybrid social interactions, i.e., human-CA, human-to-human, and human-to-group behaviors. However, research on polyadic CAs is scattered across different fields, making it challenging to identify, compare, and accumulate existing knowledge. To promote the future design of CA systems, we conducted a literature review of ACM publications and identified a set of works that conducted UX (user experience) research. We qualitatively synthesized the effects of polyadic CAs into four aspects of human-human interactions, i.e., communication, engagement, connection, and relationship maintenance. Through a mixed-method analysis of the selected polyadic and dyadic CA studies, we developed a suite of evaluation measurements on the effects. Our findings show that designing with social boundaries, such as privacy, disclosure, and identification, is crucial for ethical polyadic CAs. Future research should also advance usability testing methods and trust-building guidelines for conversational AI.",
           "url": "https://www.semanticscholar.org/paper/db2c80017284d8492026868aeba957efdaae7cf3",
           "externalIds": {
@@ -1072,6 +1653,21 @@
             "DBLP": "conf/chi/ZhengTLLH22",
             "DOI": "10.1145/3491102.3501855",
             "CorpusId": 247011359
+          }
+        },
+        {
+          "paperId": "5211f6ffb9ec50ee8fb2ff2543b8c4be8f7fbebc",
+          "title": "“Okay, whatever”: An Evaluation of Cookie Consent Interfaces",
+          "year": 2022,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 122,
+          "citations_per_year": 24.4,
+          "abstract": "Many websites have added cookie consent interfaces to meet regulatory consent requirements. While prior work has demonstrated that they often use dark patterns — design techniques that lead users to less privacy-protective options — other usability aspects of these interfaces have been less explored. This study contributes a comprehensive, two-stage usability assessment of cookie consent interfaces. We first inspected 191 consent interfaces against five dark pattern heuristics and identified design choices that may impact usability. We then conducted a 1,109-participant online between-subjects experiment exploring the usability impact of seven design parameters. Participants were exposed to one of 12 consent interface variants during a shopping task on a prototype e-commerce website and answered a survey about their experience. Our findings suggest that a fully-blocking consent interface with in-line cookie options accompanied by a persistent button enabling users to later change their consent decision best meets several design objectives.",
+          "url": "https://www.semanticscholar.org/paper/5211f6ffb9ec50ee8fb2ff2543b8c4be8f7fbebc",
+          "externalIds": {
+            "DBLP": "conf/chi/HabibLYC22",
+            "DOI": "10.1145/3491102.3501985",
+            "CorpusId": 248419472
           }
         },
         {
@@ -1088,21 +1684,6 @@
             "ArXiv": "2402.11353",
             "DOI": "10.1145/3613904.3642420",
             "CorpusId": 267751317
-          }
-        },
-        {
-          "paperId": "5211f6ffb9ec50ee8fb2ff2543b8c4be8f7fbebc",
-          "title": "“Okay, whatever”: An Evaluation of Cookie Consent Interfaces",
-          "year": 2022,
-          "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 119,
-          "citations_per_year": 23.8,
-          "abstract": "Many websites have added cookie consent interfaces to meet regulatory consent requirements. While prior work has demonstrated that they often use dark patterns — design techniques that lead users to less privacy-protective options — other usability aspects of these interfaces have been less explored. This study contributes a comprehensive, two-stage usability assessment of cookie consent interfaces. We first inspected 191 consent interfaces against five dark pattern heuristics and identified design choices that may impact usability. We then conducted a 1,109-participant online between-subjects experiment exploring the usability impact of seven design parameters. Participants were exposed to one of 12 consent interface variants during a shopping task on a prototype e-commerce website and answered a survey about their experience. Our findings suggest that a fully-blocking consent interface with in-line cookie options accompanied by a persistent button enabling users to later change their consent decision best meets several design objectives.",
-          "url": "https://www.semanticscholar.org/paper/5211f6ffb9ec50ee8fb2ff2543b8c4be8f7fbebc",
-          "externalIds": {
-            "DBLP": "conf/chi/HabibLYC22",
-            "DOI": "10.1145/3491102.3501985",
-            "CorpusId": 248419472
           }
         },
         {
@@ -1171,14 +1752,29 @@
           "title": "Care Infrastructures for Digital Security in Intimate Partner Violence",
           "year": 2022,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 96,
-          "citations_per_year": 19.2,
+          "citations": 97,
+          "citations_per_year": 19.4,
           "abstract": "Survivors of intimate partner violence (IPV) face complex threats to their digital privacy and security. Prior work has established protocols for directly helping them mitigate these harms; however, there remains a need for flexible and pluralistic systems that can support survivors’ long-term needs. This paper describes the design and development of sociotechnical infrastructure that incorporates feminist notions of care to connect IPV survivors experiencing technology abuse with volunteer computer security consultants. We present findings from a mixed methods study that draws on data from an 8-month, real-world deployment, as well as interviews with 7 volunteer technology consultants and 18 IPV professionals. Our findings illuminate emergent challenges in safely and adaptively providing computer security advice as care. We discuss implications of these findings for feminist approaches to computer security and privacy, and provide broader lessons for interventions that aim to directly assist at-risk and marginalized people experiencing digital insecurity.",
           "url": "https://www.semanticscholar.org/paper/d50346dc6a45daadd75da8b729af46c532b456ab",
           "externalIds": {
             "DBLP": "conf/chi/TsengSBSRD22",
             "DOI": "10.1145/3491102.3502038",
             "CorpusId": 247127094
+          }
+        },
+        {
+          "paperId": "f1fb142ea51716d8f7506d3055b44fd9631eec89",
+          "title": "\"I Deleted It After the Overturn of Roe v. Wade\": Understanding Women's Privacy Concerns Toward Period-Tracking Apps in the Post Roe v. Wade Era",
+          "year": 2024,
+          "venue": "International Conference on Human Factors in Computing Systems",
+          "citations": 58,
+          "citations_per_year": 19.3,
+          "abstract": "The overturn of Roe v. Wade has taken away the constitutional right to abortion. Prior work shows that period-tracking apps’ data practices can be used to detect pregnancy and abortion, hence putting women at risk of being prosecuted. It is unclear how much women know about the privacy practices of such apps and how concerned they are after the overturn. Such knowledge is critical to designing effective strategies for stakeholders to enhance women’s reproductive privacy. We conducted an online 183-participant vignette survey with US women from states with diverse policies on abortion. Participants were significantly concerned about the privacy practices of the period-tracking apps, such as data access by law enforcement and third parties. However, participants felt uninformed and powerless about risk mitigation practices. We provide several recommendations to enhance women’s privacy awareness toward their period-tracking practices.",
+          "url": "https://www.semanticscholar.org/paper/f1fb142ea51716d8f7506d3055b44fd9631eec89",
+          "externalIds": {
+            "DBLP": "conf/chi/CaoLMSN24",
+            "DOI": "10.1145/3613904.3642042",
+            "CorpusId": 268325524
           }
         },
         {
@@ -1194,21 +1790,6 @@
             "DBLP": "conf/chi/SambasivanV22",
             "DOI": "10.1145/3491102.3517578",
             "CorpusId": 248419993
-          }
-        },
-        {
-          "paperId": "f1fb142ea51716d8f7506d3055b44fd9631eec89",
-          "title": "\"I Deleted It After the Overturn of Roe v. Wade\": Understanding Women's Privacy Concerns Toward Period-Tracking Apps in the Post Roe v. Wade Era",
-          "year": 2024,
-          "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 57,
-          "citations_per_year": 19.0,
-          "abstract": "The overturn of Roe v. Wade has taken away the constitutional right to abortion. Prior work shows that period-tracking apps’ data practices can be used to detect pregnancy and abortion, hence putting women at risk of being prosecuted. It is unclear how much women know about the privacy practices of such apps and how concerned they are after the overturn. Such knowledge is critical to designing effective strategies for stakeholders to enhance women’s reproductive privacy. We conducted an online 183-participant vignette survey with US women from states with diverse policies on abortion. Participants were significantly concerned about the privacy practices of the period-tracking apps, such as data access by law enforcement and third parties. However, participants felt uninformed and powerless about risk mitigation practices. We provide several recommendations to enhance women’s privacy awareness toward their period-tracking practices.",
-          "url": "https://www.semanticscholar.org/paper/f1fb142ea51716d8f7506d3055b44fd9631eec89",
-          "externalIds": {
-            "DBLP": "conf/chi/CaoLMSN24",
-            "DOI": "10.1145/3613904.3642042",
-            "CorpusId": 268325524
           }
         }
       ]
@@ -1383,8 +1964,8 @@
           "title": "Why Johnny Can’t Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts",
           "year": 2023,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 1203,
-          "citations_per_year": 300.8,
+          "citations": 1206,
+          "citations_per_year": 301.5,
           "abstract": "Pre-trained large language models (“LLMs”) like GPT-3 can engage in fluent, multi-turn instruction-taking out-of-the-box, making them attractive materials for designing natural language interactions. Using natural language to steer LLM outputs (“prompting”) has emerged as an important design technique potentially accessible to non-AI-experts. Crafting effective prompts can be challenging, however, and prompt-based interactions are brittle. Here, we explore whether non-AI-experts can successfully engage in “end-user prompt engineering” using a design probe—a prototype LLM-based chatbot design tool supporting development and systematic evaluation of prompting strategies. Ultimately, our probe participants explored prompt designs opportunistically, not systematically, and struggled in ways echoing end-user programming systems and interactive machine learning systems. Expectations stemming from human-to-human instructional experiences, and a tendency to overgeneralize, were barriers to effective prompt design. These findings have implications for non-AI-expert-facing LLM-based tool design and for improving LLM-and-prompt literacy among programmers and the public, and present opportunities for further research.",
           "url": "https://www.semanticscholar.org/paper/8f9e864fab09bbae4a46a2a62bb954db1a88eb3e",
           "externalIds": {
@@ -1398,8 +1979,8 @@
           "title": "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers",
           "year": 2025,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 525,
-          "citations_per_year": 262.5,
+          "citations": 534,
+          "citations_per_year": 267.0,
           "abstract": "The rise of Generative AI (GenAI) in knowledge workflows raises questions about its impact on critical thinking skills and practices. We survey 319 knowledge workers to investigate 1) when and how they perceive the enaction of critical thinking when using GenAI, and 2) when and why GenAI affects their effort to do so. Participants shared 936 first-hand examples of using GenAI in work tasks. Quantitatively, when considering both task- and user-specific factors, a user’s task-specific self-confidence and confidence in GenAI are predictive of whether critical thinking is enacted and the effort of doing so in GenAI-assisted tasks. Specifically, higher confidence in GenAI is associated with less critical thinking, while higher self-confidence is associated with more critical thinking. Qualitatively, GenAI shifts the nature of critical thinking toward information verification, response integration, and task stewardship. Our insights reveal new design challenges and opportunities for developing GenAI tools for knowledge work.",
           "url": "https://www.semanticscholar.org/paper/93a07d548608d2368ae2e3287275e3caf42a562c",
           "externalIds": {
@@ -1413,8 +1994,8 @@
           "title": "AppAgent: Multimodal Agents as Smartphone Users",
           "year": 2023,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 482,
-          "citations_per_year": 120.5,
+          "citations": 484,
+          "citations_per_year": 121.0,
           "abstract": "Recent advancements in large language models (LLMs) have led to the creation of intelligent agents capable of performing complex tasks. This paper introduces a novel LLM-based multimodal agent framework designed to operate smartphone applications. Our framework allows the agent to mimic human-like interactions such as tapping and swiping through a simplified action space, eliminating the need for system back-end access and enhancing its versatility across various apps. Central to the agent’s functionality is an innovative in-context learning method, where it either autonomously explores or learns from human demonstrations, creating a knowledge base used to execute complex tasks across diverse applications. We conducted extensive testing with our agent on over 50 tasks spanning 10 applications, ranging from social media to sophisticated image editing tools. Additionally, a user study confirmed the agent’s superior performance and practicality in handling a diverse array of high-level tasks, demonstrating its effectiveness in real-world settings. Our project page is available at https://appagent-official.github.io/.",
           "url": "https://www.semanticscholar.org/paper/61c723e7d91ca308b9eeacab35a2fce7548ef9fc",
           "externalIds": {
@@ -1429,8 +2010,8 @@
           "title": "CoAuthor: Designing a Human-AI Collaborative Writing Dataset for Exploring Language Model Capabilities",
           "year": 2022,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 553,
-          "citations_per_year": 110.6,
+          "citations": 555,
+          "citations_per_year": 111.0,
           "abstract": "Large language models (LMs) offer unprecedented language generation capabilities and exciting opportunities for interaction design. However, their highly context-dependent capabilities are difficult to grasp and are often subjectively interpreted. In this paper, we argue that by curating and analyzing large interaction datasets, the HCI community can foster more incisive examinations of LMs’ generative capabilities. Exemplifying this approach, we present CoAuthor, a dataset designed for revealing GPT-3’s capabilities in assisting creative and argumentative writing. CoAuthor captures rich interactions between 63 writers and four instances of GPT-3 across 1445 writing sessions. We demonstrate that CoAuthor can address questions about GPT-3’s language, ideation, and collaboration capabilities, and reveal its contribution as a writing “collaborator” under various definitions of good collaboration. Finally, we discuss how this work may facilitate a more principled discussion around LMs’ promises and pitfalls in relation to interaction design. The dataset and an interface for replaying the writing sessions are publicly available at https://coauthor.stanford.edu.",
           "url": "https://www.semanticscholar.org/paper/2b5d234efd26e7377698cf16c901601a3d3c4e56",
           "externalIds": {
@@ -1445,8 +2026,8 @@
           "title": "CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs",
           "year": 2024,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 330,
-          "citations_per_year": 110.0,
+          "citations": 332,
+          "citations_per_year": 110.7,
           "abstract": "Timely, personalized feedback is essential for students learning programming. LLM-powered tools like ChatGPT offer instant support, but reveal direct answers with code, which may hinder deep conceptual engagement. We developed CodeAid, an LLM-powered programming assistant delivering helpful, technically correct responses, without revealing code solutions. CodeAid answers conceptual questions, generates pseudo-code with line-by-line explanations, and annotates student’s incorrect code with fix suggestions. We deployed CodeAid in a programming class of 700 students for a 12-week semester. A thematic analysis of 8,000 usages of CodeAid was performed, further enriched by weekly surveys, and 22 student interviews. We then interviewed eight programming educators to gain further insights. Our findings reveal four design considerations for future educational AI assistants: D1) exploiting AI’s unique benefits; D2) simplifying query formulation while promoting cognitive engagement; D3) avoiding direct responses while encouraging motivated learning; and D4) maintaining transparency and control for students to asses and steer AI responses.",
           "url": "https://www.semanticscholar.org/paper/7c04ab297b59d4fe29285f339350882a3120b27f",
           "externalIds": {
@@ -1461,8 +2042,8 @@
           "title": "Design Principles for Generative AI Applications",
           "year": 2024,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 303,
-          "citations_per_year": 101.0,
+          "citations": 305,
+          "citations_per_year": 101.7,
           "abstract": "Generative AI applications present unique design challenges. As generative AI technologies are increasingly being incorporated into mainstream applications, there is an urgent need for guidance on how to design user experiences that foster effective and safe use. We present six principles for the design of generative AI applications that address unique characteristics of generative AI UX and offer new interpretations and extensions of known issues in the design of AI applications. Each principle is coupled with a set of design strategies for implementing that principle via UX capabilities or through the design process. The principles and strategies were developed through an iterative process involving literature review, feedback from design practitioners, validation against real-world generative AI applications, and incorporation into the design process of two generative AI applications. We anticipate the principles to usefully inform the design of generative AI applications by driving actionable design recommendations.",
           "url": "https://www.semanticscholar.org/paper/515db5fefd215c05649aaa5adc4d64075d2518ab",
           "externalIds": {
@@ -1477,8 +2058,8 @@
           "title": "Co-Writing with Opinionated Language Models Affects Users’ Views",
           "year": 2023,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 392,
-          "citations_per_year": 98.0,
+          "citations": 393,
+          "citations_per_year": 98.2,
           "abstract": "If large language models like GPT-3 preferably produce a particular point of view, they may influence people’s opinions on an unknown scale. This study investigates whether a language-model-powered writing assistant that generates some opinions more often than others impacts what users write – and what they think. In an online experiment, we asked participants (N=1,506) to write a post discussing whether social media is good for society. Treatment group participants used a language-model-powered writing assistant configured to argue that social media is good or bad for society. Participants then completed a social media attitude survey, and independent judges (N=500) evaluated the opinions expressed in their writing. Using the opinionated language model affected the opinions expressed in participants’ writing and shifted their opinions in the subsequent attitude survey. We discuss the wider implications of our results and argue that the opinions built into AI language technologies need to be monitored and engineered more carefully.",
           "url": "https://www.semanticscholar.org/paper/92999f7a304e866a2be7176e59c745481ed01042",
           "externalIds": {
@@ -1493,8 +2074,8 @@
           "title": "The Metacognitive Demands and Opportunities of Generative AI",
           "year": 2023,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 362,
-          "citations_per_year": 90.5,
+          "citations": 366,
+          "citations_per_year": 91.5,
           "abstract": "Generative AI (GenAI) systems offer unprecedented opportunities for transforming professional and personal work, yet present challenges around prompting, evaluating and relying on outputs, and optimizing workflows. We argue that metacognition—the psychological ability to monitor and control one’s thoughts and behavior—offers a valuable lens to understand and design for these usability challenges. Drawing on research in psychology and cognitive science, and recent GenAI user studies, we illustrate how GenAI systems impose metacognitive demands on users, requiring a high degree of metacognitive monitoring and control. We propose these demands could be addressed by integrating metacognitive support strategies into GenAI systems, and by designing GenAI systems to reduce their metacognitive demand by targeting explainability and customizability. Metacognition offers a coherent framework for understanding the usability challenges posed by GenAI, and provides novel research and design directions to advance human-AI interaction.",
           "url": "https://www.semanticscholar.org/paper/a1ba4bbc0ec996278d8dc9acbcf64e444e2ada39",
           "externalIds": {
@@ -1509,8 +2090,8 @@
           "title": "Evaluating Large Language Models in Generating Synthetic HCI Research Data: a Case Study",
           "year": 2023,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 331,
-          "citations_per_year": 82.8,
+          "citations": 333,
+          "citations_per_year": 83.2,
           "abstract": "Collecting data is one of the bottlenecks of Human-Computer Interaction (HCI) research. Motivated by this, we explore the potential of large language models (LLMs) in generating synthetic user research data. We use OpenAI’s GPT-3 model to generate open-ended questionnaire responses about experiencing video games as art, a topic not tractable with traditional computational user models. We test whether synthetic responses can be distinguished from real responses, analyze errors of synthetic data, and investigate content similarities between synthetic and real data. We conclude that GPT-3 can, in this context, yield believable accounts of HCI experiences. Given the low cost and high speed of LLM data generation, synthetic data should be useful in ideating and piloting new experiments, although any findings must obviously always be validated with real data. The results also raise concerns: if employed by malicious users of crowdsourcing services, LLMs may make crowdsourcing of self-report data fundamentally unreliable.",
           "url": "https://www.semanticscholar.org/paper/0ffd57884d7957f6b5634b9fa24843dc3759668f",
           "externalIds": {
@@ -1524,8 +2105,8 @@
           "title": "Human-LLM Collaborative Annotation Through Effective Verification of LLM Labels",
           "year": 2024,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 225,
-          "citations_per_year": 75.0,
+          "citations": 227,
+          "citations_per_year": 75.7,
           "abstract": "Large language models (LLMs) have shown remarkable performance across various natural language processing (NLP) tasks, indicating their significant potential as data annotators. Although LLM-generated annotations are more cost-effective and efficient to obtain, they are often erroneous for complex or domain-specific tasks and may introduce bias when compared to human annotations. Therefore, instead of completely replacing human annotators with LLMs, we need to leverage the strengths of both LLMs and humans to ensure the accuracy and reliability of annotations. This paper presents a multi-step human-LLM collaborative approach where (1) LLMs generate labels and provide explanations, (2) a verifier assesses the quality of LLM-generated labels, and (3) human annotators re-annotate a subset of labels with lower verification scores. To facilitate human-LLM collaboration, we make use of LLM’s ability to rationalize its decisions. LLM-generated explanations can provide additional information to the verifier model as well as help humans better understand LLM labels. We demonstrate that our verifier is able to identify potentially incorrect LLM labels for human re-annotation. Furthermore, we investigate the impact of presenting LLM labels and explanations on human re-annotation through crowdsourced studies.",
           "url": "https://www.semanticscholar.org/paper/61d134b99099b21cc88b700229140023507ce848",
           "externalIds": {
@@ -1539,8 +2120,8 @@
           "title": "The Effects of Generative AI on Design Fixation and Divergent Thinking",
           "year": 2024,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 216,
-          "citations_per_year": 72.0,
+          "citations": 217,
+          "citations_per_year": 72.3,
           "abstract": "Generative AI systems have been heralded as tools for augmenting human creativity and inspiring divergent thinking, though with little empirical evidence for these claims. This paper explores the effects of exposure to AI-generated images on measures of design fixation and divergent thinking in a visual ideation task. Through a between-participants experiment (N=60), we found that support from an AI image generator during ideation leads to higher fixation on an initial example. Participants who used AI produced fewer ideas, with less variety and lower originality compared to a baseline. Our qualitative analysis suggests that the effectiveness of co-ideation with AI rests on participants’ chosen approach to prompt creation and on the strategies used by participants to generate ideas in response to the AI’s suggestions. We discuss opportunities for designing generative AI systems for ideation support and incorporating these AI tools into ideation workflows.",
           "url": "https://www.semanticscholar.org/paper/2a814b6605b137a9b2705fe68feae6c47248cddf",
           "externalIds": {
@@ -1598,19 +2179,19 @@
           }
         },
         {
-          "paperId": "c6e2837894bb545fc62ef41d7dadcd6e1bb51dc5",
-          "title": "PromptCharm: Text-to-Image Generation through Multi-modal Prompting and Refinement",
+          "paperId": "91f657c27946a6a96d122c2beace6d3068ee5df6",
+          "title": "The Dark Side of AI Companionship: A Taxonomy of Harmful Algorithmic Behaviors in Human-AI Relationships",
           "year": 2024,
           "venue": "International Conference on Human Factors in Computing Systems",
-          "citations": 175,
-          "citations_per_year": 58.3,
-          "abstract": "The recent advancements in Generative AI have significantly advanced the field of text-to-image generation. The state-of-the-art text-to-image model, Stable Diffusion, is now capable of synthesizing high-quality images with a strong sense of aesthetics. Crafting text prompts that align with the model’s interpretation and the user’s intent thus becomes crucial. However, prompting remains challenging for novice users due to the complexity of the stable diffusion model and the non-trivial efforts required for iteratively editing and refining the text prompts. To address these challenges, we propose PromptCharm, a mixed-initiative system that facilitates text-to-image creation through multi-modal prompt engineering and refinement. To assist novice users in prompting, PromptCharm first automatically refines and optimizes the user’s initial prompt. Furthermore, PromptCharm supports the user in exploring and selecting different image styles within a large database. To assist users in effectively refining their prompts and images, PromptCharm renders model explanations by visualizing the model’s attention values. If the user notices any unsatisfactory areas in the generated images, they can further refine the images through model attention adjustment or image inpainting within the rich feedback loop of PromptCharm. To evaluate the effectiveness and usability of PromptCharm, we conducted a controlled user study with 12 participants and an exploratory user study with another 12 participants. These two studies show that participants using PromptCharm were able to create images with higher quality and better aligned with the user’s expectations compared with using two variants of PromptCharm that lacked interaction or visualization support.",
-          "url": "https://www.semanticscholar.org/paper/c6e2837894bb545fc62ef41d7dadcd6e1bb51dc5",
+          "citations": 176,
+          "citations_per_year": 58.7,
+          "abstract": "As conversational AI systems increasingly engage with people socially and emotionally, they bring notable risks and harms, particularly in human-AI relationships. However, these harms remain underexplored due to the private and sensitive nature of such interactions. This study investigates the harmful behaviors and roles of AI companions through an analysis of 35,390 conversation excerpts between 10,149 users and the AI companion Replika. We develop a taxonomy of AI companion harms encompassing six categories of harmful algorithmic behaviors: relational transgression, harassment, verbal abuse, self-harm, mis/disinformation, and privacy violations. These harmful behaviors stem from four distinct roles that AI plays: perpetrator, instigator, facilitator, and enabler. Our findings highlight relational harm as a critical yet understudied type of AI harm and emphasize the importance of examining AI’s roles in harmful interactions to address root causes. We provide actionable insights for designing ethical and responsible AI companions that prioritize user safety and well-being.",
+          "url": "https://www.semanticscholar.org/paper/91f657c27946a6a96d122c2beace6d3068ee5df6",
           "externalIds": {
-            "DBLP": "conf/chi/WangHS0024",
-            "ArXiv": "2403.04014",
-            "DOI": "10.1145/3613904.3642803",
-            "CorpusId": 268264261
+            "DBLP": "conf/chi/ZhangLMZGL25",
+            "ArXiv": "2410.20130",
+            "DOI": "10.1145/3706598.3713429",
+            "CorpusId": 273653956
           }
         }
       ]
@@ -1622,8 +2203,8 @@
         "2023": 968,
         "2025": 1171,
         "2024": 1118,
-        "2022": 703,
-        "2021": 633,
+        "2022": 702,
+        "2021": 634,
         "2020": 576,
         "2026": 370
       },
@@ -1757,7 +2338,7 @@
         "2022": {
           "other_review": {
             "label": "Other / needs review",
-            "count": 638
+            "count": 637
           },
           "genai_safety_media": {
             "label": "GenAI safety / synthetic media / deepfake",
@@ -1799,7 +2380,7 @@
         "2021": {
           "other_review": {
             "label": "Other / needs review",
-            "count": 573
+            "count": 574
           },
           "privacy_advice_policy": {
             "label": "Privacy advice / literacy / policy",
@@ -1922,136 +2503,30 @@
     },
     "security_big4_usable": {
       "totals": {
-        "2024": 63,
-        "2025": 63,
-        "2021": 27,
-        "2023": 83,
-        "2020": 19,
-        "2022": 38,
-        "2026": 11
+        "2023": 71,
+        "2020": 25,
+        "2024": 71,
+        "2022": 53,
+        "2021": 20,
+        "2025": 81,
+        "2026": 25
       },
       "topics": {
-        "2024": {
-          "other_review": {
-            "label": "Other / needs review",
-            "count": 47
-          },
-          "fraud_scams_online_harms": {
-            "label": "Fraud / scams / online harms",
-            "count": 4
-          },
-          "crypto_security_cryptography": {
-            "label": "Cryptography / censorship / private advertising",
-            "count": 3
-          },
-          "digital_labor_platform_power": {
-            "label": "Digital labor / platforms / organizational power",
-            "count": 2
-          },
-          "crypto_dao_web3_governance": {
-            "label": "Crypto / DAO / Web3 governance",
-            "count": 2
-          },
-          "genai_safety_media": {
-            "label": "GenAI safety / synthetic media / deepfake",
-            "count": 1
-          },
-          "human_ai_creativity_education_health": {
-            "label": "Human-AI collaboration / creativity / education / health",
-            "count": 1
-          },
-          "ai_agents_llm_workflows": {
-            "label": "AI agents / LLM workflows",
-            "count": 2
-          },
-          "privacy_advice_policy": {
-            "label": "Privacy advice / literacy / policy",
-            "count": 1
-          }
-        },
-        "2025": {
-          "other_review": {
-            "label": "Other / needs review",
-            "count": 46
-          },
-          "digital_labor_platform_power": {
-            "label": "Digital labor / platforms / organizational power",
-            "count": 3
-          },
-          "ai_agents_llm_workflows": {
-            "label": "AI agents / LLM workflows",
-            "count": 2
-          },
-          "crypto_security_cryptography": {
-            "label": "Cryptography / censorship / private advertising",
-            "count": 3
-          },
-          "genai_safety_media": {
-            "label": "GenAI safety / synthetic media / deepfake",
-            "count": 1
-          },
-          "privacy_advice_policy": {
-            "label": "Privacy advice / literacy / policy",
-            "count": 2
-          },
-          "fraud_scams_online_harms": {
-            "label": "Fraud / scams / online harms",
-            "count": 1
-          },
-          "crypto_dao_web3_governance": {
-            "label": "Crypto / DAO / Web3 governance",
-            "count": 1
-          },
-          "human_ai_creativity_education_health": {
-            "label": "Human-AI collaboration / creativity / education / health",
-            "count": 2
-          },
-          "accessibility_older_adults": {
-            "label": "Accessibility / older adults / assistive tech",
-            "count": 2
-          }
-        },
-        "2021": {
-          "other_review": {
-            "label": "Other / needs review",
-            "count": 20
-          },
-          "ai_agents_llm_workflows": {
-            "label": "AI agents / LLM workflows",
-            "count": 1
-          },
-          "privacy_advice_policy": {
-            "label": "Privacy advice / literacy / policy",
-            "count": 2
-          },
-          "fraud_scams_online_harms": {
-            "label": "Fraud / scams / online harms",
-            "count": 2
-          },
-          "digital_labor_platform_power": {
-            "label": "Digital labor / platforms / organizational power",
-            "count": 2
-          }
-        },
         "2023": {
           "other_review": {
             "label": "Other / needs review",
-            "count": 72
+            "count": 63
           },
-          "fraud_scams_online_harms": {
-            "label": "Fraud / scams / online harms",
-            "count": 2
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
           },
           "crypto_security_cryptography": {
             "label": "Cryptography / censorship / private advertising",
             "count": 2
           },
-          "crypto_dao_web3_governance": {
-            "label": "Crypto / DAO / Web3 governance",
-            "count": 2
-          },
-          "digital_labor_platform_power": {
-            "label": "Digital labor / platforms / organizational power",
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
             "count": 1
           },
           "ai_agents_llm_workflows": {
@@ -2060,38 +2535,28 @@
           },
           "genai_safety_media": {
             "label": "GenAI safety / synthetic media / deepfake",
-            "count": 2
+            "count": 1
           },
           "human_ai_creativity_education_health": {
             "label": "Human-AI collaboration / creativity / education / health",
+            "count": 1
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
             "count": 1
           }
         },
         "2020": {
           "other_review": {
             "label": "Other / needs review",
-            "count": 17
+            "count": 22
           },
           "accessibility_older_adults": {
             "label": "Accessibility / older adults / assistive tech",
-            "count": 2
-          }
-        },
-        "2022": {
-          "other_review": {
-            "label": "Other / needs review",
-            "count": 32
+            "count": 1
           },
           "privacy_advice_policy": {
             "label": "Privacy advice / literacy / policy",
-            "count": 3
-          },
-          "fraud_scams_online_harms": {
-            "label": "Fraud / scams / online harms",
-            "count": 1
-          },
-          "crypto_security_cryptography": {
-            "label": "Cryptography / censorship / private advertising",
             "count": 1
           },
           "digital_labor_platform_power": {
@@ -2099,10 +2564,130 @@
             "count": 1
           }
         },
+        "2024": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 47
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 2
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 6
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 4
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 3
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 4
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 2
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 1
+          }
+        },
+        "2022": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 46
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 1
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 3
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 1
+          }
+        },
+        "2021": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 16
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 1
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 1
+          }
+        },
+        "2025": {
+          "other_review": {
+            "label": "Other / needs review",
+            "count": 55
+          },
+          "ai_agents_llm_workflows": {
+            "label": "AI agents / LLM workflows",
+            "count": 6
+          },
+          "crypto_security_cryptography": {
+            "label": "Cryptography / censorship / private advertising",
+            "count": 4
+          },
+          "fraud_scams_online_harms": {
+            "label": "Fraud / scams / online harms",
+            "count": 2
+          },
+          "crypto_dao_web3_governance": {
+            "label": "Crypto / DAO / Web3 governance",
+            "count": 3
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
+            "count": 3
+          },
+          "digital_labor_platform_power": {
+            "label": "Digital labor / platforms / organizational power",
+            "count": 2
+          },
+          "privacy_advice_policy": {
+            "label": "Privacy advice / literacy / policy",
+            "count": 2
+          },
+          "accessibility_older_adults": {
+            "label": "Accessibility / older adults / assistive tech",
+            "count": 3
+          },
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
+            "count": 1
+          }
+        },
         "2026": {
           "other_review": {
             "label": "Other / needs review",
-            "count": 4
+            "count": 16
           },
           "privacy_advice_policy": {
             "label": "Privacy advice / literacy / policy",
@@ -2122,10 +2707,14 @@
           },
           "ai_agents_llm_workflows": {
             "label": "AI agents / LLM workflows",
+            "count": 2
+          },
+          "human_ai_creativity_education_health": {
+            "label": "Human-AI collaboration / creativity / education / health",
             "count": 1
           },
-          "crypto_security_cryptography": {
-            "label": "Cryptography / censorship / private advertising",
+          "genai_safety_media": {
+            "label": "GenAI safety / synthetic media / deepfake",
             "count": 1
           }
         }
@@ -2135,10 +2724,10 @@
       "totals": {
         "2025": 166,
         "2023": 132,
-        "2024": 120,
+        "2024": 121,
         "2022": 103,
         "2021": 88,
-        "2026": 118,
+        "2026": 117,
         "2020": 81
       },
       "topics": {
@@ -2225,7 +2814,7 @@
           },
           "digital_labor_platform_power": {
             "label": "Digital labor / platforms / organizational power",
-            "count": 1
+            "count": 2
           },
           "accessibility_older_adults": {
             "label": "Accessibility / older adults / assistive tech",
@@ -2332,10 +2921,6 @@
           "genai_safety_media": {
             "label": "GenAI safety / synthetic media / deepfake",
             "count": 3
-          },
-          "digital_labor_platform_power": {
-            "label": "Digital labor / platforms / organizational power",
-            "count": 1
           }
         },
         "2020": {
@@ -2602,35 +3187,35 @@
       }
     }
   },
-  "migration_method": "source first-hot + Big4 usable/user-study zero-to-one: first popular year in SOUPS/PETS or HCI privacy/security must be earlier than the first year where the topic appears at least once in the security Big4 usable/user-study subset, and the lag must be 1-2 years.",
+  "migration_method": "source first-hot + Big4 user-study zero-to-one: first popular year in SOUPS/PETS or HCI privacy/security must be earlier than the first year where the topic appears at least once in the security Big4 usable/user-study subset, and the lag must be 1-2 years.",
   "topic_migration": {
     "migrations": [
       {
-        "topic": "privacy_advice_policy",
-        "label": "Privacy advice / literacy / policy",
-        "source_group": "soups_pets",
-        "source_label": "SOUPS/PETS",
-        "source_year": 2020,
+        "topic": "ai_agents_llm_workflows",
+        "label": "AI agents / LLM workflows",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2021,
         "source_count": 2,
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
-        "target_year": 2021,
-        "target_count": 2,
+        "target_year": 2022,
+        "target_count": 3,
         "lag_years": 1,
         "signal": "strong",
         "judgment": "source_first_then_big4_breakthrough"
       },
       {
-        "topic": "privacy_advice_policy",
-        "label": "Privacy advice / literacy / policy",
-        "source_group": "hci_privacy_security",
-        "source_label": "HCI privacy/security",
+        "topic": "crypto_security_cryptography",
+        "label": "Cryptography / censorship / private advertising",
+        "source_group": "soups_pets",
+        "source_label": "SOUPS/PETS",
         "source_year": 2020,
-        "source_count": 2,
+        "source_count": 3,
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
         "target_year": 2021,
-        "target_count": 2,
+        "target_count": 1,
         "lag_years": 1,
         "signal": "strong",
         "judgment": "source_first_then_big4_breakthrough"
@@ -2645,21 +3230,6 @@
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
         "target_year": 2023,
-        "target_count": 1,
-        "lag_years": 2,
-        "signal": "medium",
-        "judgment": "source_first_then_big4_breakthrough"
-      },
-      {
-        "topic": "crypto_security_cryptography",
-        "label": "Cryptography / censorship / private advertising",
-        "source_group": "soups_pets",
-        "source_label": "SOUPS/PETS",
-        "source_year": 2020,
-        "source_count": 3,
-        "target_group": "security_big4_usable",
-        "target_label": "安全四大用户研究",
-        "target_year": 2022,
         "target_count": 1,
         "lag_years": 2,
         "signal": "medium",
@@ -2668,31 +3238,31 @@
     ],
     "verified_transmissions": [
       {
-        "topic": "privacy_advice_policy",
-        "label": "Privacy advice / literacy / policy",
-        "source_group": "soups_pets",
-        "source_label": "SOUPS/PETS",
-        "source_year": 2020,
+        "topic": "ai_agents_llm_workflows",
+        "label": "AI agents / LLM workflows",
+        "source_group": "hci_privacy_security",
+        "source_label": "HCI privacy/security",
+        "source_year": 2021,
         "source_count": 2,
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
-        "target_year": 2021,
-        "target_count": 2,
+        "target_year": 2022,
+        "target_count": 3,
         "lag_years": 1,
         "signal": "strong",
         "judgment": "source_first_then_big4_breakthrough"
       },
       {
-        "topic": "privacy_advice_policy",
-        "label": "Privacy advice / literacy / policy",
-        "source_group": "hci_privacy_security",
-        "source_label": "HCI privacy/security",
+        "topic": "crypto_security_cryptography",
+        "label": "Cryptography / censorship / private advertising",
+        "source_group": "soups_pets",
+        "source_label": "SOUPS/PETS",
         "source_year": 2020,
-        "source_count": 2,
+        "source_count": 3,
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
         "target_year": 2021,
-        "target_count": 2,
+        "target_count": 1,
         "lag_years": 1,
         "signal": "strong",
         "judgment": "source_first_then_big4_breakthrough"
@@ -2707,21 +3277,6 @@
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
         "target_year": 2023,
-        "target_count": 1,
-        "lag_years": 2,
-        "signal": "medium",
-        "judgment": "source_first_then_big4_breakthrough"
-      },
-      {
-        "topic": "crypto_security_cryptography",
-        "label": "Cryptography / censorship / private advertising",
-        "source_group": "soups_pets",
-        "source_label": "SOUPS/PETS",
-        "source_year": 2020,
-        "source_count": 3,
-        "target_group": "security_big4_usable",
-        "target_label": "安全四大用户研究",
-        "target_year": 2022,
         "target_count": 1,
         "lag_years": 2,
         "signal": "medium",
@@ -2740,20 +3295,6 @@
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
         "target_year": 2020,
-        "target_count": 2,
-        "lag_years": 0,
-        "reason": "big4_first_or_lag_too_long"
-      },
-      {
-        "topic": "ai_agents_llm_workflows",
-        "label": "AI agents / LLM workflows",
-        "source_group": "hci_privacy_security",
-        "source_label": "HCI privacy/security",
-        "source_year": 2021,
-        "source_count": 2,
-        "target_group": "security_big4_usable",
-        "target_label": "安全四大用户研究",
-        "target_year": 2021,
         "target_count": 1,
         "lag_years": 0,
         "reason": "big4_first_or_lag_too_long"
@@ -2767,19 +3308,24 @@
         "source_count": 3,
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
-        "target_year": 2021,
-        "target_count": 2,
-        "lag_years": 0,
+        "target_year": 2020,
+        "target_count": 1,
+        "lag_years": -1,
         "reason": "big4_first_or_lag_too_long"
       },
       {
-        "topic": "fraud_scams_online_harms",
-        "label": "Fraud / scams / online harms",
+        "topic": "privacy_advice_policy",
+        "label": "Privacy advice / literacy / policy",
+        "source_group": "soups_pets",
+        "source_label": "SOUPS/PETS",
+        "source_year": 2020,
+        "source_count": 2,
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
-        "target_year": 2021,
-        "target_count": 2,
-        "reason": "big4_only_or_first"
+        "target_year": 2020,
+        "target_count": 1,
+        "lag_years": 0,
+        "reason": "big4_first_or_lag_too_long"
       },
       {
         "topic": "crypto_dao_web3_governance",
@@ -2790,9 +3336,9 @@
         "source_count": 5,
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
-        "target_year": 2023,
-        "target_count": 2,
-        "lag_years": -1,
+        "target_year": 2021,
+        "target_count": 1,
+        "lag_years": -3,
         "reason": "big4_first_or_lag_too_long"
       },
       {
@@ -2804,12 +3350,21 @@
         "source_count": 3,
         "target_group": "security_big4_usable",
         "target_label": "安全四大用户研究",
-        "target_year": 2023,
-        "target_count": 2,
-        "lag_years": -2,
+        "target_year": 2022,
+        "target_count": 1,
+        "lag_years": -3,
         "reason": "big4_first_or_lag_too_long"
+      },
+      {
+        "topic": "fraud_scams_online_harms",
+        "label": "Fraud / scams / online harms",
+        "target_group": "security_big4_usable",
+        "target_label": "安全四大用户研究",
+        "target_year": 2023,
+        "target_count": 1,
+        "reason": "big4_only_or_first"
       }
     ],
-    "method": "source first-hot + Big4 usable/user-study zero-to-one: source first-hot must be earlier than the first Big4 usable/user-study appearance, with a 1-2 year lag."
+    "method": "source first-hot + Big4 user-study zero-to-one: source first-hot must be earlier than the first Big4 usable/user-study appearance, with a 1-2 year lag."
   }
 }

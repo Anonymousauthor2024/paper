@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-08-03",
+  "scope": "Chinese 2-3 sentence introductions used only when the merged dashboard record has no existing summary. Each entry is grounded in an official conference page, an author/institution page, or arXiv abstract.",
+  "papers": [
+    {
+      "title": "What is Safety? Corporate Discourse, Power, and the Politics of Generative AI Safety",
+      "summary_zh": "论文采用批判性话语分析，研究头部生成式AI公司如何在公开文件中建构“安全”，以及它们如何描述权威、责任与合法性。结果表明，企业话语倾向于把安全塑造成持续实验和前瞻治理过程，同时巩固企业自身的解释权；作者因此提醒HCI研究不要直接沿用企业框架，而应强调问责、公平与正义。",
+      "abstract_source_url": "https://arxiv.org/abs/2602.06981",
+      "source_type": "arXiv abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "YouthSafe: A Youth-Centric Safety Benchmark and Safeguard Model for Large Language Models",
+      "summary_zh": "论文构建面向青少年LLM交互的YAIR基准，包含12,449段标注对话和78类细粒度风险，覆盖诱导、边界侵犯、身份混淆与情感过度依赖等发展阶段特有伤害。评测显示现有内容审核模型容易漏掉语境隐蔽但具有发展性危害的风险；作者进一步提出YouthSafe实时检测模型，并报告其在风险检测与分类上优于既有方法。",
+      "abstract_source_url": "https://arxiv.org/abs/2509.08997",
+      "source_type": "arXiv abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "Youth-Centered GAI Risks (YAIR): A Taxonomy of Generative AI Risks from Empirical Data",
+      "summary_zh": "研究基于344段青少年与生成式AI聊天记录、30,305条Reddit讨论和153份AI事件报告，建立青少年中心的生成式AI风险分类。作者归纳出6个高层风险类别、84项具体风险和4条交互路径，并指出心理健康、行为与社会发展风险，以及毒性、隐私、偏见和滥用的新表现，尚未被现有儿童网络安全或AI风险框架充分覆盖。",
+      "abstract_source_url": "https://www.usenix.org/conference/soups2025/presentation/yu",
+      "source_type": "USENIX official abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "Towards Automating Data Access Permissions in AI Agents",
+      "summary_zh": "论文先通过情境式用户研究识别影响AI智能体数据访问授权的因素，再把这些因素编码进结合上下文学习与协同过滤的权限预测助手。结果显示，授权决定受沟通情境影响，但个人偏好在相同情境内较稳定；模型总体准确率达到85.1%，高置信预测达到94.4%，少量个人训练样本也能明显提高预测表现。",
+      "abstract_source_url": "https://arxiv.org/abs/2511.17959",
+      "source_type": "arXiv abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers",
+      "summary_zh": "研究调查319名知识工作者，并收集936个在工作中使用生成式AI的亲历案例，分析何时会进行批判性思考以及投入多少认知努力。结果显示，对GenAI越有信心与更少的批判性思考相关，而较高的任务自信与更多批判性思考相关；GenAI也把思考重点转向信息核验、结果整合和任务监督，但这些结论主要是自我报告关联而非因果效应。",
+      "abstract_source_url": "https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/",
+      "source_type": "Microsoft Research publication abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "SituGuard: LLM-based Fine-grained Smart Glass Privacy Control in Home Environments",
+      "summary_zh": "SituGuard面向智能眼镜进入家庭环境后的视觉隐私问题，尝试利用LLM和人机交互方法提供自动化、细粒度且能理解情境的隐私控制。项目官方介绍称，该方案已在智能家居场景中完成有效性验证，并获得UbiComp 2025 Student Challenge最佳学生挑战奖；公开页面没有提供可用于报告具体量化结果的完整abstract。",
+      "abstract_source_url": "https://www.insc.tsinghua.edu.cn/inscen/info/1254/1133.htm",
+      "source_type": "Tsinghua institutional project description",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "Safety Perceptions of Generative AI Conversational Agents: Uncovering Perceptual Differences in Trust, Risk, and Fairness",
+      "summary_zh": "研究开发一套生成式AI对话代理安全感知量表，并对123名美国参与者的问卷进行因子分析和潜在类别分析。结果识别出“犹豫的怀疑者”“谨慎的信任者”和“自信的采用者”三类人群；更频繁使用聊天机器人与更高的信任和公平感、更低的风险感知相关，说明信任、公平和风险不能被当作单一安全态度。",
+      "abstract_source_url": "https://www.usenix.org/conference/soups2025/presentation/tolsdorf",
+      "source_type": "USENIX official abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "IsolateGPT: An Execution Isolation Architecture for LLM-Based Systems",
+      "summary_zh": "论文针对第三方LLM应用可自由访问用户数据、其他应用和系统能力所产生的风险，提出通过隔离执行环境和受权限控制的接口限制应用交互的IsolateGPT架构。攻击评测显示，该架构能够缓解多类安全、隐私和安全性问题且不损失功能；四分之三测试查询的性能开销低于30%，因此它主要是一项系统架构与安全评测工作，而非用户研究。",
+      "abstract_source_url": "https://arxiv.org/abs/2403.04960",
+      "source_type": "arXiv abstract and NDSS paper",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "Governance of Generative AI in Creative Work: Consent, Credit, Compensation, and Beyond",
+      "summary_zh": "研究访谈来自视觉艺术与设计、写作和编程领域的20名创意工作者，比较现行生成式AI治理方式与从业者实际希望获得的保护。参与者关切训练数据使用中的同意、署名和补偿，但论文也表明这“三个C”需要结合不同创作关系和职业风险具体落实；作者据此提出更合乎伦理的模型训练与治理建议。",
+      "abstract_source_url": "https://arxiv.org/abs/2501.11457",
+      "source_type": "arXiv abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "Evaluating the Efficacy of Large Language Models for Generating Fine-Grained Visual Privacy Policies in Homes",
+      "summary_zh": "论文提出以LLM作为动态隐私策略引擎，根据数据敏感度、空间情境和社会在场情况生成细粒度视觉隐私规则，例如实时选择性遮挡物体。作者在模拟家庭场景中比较GPT-4o和Qwen-VL等视觉语言模型，最佳策略的机器适切性评分为3.99/5、人工评分为4.00/5，说明该思路具有可行性，但仍属于受控场景中的早期验证。",
+      "abstract_source_url": "https://arxiv.org/abs/2508.00321",
+      "source_type": "arXiv abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "Evaluating Concept Filtering Defenses against Child Sexual Abuse Material Generation by Text-to-Image Models",
+      "summary_zh": "论文用博弈式安全定义系统评估从训练数据中移除儿童概念能否阻止文生图模型生成儿童性虐待材料，并采用“戴眼镜儿童”作为合规代理概念开展实验。结果显示现有检测器无法完全清除相关图像，即使残留比例很低，提示策略仍可恢复该概念，微调甚至能在完全过滤后重新引入它；因此该防御对闭源模型保护有限，对开放权重模型基本无效，还会损害模型生成一般儿童相关内容的能力。",
+      "abstract_source_url": "https://arxiv.org/abs/2512.05707",
+      "source_type": "arXiv abstract",
+      "verified_at": "2026-08-03"
+    },
+    {
+      "title": "DataSentinel: A Game-Theoretic Detection of Prompt Injection Attacks",
+      "summary_zh": "论文把提示注入检测建模为检测器与自适应攻击者之间的极小极大博弈，并交替优化攻击和检测目标来微调LLM检测器。作者在多个基准数据集和模型上评估DataSentinel，结果显示它不仅能识别已有提示注入，也能更有效地应对专门针对检测器适配的攻击；该工作属于技术防御与基准评测，并不包含终端用户研究。",
+      "abstract_source_url": "https://arxiv.org/abs/2504.11358",
+      "source_type": "arXiv abstract",
+      "verified_at": "2026-08-03"
+    }
+  ]
+}

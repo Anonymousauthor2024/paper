@@ -162,6 +162,16 @@
       "note": "用户点名新增；已按 profile_audit 先绑定含领域论文的候选，仍需后续核对是否为悉尼大学 Liyi Zhou"
     },
     {
+      "name": "Jiachi Chen",
+      "affiliation": "Zhejiang University",
+      "role": "professor",
+      "known_for": "Web3 security, smart-contract security, Agentic Economy, AI/LLM for Web3, software testing",
+      "ss_author_ids": ["2254800142", "3413969", "2382934802"],
+      "dblp": "https://dblp.org/pid/181/3422",
+      "homepage": "https://jiachi-chen.github.io/",
+      "note": "ZJU 100 Young Professor；S2 拆成主档、早期智能合约档和 2026 新作档，已用主页、ORCID 0000-0002-0192-9992 与代表论文交叉核验"
+    },
+    {
       "name": "Florian Schaub",
       "affiliation": "University of Michigan",
       "role": "professor",

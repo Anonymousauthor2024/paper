@@ -882,6 +882,79 @@ def usable_source_family(venue):
     return None
 
 
+USABLE_SECURITY_SCOPE_TERMS = (
+    "security", "privacy", "scam", "scams", "fraud", "phishing", "warning",
+    "authentication", "password", "abuse", "harassment", "cybercrime", "safety",
+)
+
+USABLE_HUMAN_EVIDENCE_TERMS = (
+    "participants", "interview", "survey", "questionnaire", "focus group",
+    "user study", "human-centered", "human centred", "thematic analysis",
+    "qualitative analysis", "mixed-method", "mixed method", "field study",
+    "reddit posts", "social media posts", "user perceptions", "user behavior",
+    "user behaviour", "people often", "community-centered", "community centred",
+)
+
+ADVICE_LEARNING_RECALL_TERMS = (
+    "security advice", "privacy advice", "seek advice", "seeking advice", "obtain advice",
+    "advice on", "informational support", "emotional support", "reassurance", "coping",
+    "help-seeking", "knowledge-sharing", "knowledge sharing", "awareness", "literacy",
+    "security education", "privacy education", "security learning", "warning", "warnings",
+)
+
+USER_EXPERIMENT_RECALL_TERMS = (
+    "between-subjects", "within-subjects", "field experiment", "online experiment",
+    "controlled experiment", "randomized", "randomised", "a/b test", "ab test",
+)
+
+
+def rule_based_usable_tags(paper):
+    """Classify candidate papers from content; venue/author only defines the pool."""
+    text = " ".join(str(paper.get(k) or "") for k in (
+        "title", "abstract", "topic", "summary_zh", "takeaway_zh", "method",
+    )).lower()
+    if not any(term in text for term in USABLE_SECURITY_SCOPE_TERMS):
+        return set()
+    if not any(term in text for term in USABLE_HUMAN_EVIDENCE_TERMS):
+        return set()
+    tags = {"Usable Security"}
+    if any(term in text for term in ADVICE_LEARNING_RECALL_TERMS):
+        tags.add("安全建议与学习")
+    if any(term in text for term in USER_EXPERIMENT_RECALL_TERMS):
+        tags.add("用户实验")
+    return tags
+
+
+def collect_rule_based_usable_rows(experts, trends):
+    """Build a complete expert+venue candidate pool, then classify by abstract evidence."""
+    rows = {}
+
+    def add(paper, source):
+        if (paper.get("year") or 0) not in {2025, 2026}:
+            return
+        if not usable_source_family(paper.get("venue")):
+            return
+        key = _norm_title(paper.get("title"))
+        if not key:
+            return
+        tags = rule_based_usable_tags(paper)
+        if not tags:
+            return
+        row = rows.setdefault(key, {"paper": paper, "tags": set(), "sources": set()})
+        row["tags"].update(tags)
+        row["sources"].add(source)
+        if len(paper.get("abstract") or "") > len(row["paper"].get("abstract") or ""):
+            row["paper"] = paper
+
+    for expert in experts:
+        for paper in expert.get("papers", []):
+            add(paper, "expert")
+    for block in trends.get("blocks", []):
+        for paper in block.get("papers", []):
+            add(paper, block.get("key") or "trend")
+    return list(rows.values())
+
+
 def paper_default_topic_tags(paper, forced=None):
     tags = set(forced or [])
     text = " ".join(str(paper.get(k) or "") for k in (
@@ -899,9 +972,15 @@ def paper_default_topic_tags(paper, forced=None):
     return tags
 
 
-def collect_usable_hub_papers(official, advice, experiments, automatic, genai_rows):
+def collect_usable_hub_papers(official, advice, experiments, automatic, genai_rows, rule_based_rows=None):
     """Merge the curated usable-security datasets without altering their source files."""
     rows = {}
+    summary_data = json.loads(read("data/paper_summaries_zh.json") or "{}")
+    summary_by_title = {
+        _norm_title(entry.get("title")): entry
+        for entry in summary_data.get("papers", [])
+        if _norm_title(entry.get("title"))
+    }
 
     def add(paper, forced_tags=None):
         title = paper.get("title") or ""
@@ -911,6 +990,7 @@ def collect_usable_hub_papers(official, advice, experiments, automatic, genai_ro
             return
         tags = paper_default_topic_tags(paper, {"Usable Security", *(forced_tags or [])})
         themes = usable_theme_labels(paper, tags)
+        supplemental_summary = summary_by_title.get(key) or {}
         row = rows.setdefault(key, {
             "id": key,
             "title": title,
@@ -918,7 +998,10 @@ def collect_usable_hub_papers(official, advice, experiments, automatic, genai_ro
             "venue": paper.get("venue") or "",
             "url": paper.get("url") or paper.get("source_url") or "#",
             "topic": paper.get("topic") or "",
-            "summary": paper.get("summary_zh") or paper.get("takeaway_zh") or "",
+            "summary": paper.get("summary_zh") or paper.get("takeaway_zh") or supplemental_summary.get("summary_zh") or "",
+            "summary_source_url": supplemental_summary.get("abstract_source_url") or "",
+            "summary_verified_at": supplemental_summary.get("verified_at") or "",
+            "abstract": paper.get("abstract") or "",
             "method": paper.get("method") or paper.get("design") or "",
             "source_family": family,
             "tags": set(),
@@ -933,9 +1016,15 @@ def collect_usable_hub_papers(official, advice, experiments, automatic, genai_ro
             ("topic", [paper.get("topic")]),
             ("summary", [paper.get("summary_zh"), paper.get("takeaway_zh")]),
             ("method", [paper.get("method"), paper.get("design")]),
+            ("abstract", [paper.get("abstract")]),
         ):
             if not row.get(field):
                 row[field] = next((value for value in candidates if value), row.get(field) or "")
+        if not row.get("summary") and supplemental_summary.get("summary_zh"):
+            row["summary"] = supplemental_summary["summary_zh"]
+        if not row.get("summary_source_url") and supplemental_summary.get("abstract_source_url"):
+            row["summary_source_url"] = supplemental_summary["abstract_source_url"]
+            row["summary_verified_at"] = supplemental_summary.get("verified_at") or ""
 
     for paper in official.get("papers", []):
         tags = {"安全建议与学习"} if paper.get("advice_learning_relevant") else set()
@@ -957,9 +1046,14 @@ def collect_usable_hub_papers(official, advice, experiments, automatic, genai_ro
         paper = row.get("paper") or {}
         if (paper.get("year") or 0) >= 2025:
             add(paper, {"GenAI"})
+    for row in rule_based_rows or []:
+        add(row.get("paper") or {}, row.get("tags") or set())
 
     result = list(rows.values())
     for row in result:
+        if not row.get("summary") and row.get("abstract"):
+            sentences = re.split(r"(?<=[.!?])\s+", row["abstract"].strip())
+            row["summary"] = " ".join(sentence for sentence in sentences[:3] if sentence).strip()
         if len(row["themes"]) > 1:
             row["themes"].discard("其他新方向")
     result.sort(key=lambda row: (row["year"], row["title"]), reverse=True)
@@ -970,20 +1064,47 @@ def tag_attr(tags):
     return html.escape(json.dumps(sorted(tags), ensure_ascii=False), quote=True)
 
 
+def compact_venue(venue):
+    v = (venue or "").lower()
+    labels = (
+        (("computer and communications security", "acm ccs"), "ACM CCS"),
+        (("ieee symposium on security and privacy", "ieee s&p"), "IEEE S&P"),
+        (("usenix security",), "USENIX Security"),
+        (("network and distributed system security", "ndss"), "NDSS"),
+        (("symposium on usable privacy and security", "soups"), "SOUPS"),
+        (("proceedings on privacy enhancing technologies", "privacy enhancing technologies", "popets", "pets"), "PoPETS/PETS"),
+        (("international conference on human factors in computing systems", "acm chi", "chi conference"), "CHI"),
+        (("computer supported cooperative work", "computer-supported cooperative work", "cscw"), "CSCW"),
+    )
+    for terms, label in labels:
+        if any(term in v for term in terms):
+            return label
+    return venue or "来源待核验"
+
+
 def usable_paper_card(row):
     visible_tags = set(row["themes"])
     if "用户实验" in row["tags"]:
         visible_tags.add("用户实验")
     tags = "".join(f'<span class="topic-chip">{html.escape(tag)}</span>' for tag in sorted(visible_tags))
     summary = f'<p>{html.escape(row["summary"])}</p>' if row.get("summary") else ""
+    summary_source = ""
+    if row.get("summary_source_url"):
+        verified = f' · 核验 {html.escape(row.get("summary_verified_at") or "")}' if row.get("summary_verified_at") else ""
+        summary_source = (
+            f'<div class="summary-source"><a href="{html.escape(row["summary_source_url"])}" '
+            f'target="_blank">简介依据</a>{verified}</div>'
+        )
     method = f'<div class="method-line">{html.escape(row["method"])}</div>' if row.get("method") else ""
     default_tags = set(row["tags"]) | set(row["themes"])
+    publication_source = f'{row["year"] or "?"} · {compact_venue(row.get("venue") or "")}'
     return (
         f'<article class="usable-paper paper-entry" data-paper-id="{html.escape(row["id"])}" '
+        f'data-publication-source="{html.escape(publication_source, quote=True)}" '
         f'data-default-tags="{tag_attr(default_tags)}">'
         f'<div class="paper-meta">{row["year"] or "?"} · {html.escape(row["venue"])}</div>'
         f'<h4><a href="{html.escape(row["url"])}" target="_blank">{html.escape(row["title"])}</a></h4>'
-        f'<div class="default-topic-tags">{tags}</div>{method}{summary}</article>'
+        f'<div class="default-topic-tags">{tags}</div>{method}{summary}{summary_source}</article>'
     )
 
 
@@ -1025,7 +1146,7 @@ EXPERT_THEME_RULES = [
     ("诈骗、钓鱼与在线伤害", ("phishing", "scam", "fraud", "abuse", "harassment", "harm", "deception")),
     ("隐私、同意与数据控制", ("privacy", "consent", "disclosure", "tracking", "data control", "anonym")),
     ("认证、账户与访问控制", ("authentication", "password", "passkey", "account", "permission", "access control", "mfa")),
-    ("开发者、组织与安全工作流", ("developer", "organization", "workplace", "workflow", "security operations", "soc", "vulnerability")),
+    ("开发者、组织与安全工作流", ("developer", "organization", "workplace", "workflow", "security operations", "security operations center", "security operations centre", "vulnerability")),
     ("可访问性与包容性安全", ("accessible", "accessibility", "deaf", "blind", "disability", "older adult", "inclusive")),
 ]
 
@@ -1138,6 +1259,8 @@ def tag_interaction_assets(seed):
 .usable-paper,.expert-theme-card,.ongoing-paper{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:12px}
 .usable-paper h4,.ongoing-paper h4{margin:4px 0 7px;font-size:14px}.usable-paper h4 a,.ongoing-paper a{color:var(--fg);text-decoration:none}
 .usable-paper p{font-size:12.5px;color:var(--mut)}.default-topic-tags{display:flex;gap:5px;flex-wrap:wrap;margin:5px 0}
+.summary-source{font-size:11px;color:var(--mut);margin-top:6px}.summary-source a{color:var(--acc);text-decoration:none}
+.publication-source{font-size:10px;font-weight:600;color:var(--acc);margin-left:7px;vertical-align:super;white-space:nowrap}
 .expert-theme-card h4{font-size:14px;margin:0}.expert-theme-list{list-style:none;margin:8px 0 0;padding:0}
 .expert-theme-list li{padding:7px 0;border-top:1px dashed var(--line);font-size:13px}.expert-theme-list a{color:var(--fg);text-decoration:none}
 .tag-toolbar{position:sticky;top:42px;z-index:4;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px;margin:0 0 18px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
@@ -1221,6 +1344,9 @@ window.PAPER_TAG_SEED = __SEED__;
       const card = document.createElement("article"); card.className = "ongoing-paper";
       const h = document.createElement("h4"); const a = document.createElement("a");
       a.href = entry.link.href; a.target = "_blank"; a.textContent = entry.title; h.appendChild(a); card.appendChild(h);
+      const source = entry.node.dataset.publicationSource ||
+        (entry.node.querySelector(".paper-meta")?.textContent || entry.node.querySelector(".venue")?.textContent || "").trim();
+      if (source) { const sup=document.createElement("sup"); sup.className="publication-source"; sup.textContent=source; h.appendChild(sup); }
       const tags = document.createElement("div"); tags.className = "default-topic-tags";
       combined(entry).forEach(tag => { const s=document.createElement("span"); s.className="topic-chip"; s.textContent=tag; tags.appendChild(s); });
       card.appendChild(tags); target.appendChild(card);
@@ -1275,7 +1401,7 @@ def expert_card(e, tz):
     return f"""<div class="card">
       <div class="chead"><b>{html.escape(e['name'])}</b>
         <span class="aff">{html.escape(e.get('affiliation') or '')}</span></div>
-      {tracking_html}
+{tracking_html}
       <div class="stat">2025 年以来 {len(recent)} 篇</div>
       <ul class="papers">{''.join(items)}</ul>
     </div>"""
@@ -1316,6 +1442,7 @@ def main():
     sec_migration_html = security_migration_html(trends)
     genai_html = genai_topic_html(experts, trends, tz)
     genai_rows = collect_genai_rows(experts, trends)
+    rule_based_usable_rows = collect_rule_based_usable_rows(experts, trends)
     hci_html = "".join(trend_block_html(b, curated_trends) for b in trend_blocks[2:4])
     official_usable = json.loads(read("data/usable_security_2026.json") or "{}")
     official_usable_section = official_usable_html(official_usable)
@@ -1326,7 +1453,8 @@ def main():
     automatic_experiments = collect_automatic_experiment_candidates(official_raw, user_experiments)
     user_experiments_section = user_experiments_html(user_experiments, automatic_experiments)
     usable_rows = collect_usable_hub_papers(
-        official_usable, advice_learning, user_experiments, automatic_experiments, genai_rows
+        official_usable, advice_learning, user_experiments, automatic_experiments, genai_rows,
+        rule_based_usable_rows,
     )
     usable_hub_section = usable_security_hub_html(usable_rows)
     expert_security_themes = expert_themes_html(experts, "security", tz)

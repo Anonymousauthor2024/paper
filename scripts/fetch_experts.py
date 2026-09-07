@@ -21,7 +21,7 @@ from datetime import datetime, timezone, date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXPERTS_FILE = os.path.join(ROOT, "people", "experts.json")
 PAPERS_URL = "https://api.semanticscholar.org/graph/v1/author/{}/papers"
-FIELDS = "paperId,title,year,venue,publicationDate,externalIds,url"
+FIELDS = "paperId,title,year,venue,publicationDate,externalIds,url,abstract"
 RECENT_MONTHS = 18     # 最近动向窗口(usable security 出版周期长,放宽到 18 个月)
 LOOKBACK_YEARS = 4     # 清单显示的年份下限
 API_KEY = os.environ.get("S2_API_KEY")
