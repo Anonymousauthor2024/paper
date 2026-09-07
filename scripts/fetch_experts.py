@@ -15,7 +15,7 @@ fetch_experts.py — 拉取大牛库(people/experts.json)中每位学者的论�
   security/experts/latest.md    所有大牛在安全会议的近期论文
   hci/experts/latest.md         所有大牛在 CHI/CSCW 的近期论文
 """
-import json, os, re, time, urllib.request, urllib.error
+import json, os, random, re, time, urllib.request, urllib.error
 from datetime import datetime, timezone, date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +25,15 @@ FIELDS = "paperId,title,year,venue,publicationDate,externalIds,url,abstract"
 RECENT_MONTHS = 18     # 最近动向窗口(usable security 出版周期长,放宽到 18 个月)
 LOOKBACK_YEARS = 4     # 清单显示的年份下限
 API_KEY = os.environ.get("S2_API_KEY")
+REQUEST_MIN_INTERVAL = float(os.environ.get(
+    "S2_REQUEST_MIN_INTERVAL", "0.3" if API_KEY else "3.0"
+))
+REQUEST_MAX_INTERVAL = float(os.environ.get(
+    "S2_REQUEST_MAX_INTERVAL", "1.0" if API_KEY else "7.0"
+))
+MAX_RETRIES = int(os.environ.get("S2_MAX_RETRIES", "5"))
+BACKOFF_BASE = float(os.environ.get("S2_BACKOFF_BASE", "30"))
+_LAST_REQUEST_AT = 0.0
 
 # ---------- venue 分类 ----------
 SEC_PATTERNS = [
@@ -107,19 +116,72 @@ def is_recent(p):
     return d is not None and (TODAY - d).days <= RECENT_MONTHS * 31
 
 # ---------- 抓取 ----------
+def throttle_request():
+    """Space requests with jitter so independent runs do not synchronize."""
+    global _LAST_REQUEST_AT
+    target_gap = random.uniform(REQUEST_MIN_INTERVAL, REQUEST_MAX_INTERVAL)
+    elapsed = time.monotonic() - _LAST_REQUEST_AT
+    if elapsed < target_gap:
+        time.sleep(target_gap - elapsed)
+    _LAST_REQUEST_AT = time.monotonic()
+
+
+def retry_delay(exc, attempt):
+    """Honor Retry-After when present; otherwise use exponential backoff."""
+    retry_after = exc.headers.get("Retry-After") if exc.headers else None
+    if retry_after:
+        try:
+            return max(1.0, float(retry_after)) + random.uniform(0, 3)
+        except ValueError:
+            pass
+    return min(240.0, BACKOFF_BASE * (2 ** attempt)) + random.uniform(0, 5)
+
+
 def fetch(url):
     req = urllib.request.Request(url)
     if API_KEY:
         req.add_header("x-api-key", API_KEY)
-    for attempt in range(5):
+    last_error = None
+    for attempt in range(MAX_RETRIES):
+        throttle_request()
         try:
             with urllib.request.urlopen(req, timeout=40) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
-            time.sleep(5 * (attempt + 1) if e.code == 429 else 3)
-        except Exception:
-            time.sleep(3)
-    return {}
+            last_error = e
+            if e.code == 404:
+                return {"data": []}
+            if e.code == 429:
+                wait = retry_delay(e, attempt)
+                message = (
+                    "  Semantic Scholar 429；重试次数已用尽"
+                    if attempt == MAX_RETRIES - 1 else
+                    f"  Semantic Scholar 429；等待 {wait:.1f}s 后重试 {attempt + 2}/{MAX_RETRIES}"
+                )
+                print(message, flush=True)
+            elif 500 <= e.code < 600:
+                wait = min(60.0, 5.0 * (2 ** attempt)) + random.uniform(0, 3)
+                print(f"  Semantic Scholar HTTP {e.code}；等待 {wait:.1f}s", flush=True)
+            else:
+                raise RuntimeError(f"Semantic Scholar HTTP {e.code}: {url}") from e
+            if attempt == MAX_RETRIES - 1:
+                break
+            time.sleep(wait)
+        except Exception as e:
+            last_error = e
+            wait = min(60.0, 5.0 * (2 ** attempt)) + random.uniform(0, 3)
+            message = (
+                f"  Semantic Scholar 请求失败；重试次数已用尽：{e}"
+                if attempt == MAX_RETRIES - 1 else
+                f"  Semantic Scholar 请求失败；等待 {wait:.1f}s：{e}"
+            )
+            print(message, flush=True)
+            if attempt == MAX_RETRIES - 1:
+                break
+            time.sleep(wait)
+    raise RuntimeError(
+        f"Semantic Scholar 请求在 {MAX_RETRIES} 次尝试后仍失败；保留旧数据，不写出：{url}"
+    ) from last_error
 
 def fetch_author_papers(aid):
     out, offset = [], 0

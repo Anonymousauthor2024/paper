@@ -915,7 +915,18 @@ def rule_based_usable_tags(paper):
     )).lower()
     if not any(term in text for term in USABLE_SECURITY_SCOPE_TERMS):
         return set()
-    if not any(term in text for term in USABLE_HUMAN_EVIDENCE_TERMS):
+    has_human_evidence = any(term in text for term in USABLE_HUMAN_EVIDENCE_TERMS)
+    title = (paper.get("title") or "").lower()
+    # Some newly indexed journal records have no abstract. In that narrow case,
+    # let an explicit usable/usability title signal stand in for missing method
+    # metadata; generic privacy/security titles still require human evidence.
+    explicit_usable_title = not paper.get("abstract") and any(
+        term in title for term in (
+            "usable", "usability", "awareness", "training", "attitudes",
+            "strategies", "attempts to protect", "user-centred", "user-centered",
+        )
+    )
+    if not has_human_evidence and not explicit_usable_title:
         return set()
     tags = {"Usable Security"}
     if any(term in text for term in ADVICE_LEARNING_RECALL_TERMS):
@@ -952,6 +963,11 @@ def collect_rule_based_usable_rows(experts, trends):
     for block in trends.get("blocks", []):
         for paper in block.get("papers", []):
             add(paper, block.get("key") or "trend")
+    # The trend blocks only retain citation-velocity Top 15 papers. Keep the
+    # complete recent HCI privacy/security slice available for paper-level
+    # usable-security recall instead of silently dropping lower-cited work.
+    for paper in trends.get("recent_hci_privacy_security", []):
+        add(paper, "hci_recent")
     return list(rows.values())
 
 
@@ -1637,7 +1653,9 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
         f'{hci_html}</section>'
         '</main>'
     )
-    doc = re.sub(r"(?s)<main>.*?</main>", main_content, doc, count=1)
+    # Use a callable replacement so backslashes in paper titles/abstracts are
+    # treated as literal content instead of regex replacement escapes.
+    doc = re.sub(r"(?s)<main>.*?</main>", lambda _match: main_content, doc, count=1)
     doc = doc.replace("</body>", f"{tag_assets}</body>", 1)
 
     experts_doc = f"""<!doctype html>

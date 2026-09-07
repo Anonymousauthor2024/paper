@@ -1,16 +1,16 @@
 # 大牛库 · 各学者的最近论文
 
-_生成于 2026-08-03；🆕 = 最近 18 个月_
+_生成于 2026-09-07；🆕 = 最近 18 个月_
 
 
-## Yang Wang (UIUC) — 领域内 20 篇，近 18 月 7 篇
+## Yang Wang (UIUC) — 领域内 20 篇，近 18 月 6 篇
 - 2026 🆕 | [arXiv] arXiv.org — **When Are LLM Inferences Acceptable? User Reactions and Control Preferences for Inferred Personal Information** (arXiv:2605.10013)
 - 2025 🆕 | [HCI] International Conference on Human Factor — **Principles of Safe AI Companions for Youth: Parent and Expert Perspectives** (arXiv:2510.11185)
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **YouthSafe: A Youth-Centric Safety Benchmark and Safeguard Model for Large Language Models** (arXiv:2509.08997)
 - 2025 🆕 | [SEC] Symposium On Usable Privacy and Security — **Youth-Centered GAI Risks (YAIR): A Taxonomy of Generative AI Risks from Empirical Data**
 - 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Security Perceptions of Users in Stablecoins: Advantages and Risks within the Cryptocurrency Ecosystem**
 - 2025 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **Privacy Perceptions and Behaviors Towards Targeted Advertising on Social Media: A Cross-Country Study on the Effect of Culture and Religion**
-- 2025 🆕 | [arXiv] — — **LLM-Driven Optimization of HTML Structure to Support Screen Reader Navigation** (arXiv:2502.18701)
+- 2025 | [arXiv] — — **LLM-Driven Optimization of HTML Structure to Support Screen Reader Navigation** (arXiv:2502.18701)
 - 2024 | [SEC] USENIX Security Symposium — **"I'm not convinced that they don't collect more than is necessary": User-Controlled Data Minimization Design in Search Engines**
 - 2024 | [SEC] IEEE Symposium on Security and Privacy — **Exploring Parent-Child Perceptions on Safety in Generative AI: Concerns, Mitigation Strategies, and Design Implications** (arXiv:2406.10461)
 - 2024 | [HCI] International Conference on Human Factor — **Designing Accessible Obfuscation Support for Blind Individuals’ Visual Privacy Management**
@@ -23,7 +23,7 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2023 | [HCI] International Conference on Human Factor — **User Perceptions and Experiences of Targeted Ads on Social Media Platforms: Learning from Bangladesh and India**
 - 2022 | [SEC] USENIX Security Symposium — **DeepPhish: Understanding User Trust Towards Artificially Generated Profiles in Online Social Networks**
 
-## Yaman Yu (UIUC) — 领域内 14 篇，近 18 月 9 篇
+## Yaman Yu (UIUC) — 领域内 14 篇，近 18 月 8 篇
 - 2026 🆕 | [HCI] CHI Extended Abstracts — **Developmentally Safe Generative AI Environment for Youth**
 - 2025 🆕 | [HCI] International Conference on Human Factor — **Principles of Safe AI Companions for Youth: Parent and Expert Perspectives** (arXiv:2510.11185)
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **YouthSafe: A Youth-Centric Safety Benchmark and Safeguard Model for Large Language Models** (arXiv:2509.08997)
@@ -32,7 +32,7 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2025 🆕 | [HCI] CHI Extended Abstracts — **"I Am a Blind Seller!": Picture Taking Assistance for Visually Impaired Individuals for Participation as Sellers in Customer to Customer (C2C) Marketplaces**
 - 2025 🆕 | [HCI] International Conference on Human Factor — **Using Affordance to Understand Usability of Web3 Social Media**
 - 2025 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **Privacy Perceptions and Behaviors Towards Targeted Advertising on Social Media: A Cross-Country Study on the Effect of Culture and Religion**
-- 2025 🆕 | [arXiv] — — **LLM-Driven Optimization of HTML Structure to Support Screen Reader Navigation** (arXiv:2502.18701)
+- 2025 | [arXiv] — — **LLM-Driven Optimization of HTML Structure to Support Screen Reader Navigation** (arXiv:2502.18701)
 - 2024 | [SEC] IEEE Symposium on Security and Privacy — **Exploring Parent-Child Perceptions on Safety in Generative AI: Concerns, Mitigation Strategies, and Design Implications** (arXiv:2406.10461)
 - 2024 | [HCI] CHI Extended Abstracts — **Cross-Country Examination of People’s Experience with Targeted Advertising on Social Media**
 - 2024 | [HCI] International Conference on Human Factor — **"Don't put all your eggs in one basket": How Cryptocurrency Users Choose and Secure Their Wallets**
@@ -90,7 +90,8 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2023 | [HCI] International Conference on Human Factor — **Disability-First Design and Creation of A Dataset Showing Private Visual Information Collected With People Who Are Blind**
 - 2022 | [arXiv] arXiv.org — **Exploring Security Practices of Smart Contract Developers** (arXiv:2204.11193)
 
-## Elissa M. Redmiles (Georgetown University) — 领域内 53 篇，近 18 月 6 篇
+## Elissa M. Redmiles (Georgetown University) — 领域内 54 篇，近 18 月 7 篇
+- 2026 🆕 | [SEC] Symposium On Usable Privacy and Security — **Goals, Risks, and Safety Practices in Online Labor Abuse Disclosures**
 - 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **“I Wonder if These Warnings are Accurate”: Security and Privacy Advice in Nine Majority World Countries**
 - 2025 🆕 | [HCI] International Conference on Human Factor — **"Having Confidence in My Confidence Intervals": How Data Users Engage with Privacy-Protected Wikipedia Data** (arXiv:2512.06534)
 - 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Evaluating Concept Filtering Defenses against Child Sexual Abuse Material Generation by Text-to-Image Models** (arXiv:2512.05707)
@@ -170,7 +171,7 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2022 | [HCI] International Conference on Human Factor — **“Nudes? Shouldn’t I charge for these?”: Motivations of New Sexual Content Creators on OnlyFans** (arXiv:2205.10425)
 - 2022 | [arXiv] Proc. ACM Hum. Comput. Interact. — **Ethics and Efficacy of Unsolicited Anti-Trafficking SMS Outreach** (arXiv:2202.09527)
 
-## Allison McDonald (Boston University) — 领域内 16 篇，近 18 月 3 篇
+## Allison McDonald (Boston University) — 领域内 17 篇，近 18 月 3 篇
 - 2026 🆕 | [HCI] International Conference on Human Factor — **Surveillance, Spacing, Screaming and Scabbing: How Digital Technology Facilitates Union Busting** (arXiv:2603.03130)
 - 2026 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **How We Define Privacy Literacy: Teaching Experiences & Challenges of Community-Engaged Privacy Educators**
 - 2025 🆕 | [HCI] CSCW Companion — **Co-Constructing the Future of Digital Intimacy**
@@ -197,7 +198,7 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2022 | [SEC] SOUPS @ USENIX Security Symposium — **Anti-Privacy and Anti-Security Advice on TikTok: Case Studies of Technology-Enabled Surveillance and Control in Intimate Partner and Parent-Child Relationships**
 - 2022 | [HCI] CHI Extended Abstracts — **Styx++: Reliable Data Access and Availability Using a Hybrid Paxos and Chain Replication Protocol**
 
-## Tadayoshi Kohno (University of Washington) — 领域内 89 篇，近 18 月 9 篇
+## Tadayoshi Kohno (University of Washington) — 领域内 90 篇，近 18 月 9 篇
 - 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Towards Automating Data Access Permissions in AI Agents** (arXiv:2511.17959)
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **Ethics in Computer Security Research: A Data-Driven Assessment of the Past, the Present, and the Possible Future**
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **Poster: Computer Security Researchers' Experiences with Vulnerability Disclosures**
@@ -229,8 +230,9 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2022 | [SEC] SOUPS @ USENIX Security Symposium — **Anti-Privacy and Anti-Security Advice on TikTok: Case Studies of Technology-Enabled Surveillance and Control in Intimate Partner and Parent-Child Relationships**
 - 2022 | [SEC] USENIX Security Symposium — **Electronic Monitoring Smartphone Apps: An Analysis of Risks from Technical, Human-Centered, and Legal Perspectives**
 
-## Zhicong Lu (City University of Hong Kong) — 领域内 54 篇，近 18 月 17 篇
-- 2026 🆕 | [arXiv] — — **HIPIF: Hierarchical Planning and Information Folding for Long-Horizon LLM Agent Learning** (arXiv:2606.10507)
+## Zhicong Lu (City University of Hong Kong) — 领域内 55 篇，近 18 月 16 篇
+- 2026 🆕 | [arXiv] — — **Balancing Safety and Autonomy: Accessibility-Oriented Interventions in Generative AI for Cognitive Impairment** (arXiv:2608.17175)
+- 2026 🆕 | [arXiv] arXiv.org — **HIPIF: Hierarchical Planning and Information Folding for Long-Horizon LLM Agent Learning** (arXiv:2606.10507)
 - 2026 🆕 | [arXiv] arXiv.org — **LLM-as-a-Reviewer: Benchmarking Their Ability, Divergence, and Prompt Injection Resistance as Paper Reviewers** (arXiv:2605.25415)
 - 2026 🆕 | [HCI] CHI Extended Abstracts — **Cultures as Catalysts: Nurturing HCI Communities Across Regions**
 - 2026 🆕 | [HCI] CHI Extended Abstracts — **Sportoonizer: Augmenting Sports Highlights' Narratives via AI-Generated Manga B-Roll**
@@ -245,8 +247,8 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2025 🆕 | [HCI] International Conference on Human Factor — **ProductMeta: An Interactive System for Metaphorical Product Design Ideation with Multimodal Large Language Models**
 - 2025 🆕 | [HCI] International Conference on Human Factor — **"Can't believe I'm crying over an anime girl": Public Parasocial Grieving and Coping Towards VTuber Graduation and Termination** (arXiv:2504.13421)
 - 2025 🆕 | [HCI] CHI Extended Abstracts — **RevTogether: Supporting Science Story Revision with Multiple AI Agents** (arXiv:2503.01608)
-- 2025 🆕 | [HCI] International Conference on Human Factor — **How Users Who are Blind or Low Vision Play Mobile Games: Perceptions, Challenges, and Strategies** (arXiv:2502.09866)
-- 2025 🆕 | [HCI] International Conference on Human Factor — **HarmonyCut: Supporting Creative Chinese Paper-cutting Design with Form and Connotation Harmony** (arXiv:2502.07628)
+- 2025 | [HCI] International Conference on Human Factor — **How Users Who are Blind or Low Vision Play Mobile Games: Perceptions, Challenges, and Strategies** (arXiv:2502.09866)
+- 2025 | [HCI] International Conference on Human Factor — **HarmonyCut: Supporting Creative Chinese Paper-cutting Design with Form and Connotation Harmony** (arXiv:2502.07628)
 - 2024 | [HCI] International Conference on Human Factor — **Let's Influence Algorithms Together: How Millions of Fans Build Collective Understanding of Algorithms and Organize Coordinated Algorithmic Actions** (arXiv:2409.10670)
 - 2024 | [HCI] International Conference on Human Factor — **User-Driven Value Alignment: Understanding Users' Perceptions and Strategies for Addressing Biased and Discriminatory Statements in AI Companions** (arXiv:2409.00862)
 - 2024 | [HCI] International Conference on Human Factor — **The Odyssey Journey: Top-Tier Medical Resource Seeking for Specialized Disorder in China** (arXiv:2406.00337)
@@ -282,11 +284,13 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 ## Yi Xin (Tsinghua University) — 领域内 0 篇，近 18 月 0 篇
 _(近年无领域内论文)_
 
-## Shuning Zhang (Tsinghua University) — 领域内 32 篇，近 18 月 25 篇
+## Shuning Zhang (Tsinghua University) — 领域内 34 篇，近 18 月 25 篇
 - 2026 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **Designing Reflective Thinking-Based Contextual Privacy Policy for Mobile Applications**
-- 2026 🆕 | [arXiv] — — **Generative AI-Enabled Refund Fraud in Chinese E-Commerce: Investigation on Merchants and Platform Workers** (arXiv:2606.03215)
-- 2026 🆕 | [arXiv] — — **Investigating Novice Researchers'Perceptions of Research Privacy Within LLM-Assisted Workflows** (arXiv:2606.03248)
-- 2026 🆕 | [arXiv] — — **Focused on the User, Overlooking the Risks: Security and Privacy Understandings, Practices and Challenges of Independent Chinese AI Agent Developers** (arXiv:2606.03190)
+- 2026 🆕 | [arXiv] — — **Position: Robot Privacy as Embodied Boundary Work. Connecting Capabilities, Contexts, and Design Responses in Everyday Robotics** (arXiv:2608.21410)
+- 2026 🆕 | [arXiv] — — **Understanding Security and Privacy Perceptions of Content Creators Regarding AI Labels of AI-Generated Content** (arXiv:2608.08129)
+- 2026 🆕 | [arXiv] arXiv.org — **Generative AI-Enabled Refund Fraud in Chinese E-Commerce: Investigation on Merchants and Platform Workers** (arXiv:2606.03215)
+- 2026 🆕 | [arXiv] arXiv.org — **Investigating Novice Researchers' Perceptions of Research Privacy Within LLM-Assisted Workflows** (arXiv:2606.03248)
+- 2026 🆕 | [arXiv] arXiv.org — **Focused on the User, Overlooking the Risks: Security and Privacy Understandings, Practices and Challenges of Independent Chinese AI Agent Developers** (arXiv:2606.03190)
 - 2026 🆕 | [HCI] International Conference on Human Factor — **Characterizing Unintended Consequences of GUI Agents For Web Browsing**
 - 2026 🆕 | [HCI] International Conference on Human Factor — **Virtual Minds, Real Work: LLM-Powered Preference-Based Planning through Spatial Multi-Agent-Human Collaboration**
 - 2026 🆕 | [HCI] International Conference on Human Factor — **VisGuardian: A Lightweight Group-based Visual Privacy Control Technique For Smart Glasses in Home Environments**
@@ -306,8 +310,8 @@ _(近年无领域内论文)_
 - 2025 🆕 | [HCI] UbiComp Companion — **From Patient Burdens to User Agency: Designing for Real-Time Protection Support in Online Health Consultations** (arXiv:2508.00328)
 - 2025 🆕 | [HCI] UbiComp Companion — **Evaluating the Efficacy of Large Language Models for Generating Fine-Grained Visual Privacy Policies in Homes** (arXiv:2508.00321)
 - 2025 🆕 | [HCI] International Conference on Human Factor — **PrivCAPTCHA: Interactive CAPTCHA to Facilitate Effective Comprehension of APP Privacy Policy**
-- 2025 🆕 | [HCI] International Conference on Human Factor — **Actual Achieved Gain and Optimal Perceived Gain: Modeling Human Take-over Decisions Towards Automated Vehicles' Suggestions** (arXiv:2502.06179)
-- 2025 🆕 | [HCI] International Conference on Human Factor — **Vision-Based Multimodal Interfaces: A Survey and Taxonomy for Enhanced Context-Aware System Design** (arXiv:2501.13443)
+- 2025 | [HCI] International Conference on Human Factor — **Actual Achieved Gain and Optimal Perceived Gain: Modeling Human Take-over Decisions Towards Automated Vehicles' Suggestions** (arXiv:2502.06179)
+- 2025 | [HCI] International Conference on Human Factor — **Vision-Based Multimodal Interfaces: A Survey and Taxonomy for Enhanced Context-Aware System Design** (arXiv:2501.13443)
 - 2024 | [HCI] CSCW Companion — **The Synergy of Dialogue and Art: Exploring the Potential of Multimodal AI Chatbots in Emotional Support**
 - 2024 | [arXiv] arXiv.org — **"Ghost of the past": identifying and resolving privacy leakage from LLM's memory through proactive user interaction** (arXiv:2410.14931)
 - 2024 | [arXiv] arXiv.org — **Adanonymizer: Interactively Navigating and Balancing the Duality of Privacy and Output Performance in Human-LLM Interaction** (arXiv:2410.15044)
@@ -320,7 +324,7 @@ _(近年无领域内论文)_
 _(近年无领域内论文)_
 
 ## Liyi Zhou (University of Sydney) — 领域内 12 篇，近 18 月 3 篇
-- 2026 🆕 | [arXiv] — — **Transferable Self-Evolving Playbooks for Agentic Security Auditing** (arXiv:2606.16420)
+- 2026 🆕 | [arXiv] arXiv.org — **Transferable Self-Evolving Playbooks for Agentic Security Auditing** (arXiv:2606.16420)
 - 2026 🆕 | [arXiv] arXiv.org — **When Agents Overtrust Environmental Evidence: An Extensible Agentic Framework for Benchmarking Evidence-Grounding Defects in LLM Agents** (arXiv:2605.08828)
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **DeFi '25: 5th ACM Workshop on Decentralized Finance and Security**
 - 2024 | [SEC] Conference on Computer and Communication — **DeFi '24: Workshop on Decentralized Finance and Security**
@@ -331,7 +335,7 @@ _(近年无领域内论文)_
 - 2022 | [arXiv] IACR Cryptology ePrint Archive — **On How Zero-Knowledge Proof Blockchain Mixers Improve, and Worsen User Privacy** (arXiv:2201.09035)
 
 ## Jiachi Chen (Zhejiang University) — 领域内 14 篇，近 18 月 7 篇
-- 2026 🆕 | [arXiv] — — **When LLMs Over-Answer: Measuring and Mitigating Quality Issues in LLM-Based Hardware Description Language Question Answering** (arXiv:2607.17063)
+- 2026 🆕 | [arXiv] arXiv.org — **When LLMs Over-Answer: Measuring and Mitigating Quality Issues in LLM-Based Hardware Description Language Question Answering** (arXiv:2607.17063)
 - 2026 🆕 | [arXiv] Annual Meeting of the Association for Co — **RealSec-bench: A Benchmark for Evaluating Secure Code Generation in Real-World Repositories** (arXiv:2601.22706)
 - 2026 🆕 | [arXiv] arXiv.org — **Advances and Frontiers of LLM-based Issue Resolution in Software Engineering: A Comprehensive Survey** (arXiv:2601.11655)
 - 2025 🆕 | [arXiv] arXiv.org — **Coinvisor: An RL-Enhanced Chatbot Agent for Interactive Cryptocurrency Investment Analysis** (arXiv:2510.17235)
@@ -365,9 +369,8 @@ _(近年无领域内论文)_
 - 2022 | [HCI] CHI Extended Abstracts — **Novel Challenges of Safety, Security and Privacy in Extended Reality**
 - 2022 | [SEC] Proceedings on Privacy Enhancing Technol — **Increasing Adoption of Tor Browser Using Informational and Planning Nudges**
 
-## Lorrie Faith Cranor (CMU) — 领域内 134 篇，近 18 月 8 篇
+## Lorrie Faith Cranor (CMU) — 领域内 133 篇，近 18 月 7 篇
 - 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **From “Be Careful” to “Here's Why”: Investigating User Reasoning with Context-Specific SMS Scam Warnings**
-- 2026 🆕 | [HCI] International Conference on Human Factor — **Passing Down Passwords: How Older Adults Approach Postmortem Account Access and Digital Estate Planning**
 - 2026 🆕 | [HCI] International Conference on Human Factor — **My Money, Your Name: Challenges and Workarounds in ID-Required Mobile Money in East Africa**
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **'Is this a scam?': The Nature and Quality of Reddit Discussion about Scams**
 - 2025 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **Rethinking Fingerprinting: An Assessment of Behavior-based Methods at Scale and Implications for Web Tracking**

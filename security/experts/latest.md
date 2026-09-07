@@ -1,9 +1,10 @@
 # 大牛 · 安全会议(四大会 + SOUPS/PETS)近期论文
 
-_生成于 2026-08-03；🆕 = 最近 18 个月_
+_生成于 2026-09-07；🆕 = 最近 18 个月_
 
 - 2026 🆕 | [SEC] Yixin Zou, Elissa M. Redmiles, Collins W. Munyendo | IEEE Symposium on Security and Privacy — **“I Wonder if These Warnings are Accurate”: Security and Privacy Advice in Nine Majority World Countries**
 - 2026 🆕 | [SEC] Yixin Zou | IEEE Symposium on Security and Privacy — **Toward Inclusive Security and Privacy for Deaf and Hard-of-Hearing People: A Community-Based Interview Study**
+- 2026 🆕 | [SEC] Elissa M. Redmiles | Symposium On Usable Privacy and Security — **Goals, Risks, and Safety Practices in Online Labor Abuse Disclosures**
 - 2026 🆕 | [SEC] Michelle L. Mazurek | IEEE Symposium on Security and Privacy — **Perceived Privacy Risk and Mitigation Post-Roe**
 - 2026 🆕 | [SEC] Michelle L. Mazurek | Proceedings on Privacy Enhancing Technol — **How Experts Personalize Privacy & Security Advice for At-Risk Users**
 - 2026 🆕 | [SEC] Allison McDonald, Florian Schaub | Proceedings on Privacy Enhancing Technol — **How We Define Privacy Literacy: Teaching Experiences & Challenges of Community-Engaged Privacy Educators**

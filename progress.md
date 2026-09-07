@@ -49,7 +49,7 @@ paper/
 - [x] `scripts/fetch_experts.py`：拉每个大牛的论文，多 profile 合并去重，按 venue 归类，直接列最近论文
 - [x] `scripts/find_profiles.py`：扫描同名 SS profile 查漏，补齐漏绑 id（输出 `people/profile_audit.md`）
 - [x] 大牛"新方向"检测 → 改为直接列最近论文标题（自动关键词提炼不可靠，已放弃）
-- [ ] `scripts/fetch_trends.py`：全领域关键词增长 + 引用增速
+- [x] `scripts/fetch_trends.py`：全领域关键词增长 + 引用增速
 - [ ] 补全每个大牛的 DBLP 作者页
 - [ ] GitHub Actions 定时配置
 - [ ] HTML 看板 + GitHub Pages
@@ -84,3 +84,10 @@ paper/
   抓取，三套结构化数据的生成日期更新为2026-08-03。刷新后 Usable Security 去重集合为
   48篇，其中原先缺简介的12篇已通过官方会议页、arXiv、作者/学校页面或本地abstract补齐
   2–3句中文简介，并在 `data/paper_summaries_zh.json` 中保存来源和核验日期。
+- **2026-09-07（完整刷新）**：成功刷新安全四大官方 2026 页面；USENIX Security 376 条、
+  IEEE S&P 254 条、NDSS 265 条，ACM CCS 官方页面本次未返回记录，不能解释为零篇。Semantic
+  Scholar 大牛库与趋势数据均刷新至当日；抓取器加入随机请求间隔、`Retry-After`/指数退避和
+  失败时保留旧数据的保护。HCI 趋势来源扩展到 CHI、CSCW/PACM HCI、TOCHI、UbiComp/IMWUT
+  与 IJHCS，并覆盖 phishing/scam/fraud/authentication/warning 等 usable-security 语义；保存
+  2025–2026 完整相关论文切片供单篇卡片召回，不再仅依赖引用增速 Top 15。
+  IJHCS 另以 Crossref 期刊元数据补齐 Semantic Scholar 尚未收录的新文章。

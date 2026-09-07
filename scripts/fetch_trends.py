@@ -5,7 +5,7 @@ fetch_trends.py — 领域"新趋势"分析(区别于大牛库的"最新工作")
 
 样本(高信噪源,避免四大会系统安全论文的噪声):
   security 领域: SOUPS + PETS 全部论文(usable security/privacy 专会)
-  hci 领域    : CHI 中 privacy/security 相关论文(venue + query 过滤)
+  hci 领域    : CHI / CSCW / TOCHI / UbiComp / IMWUT / IJHCS 中的 privacy/security 相关论文
 
 两个趋势信号:
   1. 新兴关键词: 近 2 年(2024-2026)相对基线(2020-2023)文档频率增长最快的主题词
@@ -14,12 +14,25 @@ fetch_trends.py — 领域"新趋势"分析(区别于大牛库的"最新工作")
 只用标准库。可选 S2_API_KEY。
 输出: security/trends/latest.md, hci/trends/latest.md, data/trends.json
 """
-import json, os, re, time, urllib.request, urllib.parse, urllib.error
+import json, os, random, re, time, urllib.request, urllib.parse, urllib.error
 from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BULK_URL = "https://api.semanticscholar.org/graph/v1/paper/search/bulk"
+CROSSREF_IJHCS_URL = (
+    "https://api.crossref.org/journals/1071-5819/works?"
+    "filter=from-pub-date:2025-01-01,until-pub-date:2026-12-31&rows=1000"
+)
 API_KEY = os.environ.get("S2_API_KEY")
+REQUEST_MIN_INTERVAL = float(os.environ.get(
+    "S2_REQUEST_MIN_INTERVAL", "0.3" if API_KEY else "3.0"
+))
+REQUEST_MAX_INTERVAL = float(os.environ.get(
+    "S2_REQUEST_MAX_INTERVAL", "1.0" if API_KEY else "7.0"
+))
+MAX_RETRIES = int(os.environ.get("S2_MAX_RETRIES", "5"))
+BACKOFF_BASE = float(os.environ.get("S2_BACKOFF_BASE", "30"))
+_LAST_REQUEST_AT = 0.0
 YEARS = "2020-2026"
 CUR_YEAR = 2026
 SPLIT_YEAR = 2024          # >= 为 recent, < 为 baseline
@@ -95,9 +108,27 @@ EXPERIMENT_OUTCOME_TERMS = (
     "click", "click-through", "completion", "adoption", "trust", "usability",
     "comprehension", "understanding", "knowledge", "awareness", "risk perception",
 )
-HCI_VENUE = "International Conference on Human Factors in Computing Systems"
+# HCI 来源白名单：CHI、CSCW/PACM HCI、TOCHI、UbiComp/IMWUT、IJHCS。
+# Semantic Scholar 对同一来源存在多种 venue 字符串，保留常见别名并在抓取后去重。
+HCI_VENUES = [
+    "International Conference on Human Factors in Computing Systems",  # CHI
+    "Computer Supported Cooperative Work  (CSCW)",
+    "Conference on Computer Supported Cooperative Work",
+    "Conference on Computer-Supported Cooperative Work and Social Computing",
+    "CSCW Companion",
+    "Proc. ACM Hum. Comput. Interact.",  # PACM HCI / CSCW / IMWUT 等期刊卷
+    "ACM Trans. Comput. Hum. Interact.",  # TOCHI
+    "Proceedings of the ACM on Interactive Mobile Wearable and Ubiquitous Technologies",  # IMWUT
+    "Ubiquitous Computing",  # UbiComp
+    "International Journal of Human-Computer Studies",  # IJHCS
+]
 # 全用单词 OR;多词短语(如 data protection)会被 SS 当成 AND,不要放进来
 HCI_QUERY = "privacy | security | surveillance | consent | confidentiality | anonymity"
+HCI_TOPIC_TERMS = (
+    "privacy", "security", "surveillance", "consent", "confidentiality", "anonymity",
+    "phishing", "scam", "scams", "fraud", "authentication", "password", "passwords",
+    "cybercrime", "warning", "warnings", "online abuse", "harassment", "data protection",
+)
 TOPIC_RULES_FILE = os.path.join(ROOT, "data", "topic_rules.json")
 
 STOP = set("""a an the of to in on for and or with without via using use uses used
@@ -163,20 +194,71 @@ def topic_for_title(title, venue, topics):
                 return topic["key"]
     return "other_review"
 
+def throttle_request():
+    """Space requests with jitter so independent runs do not synchronize."""
+    global _LAST_REQUEST_AT
+    target_gap = random.uniform(REQUEST_MIN_INTERVAL, REQUEST_MAX_INTERVAL)
+    elapsed = time.monotonic() - _LAST_REQUEST_AT
+    if elapsed < target_gap:
+        time.sleep(target_gap - elapsed)
+    _LAST_REQUEST_AT = time.monotonic()
+
+
+def retry_delay(exc, attempt):
+    """Honor Retry-After when present; otherwise use exponential backoff."""
+    retry_after = exc.headers.get("Retry-After") if exc.headers else None
+    if retry_after:
+        try:
+            return max(1.0, float(retry_after)) + random.uniform(0, 3)
+        except ValueError:
+            pass
+    return min(240.0, BACKOFF_BASE * (2 ** attempt)) + random.uniform(0, 5)
+
+
 def req(params):
     # 用 %20 编码空格(默认的 + 会被 SS query 当成 AND 操作符)
     url = BULK_URL + "?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
     headers = {"x-api-key": API_KEY} if API_KEY else {}
     r = urllib.request.Request(url, headers=headers)
-    for attempt in range(5):
+    last_error = None
+    for attempt in range(MAX_RETRIES):
+        throttle_request()
         try:
             with urllib.request.urlopen(r, timeout=60) as resp:
                 return json.load(resp)
         except urllib.error.HTTPError as e:
-            time.sleep(5 * (attempt + 1) if e.code == 429 else 3)
-        except Exception:
-            time.sleep(3)
-    return {}
+            last_error = e
+            if e.code == 429:
+                wait = retry_delay(e, attempt)
+                message = (
+                    "  Semantic Scholar 429；重试次数已用尽"
+                    if attempt == MAX_RETRIES - 1 else
+                    f"  Semantic Scholar 429；等待 {wait:.1f}s 后重试 {attempt + 2}/{MAX_RETRIES}"
+                )
+                print(message, flush=True)
+            elif 500 <= e.code < 600:
+                wait = min(60.0, 5.0 * (2 ** attempt)) + random.uniform(0, 3)
+                print(f"  Semantic Scholar HTTP {e.code}；等待 {wait:.1f}s", flush=True)
+            else:
+                raise RuntimeError(f"Semantic Scholar HTTP {e.code}: {url}") from e
+            if attempt == MAX_RETRIES - 1:
+                break
+            time.sleep(wait)
+        except Exception as e:
+            last_error = e
+            wait = min(60.0, 5.0 * (2 ** attempt)) + random.uniform(0, 3)
+            message = (
+                f"  Semantic Scholar 请求失败；重试次数已用尽：{e}"
+                if attempt == MAX_RETRIES - 1 else
+                f"  Semantic Scholar 请求失败；等待 {wait:.1f}s：{e}"
+            )
+            print(message, flush=True)
+            if attempt == MAX_RETRIES - 1:
+                break
+            time.sleep(wait)
+    raise RuntimeError(
+        f"Semantic Scholar 请求在 {MAX_RETRIES} 次尝试后仍失败；保留旧数据，不写出：{url}"
+    ) from last_error
 
 def bulk(venue, query=None):
     out, token = [], None
@@ -210,11 +292,57 @@ def bulk_big4(query=None):
                 rows.append(p)
     return dedup(rows)
 
-def bulk_big4_usable():
-    candidates = []
-    for query in BIG4_QUERIES:
-        candidates.extend(bulk_big4(query))
+def bulk_big4_usable(papers=None):
+    # 每个 venue alias 只抓一次全量题录，再在本地用摘要证据筛选。
+    # 这样避免把多组方法词分别发送到 API，也不会因远端查询语法损失召回。
+    candidates = papers if papers is not None else bulk_big4()
     return [p for p in dedup(candidates) if is_big4_usable_user_study(p)]
+
+def bulk_hci(query=None):
+    """抓取指定 HCI 来源并按 Semantic Scholar paperId 去重。"""
+    rows = []
+    for venue in HCI_VENUES:
+        rows.extend(bulk(venue, query))
+    return dedup(rows)
+
+
+def crossref_ijhcs_recent():
+    """Fill recent IJHCS records that have not reached Semantic Scholar yet."""
+    request = urllib.request.Request(
+        CROSSREF_IJHCS_URL,
+        headers={"User-Agent": "paper-dashboard/1.0 (metadata refresh)"},
+    )
+    with urllib.request.urlopen(request, timeout=60) as response:
+        items = (json.load(response).get("message") or {}).get("items") or []
+    rows = []
+    for item in items:
+        title = " ".join(item.get("title") or []).strip()
+        date_parts = ((item.get("published") or {}).get("date-parts") or [[]])[0]
+        year = date_parts[0] if date_parts else None
+        if not title or year not in {2025, 2026}:
+            continue
+        doi = item.get("DOI") or ""
+        rows.append({
+            "paperId": f"crossref:{doi}" if doi else None,
+            "title": title,
+            "year": year,
+            "venue": "International Journal of Human-Computer Studies",
+            "citationCount": item.get("is-referenced-by-count") or 0,
+            "abstract": item.get("abstract"),
+            "url": item.get("URL") or (f"https://doi.org/{doi}" if doi else None),
+            "externalIds": {"DOI": doi} if doi else {},
+            "authors": [
+                {"name": " ".join(filter(None, (a.get("given"), a.get("family"))))}
+                for a in item.get("author") or []
+            ],
+            "metadata_source": "Crossref",
+        })
+    return rows
+
+
+def is_hci_privacy_security(p):
+    text = norm_text(" ".join((p.get("title") or "", p.get("abstract") or "")))
+    return any(re.search(rf"\b{re.escape(term)}\b", text) for term in HCI_TOPIC_TERMS)
 
 def venue_year_counts(papers):
     counts = {}
@@ -229,7 +357,12 @@ def dedup(papers):
     seen = {}
     for p in papers:
         if p.get("paperId") or p.get("title"):
-            seen[p.get("paperId") or p.get("title")] = p
+            title_key = re.sub(r"[^a-z0-9]+", "", (p.get("title") or "").lower())
+            key = title_key or p.get("paperId")
+            old = seen.get(key)
+            if old and len(old.get("abstract") or "") > len(p.get("abstract") or ""):
+                continue
+            seen[key] = p
     return list(seen.values())
 
 # ---------- 趋势计算 ----------
@@ -573,26 +706,26 @@ def render_block(block, curated):
 def main():
     print("安全·SOUPS/PETS ...")
     soups_pets = dedup(sum((bulk(v) for v in SEC_FULL_VENUES), []))
-    print("安全·四大会 usable/user-study 宽检索 + 方法证据筛选 ...")
-    big4_usable = bulk_big4_usable()
+    print("安全·整体: 四大会全部 ...")
+    sec_all = bulk_big4()
+    print("安全·四大会 usable/user-study 本地方法证据筛选 ...")
+    big4_usable = bulk_big4_usable(sec_all)
     print("安全·子领域: SOUPS+PETS + 四大会 usable/user-study ...")
     sec_sub = dedup(soups_pets + big4_usable)
     experiment_candidates = [
         p for p in sec_sub if (p.get("year") or 0) >= 2025 and is_user_experiment(p)
     ]
-    print("安全·整体: 四大会全部 ...")
-    sec_all = bulk_big4()
-    print("HCI·子领域: CHI 隐私安全 ...")
-    hci_sub = dedup(bulk(HCI_VENUE, HCI_QUERY))
-    print("HCI·整体: 全 CHI ...")
-    hci_all = dedup(bulk(HCI_VENUE))
+    print("HCI·整体: 指定 HCI 来源 ...")
+    hci_all = dedup(bulk_hci() + crossref_ijhcs_recent())
+    print("HCI·子领域: CHI / CSCW / TOCHI / UbiComp / IMWUT / IJHCS 隐私安全本地筛选 ...")
+    hci_sub = [p for p in hci_all if is_hci_privacy_security(p)]
     print(f"  样本 安全 子{len(sec_sub)}/整体{len(sec_all)} · HCI 子{len(hci_sub)}/整体{len(hci_all)}")
 
     blocks = [
         block_data("security_sub", "子领域 · usable security（SOUPS + PETS + 四大会 usable/user study）", sec_sub),
         block_data("security_all", "整体 · 安全四大会全部（USENIX / S&P / CCS / NDSS）", sec_all),
-        block_data("hci_sub", "子领域 · 隐私安全（CHI + privacy/security 过滤）", hci_sub),
-        block_data("hci_all", "整体 · 全 CHI", hci_all),
+        block_data("hci_sub", "子领域 · 隐私安全（指定 HCI 来源 + privacy/security 过滤）", hci_sub),
+        block_data("hci_all", "整体 · 指定 HCI 来源", hci_all),
     ]
     topics = load_topic_rules()
     yearly = yearly_topic_counts({
@@ -616,13 +749,20 @@ def main():
     with open(os.path.join(ROOT, "data", "trends.json"), "w", encoding="utf-8") as f:
         json.dump({
             "generated_at": time.strftime("%Y-%m-%d"),
-            "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；四大会 usable 子集使用访谈、问卷、可用性与用户实验宽检索，再要求摘要同时出现人本范围和方法证据。用户实验候选进一步要求实验设计、真实参与者和用户结果指标三类证据。",
+        "method": "2024–2026 相对 2020–2023 的标题词频增长；引用增速为总引用数除以论文年龄；四大会 usable 子集使用访谈、问卷、可用性与用户实验宽检索，再要求摘要同时出现人本范围和方法证据；HCI 子集覆盖 CHI、CSCW/PACM HCI、TOCHI、UbiComp/IMWUT 与 IJHCS。用户实验候选进一步要求实验设计、真实参与者和用户结果指标三类证据。",
             "big4_definition": {
                 "venues": list(SEC_BIG4_VENUES.keys()),
                 "venue_aliases": SEC_BIG4_VENUES,
                 "queries": list(BIG4_QUERIES),
+                "query_strategy": "fetch each venue alias once, then apply the human/usability and user-study evidence filter locally",
                 "filter": "human/usability scope term AND user-study method term",
                 "counts_by_venue_year": venue_year_counts(big4_usable),
+            },
+            "hci_definition": {
+                "venues": HCI_VENUES,
+                "topic_terms": list(HCI_TOPIC_TERMS),
+                "query_strategy": "fetch each HCI venue once, then apply the security-topic terms locally",
+                "filter": "privacy/security plus high-precision usable-security topics such as phishing, scams, fraud, authentication, warnings, online abuse, and data protection",
             },
             "user_experiment_method": {
                 "design_terms": list(EXPERIMENT_DESIGN_TERMS),
@@ -632,6 +772,9 @@ def main():
                 "candidate_count": len(experiment_candidates),
                 "candidates": experiment_candidates,
             },
+            "recent_hci_privacy_security": [
+                p for p in hci_sub if (p.get("year") or 0) >= 2025
+            ],
             "blocks": blocks,
             "yearly_topics": yearly,
             "migration_method": "source first-hot + Big4 user-study zero-to-one: first popular year in SOUPS/PETS or HCI privacy/security must be earlier than the first year where the topic appears at least once in the security Big4 usable/user-study subset, and the lag must be 1-2 years.",

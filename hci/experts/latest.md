@@ -1,6 +1,6 @@
 # 大牛 · HCI(CHI / CSCW)近期论文
 
-_生成于 2026-08-03；🆕 = 最近 18 个月_
+_生成于 2026-09-07；🆕 = 最近 18 个月_
 
 - 2026 🆕 | [HCI] Yaman Yu | CHI Extended Abstracts — **Developmentally Safe Generative AI Environment for Youth**
 - 2026 🆕 | [HCI] Yixin Zou | Symposium on Designing Interactive Syste — **Revealed or Reinforced: How Assistive Technologies Shape the Experience with Dark Patterns for Blind and Low-Vision Users**
@@ -27,7 +27,6 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2026 🆕 | [HCI] Shuning Zhang | International Conference on Human Factor — **"Privacy across the boundary": Examining Perceived Privacy Risk Across Data Transmission and Sharing Ranges of Smart Home Personal Assistants** (arXiv:2601.17373)
 - 2026 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **Privacy and Trust vs. Utility: Adoption of Commercial vs. Institutional AI assistants Among University Users**
 - 2026 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **“Families are messy”: From Parent-Child Tensions to Family-Centered Design of Smart Home Technologies**
-- 2026 🆕 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **Passing Down Passwords: How Older Adults Approach Postmortem Account Access and Digital Estate Planning**
 - 2026 🆕 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **My Money, Your Name: Challenges and Workarounds in ID-Required Mobile Money in East Africa**
 - 2026 🆕 | [HCI] Collins W. Munyendo | International Conference on Human Factor — **Re-Examining the Examiners: Changes in Privacy and Security Perceptions of Exam Proctoring**
 - 2025 🆕 | [HCI] Yang Wang, Yaman Yu | International Conference on Human Factor — **Principles of Safe AI Companions for Youth: Parent and Expert Perspectives** (arXiv:2510.11185)
@@ -46,16 +45,16 @@ _生成于 2026-08-03；🆕 = 最近 18 个月_
 - 2025 🆕 | [HCI] Zhicong Lu | International Conference on Human Factor — **ProductMeta: An Interactive System for Metaphorical Product Design Ideation with Multimodal Large Language Models**
 - 2025 🆕 | [HCI] Zhicong Lu | International Conference on Human Factor — **"Can't believe I'm crying over an anime girl": Public Parasocial Grieving and Coping Towards VTuber Graduation and Termination** (arXiv:2504.13421)
 - 2025 🆕 | [HCI] Zhicong Lu | CHI Extended Abstracts — **RevTogether: Supporting Science Story Revision with Multiple AI Agents** (arXiv:2503.01608)
-- 2025 🆕 | [HCI] Zhicong Lu | International Conference on Human Factor — **How Users Who are Blind or Low Vision Play Mobile Games: Perceptions, Challenges, and Strategies** (arXiv:2502.09866)
-- 2025 🆕 | [HCI] Zhicong Lu | International Conference on Human Factor — **HarmonyCut: Supporting Creative Chinese Paper-cutting Design with Form and Connotation Harmony** (arXiv:2502.07628)
+- 2025 | [HCI] Zhicong Lu | International Conference on Human Factor — **How Users Who are Blind or Low Vision Play Mobile Games: Perceptions, Challenges, and Strategies** (arXiv:2502.09866)
+- 2025 | [HCI] Zhicong Lu | International Conference on Human Factor — **HarmonyCut: Supporting Creative Chinese Paper-cutting Design with Form and Connotation Harmony** (arXiv:2502.07628)
 - 2025 🆕 | [HCI] Shuning Zhang | UbiComp Companion — **SituGuard: LLM-based Fine-grained Smart Glass Privacy Control in Home Environments**
 - 2025 🆕 | [HCI] Shuning Zhang | International Conference on Human Factor — **PrivWeb: Unobtrusive and Content-aware Privacy Protection For Web Agents** (arXiv:2509.11939)
 - 2025 🆕 | [HCI] Shuning Zhang | International Conference on Human Factor — **Request a Note: How the Request Function Shapes X's Community Notes System** (arXiv:2509.09956)
 - 2025 🆕 | [HCI] Shuning Zhang | UbiComp Companion — **From Patient Burdens to User Agency: Designing for Real-Time Protection Support in Online Health Consultations** (arXiv:2508.00328)
 - 2025 🆕 | [HCI] Shuning Zhang | UbiComp Companion — **Evaluating the Efficacy of Large Language Models for Generating Fine-Grained Visual Privacy Policies in Homes** (arXiv:2508.00321)
 - 2025 🆕 | [HCI] Shuning Zhang | International Conference on Human Factor — **PrivCAPTCHA: Interactive CAPTCHA to Facilitate Effective Comprehension of APP Privacy Policy**
-- 2025 🆕 | [HCI] Shuning Zhang | International Conference on Human Factor — **Actual Achieved Gain and Optimal Perceived Gain: Modeling Human Take-over Decisions Towards Automated Vehicles' Suggestions** (arXiv:2502.06179)
-- 2025 🆕 | [HCI] Shuning Zhang | International Conference on Human Factor — **Vision-Based Multimodal Interfaces: A Survey and Taxonomy for Enhanced Context-Aware System Design** (arXiv:2501.13443)
+- 2025 | [HCI] Shuning Zhang | International Conference on Human Factor — **Actual Achieved Gain and Optimal Perceived Gain: Modeling Human Take-over Decisions Towards Automated Vehicles' Suggestions** (arXiv:2502.06179)
+- 2025 | [HCI] Shuning Zhang | International Conference on Human Factor — **Vision-Based Multimodal Interfaces: A Survey and Taxonomy for Enhanced Context-Aware System Design** (arXiv:2501.13443)
 - 2025 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **Intriguing, Concerning, and Questioning the Impact on Immersion: An Exploration of VR Users' Advertising Experiences and Attitudes**
 - 2025 🆕 | [HCI] Collins W. Munyendo | International Conference on Human Factor — **Reimagining Wearable-Based Digital Contact Tracing: Insights from Kenya and Côte d'Ivoire**
 - 2024 | [HCI] Yang Wang, Tanusree Sharma | International Conference on Human Factor — **Designing Accessible Obfuscation Support for Blind Individuals’ Visual Privacy Management**

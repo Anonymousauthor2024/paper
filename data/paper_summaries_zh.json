@@ -1,7 +1,42 @@
 {
-  "generated_at": "2026-08-03",
+  "generated_at": "2026-09-07",
   "scope": "Chinese 2-3 sentence introductions used only when the merged dashboard record has no existing summary. Each entry is grounded in an official conference page, an author/institution page, or arXiv abstract.",
   "papers": [
+    {
+      "title": "Making privacy usable: Bridging privacy research and practice through guidelines",
+      "summary_zh": "论文把127项有用户参与的既有研究综合为一套包含25条指南的用户隐私沟通目录，用于帮助设计者发现数据驱动界面中的隐私沟通问题并提出改进。作者又通过两项共92名参与者的研究评估该目录，结果表明指南能较好地衔接问题识别、指南选择和解决方案设计，并帮助参与者理解数据保护原则。",
+      "abstract_source_url": "https://www.sciencedirect.com/science/article/pii/S1071581926001758",
+      "source_type": "IJHCS official abstract",
+      "verified_at": "2026-09-07"
+    },
+    {
+      "title": "Designing effective phishing awareness training: The role of feedback and engagement strategies",
+      "summary_zh": "研究在真实组织环境中把模拟钓鱼行为数据与19次半结构化访谈结合，比较反馈时机及强制/自愿培训安排如何影响员工参与和后续钓鱼易感性。结果显示即时反馈能降低后续易感性，强制参加可提高参与度，但也可能削弱内在动机；作者据此提出安全意识培训的反馈、形式和组织文化设计建议。",
+      "abstract_source_url": "https://www.sciencedirect.com/science/article/pii/S1071581926001369",
+      "source_type": "IJHCS official abstract",
+      "verified_at": "2026-09-07"
+    },
+    {
+      "title": "The privacy triad: Understanding the influence of perceived social agency on privacy attitudes",
+      "summary_zh": "研究先调查400名参与者，再访谈12人，考察人们面对电脑、智能手机和数字助理时的隐私态度。作者发现单靠“计算机是社会行动者”不足以解释这些态度，并提出隐私三元框架：用户会把设备视为社会行动者、连接外部主体的通道，或自己完全控制的工具；不同角色会改变隐私期待与设计风险。",
+      "abstract_source_url": "https://www.sciencedirect.com/science/article/pii/S1071581926000273",
+      "source_type": "IJHCS official abstract",
+      "verified_at": "2026-09-07"
+    },
+    {
+      "title": "Privacy in motion: Attitudes and strategies for navigating the smart home privacy paradox",
+      "summary_zh": "研究通过14天日记和回溯式半结构化访谈，分析用户在智能家居中如何权衡便利与隐私。结果强调隐私策略高度依赖具体情境和日常惯例，说明隐私感知与保护行为不是稳定不变的个人偏好；论文据此提出贴近日常生活的隐私感知型智能家居设计启示。",
+      "abstract_source_url": "https://www.sciencedirect.com/science/article/pii/S1071581926000492",
+      "source_type": "IJHCS official abstract",
+      "verified_at": "2026-09-07"
+    },
+    {
+      "title": "Strategic misdirection: Attempts to protect privacy with made-up email addresses",
+      "summary_zh": "研究访谈20名曾填写虚构邮箱地址的人，发现他们这样做主要是为了避免信息过载并保护隐私；具体选择受到情境、收益风险、既往经历和验证要求影响。论文进一步指出这种做法会产生相互依赖的隐私问题，并建议采用客户端统一管理、输入验证和双重确认等设计与治理措施。",
+      "abstract_source_url": "https://www.sciencedirect.com/science/article/pii/S1071581925001569",
+      "source_type": "IJHCS official abstract",
+      "verified_at": "2026-09-07"
+    },
     {
       "title": "What is Safety? Corporate Discourse, Power, and the Politics of Generative AI Safety",
       "summary_zh": "论文采用批判性话语分析，研究头部生成式AI公司如何在公开文件中建构“安全”，以及它们如何描述权威、责任与合法性。结果表明，企业话语倾向于把安全塑造成持续实验和前瞻治理过程，同时巩固企业自身的解释权；作者因此提醒HCI研究不要直接沿用企业框架，而应强调问责、公平与正义。",
