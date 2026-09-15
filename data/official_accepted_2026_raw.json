@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07",
+  "generated_at": "2026-09-15",
   "note": "Official-list audit. A missing page means not publicly available, not zero accepted papers.",
   "venues": {
     "USENIX Security": {
@@ -1191,7 +1191,7 @@
           "title": "Quantifying Large Language Model Attacks Through the Lens of Model Cognition",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/liu-xiuming",
-          "abstract": "Xiuming Liu, Chaoxiang He, Xuanran Yu, Jichen Chai, Feiyue Xu, Sheng Hang, and Hanqing Hu, Shanghai Jiao Tong University; Bin Benjamin Zhu, Microsoft Corporation; Hongsheng Hu, Shi-Feng Sun, Dawu Gu, and Shuo Wang, Shanghai Jiao Tong University Available Media Large language models (LLMs) are vulnerable to malicious inputs that elicit harmful content. Current safety mechanisms, such as keyword filters or output moderation, largely ignore internal model dynamics. We show that safety-relevant features correlated with harmful prompting are strongly separable under lightweight probes in intermediate hidden states (up to 99% accuracy) before generation, revealing that such features persist internally even when models produce compliant outputs. Leveraging this observation, we introduce layer-wise toxicity probes and a multi-layer complementary detection framework that fuses signals from diverse depths. Our lightweight Sentinel (<5M parameters) halves false negatives compared to generation-level refusal and maintains over 94% detection accuracy under adversarial attacks—where baselines drop by 32%. Sentinel also outperforms Llama-Guard-3-8B on heterogeneous harmful prompting across seven open-weight LLMs (1.5B→72B) and multiple benchmarks (I2P, SneakyPrompt, MMA, Labelled, PIJ, ChatAlpaca, and Multi-turn Jailbreak). Beyond detection, our method provides the first quantitative, layer-resolved map of how safety-relevant signals emerge, propagate, and degrade within LLMs, enabling interpretable, inside-out alignment and diagnostics. This paper contains potentially sensitive and offensive content, including but not limited to NSFW material, hate speech, discrimination, and other harmful text. Reader discretion is advised. Attend Registration Information Registration Discounts Grant Opportunities Venue, Hotel, and Travel Schedule Technical Sessions Cycle 1 Accepted Papers Activities Poster Session Participate Call for Papers Call for Artifacts Enigma Track Call for Participation Call for Posters Instructions for Presenters and Authors Sponsors Exhibitor Resources About Symposium Organizers Past Symposia Conference Policies Code of Conduct Questions Privacy Policy Contact Us © USENIX new Date().getFullYear()>document.write(new Date().getFullYear()); EIN 13-3055038 (function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML=\"window.__CF$cv$params={r:'a3745ba5df64983e',t:'MTc4ODc2OTg5NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);\";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();",
+          "abstract": "Xiuming Liu, Chaoxiang He, Xuanran Yu, Jichen Chai, Feiyue Xu, Sheng Hang, and Hanqing Hu, Shanghai Jiao Tong University; Bin Benjamin Zhu, Microsoft Corporation; Hongsheng Hu, Shi-Feng Sun, Dawu Gu, and Shuo Wang, Shanghai Jiao Tong University Available Media Large language models (LLMs) are vulnerable to malicious inputs that elicit harmful content. Current safety mechanisms, such as keyword filters or output moderation, largely ignore internal model dynamics. We show that safety-relevant features correlated with harmful prompting are strongly separable under lightweight probes in intermediate hidden states (up to 99% accuracy) before generation, revealing that such features persist internally even when models produce compliant outputs. Leveraging this observation, we introduce layer-wise toxicity probes and a multi-layer complementary detection framework that fuses signals from diverse depths. Our lightweight Sentinel (<5M parameters) halves false negatives compared to generation-level refusal and maintains over 94% detection accuracy under adversarial attacks—where baselines drop by 32%. Sentinel also outperforms Llama-Guard-3-8B on heterogeneous harmful prompting across seven open-weight LLMs (1.5B→72B) and multiple benchmarks (I2P, SneakyPrompt, MMA, Labelled, PIJ, ChatAlpaca, and Multi-turn Jailbreak). Beyond detection, our method provides the first quantitative, layer-resolved map of how safety-relevant signals emerge, propagate, and degrade within LLMs, enabling interpretable, inside-out alignment and diagnostics. This paper contains potentially sensitive and offensive content, including but not limited to NSFW material, hate speech, discrimination, and other harmful text. Reader discretion is advised. Attend Registration Information Registration Discounts Grant Opportunities Venue, Hotel, and Travel Schedule Technical Sessions Cycle 1 Accepted Papers Activities Poster Session Participate Call for Papers Call for Artifacts Enigma Track Call for Participation Call for Posters Instructions for Presenters and Authors Sponsors Exhibitor Resources About Symposium Organizers Past Symposia Conference Policies Code of Conduct Questions Privacy Policy Contact Us © USENIX new Date().getFullYear()>document.write(new Date().getFullYear()); EIN 13-3055038 (function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML=\"window.__CF$cv$params={r:'a3b8138d7a966e08',t:'MTc4OTQ3OTk3Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);\";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();",
           "cycle": "cycle1"
         },
         {
@@ -1310,14 +1310,14 @@
           "title": "The Six Developers You'll Meet in Security: Why Secure by Design Needs a Behavioral Playbook",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/vargas",
-          "abstract": "Enrique Larios Vargas, OWASP The Secure by Design movement has advanced security by shifting responsibility from individual developers to the systems they use. However, it assumes developers will respond uniformly to secure defaults and guardrails. They don't. Using the COM-B behavioral model, which analyzes behavior through Capability, Opportunity, and Motivation, and synthesizing empirical research on developer security practices, I identified six developer personas reflecting fundamentally different patterns of security engagement. A developer skeptical about security's ROI requires a different intervention than one who is enthusiastic but lacks organizational support, or one who actively resists security processes. This talk introduces the SECUR-E framework (Skeptic, Enthusiast, Compliant, Unaware, Resistant, Embedded) and explains why recognizing behavioral diversity is essential for Secure by Design to succeed. When organizations approach developer security as a behavioral design challenge rather than a compliance issue, they can tailor interventions to the actual barriers of each developer type. Dr. Enrique Larios Vargas is a Security and Learning Specialist at Adyen in the Netherlands, where he designs and leads large-scale security enablement programs for engineering teams in a global fintech environment. His work focuses on integrating behavioral science into secure software development, helping organizations move beyond compliance-driven approaches toward sustainable security culture. With over five years of experience across fintech, cybersecurity, and higher education, Enrique bridges research and practice. Prior to joining the industry, he served as a university lecturer and conducted research on behavioral factors in software engineering and cybersecurity. He holds a Ph.D. in Computer Science from Leiden University. Enrique is an active OWASP contributor, co-leads the OWASP Security Culture Project, and regularly speaks on human-centric cybersecurity, developer behavior, and security culture transformation. His mission is to make secure development not just a policy requirement, but the natural and easiest choice for developers and software teams.",
+          "abstract": "Enrique Larios Vargas, OWASP Available Media The Secure by Design movement has advanced security by shifting responsibility from individual developers to the systems they use. However, it assumes developers will respond uniformly to secure defaults and guardrails. They don't. Using the COM-B behavioral model, which analyzes behavior through Capability, Opportunity, and Motivation, and synthesizing empirical research on developer security practices, I identified six developer personas reflecting fundamentally different patterns of security engagement. A developer skeptical about security's ROI requires a different intervention than one who is enthusiastic but lacks organizational support, or one who actively resists security processes. This talk introduces the SECUR-E framework (Skeptic, Enthusiast, Compliant, Unaware, Resistant, Embedded) and explains why recognizing behavioral diversity is essential for Secure by Design to succeed. When organizations approach developer security as a behavioral design challenge rather than a compliance issue, they can tailor interventions to the actual barriers of each developer type. Dr. Enrique Larios Vargas is a Security and Learning Specialist at Adyen in the Netherlands, where he designs and leads large-scale security enablement programs for engineering teams in a global fintech environment. His work focuses on integrating behavioral science into secure software development, helping organizations move beyond compliance-driven approaches toward sustainable security culture. With over five years of experience across fintech, cybersecurity, and higher education, Enrique bridges research and practice. Prior to joining the industry, he served as a university lecturer and conducted research on behavioral factors in software engineering and cybersecurity. He holds a Ph.D. in Computer Science from Leiden University. Enrique is an active OWASP contributor, co-leads the OWASP Security Culture Project, and regularly speaks on human-centric cybersecurity, developer behavior, and security culture transformation. His mission is to make secure development not just a policy requirement, but the natural and easiest choice for developers and software teams.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
           "title": "Broken Promises: Who's Accountable When VPNs Fail?",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/ensafi",
-          "abstract": "Roya Ensafi, University of Michigan Systematic research across five years, encompassing over a thousand users, nine VPN providers, and hundreds of desktop and mobile apps, reveals that VPNs routinely fail the users who depend on them most. For example: Kill switches leak real IP addresses during tunnel failures DNS queries escape the tunnel, exposing browsing activity to ISPs and adversaries, VPN apps transmit cleartext traffic, deliver configuration files unencrypted, and exfiltrate advertising IDs for cross-app tracking. These failures are not bugs but the predictable consequence of unregulated markets, misaligned incentives, and app stores that substitute self-reported safety claims and paid verification badges for independent auditing. Roya Ensafi is a Morris Wellman Associate Professor of Computer Science and Engineering at the University of Michigan. She is the founder of Censored Planet lab which focuses on using data-driven approach to detecting and defending against powerful network intermediaries, government threat actors, and technologies that impact users' freedom of expression online. Prof. Ensafi has studied Russia's throttling of Twitter, HTTPS interception in Kazakhstan, and China's Great Cannon attack, among many other instances of network interference. She is a recipient of the Sloan Research Fellowship, NSF CAREER, Google Faculty Research Award, multiple IRTF Applied Networking Research Prizes, and the Consumer Reports Digital Lab Fellowship. Her work has been cited in popular publications such as The New York Times, Newsweek, Business Insider, Wired, and Ars Technica.",
+          "abstract": "Roya Ensafi, University of Michigan Available Media Systematic research across five years, encompassing over a thousand users, nine VPN providers, and hundreds of desktop and mobile apps, reveals that VPNs routinely fail the users who depend on them most. For example: Kill switches leak real IP addresses during tunnel failures DNS queries escape the tunnel, exposing browsing activity to ISPs and adversaries, VPN apps transmit cleartext traffic, deliver configuration files unencrypted, and exfiltrate advertising IDs for cross-app tracking. These failures are not bugs but the predictable consequence of unregulated markets, misaligned incentives, and app stores that substitute self-reported safety claims and paid verification badges for independent auditing. Roya Ensafi is a Morris Wellman Associate Professor of Computer Science and Engineering at the University of Michigan. She is the founder of Censored Planet lab which focuses on using data-driven approach to detecting and defending against powerful network intermediaries, government threat actors, and technologies that impact users' freedom of expression online. Prof. Ensafi has studied Russia's throttling of Twitter, HTTPS interception in Kazakhstan, and China's Great Cannon attack, among many other instances of network interference. She is a recipient of the Sloan Research Fellowship, NSF CAREER, Google Faculty Research Award, multiple IRTF Applied Networking Research Prizes, and the Consumer Reports Digital Lab Fellowship. Her work has been cited in popular publications such as The New York Times, Newsweek, Business Insider, Wired, and Ars Technica.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
@@ -1436,14 +1436,14 @@
           "title": "Verifiable Elections—Now Is the Time",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/benaloh",
-          "abstract": "Josh Benaloh, Microsoft Research We have a crisis of confidence in elections today in the U.S. and in many parts of the world. Voters are asked to \"trust the process\" without being given direct evidence that their votes have been counted correctly. We can do better! Technology has existed for over four decades that allows voters to independently verify that their votes have been accurately counted – without having to trust any election software, hardware, or personnel. This technology is now mature, practical, easy to use, and has been deployed in public elections. This talk will describe what it means for an election to be publicly verifiable, provide a high-level view of how these systems work, and reflect on lessons learned from real-world deployments. It will also discuss how individuals can help drive the adoption of verifiable election technology in their own jurisdictions. Josh Benaloh is the Senior Principal Cryptographer at Microsoft Research and an Affiliate Professor at the University of Washington's Paul G. Allen School of Computer Science & Engineering. He is an author of the 2018 National Academy of Sciences report \"Securing the Vote: Protecting American Democracy\" and has testified before Congress on verifiable election technologies. His work has been featured in publications including The New Yorker and WIRED. Dr. Benaloh holds an S.B. degree from the Massachusetts Institute of Technology and M.S., M. Phil., and Ph.D. degrees from Yale University. He served seventeen years on the Board of Directors of the International Association for Cryptologic Research and currently serves on the Coordinating Committee of the Election Verification Network which he chaired from 2020-2024. Outside of professional activities, Dr. Benaloh served eight years on and chaired the Citizen Oversight Panel for Sound Transit which is investing $2 billion annually on expanding the public transit infrastructure for the Seattle region. He has also authored numerous puzzles for competitive puzzle-solving events.",
+          "abstract": "Josh Benaloh, Microsoft Research Available Media We have a crisis of confidence in elections today in the U.S. and in many parts of the world. Voters are asked to \"trust the process\" without being given direct evidence that their votes have been counted correctly. We can do better! Technology has existed for over four decades that allows voters to independently verify that their votes have been accurately counted – without having to trust any election software, hardware, or personnel. This technology is now mature, practical, easy to use, and has been deployed in public elections. This talk will describe what it means for an election to be publicly verifiable, provide a high-level view of how these systems work, and reflect on lessons learned from real-world deployments. It will also discuss how individuals can help drive the adoption of verifiable election technology in their own jurisdictions. Josh Benaloh is the Senior Principal Cryptographer at Microsoft Research and an Affiliate Professor at the University of Washington's Paul G. Allen School of Computer Science & Engineering. He is an author of the 2018 National Academy of Sciences report \"Securing the Vote: Protecting American Democracy\" and has testified before Congress on verifiable election technologies. His work has been featured in publications including The New Yorker and WIRED. Dr. Benaloh holds an S.B. degree from the Massachusetts Institute of Technology and M.S., M. Phil., and Ph.D. degrees from Yale University. He served seventeen years on the Board of Directors of the International Association for Cryptologic Research and currently serves on the Coordinating Committee of the Election Verification Network which he chaired from 2020-2024. Outside of professional activities, Dr. Benaloh served eight years on and chaired the Citizen Oversight Panel for Sound Transit which is investing $2 billion annually on expanding the public transit infrastructure for the Seattle region. He has also authored numerous puzzles for competitive puzzle-solving events.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
           "title": "If They Can Touch It, They Own It: The Stories We Tell Ourselves About Medical Device Cybersecurity",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/rushanan",
-          "abstract": "Michael Rushanan, Armatyr Medical device security differs from traditional security in one important way: when it fails, patient safety can be at risk. Regulators around the world have responded with policies, requirements, and frameworks intended to drive secure-by-design development. However, regulatory frameworks rely heavily on manufacturer risk assessments. As a result, the quality of the underlying security reasoning becomes critical. This talk presents real-world case studies of security decisions shaped by familiar justifications, including \"competitors are doing less,\" \"previous products shipped without incident,\" and \"physical access makes security irrelevant.\" These decisions result in flawed risk management, weak cryptographic designs, and avoidable vulnerabilities. To illustrate how these decisions emerge in practice, each case study describes the technical issue, stakeholder dynamics, and outcome. It also discusses penetration-testing findings, regulatory feedback, and practical remediation approaches. Dr. Michael Rushanan is a medical device cybersecurity researcher, consultant, and educator with more than two decades of experience in security engineering, risk management, and applied cryptography. He is the Co-Founder of Armatyr and previously spent 11 years as Chief Scientist at Harbor Labs, helping manufacturers build and evaluate the security of medical devices. Dr. Rushanan is also a Fellow at Harbor Experts and a Lecturer in Computer Science at Johns Hopkins University. He teaches Medical Device Cybersecurity (MDC), a course he designed to address the need for applied education in the field. Dr. Rushanan also directs federal cybersecurity efforts for the U.S. FDA, HHS, and DOJ, and has provided expert testimony on the security of health and medical systems.",
+          "abstract": "Michael Rushanan, Armatyr Available Media Medical device security differs from traditional security in one important way: when it fails, patient safety can be at risk. Regulators around the world have responded with policies, requirements, and frameworks intended to drive secure-by-design development. However, regulatory frameworks rely heavily on manufacturer risk assessments. As a result, the quality of the underlying security reasoning becomes critical. This talk presents real-world case studies of security decisions shaped by familiar justifications, including \"competitors are doing less,\" \"previous products shipped without incident,\" and \"physical access makes security irrelevant.\" These decisions result in flawed risk management, weak cryptographic designs, and avoidable vulnerabilities. To illustrate how these decisions emerge in practice, each case study describes the technical issue, stakeholder dynamics, and outcome. It also discusses penetration-testing findings, regulatory feedback, and practical remediation approaches. Dr. Michael Rushanan is a medical device cybersecurity researcher, consultant, and educator with more than two decades of experience in security engineering, risk management, and applied cryptography. He is the Co-Founder of Armatyr and previously spent 11 years as Chief Scientist at Harbor Labs, helping manufacturers build and evaluate the security of medical devices. Dr. Rushanan is also a Fellow at Harbor Experts and a Lecturer in Computer Science at Johns Hopkins University. He teaches Medical Device Cybersecurity (MDC), a course he designed to address the need for applied education in the field. Dr. Rushanan also directs federal cybersecurity efforts for the U.S. FDA, HHS, and DOJ, and has provided expert testimony on the security of health and medical systems.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
@@ -1569,14 +1569,14 @@
           "title": "Improving Safety with Privacy: An Exploration of Privacy-Enhancing Safety Guardrails for Cloud Inference",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/tetali",
-          "abstract": "Sai Deep Tetali, OpenAI Cloud AI systems face two obligations that are often framed as a tradeoff. Providers need to prevent misuse and investigate failures, while users and enterprises need assurances on how their data is stored, accessed, and processed. This framing assumes that safety requires broad visibility into user data and that privacy requires giving up meaningful safeguards. This talk argues that privacy-enhancing infrastructure can improve both. We will explore how encryption, confidential computing, remote attestation, and other technologies can provide strong technical guarantees about how data is accessed and processed. These mechanisms can support strong safety guardrails without making routine human access the default. They provide stronger, auditable guarantees than from policy alone. We will also present a number of challenges with these architectures, including trust boundaries, operational tradeoffs, appeals, incidents, and software updates. This is an open area of exploration and we are actively seeking to work with the community to set the standards for how responsible AI can be built. Sai Deep Tetali is a Member of Technical Staff at OpenAI, where he leads the Private Stack team. His work focuses on building privacy-preserving infrastructure for frontier AI. Before OpenAI, Sai worked at Meta on privacy for augmented- and virtual-reality devices, spanning privacy-aware infrastructure and confidential computing. Earlier, he built machine-learning systems for detecting Android malware at Google and worked on automated software verification at Microsoft Research. He holds a PhD in Computer Science from UCLA, where his research focused on secure cloud computing, and is a co-author of The Android Malware Handbook .",
+          "abstract": "Sai Deep Tetali, OpenAI Available Media Cloud AI systems face two obligations that are often framed as a tradeoff. Providers need to prevent misuse and investigate failures, while users and enterprises need assurances on how their data is stored, accessed, and processed. This framing assumes that safety requires broad visibility into user data and that privacy requires giving up meaningful safeguards. This talk argues that privacy-enhancing infrastructure can improve both. We will explore how encryption, confidential computing, remote attestation, and other technologies can provide strong technical guarantees about how data is accessed and processed. These mechanisms can support strong safety guardrails without making routine human access the default. They provide stronger, auditable guarantees than from policy alone. We will also present a number of challenges with these architectures, including trust boundaries, operational tradeoffs, appeals, incidents, and software updates. This is an open area of exploration and we are actively seeking to work with the community to set the standards for how responsible AI can be built. Sai Deep Tetali is a Member of Technical Staff at OpenAI, where he leads the Private Stack team. His work focuses on building privacy-preserving infrastructure for frontier AI. Before OpenAI, Sai worked at Meta on privacy for augmented- and virtual-reality devices, spanning privacy-aware infrastructure and confidential computing. Earlier, he built machine-learning systems for detecting Android malware at Google and worked on automated software verification at Microsoft Research. He holds a PhD in Computer Science from UCLA, where his research focused on secure cloud computing, and is a co-author of The Android Malware Handbook .",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
           "title": "Detecting Security Posture Drift in AI-Driven Software Development via Continuous Threat Modeling",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/ravindra",
-          "abstract": "Preeti Ravindra AI-assisted software development is accelerating how quickly systems are designed, modified, and deployed. While modern security tooling can identify vulnerabilities, misconfigurations, and policy violations, it often struggles to answer a more fundamental question: does the deployed system still reflect the intended security posture? This talk introduces an approach for automatically deriving threat models from code, infrastructure, and configuration artifacts and tracking their evolution over time. Rather than focusing on code diffs, the approach computes threat model diffs to detect security intent drift, including changes to attack surfaces, trust boundaries, privilege relationships, and sensitive data flows. Through real-world examples of AI-assisted infrastructure changes, I show how security-relevant behavior can emerge without introducing traditional vulnerabilities, and how threat model differencing can surface these risks. The result is a practical workflow for maintaining security oversight in development environments where code changes faster than humans can review it. Preeti is a technical leader who has delivered security outcomes by applying AI to security problems and ensuring AI systems are reliable and trustworthy for over a decade. Her career spans startups to Fortune 100 companies where she has advanced research and implemented it into scalable, revenue-aligned systems. She solves problems in both product security and security operations bridging research and engineering execution with equal ease. Her value proposition is working across functions, cutting through ambiguity and delivering measurable business value. As a recognized industry voice, Preeti speaks at conferences like DEFCON,BSides and serves on program committees for CAMLIS, unprompted. She is passionate about bridging the AI and security communities and advancing early career professionals to more senior roles. Currently, Preeti is pursuing AI safety research in AI control.",
+          "abstract": "Preeti Ravindra Available Media AI-assisted software development is accelerating how quickly systems are designed, modified, and deployed. While modern security tooling can identify vulnerabilities, misconfigurations, and policy violations, it often struggles to answer a more fundamental question: does the deployed system still reflect the intended security posture? This talk introduces an approach for automatically deriving threat models from code, infrastructure, and configuration artifacts and tracking their evolution over time. Rather than focusing on code diffs, the approach computes threat model diffs to detect security intent drift, including changes to attack surfaces, trust boundaries, privilege relationships, and sensitive data flows. Through real-world examples of AI-assisted infrastructure changes, I show how security-relevant behavior can emerge without introducing traditional vulnerabilities, and how threat model differencing can surface these risks. The result is a practical workflow for maintaining security oversight in development environments where code changes faster than humans can review it. Preeti is a technical leader who has delivered security outcomes by applying AI to security problems and ensuring AI systems are reliable and trustworthy for over a decade. Her career spans startups to Fortune 100 companies where she has advanced research and implemented it into scalable, revenue-aligned systems. She solves problems in both product security and security operations bridging research and engineering execution with equal ease. Her value proposition is working across functions, cutting through ambiguity and delivering measurable business value. As a recognized industry voice, Preeti speaks at conferences like DEFCON,BSides and serves on program committees for CAMLIS, unprompted. She is passionate about bridging the AI and security communities and advancing early career professionals to more senior roles. Currently, Preeti is pursuing AI safety research in AI control.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
@@ -1849,7 +1849,7 @@
           "title": "Breaking the Lethal Trifecta: Secure Agentic Computing via Causal Isolation Architecture",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/tsao",
-          "abstract": "Thursday, 11:30 am – 12:00 pm David Tsao, Notion Labs, Inc. Most LLM agents over private data have a dangerous shape: the same model reads untrusted instructions, sees sensitive context, and speaks to the outside world. It is like handing a press secretary every private email, incident note, and salary spreadsheet, then hoping a policy memo keeps secrets safe. Causal Isolation Architecture treats leakage as a systems design failure, not a prompt-writing failure. It splits the lethal trifecta across isolated components, passes only typed abstractions across boundaries, and uses a rule-of-two release judge to preserve useful private-derived guidance while stripping exact facts based on requester trust and source sensitivity. The key lesson: safety without utility becomes a refusal machine. In our bounded real-model matrix, claim-eligible OpenAI and Anthropic rows showed 0.0% observed secure-path leakage with 83-100% measured utility; matching single-agent baselines leaked private facts. The talk shows the demo, tradeoffs, and limits. David Tsao is Notion's Chief Information Security Officer (CISO), leading the teams responsible for Platform Security, IT, and Security Engineering. With 20+ years of experience building security culture and risk-based security programs across high-growth SaaS and large enterprises, he partners closely with company leadership to strengthen Notion's security posture and protect customers' data. Prior to Notion, David held CISO and senior security leadership roles at Instacart, Marqeta, BYTON, and Veeva Systems, and spent more than a decade at Gilead Sciences building enterprise security and privacy programs; he is also a CISSP and advises startups as a venture advisor. 12:30 pm–2:00 pm",
+          "abstract": "Thursday, 11:30 am – 12:00 pm David Tsao, Notion Labs, Inc. Available Media Most LLM agents over private data have a dangerous shape: the same model reads untrusted instructions, sees sensitive context, and speaks to the outside world. It is like handing a press secretary every private email, incident note, and salary spreadsheet, then hoping a policy memo keeps secrets safe. Causal Isolation Architecture treats leakage as a systems design failure, not a prompt-writing failure. It splits the lethal trifecta across isolated components, passes only typed abstractions across boundaries, and uses a rule-of-two release judge to preserve useful private-derived guidance while stripping exact facts based on requester trust and source sensitivity. The key lesson: safety without utility becomes a refusal machine. In our bounded real-model matrix, claim-eligible OpenAI and Anthropic rows showed 0.0% observed secure-path leakage with 83-100% measured utility; matching single-agent baselines leaked private facts. The talk shows the demo, tradeoffs, and limits. David Tsao is Notion's Chief Information Security Officer (CISO), leading the teams responsible for Platform Security, IT, and Security Engineering. With 20+ years of experience building security culture and risk-based security programs across high-growth SaaS and large enterprises, he partners closely with company leadership to strengthen Notion's security posture and protect customers' data. Prior to Notion, David held CISO and senior security leadership roles at Instacart, Marqeta, BYTON, and Veeva Systems, and spent more than a decade at Gilead Sciences building enterprise security and privacy programs; he is also a CISSP and advises startups as a venture advisor. 12:30 pm–2:00 pm",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
@@ -1975,21 +1975,21 @@
           "title": "How Can We Have Private Access to Intelligence?",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/verma",
-          "abstract": "Tanya Verma, Tinfoil Our interactions with AI models are getting more intimate. It started out with chat, where we voluntarily shared specifics. Now agents are always on and always listening. Today, all context flows through cloud servers in plaintext, accessible to model providers, hackers, and governments. Digital privacy now effectively means protecting your brain. This talk examines the paths to private AI. Fully homomorphic encryption offers mathematical elegance but remains impractical for frontier-scale inference. However, secure hardware primitives are practical today and will take us very far in accomplishing the goal of building a verifiably private infrastructure for AI. Based on lessons from deploying confidential inference serving billions of tokens daily, I'll chart why this matters now, and how secure hardware, combined with transparency logs, and open-source verification, can make private AI the default. Tanya is a co-founder of Tinfoil and was previously a Cloudflare engineer and researcher. Tanya designed and deployed privacy and security protocols used by billions of users, and contributed to Cloudflare's Workers AI platform.",
+          "abstract": "Tanya Verma, Tinfoil Available Media Our interactions with AI models are getting more intimate. It started out with chat, where we voluntarily shared specifics. Now agents are always on and always listening. Today, all context flows through cloud servers in plaintext, accessible to model providers, hackers, and governments. Digital privacy now effectively means protecting your brain. This talk examines the paths to private AI. Fully homomorphic encryption offers mathematical elegance but remains impractical for frontier-scale inference. However, secure hardware primitives are practical today and will take us very far in accomplishing the goal of building a verifiably private infrastructure for AI. Based on lessons from deploying confidential inference serving billions of tokens daily, I'll chart why this matters now, and how secure hardware, combined with transparency logs, and open-source verification, can make private AI the default. Tanya is a co-founder of Tinfoil and was previously a Cloudflare engineer and researcher. Tanya designed and deployed privacy and security protocols used by billions of users, and contributed to Cloudflare's Workers AI platform.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
           "title": "Cryptography at Scale: Building a Practical Cryptographic Inventory for Risk, Compliance, and Post‑Quantum Readiness",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/dev",
-          "abstract": "Jayati Dev, Comcast Cable Large organizations depend on cryptography for security and compliance with existing standards yet often lack a reliable understanding of where cryptographic assets actually exist. \"Assets\", like, certificates, keys, algorithms, and protocols are scattered across source code, network traffic, infrastructure, and third‑party systems, frequently managed by different teams. This lack of visibility makes it difficult to assess cryptographic risk and create a well-informed plan to migrate to newer quantum-resistant algorithms. Post-quantum readiness largely depends on what we can observe – we cannot fix cryptography that we cannot see. This talk presents XIPHER, a scalable approach to cryptographic inventory. We discuss XIPHER as a methodology and a suite of tools that can build scalable inventory of cryptographic assets to help with current and future compliance with encryption standards. Jayati Dev is a cybersecurity researcher working at the intersection of policy and emerging technologies at Comcast. She leads the inventorying workstream for the Post-Quantum Cryptography (PQC) Center of Excellence, building tools and solutions for encryption compliance. She also supports the public policy workstream, working on various areas of emerging tech policy like PQC. Jayati holds a PhD in Security Informatics from Indiana University Bloomington where she worked on privacy-preserving technologies in conversational platforms. She has also been a Google Public Policy fellow in cybersecurity policy and a co-lead researcher in a National Science Foundation multi-year investigation into IoT privacy.",
+          "abstract": "Jayati Dev, Comcast Cable Available Media Large organizations depend on cryptography for security and compliance with existing standards yet often lack a reliable understanding of where cryptographic assets actually exist. \"Assets\", like, certificates, keys, algorithms, and protocols are scattered across source code, network traffic, infrastructure, and third‑party systems, frequently managed by different teams. This lack of visibility makes it difficult to assess cryptographic risk and create a well-informed plan to migrate to newer quantum-resistant algorithms. Post-quantum readiness largely depends on what we can observe – we cannot fix cryptography that we cannot see. This talk presents XIPHER, a scalable approach to cryptographic inventory. We discuss XIPHER as a methodology and a suite of tools that can build scalable inventory of cryptographic assets to help with current and future compliance with encryption standards. Jayati Dev is a cybersecurity researcher working at the intersection of policy and emerging technologies at Comcast. She leads the inventorying workstream for the Post-Quantum Cryptography (PQC) Center of Excellence, building tools and solutions for encryption compliance. She also supports the public policy workstream, working on various areas of emerging tech policy like PQC. Jayati holds a PhD in Security Informatics from Indiana University Bloomington where she worked on privacy-preserving technologies in conversational platforms. She has also been a Google Public Policy fellow in cybersecurity policy and a co-lead researcher in a National Science Foundation multi-year investigation into IoT privacy.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
           "title": "What Is a PUF and Why Might You Need One?",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/egan",
-          "abstract": "Shannon Egan, Deep Science Ventures How does a chip prove its identity? As networked IoT devices and AI clusters increasingly handle and transmit sensitive data, strong device authentication has become more central to commodity hardware design. Physical Unclonable Functions (PUFs) are one way of providing unique device identifiers, leveraging natural variations in the manufacturing process to create a \"silicon fingerprint.\" By tracing PUFs from their origins in smart card security to their emerging role in data centre silicon, I will explain what PUFs uniquely offer and why these properties matter: from device physics, to attacks on OTP memory and implementation challenges. Shannon Egan is a physicist and multi-disciplinary researcher whose peer-reviewed work spans neuroscience, particle physics, quantum materials, and spintronic device applications in computing. Her research on entropy generation in emerging memory technologies drew her attention to the physical properties underpinning hardware security primitives and secure memory systems. She now leads R&D and product definition in these areas for an early-stage company incubated at Deep Science Ventures. 3:30 pm–4:00 pm",
+          "abstract": "Shannon Egan, Deep Science Ventures Available Media How does a chip prove its identity? As networked IoT devices and AI clusters increasingly handle and transmit sensitive data, strong device authentication has become more central to commodity hardware design. Physical Unclonable Functions (PUFs) are one way of providing unique device identifiers, leveraging natural variations in the manufacturing process to create a \"silicon fingerprint.\" By tracing PUFs from their origins in smart card security to their emerging role in data centre silicon, I will explain what PUFs uniquely offer and why these properties matter: from device physics, to attacks on OTP memory and implementation challenges. Shannon Egan is a physicist and multi-disciplinary researcher whose peer-reviewed work spans neuroscience, particle physics, quantum materials, and spintronic device applications in computing. Her research on entropy generation in emerging memory technologies drew her attention to the physical properties underpinning hardware security primitives and secure memory systems. She now leads R&D and product definition in these areas for an early-stage company incubated at Deep Science Ventures. 3:30 pm–4:00 pm",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
@@ -2157,14 +2157,14 @@
           "title": "Red-Teaming for Scraping",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/jain",
-          "abstract": "Malya Jain Scraping has evolved from a nuisance into a sophisticated, economically motivated threat to user privacy and platform integrity. Most organizations rely on reactive rate-limiting and passive monitoring defenses routinely bypassed by well-resourced attackers. This talk presents a different approach: proactively attacking your own platform through a dedicated Scraping Red Team program. We introduce adversary economics as the primary defensive metric such as, the attacker's cost-per-record. When that number is low, your defenses are failing regardless of what your dashboards say. Drawing on real operational experience, we walk through engagement design, privacy-aware data handling, structured vulnerability reporting, and validated remediation. Malya Jain is a Senior Security Engineer at Meta, where she leads the Vector Discovery team within the Anti-Scraping organization, protecting billions of users. She manages three red teams conducting continuous offensive scraping operations and has built programs spanning static analysis, scraping threat intelligence, and bug bounty integration for scraping vectors. Malya authored \"Best Practices for Unauthorized Scraping Red Teaming Exercises,\" published through the Mitigating Unauthorized Scraping Alliance (MUSA). She has presented at the Underground Economy Conference (France), Ekoparty (LATAM), and RISE USA. Malya is an IEEE Senior Member, WiCyS National Mentor, and holds three GIAC certifications and a Stanford Advanced Cybersecurity Certificate.",
+          "abstract": "Malya Jain Available Media Scraping has evolved from a nuisance into a sophisticated, economically motivated threat to user privacy and platform integrity. Most organizations rely on reactive rate-limiting and passive monitoring defenses routinely bypassed by well-resourced attackers. This talk presents a different approach: proactively attacking your own platform through a dedicated Scraping Red Team program. We introduce adversary economics as the primary defensive metric such as, the attacker's cost-per-record. When that number is low, your defenses are failing regardless of what your dashboards say. Drawing on real operational experience, we walk through engagement design, privacy-aware data handling, structured vulnerability reporting, and validated remediation. Malya Jain is a Senior Security Engineer at Meta, where she leads the Vector Discovery team within the Anti-Scraping organization, protecting billions of users. She manages three red teams conducting continuous offensive scraping operations and has built programs spanning static analysis, scraping threat intelligence, and bug bounty integration for scraping vectors. Malya authored \"Best Practices for Unauthorized Scraping Red Teaming Exercises,\" published through the Mitigating Unauthorized Scraping Alliance (MUSA). She has presented at the Underground Economy Conference (France), Ekoparty (LATAM), and RISE USA. Malya is an IEEE Senior Member, WiCyS National Mentor, and holds three GIAC certifications and a Stanford Advanced Cybersecurity Certificate.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
           "title": "Security Tools Don't Detect Attacks—Humans Do",
           "authors_text": "",
           "paper_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/brahmkstri",
-          "abstract": "Krupa Brahmkstri, Visa Modern security tools claim to detect attacks, yet in practice they generate signals: alerts, anomalies, and observations. The actual act of detection is performed by human analysts who correlate fragmented evidence, form hypotheses, and reconstruct attack narratives across identities, systems, and time. This distinction exposes a fundamental architectural flaw in modern security operations. Most security infrastructures are designed around alert generation, while the critical work of investigative reasoning remains largely manual. This talk introduces the concept of Inference-Driven Detection, a model that reframes attack detection as a reasoning problem rather than an anomaly-identification problem. Drawing on lessons from large-scale enterprise security environments, it explores why attacks such as credential abuse, privilege escalation, and lateral movement are often discovered through narrative reconstruction rather than isolated alerts. The talk argues that future security systems must move beyond alert-centric architectures and instead support human and AI-assisted investigative reasoning to identify and understand adversarial behavior. Krupa Pratap Brahmkstri is a Senior Data Science Manager at Visa, where she leads the development of AI-driven cybersecurity solutions focused on identity risk modeling, insider threat detection, and security operations automation. She builds production-scale machine learning systems that analyze large volumes of enterprise security telemetry to detect anomalous behavior. She brings expertise across artificial intelligence, cybersecurity analytics, and large-scale data systems, with a focus on identity-centric defense strategies and explainable AI for security operations. As a professional mentor and speaker, she is deeply motivated by the opportunity to make a tangible impact through technology. She approaches challenges as mathematical and algorithmic problems, combining analytical rigor with creative problem-solving.",
+          "abstract": "Krupa Brahmkstri, Visa Available Media Modern security tools claim to detect attacks, yet in practice they generate signals: alerts, anomalies, and observations. The actual act of detection is performed by human analysts who correlate fragmented evidence, form hypotheses, and reconstruct attack narratives across identities, systems, and time. This distinction exposes a fundamental architectural flaw in modern security operations. Most security infrastructures are designed around alert generation, while the critical work of investigative reasoning remains largely manual. This talk introduces the concept of Inference-Driven Detection, a model that reframes attack detection as a reasoning problem rather than an anomaly-identification problem. Drawing on lessons from large-scale enterprise security environments, it explores why attacks such as credential abuse, privilege escalation, and lateral movement are often discovered through narrative reconstruction rather than isolated alerts. The talk argues that future security systems must move beyond alert-centric architectures and instead support human and AI-assisted investigative reasoning to identify and understand adversarial behavior. Krupa Pratap Brahmkstri is a Senior Data Science Manager at Visa, where she leads the development of AI-driven cybersecurity solutions focused on identity risk modeling, insider threat detection, and security operations automation. She builds production-scale machine learning systems that analyze large volumes of enterprise security telemetry to detect anomalous behavior. She brings expertise across artificial intelligence, cybersecurity analytics, and large-scale data systems, with a focus on identity-centric defense strategies and explainable AI for security operations. As a professional mentor and speaker, she is deeply motivated by the opportunity to make a tangible impact through technology. She approaches challenges as mathematical and algorithmic problems, combining analytical rigor with creative problem-solving.",
           "cycle": "cycle2 inferred: present in official program but absent from cycle1 list"
         },
         {
@@ -5680,12 +5680,1135 @@
     "ACM CCS": {
       "endpoints": {
         "all": {
-          "url": "https://www.sigsac.org/ccs/CCS2026/accepted-papers.html",
-          "http_status": 404
+          "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "http_status": 200
         }
       },
-      "paper_count": 0,
-      "papers": [],
+      "paper_count": 187,
+      "papers": [
+        {
+          "title": "Exploring the Exposure of IPv6 End-Host Networks",
+          "authors_text": "Hugo Hue (Georgia Institute of Technology) Abhishek Bhaskar (Georgia Institute of Technology) Amanda Hsu (Georgia Institute of Technology) Paul Pearce (University of California, Irvine) Frank Li (Georgia Institute of Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "The Trade-off Between Performance and Security: Exploring Vulnerabilities in DNS Task Queue Scheduling",
+          "authors_text": "Shiming Liu (Tsinghua University, BNRist) Yunyi Zhang (Tsinghua University) Ruixuan Li (Tsinghua University) Shiyao Guo (Tsinghua University) Baojun Liu (Tsinghua University) Donghong Sun (Tsinghua University) Yong Ma (Alibaba Cloud) Linjian Song (Alibaba Cloud)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Demystifying GhostTap: Breaking Android Tapjacking Defenses by Exploiting State Inconsistencies",
+          "authors_text": "Yanjie Zhao (Huazhong University of Science and Technology) Zhiyuan Yang (Huazhong University of Science and Technology) Weimin Cheng (Independent Researcher) Sheng Cao (Huazhong University of Science and Technology) Hao Zhou (The Hong Kong Polytechnic University) Haoyu Wang (Huazhong University of Science and Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Breaking the Curse of Dimensionality: Fuzzy PSI without $O((\\log\\delta)^d)$ Overhead",
+          "authors_text": "Cong Zhang (Institute for Advanced Study, Tsinghua University) Yang Cao (School of Cyber Science and Technology, Shandong University) Yujie Bai (Hangzhou High-Tech Zone (Binjiang) Institute of Blockchain and Data Security) Shuaishuai Li (Zhongguancun Laboratory, Beijing, China) Juntong Lin (Shandong University) Yu Chen (Shandong University) Anyu Wang (Tsinghua University) Xiaoyun Wang (Tsinghua University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "iEnFlow: Endogenous Control-Flow Attacks via Conditional Branch Prediction on Apple Silicon",
+          "authors_text": "Kaiyuan Rong (Tsinghua University) Jiajie Chen (Tsinghua University) Junqi Fang (Tsinghua University, Zhongguancun Laboratory) Peng Qu (Tsinghua University) Hanyin Liu (Harbin Institute of Technology) Youhui Zhang (Tsinghua University, Zhongguancun Laboratory) Dapeng Ju (Tsinghua University, Zhongguancun Laboratory) Dongsheng Wang (Tsinghua University, Zhongguancun Laboratory)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "TapSpy: Semantic Usage Analysis and Triangulated Risk Assessment of Session Replay in Mobile Apps",
+          "authors_text": "Jiawei Guo (University at Buffalo) Zongze Li (University at Buffalo) Haipeng Cai (University at Buffalo)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Time-Delayed Publicly Verifiable Quantum Computation with Classical Verifiers",
+          "authors_text": "Ameer Mohammed (Kuwait University) Aydin Abadi (Newcastle University) Jaffer Mahdi (Kuwait University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Dependency Triad: A Metric to Quantify the Dependencies Between Attributes for Local Differential Privacy",
+          "authors_text": "Sandaru Jayawardana (The University of Sydney) Sennur Ulukus (University of Maryland, College Park) Ming Ding (Data61, CSIRO, Australia) Kanchana Thilakarathna (The University of Sydney)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Implementation Bugs as Attacks: Adversarial Neuron Fuzzing and Supply-Chain Backdoors",
+          "authors_text": "Zizhuang Deng (School of Cyber Science and Technology, Shandong University) Yiying Shan (School of Cyber Science and Technology, Shandong University) Sanchuan Chen (Auburn University) Guozhu Meng (Institute of Information Engineering, Chinese Academy of Sciences, China; School of Cyber Security, University of Chinese Academy of Sciences, China) Qingxin Wang (Institute of Information Engineering, Chinese Academy of Sciences, China; School of Cyber Security, University of Chinese Academy of Sciences, China) Xueqing Zhang (Auburn University) Tong Liu (Institute of Information Engineering, Chinese Academy of Sciences, China; School of Cyber Security, University of Chinese Academy of Sciences, China)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "eBind: Privacy-Enhanced and eIDAS 2.0-Compliant Binding of Anonymous Credentials to Humans",
+          "authors_text": "Yang Yang (Singapore Management University) Guomin Yang (Singapore Management University) Yingjiu Li (University of Oregon) Minming Huang (Singapore Management University) David Basin (ETH Zurich) Hwee Hwa Pang (Singapore Management University) Robert H. Deng (Singapore Management University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "FirmCred: Detecting Authentication Bypass Vulnerabilities in Firmware from Credential Initialization Perspective",
+          "authors_text": "Ziqi Wei (Fudan University) Haoyu Xiao (Fudan University) Yuan Zhang (Fudan University) Chi Chen (Fudan University) Jiarun Dai (Fudan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Resilient Alerting Protocols for Blockchains",
+          "authors_text": "Marwa Mouallem (Technion) Lorenz Breidenbach (Chainlink Labs) Ittay Eyal (Technion) Ari Juels (Chainlink Labs, Cornell Tech, IC3)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "DRIP: Defending Prompt Injection via Token-wise Representation Editing and Residual Fusion",
+          "authors_text": "Ruofan Liu (National University of Singapore) Yun Lin (Shanghai Jiao Tong University) Zhiyong Huang (National University of Singapore) Jin Song Dong (National University of Singapore)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "FeatureFuzz: Treating Bug-prone Features as Core Primitives for Compiler Fuzzing",
+          "authors_text": "Xingbang He (Nanjing University) Yuanwei Chen (Nanjing University) Hao Wu (Nanjing University) Jikang Zhang (Institute of Dataspace, Hefei Comprehensive National Science Center) Zicheng Wang (Honor Device Co.,Ltd) Ligeng Chen (Honor Device Co., Ltd) Junjie Peng (Nanjing University) Haiyang Wei (Nanjing University) Yi Qian (Nanjing University) Tiantai Zhang (Nanjing University) Linzhang Wang (Nanjing University) Bing Mao (Nanjing University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "DynOP: Blow Away the Cobwebs in NX Bypassing with Dynamic-Source Gadget Oriented Programming",
+          "authors_text": "Hong Guo (National University of Defense Technology) Ruipeng Wang (National University of Defense Technology) Shiwen Ou (National University of Defense Technology) Songtao Yang (Zhongguancun Laboratory) Yu Chen (National University of Defense Technology) TaiYan Wang (National University of Defense Technology) Zexiang Zhang (National University of Defense Technology) Yuwei Li (National University of Defense Technology) Yang Li (National University of Defense Technology) Zulie Pan (National University of Defense Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Walrus: An Efficient Decentralized Storage Network",
+          "authors_text": "George Danezis (Mysten Labs & University College London (UCL)) Giacomo Giuliari (Mysten Labs) Lefteris Kokoris-Kogias (MystenLabs) Markus Legner (Mysten Labs) Jean-Pierre Smith (Mysten Labs) Alberto Sonnino (Mysten Labs & University College London (UCL)) Karl Wüst (Mysten Labs)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "PhantomSeal: Proactive Deepfakes Defense with Identity/Context Protection and Forensic Tracing",
+          "authors_text": "Liangqin Ren (University of Kansas) Zeyan Liu (University of Louisville) Ye Wang (University of Kansas) Yuxin Chen (University of Chicago) Fengjun Li (University of Kansas) Bo Luo (University of Kansas)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "GDPRuler: A Trusted GDPR Monitor for Cloud Data Systems",
+          "authors_text": "Dimitrios Stavrakakis (TU Munich) Masanori Misono (TU Munich) Julian Pritzi (TU Munich) Harshavardhan Unnibhavi (TU Munich) Nuno Santos (INESC-ID / Instituto Superior Tecnico, University of Lisbon) Pramod Bhatotia (TU Munich)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "NFSA: Non-Forward Secure Aggregation with One Server via Two Layer Secret Sharing",
+          "authors_text": "Yufei Zhou (Sun Yat-sen University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "A Formal Analysis of Signal’s Sparse Post-Quantum Ratchet Protocol and its Implementation",
+          "authors_text": "Karthikeyan Bhargavan (Cryspen) Maxime Buyse (Cryspen) Graeme Connell (Signal) Franziskus Kiefer (Cryspen) Rolfe Schmidt (Signal)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "TurboRetry: Mitigating Large-Scale QUIC Handshake Floods with Off-the-shelf DPU Offloading",
+          "authors_text": "Jiahao Wu (ICT, CAS; UCAS) Heng Pan (Computer Network Information Center, Chinese Academy of Sciences) Kai Lv (Institute of Computing Technology, Chinese Academy of Sciences; University of Chinese Academy of Sciences.) Zhenyu Li (ICT, CAS) Yanbiao Li (CNIC CAS; UCAS, China) Gaogang Xie (CNIC CAS; UCAS, China)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "GhostTac: Manipulating Tactile Sensors without Physical Contact",
+          "authors_text": "Kun Wang (Zhejiang University) Xuancun Lu (Zhejiang University) Ruochen Zhou (The Hong Kong University of Science and Technology) Kai Wang (Zhejiang University) Tongjun Ye (Zhejiang University) Yihao Shao (Zhejiang University) Chen Yan (Zhejiang University) Xiaoyu Ji (Zhejiang University) Wenyuan Xu (Zhejiang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Penetrating the Reality Wall: Long-Range and Through-Wall AR/VR Privacy Eavesdropping via Wireless Power Side Channel",
+          "authors_text": "Tao Ni (King Abdullah University of Science and Technology) Zehua Sun (National University of Singapore) Yihe Zhou (City University of Hong Kong) Yuefeng Du (City University of Hong Kong) Qingchuan Zhao (City University of Hong Kong) Cong Wang (City University of Hong Kong)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Customization under Fire: Plugin Poisoning in Text-to-Image Ecosystem",
+          "authors_text": "Jiahao Chen (Zhejiang University) Xing He (Zhejiang University) Yong Yang (Zhejiang University) Xinfeng Li (Nanyang Technological University) Chunyi Zhou (Zhejiang University) Junhao Li (Guangzhou University) Zhe Ma (Tianjin University) Tianyu Du (Zhejiang University) Shouling Ji (Zhejiang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "A Single Glance Is Better Than Words: Vision-Guided Targeted Concept Erasing",
+          "authors_text": "Yuyang Zhang (Wuhan University) Yuxiang Sun (Wuhan University) Ke Liang (Wuhan University) Junlin Li (Wuhan University) Kangjie Chen (Nanyang Technological University) Run Wang (Wuhan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Mind the Gap: Action Rebinding Attacks against Android GUI Agents",
+          "authors_text": "Yi Qian (Nanjing University) Kunwei Qian (Nanjing University) Xingbang He (Nanjing University) Ligeng Chen (Honor Device Co., Ltd) Jikang Zhang (Institute of Dataspace, Hefei Comprehensive National Science Center) Tiantai Zhang (Nanjing University) Haiyang Wei (Nanjing University) Linzhang Wang (Nanjing University) Hao Wu (Nanjing University) Bing Mao (Nanjing University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Private Direct Preference Optimization for LLM Alignment",
+          "authors_text": "Yangfan Jiang (National University of Singapore) Fei Wei (Alibaba Group) Ergute Bao (Mohamed bin Zayed University of Artificial Intelligence) Xiaokui Xiao (National University of Singapore) Yaliang Li (Alibaba Group) Bolin Ding (Alibaba Group)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Neurosymbolic Disassembly",
+          "authors_text": "Zhaoqi Xiao (University of California, Riverside) Yeqi Fu (National University of Singapore) Lambang Akbar Wijayadi (National University of Singapore) Zhenkai Liang (National University of Singapore) Heng Yin (University of California, Riverside)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Token Buncher: Shielding LLMs from Harmful Reinforcement Learning Fine-Tuning",
+          "authors_text": "Weitao Feng (Nanyang Technological University) Lixu Wang (Nanyang Technological University) Peizhuo Lv (Nanyang Technological University) Tianyi Wei (Nanyang Technological University) Jie Zhang (CFAR and IHPC, Agency for Science, Technology and Research (A*STAR), Singapore) Chongyang Gao (Northwestern University) Sinong Simon Zhan (Northwestern University) Wei Dong (Nanyang Technological University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Diagnosing Programmable Data Plane Attacks with Provenance Observability",
+          "authors_text": "Dhiraj Saharia (Georgetown University) Ashish Gehani (SRI International) Vinod Yegneswaran (SRI International) Benjamin E. Ujcich (Georgetown University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Designated-Verifier Dynamic zk-SNARKs with Applications to Dynamic Proofs of Index",
+          "authors_text": "Weijie Wang (Yale University) Charalampos Papamanthou (Yale University and Lagrange Labs) Shravan Srinivasan (Lagrange Labs) Dimitrios Papadopoulos (Hong Kong University of Science & Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "BABE: Verifying Proofs on Bitcoin Made 1000x Cheaper",
+          "authors_text": "Sanjam Garg (University of California, Berkeley and Exponential Science Foundation) Dimitris Kolonelos (UC Berkeley) Mikhail Sergeevitch (Babylon Labs) Srivatsan Sridhar (Byzantine Research) David Tse (Byzantine Research and Stanford University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "On the Limits of Consensus under Dynamic Availability and Reconfiguration",
+          "authors_text": "Javier Nieto (University of Illinois at Urbana-Champaign) Joachim Neu (a16z Crypto Research) Ling Ren (University of Illinois at Urbana-Champaign)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "DisarmRAG: Stealthy Retriever Poisoning to Disable Self-Correction in Retrieval-Augmented Generation",
+          "authors_text": "Yanbo Dai (The Hong Kong University of Science and Technology) Zhenlan Ji (The Hong Kong University of Science and Technology) Zongjie Li (The Hong Kong University of Science and Technology) Kuan Li (The Hong Kong University of Science and Technology) Shuai Wang (The Hong Kong University of Science and Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "MMAligner: Safeguarding Multimodal Large Language Models through Representation Calibration",
+          "authors_text": "Shenyi Zhang (Wuhan University) Keyan Guo (University at Buffalo) Zihao Wang (Wuhan University) Xuebin Li (Wuhan University) Lingchen Zhao (Wuhan University) Hongxin Hu (University at Buffalo) Chao Shen (Xi'an Jiaotong University) Qian Wang (Wuhan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Understanding and Mitigating Prompt Leaking Attacks in Real-World LLM-Based Applications",
+          "authors_text": "Yong Yang (Zhejiang University) Chong Fu (Zhengzhou University) Tong Zhang (Zhejiang University) Rui Zeng (Zhejiang University) Qingming Li (Zhejiang University) Tianyu Du (Zhejiang University) Zonghui Wang (Zhejiang University) Shouling Ji (Zhejiang University) Wenzhi Chen (Zhejiang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Mini-Programs, Mega-Problems: Unveiling OAuth-based Authentication Misuses in Mini-Programs via Dynamic Analysis",
+          "authors_text": "Zidong Zhang (Simon Fraser University; QI-ANXIN Research Institute.) Zhentao Xie (Shandong University) Lingyun Ying (QI-ANXIN Technology Research Institute) Qinsheng Hou (School of Computer Science, Shanghai Jiao Tong University) Yacong Gu (Tsinghua University; Tsinghua University-QI-ANXIN Group JCNS) Wenrui Diao (Shandong University) Jianliang Wu (Simon Fraser University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "CVE-Genie: An LLM-Based Multi-Agent Framework for Reproducing CVEs",
+          "authors_text": "Saad Ullah (Boston University) Praneeth Balasubramanian (University of California, Santa Barbara) Wenbo Guo (UC Santa Barbara) Amanda Burnett (Arizona State University) Hammond Pearce (UNSW Sydney) Christopher Kruegel (UC Santa Barbara) Giovanni Vigna (UC Santa Barbara) Gianluca Stringhini (Boston University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "NVBleed: Covert and Side-Channel Attacks on NVIDIA Multi-GPU Interconnect",
+          "authors_text": "Yicheng Zhang (UC Riverside) Ravan Nazaraliyev (University of California, Riverside) Sankha Baran Dutta (Brookhaven National Laboratory) Andres Marquez (Pacific Northwest Natl Labs) Kevin Barker (Pacific Northwest National Laboratory) Nael Abu-Ghazaleh (University of California, Riverside)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "THESEUS: Smart Web Crawling via Resource-Guided Semantic Modeling",
+          "authors_text": "Yongheng Huang (SKLP, Institute of Computing Technology, CAS, China) Chenghang Shi (SKLP, Institute of Computing Technology, CAS, China) Wenxiao Yao (SKLP, Institute of Computing Technology, CAS, China) Jie Lu (Institute of Computing Technology, Chinese Academy of Sciences) Haofeng Li (Institute of Computing Technology of the Chinese Academy of Sciences, China) Youlong Chen (Institute of Computing Technology, Chinese Academy of Sciences) Dong Liu (Zhongguancun Laboratory) Mengna Ma (Zhongguancun Laboratory) Yong Liu (Zhongguancun Laboratory;Qianxin Technology Group Co., Ltd) Qinfen Hao (SKLP, Institute of Computing Technology, CAS; University of Chinese Academy of Sciences) Lian Li (Institute of Computing Technology at Chinese Academy of Sciences)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "HysterAuth: A Robust and Frictionless Continuous Authentication Framework via Diffusion Augmentation and Hysteresis Decision",
+          "authors_text": "Junchao Ma (Institute of Information Engineering, Chinese Academy of Sciences, China) Kun Zhang (Institute of Information Engineering, Chinese Academy of Sciences, Beijing 100093) Haiqiang Li (Tianyi Telecom Terminal Co. Ltd.) Zeyu Li (Institute of Information Engineering, Chinese Academy of Sciences, China) Yanchang Feng (Institute of Information Engineering, Chinese Academy of Sciences, China) Xuefei Chen (Institute of Information Engineering, Chinese Academy of Sciences, China) Mingming Hu (Yellow River Henan Bureau, Zhengzhou 450004, China) Bibo Tu (Institute of Information Engineering, Chinese Academy of Sciences)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "GoSe: Command-Line Option Sequence Generation with Runtime-Based Option Relationship Modeling for Security Testing",
+          "authors_text": "Zhineng Zhong (Key Laboratory of High-Confidence Software Technologies (MOE), School of Computer Science, Peking University) Hanqin Guan (Key Laboratory of High-Confidence Software Technologies (MOE), School of Computer Science, Peking University) Ding Li (Key Laboratory of High-Confidence Software Technologies (MOE), School of Computer Science, Peking University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Angelfish: Leader, DAG, or Anywhere in Between",
+          "authors_text": "Qianyu Yu (HKUST(GZ)) Giuliano Losa (Stellar Development Foundation) Nibesh Shrestha (Supra Research) Xuechao Wang (HKUST(GZ))",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Opaque Shader: Dynamic Code Execution on GPUs via Explicit Graphics APIs",
+          "authors_text": "Hao Li (Shanghaitech University) Yihong Hang (Shanghaitech University) Yuan Xiao (ShanghaiTech University) Zhice Yang (ShanghaiTech University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "From Documentation to Zero-day Vulnerabilities: LLM-Driven Fuzzing of JavaScript Engines in PDF Readers",
+          "authors_text": "Suyue Guo (UC Santa Barbara) Stijn Pletinckx (UC Santa Barbara) Tianle Yu (UC Santa Barbara and Stanford University) Yigitcan Kaya (UC Santa Barbara) Saad Ullah (Boston University) Wenbo Guo (UC Santa Barbara) Christopher Kruegel (UC Santa Barbara) Giovanni Vigna (UC Santa Barbara and Broadcom)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Censorship Resistance vs Throughput in Multi-Proposer BFT Protocols",
+          "authors_text": "Fatima Elsheimy (Yale University) Ioannis Kaklamanis (Yale University, IC3) Charalampos Papamanthou (Yale University) Sarisht Wadhwa (Duke University) Fan Zhang (Yale University, IC3)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "You Can't Talk Your Way Out of Cyber Extortion: An Empirical Study of Ransomware Negotiations",
+          "authors_text": "Tom Meurs (Dutch Police) Edward Cartwright (De Montfort University, Leicester) Anna Cartwright (Independent researcher) Harold Houba (VU University) Daniel W Woods (University of Edinburgh)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Can Small Language Models Reliably Resist Jailbreak Attacks? A Comprehensive Evaluation",
+          "authors_text": "Zhibo Wang (Zhejiang University) Wenhui Zhang (Zhejiang University) Huiyu Xu (Zhejiang University) Zeqing He (Zhejiang University) Ziqi Zhu (Zhejiang University) Kui Ren (Zhejiang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "MAKO: Refining Indirect-Call Targets with Type Relation Unfolding",
+          "authors_text": "Yibo Jin (The Hong Kong University of Science and Technology) Wei Chen (The Hong Kong University of Science and Technology) Bowen Zhang (The Hong Kong University of Science and Technology) Charles Zhang (The Hong Kong University of Science and Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Private Signaling Secure Against Actively Corrupted Servers",
+          "authors_text": "Haotian Chu (Northwestern University) Xiao Wang (Northwestern University) Yanxue Jia (Illinois Institute of Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Decoupled TFHE-type Functional Bootstrapping",
+          "authors_text": "Zhihao Li (Ant Digital Technologies, Ant Group) Xuan Shen (Key Laboratory of Cyberspace Security Defense, Institute of Information Engineering, CAS; School of Cyber Security, UCAS) Xianhui Lu (Key Laboratory of Cyberspace Security Defense, Institute of Information Engineering, CAS; School of Cyber Security, UCAS) Ruida Wang (Key Laboratory of Cyberspace Security Defense, Institute of Information Engineering, CAS; School of Cyber Security, UCAS) Yuan Zhao (Ant Digital Technologies, Ant Group) Zhiwei Wang (Key Laboratory of Cyberspace Security Defense, Institute of Information Engineering, CAS; School of Cyber Security, UCAS)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "The SecureDrop Protocol: End-to-End Encrypted Whistleblowing for All",
+          "authors_text": "Giulio Berra (Freedom of the Press Foundation) Felix Linker (ETH Zurich) Luca Maier (ETH Zurich) Cory Francis Myers (Freedom of the Press Foundation) Kenneth G. Paterson (ETH Zurich) Rowen Shane (Freedom of the Press Foundation) Shannon Veitch (ETH Zurich)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Compiling Oblivious Schemes Against Coercion: The Anamorphic Construction",
+          "authors_text": "Xianglong Zhang (Huazhong University of Science and Technology) Wei Wang (Huazhong University of Science and Technology) Peng Xu (Huazhong University of Science and Technology) Laurence T. Yang (St. Francis Xavier University) Stjepan Picek (Radboud University and University of Zagreb) Kaitai Liang (University of Turku and TU Delft)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "SlowPerception: Physical-World Latency Attack against Camera-based Perception in Autonomous Driving",
+          "authors_text": "Chen Ma (Xi'an Jiaotong University) Ningfei Wang (Independent Researcher) Zhengyu Zhao (Xi'an Jiaotong University) Qian Wang (Wuhan University) Qi Alfred Chen (University of California, Irvine) Chao Shen (Xi'an Jiaotong University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "DIPBox: A Multi-scale Testing Framework for Tracking Dataset Regeneration",
+          "authors_text": "Tian Dong (Shanghai Jiao Tong University) Yan Meng (Shanghai Jiao Tong University) Shaofeng Li (Southeast University) Guoxing Chen (Shanghai Jiao Tong University) Yuling Chen (Guizhou University) Zhen Liu (Shanghai Jiao Tong University) Haojin Zhu (Shanghai Jiao Tong University) Hao Chen (The University of Hong Kong)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "RT-MD: Host-Centric Real-Time Detection of Multi-Domain DNS Data Exfiltration",
+          "authors_text": "Pengfei Ren (University of Science and Technology of China) Lutong Chen (University of Science and Technology of China) Xuanbo Huang (Xi'an Jiaotong University) Jiankang Sun (University of Science and Technology of China) Huanjie Zhang (University of Science and Technology of China) Jian Li (University of Science and Technology of China) Kaiping Xue (University of Science and Technology of China)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "RustGo: Fairly Directed Greybox Fuzzing for Enforcing Rust Memory Safety",
+          "authors_text": "Dongyeon Yu (Korea University) Jiun Min (Korea University) Yewan Na (UNIST) Mijung Kim (UNIST) Taegyu Kim (The Pennsylvania State University) Yuseok Jeon (Korea University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "DeepProve: Verifiable End-to-End Large Language Model Inference",
+          "authors_text": "Nicolas Gailly (Lagrange Labs) Ismael Hishon-Rezaizadeh (Lagrange Labs) Tianyi Liu (University of Illinois Urbana-Champaign and Lagrange Labs) Nicholas Mainardi (Lagrange Labs) Dimitrios Papadopoulos (Hong Kong University of Science & Technology) Charalampos Papamanthou (Yale University and Lagrange Labs) Christodoulos Pappas (Hong Kong University of Science & Technology and Lagrange Labs) Shravan Srinivasan (Lagrange Labs) Zack Youell (Lagrange Labs) Yupeng Zhang (University of Illinois Urbana-Champaign and Lagrange Labs)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Accio: Detecting Privilege Escalation Vulnerabilities in DBMSs via Minimum Privilege Set Calculation",
+          "authors_text": "Jingzhou Fu (Tsinghua University) Zongrui Peng (Tsinghua University) Jie Liang (Beihang University) Zhiyong Wu (Tsinghua University) Chi Zhang (Tsinghua University) Yu Jiang (Tsinghua University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "When Grammar Guides the Attack: Uncovering Control-Plane Vulnerabilities in LLMs with Structured Output",
+          "authors_text": "Shuoming Zhang (Institute of Computing Technology, Chinese Academy of Sciences) Jiacheng Zhao (Institute of Computing Technology, Chinese Academy of Sciences) Hanyuan Dong (Institute of Computing Technology, Chinese Academy of Sciences) Ruiyuan Xu (Institute of Computing Technology, Chinese Academy of Sciences) Zhicheng Li (Institute of Computing Technology, Chinese Academy of Sciences) Yangyu Zhang (Institute of Computing Technology, Chinese Academy of Sciences) Shuaijiang Li (Institute of Computing Technology) Yuan Wen (University of Aberdeen) Chunwei Xia (University of Leeds) Zheng Wang (University of Leeds) Xiaobing Feng (Institute of Computing Technology Chinese Academy of Sciences) Huimin Cui (Institute of Computing Technology, CAS)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Melior, Verifiable Mixed-Integer Programming via zkSNARKs",
+          "authors_text": "Wenjie Qu (National University of Singapore) Yanze Jiang (National University of Singapore) Yanpei Guo (National University of Singapore) Jiaheng Zhang (National University of Singapore)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "VeriPRAC: Verifiable Formal Contracts for Secure Per Row Activation Counting",
+          "authors_text": "Ali Hajiabadi (ETH Zurich) Silvan Niederer (ETH Zurich) Kaveh Razavi (ETH Zurich)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Expose Your Disguise: Recovering Source Speaker Identity From Voice Conversion",
+          "authors_text": "Hanlei Zhang (Zhejiang University) Zhongming Ma (Zhejiang University) Mingyang Zhang (Ant Group) Tengfei Liu (Ant Group) Yushi Cheng (Zhejiang University) Yanjiao Chen (Zhejiang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Hitchhiking on Inherent Randomness: Diffusion-based Graph Generation under Differential Privacy",
+          "authors_text": "Renxuan Hou (The Hong Kong Polytechnic University) Qingqing Ye (The Hong Kong Polytechnic University) Lyu Xu (Nanyang Technological University) Xun Ran (The Hong Kong Polytechnic University (PolyU)) Haibo Hu (Hong Kong Polytechnic University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Fundamental Limitations of Favorable Privacy–Utility Guarantees for DP-SGD",
+          "authors_text": "Murat Bilgehan Ertan (CWI Amsterdam) Marten van Dijk (CWI Amsterdam)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "An Ounce of Prevention Is Worth a Pound of Cure: A Pre-filtering Framework to Against Asymmetric DoS in Group Authentication at the IoT Edge",
+          "authors_text": "Yizhao Zhou (Hangzhou Dianzi University) Qingxiang Xu (Hangzhou Dianzi University) Yingjie Xia (Hangzhou Dianzi University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Braid: Sybil-Resistant Decentralized Identity with Trustless Key Recovery and Non-Transferable Anonymous Credentials",
+          "authors_text": "SONG Rui (Department of Computing, The Hong Kong Polytechnic University) ZHENG Tianyu (Department of Computing, The Hong Kong Polytechnic University) Shang Gao (the hong kong polytechnic university) Guyue Li (School of Cyber Science and Engineering, Southeast University) Xue Liu (McGill University) Bin Xiao (The Hong Kong Polytechnic Univ.)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "MIRAGE: Misleading Retrieval-Augmented Generation via Black-box and Query-agnostic Poisoning Attacks",
+          "authors_text": "Tailun Chen (Zhejiang University) Yu He (Zhejiang University) Yan Wang (Alibaba Group) Shuo Shao (Zhejiang University) Haolun Zheng (Zhejiang University) Zhihao Liu (Zhejiang University) Jinfeng Li (Alibaba Group) Zhizhen Qin (Amazon) Yuefeng Chen (Alibaba Group) Zhixuan Chu (Zhejiang University) Zhan Qin (Zhejiang University) Kui Ren (Zhejiang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "The Rise and Fall of Google's Privacy Sandbox",
+          "authors_text": "Rachid Youssef Grib (Politecnico di Torino) Alberto Verna (Politecnico di Torino) Nikhil Jha (Politecnico di Torino) Martino Trevisan (Università degli Studi di Trieste) Marco Mellia (Politecnico di Torino)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Stop My Dancing! Understanding, Detecting and Attributing Motion-Aware Deepfake Videos",
+          "authors_text": "Fazhong Liu (Shanghai Jiao Tong University) Yan Meng (Shanghai Jiao Tong University) Tian Dong (Shanghai Jiao Tong University) Guoxing Chen (Shanghai Jiao Tong University) Haojin Zhu (Shanghai Jiao Tong University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Mosaic: A Modular Framework for Private Fuzzy Heavy Hitters",
+          "authors_text": "Gayathri Garimella (Brown University) Peihan Miao (Brown University) Eileen Nolan (Brown University) Phuoc Van Long Pham (Brown University) Siddarth Sitaraman (Brown University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "PolyVoice: Exploiting Cluster-Level Vulnerabilities for One-to-Many Impersonation in Speaker Verification Systems",
+          "authors_text": "Yunjie Ge (Wuhan University) Jinlong Jiang (Wuhan University) Yuchen Liu (Wuhan University) Huayi Duan (The Hong Kong University of Science and Technology (Guangzhou)) Shenyi Zhang (Wuhan University) Lingchen Zhao (Wuhan University) Chao Shen (Xi'an Jiaotong University) Qian Wang (Wuhan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "SpecStega: Provably Secure Linguistic Steganography Based on Speculative Sampling in Asymmetric Resource Scenarios",
+          "authors_text": "Jun Jiang (University of Science and Technology of China) Kejiang Chen (University of Science and Technology of China) Yuang Qi (University of Science and Technology of China) Jiawei Zhao (University of Science and Technology of China) Weiming Zhang (University of Science and Technology of China) Nenghai Yu (University of Science and Technology of China)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Relect: Single Secret Leader Election via FHE with Reduced Computation and Communication and Transparent Setup",
+          "authors_text": "Haofei Liang (Shanghai Jiao Tong University) Zeyu Liu (Yale University) Yunhao Wang (Yale University) Xiang Xie (Primus Labs) Yu Yu (Shanghai Jiao Tong University) Fan Zhang (Yale University, IC3)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Auditing Data Provenance in LLM Fine-tuning via Intrinsic Distributional Fingerprints",
+          "authors_text": "Zirui Huang (Nanjing University) Yunlong Mao (Nanjing University) Wei Tong (Nanjing University) Tingting Wu (China Mobile Research Institute) Xin Ge (China Mobile Research Institute) Sheng Zhong (Nanjing University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "BadTV: Unveiling Backdoor Threats in Third-Party Task Vectors",
+          "authors_text": "Chia-Yi Hsu (National Yang Ming Chiao Tung University) Yu-Lin Tsai (University of California, Berkeley) Zhe Yu (RIKEN AIP) Yan-Lun Chen (National Yang Ming Chiao Tung University) Chih-Hsun Lin (National Yang Ming Chiao Tung University) Chia-Mu Yu (National Yang Ming Chiao Tung University) Yang Zhang (CISPA Helmholtz Center for Information Security) Chun-Ying Huang (National Yang Ming Chiao Tung University) Jun Sakuma (Institute of Science Tokyo)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "qedb: Expressive and Modular Verifiable Databases (without SNARKs)",
+          "authors_text": "Vincenzo Botta (Provably Technologies and Sapienza University of Rome) Simone Bottoni (Provably Technologies) Matteo Campanelli (Offchain Labs and University of Tartu) Emanuele Ragnoli (Provably Technologies and Warsaw University) Alberto Trombetta (Provably Technologies and Insubria University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "BACAgent: LLM-Powered Detection of Broken-Access-Control Vulnerabilities in Web Applications",
+          "authors_text": "Fengyu Liu (Fudan University) Yuan Zhang (Fudan University) Zheng Lou (Fudan University) Tian Chen (Fudan University) Youkun Shi (Fudan University) Jiarun Dai (Fudan University) Enhao Li (Fudan University) Guangyu Zhou (ByteDance Inc.) Zhongfu Su (ByteDance Inc.) Zequn Fang (ByteDance Inc.)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "HEGIDE: A MIMD Oblivious Processor for Private Function Evaluation over CKKS",
+          "authors_text": "Jules Dumezy (Université Paris-Saclay, CEA-List) Nicolas Ye (Université Paris-Saclay, CEA-List) Pierre-Emmanuel Clet (Université Paris-Saclay, CEA-List) Olive Chakraborty (Université Paris-Saclay, CEA-List) Aymen Boudguiga (Université Paris-Saclay, CEA-List)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "GALAS: Compact VOLE-in-the-Head Signatures from Subfield Compression",
+          "authors_text": "Guoxiao Liu (Tsinghua University) Yimeng Sun (Shandong University) Zhuoqing Peng (Tsinghua University) Chongxu Ren (Tsinghua University) Guowei Liu (Shandong University) Juntong Lin (Shandong University) Keting Jia (Tsinghua University) Meiqin Wang (Shandong University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Finding and Exploiting Discrepancies in QR Code Payload Processing",
+          "authors_text": "Jianyu Lu (The Chinese University of Hong Kong) Yikang Chen (The Chinese University of Hong Kong) Wong Kin Ting (The Chinese University of Hong Kong) Xianbo Wang (The Chinese University of Hong Kong) Che Wei Tu (The Chinese University of Hong Kong) Mak Sui Ling Angela (The Chinese University of Hong Kong) Sze Yiu Chau (Simon Fraser University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Asymmetric Grid Quorum Systems for Heterogeneous Processes",
+          "authors_text": "Michael Senn (University of Bern) Christian Cachin (University of Bern)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "TANTRUM: Breaking the Heap Sandbox in JavaScript Engines via Protection Domain Fuzzing",
+          "authors_text": "Seunghyun Lee (Carnegie Mellon University) David Brumley (Carnegie Mellon University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Exploiting Body-Coupled Leakage for Keystroke Inference on Smartphones",
+          "authors_text": "Yao Wang (Xidian University) An He (Xidian University) Xiaolong Li (Xidian University) Haibin Zhang (Xidian University) Tao Gu (Macquarie University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Illusion of Depth: Revealing Hidden Stereo Vision Vulnerabilities in Depth Estimation",
+          "authors_text": "Hrushikesh Varma Bhupathiraju (University of Florida) Tetsu Ishizue (The University of Electro-Communications) Nicholas U. Costagliola (University of Florida) Ozora Sako (Keio University) Kentaro Yoshioka (Keio University) Takeshi Sugawara (The University of Electro-Communications) Sara Rampazzi (University of Florida)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert Evaluation of 200 Websites",
+          "authors_text": "Sanju Ahuja (International Institute of Information Technology Bangalore) Gayatri Priyadarsini Kancherla (Indian Institute of Technology Gandhinagar) Cristiana Teixeira Santos (Utrecht University) Nataliia Bielova (Inria Centre at Université Côte d’Azur) Abhishek Bichhawat (Indian Institute of Technology Gandhinagar)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "AuditVotes: Elevating Provable Defense for GNNs with Efficient Augmentation and Conditional Smoothing",
+          "authors_text": "Yuni Lai (The Hong Kong Polytechnic University) Yulin Zhu (Hong Kong Chu Hai College) Yixuan Sun (The Hong Kong Polytechnic University) Yulun Wu (National University of Defense Technology) Bin Xiao (The Hong Kong Polytechnic University) Gaolei Li (Shanghai Jiao Tong University) Jianhua Li (Shanghai Jiao Tong University) Qi Xie (Hubei University) Kai Zhou (The Hong Kong Polytechnic University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "New Designs of Multivariate-Polynomial Universal Hash Functions",
+          "authors_text": "Jean Paul Degabriele (Technology Innovation Institute) Jan Gilcher (Applied Cryptography Group, ETH Zurich, Zürich, Switzerland) Jérôme Govinden (Technology Innovation Institute) Kenneth G. Paterson (ETH Zurich)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "What Does the Server See? Understanding Privacy Leakage from Large Language Models in Split Inference",
+          "authors_text": "Mingyuan Fan (East China Normal University) Yu Liu (East China Normal University) Fuyi Wang (RMIT University) Cen Chen (East China Normal University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Designing an Automated Fact-Checking Pipeline for Recent Claims",
+          "authors_text": "Arshia Arya (University of California, San Diego) Gauthami Yenne (University of Illinois Urbana-Champaign, Georgia Institute of Technology) Deepak Kumar (University of California San Diego)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Kairos: Efficient High-Threshold Asynchronous Distributed Key Generation from Lightweight Cryptography",
+          "authors_text": "Xinxin Xing (Beihang University) Yizhong Liu (Beihang University) Zifan Li (Beihang University) Jianwei Liu (Beihang University) Yudi Yang (Beihang University) Yuan Lu (A*STAR Institute for Infocomm Research) Song Bian (Beihang University) Zhenyu Guan (Beihang University) Tianwei Zhang (Nanyang Technological University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Models Trump Code: An Empirical Analysis of GDPR Compliance",
+          "authors_text": "Hoang Nguyen (ETH Zurich) Srdjan Krstic (ETH Zürich) David Basin (ETH Zurich)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Preprocessed Private Function Evaluation: Achieving Sublinear Online Complexity for Lookup Tables",
+          "authors_text": "Tanping Zhou (Engineering University of People’s Armed Police) Xiaoyi Wang (Institute of Software Chinese Academy of Sciences) Yi Qu (Institute of Software Chinese Academy of Sciences) Wenchao Liu (Engineering University of People’s Armed Police) Long Chen (Institute of Software Chinese Academy of Sciences) Zhenfeng Zhang (Institute of Software Chinese Academy of Sciences)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "How to Back Up High-Value Secret Keys",
+          "authors_text": "Sanjam Garg (University of California, Berkeley and Exponential Science Foundation) Noemi Glaeser (None) Abhishek Jain (Johns Hopkins University) Mike Lodder (Lit Protocol) Hart Montgomery (Linux Foundation)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "ReasoningBomb: A Stealthy Denial-of-Service Attack by Inducing Pathologically Long Reasoning in Large Reasoning Models",
+          "authors_text": "Xiaogeng Liu (Johns Hopkins University) Xinyan Wang (University of Wisconsin–Madison) Yechao Zhang (Nanyang Technological University) Sanjay Kariyappa (NVIDIA) Chong Xiang (NVIDIA) Muhao Chen (University of California, Davis) G. Edward Suh (Cornell University / NVIDIA) chaowei xiao (Johns Hopkins University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Olingo: Threshold Lattice Signatures with DKG and Identifiable Abort",
+          "authors_text": "Kamil Doruk Gur (UMD) Patrick Hough (UniBwM) Jonathan Katz (Google) Caroline Sandsbråten (NTNU) Tjerand Silde (NTNU)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Poros: Secure and Highly Parallel Sharding Blockchain with Optimized Cross-Shard Transaction Processing",
+          "authors_text": "Zhuocheng Pan (Beihang University) Jianwei Liu (Beihang University) Andi Liu (Beihang University) Yuxuan Hu (Beihang University) Boyu Zhao (Beihang University) Zhenyu Guan (Beihang University) Gerui Wang (Beijing Academy of Blockchain and Edge Computing, Beijing, China) Mingchao Wan (Beijing Academy of Blockchain and Edge Computing) Yizhong Liu (Beihang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Anchor-DKG: Distributed Key Generation with Repeating Parties",
+          "authors_text": "Hanwen Feng (University of Sydney) Qiang Tang (The University of Sydney) Sri AravindaKrishnan Thyagarajan (University of Sydney)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "PBFuzz: Agentic Directed Fuzzing for PoV Generation",
+          "authors_text": "Haochen Zeng (University of California, Riverside) Andrew Bao (University of Minnesota, Twin Cities) Jiajun Cheng (University of California, Riverside) Chengyu Song (University of California, Riverside)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "N00B: Bounds Checking for the Masses",
+          "authors_text": "Adriaan Jacobs (DistriNet, KU Leuven) Carlo Ramponi (University of Trento) Jonas Roels (Distrinet, KU Leuven) Bruno Crispo (University of Trento) Silviu Vlasceanu (Huawei Research, Germany) Mahmoud Ammar (Huawei Research, Germany) Stijn Volckaert (DistriNet, KU Leuven)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Towards Effective and Stealthy Data Poisoning Attacks to Locally Differentially Private Triangle Counting Protocols",
+          "authors_text": "Xinyu Li (Xi'an Jiaotong University) Xuebin Ren (Xi'an Jiaotong University) Shusen Yang (Xi'an Jiaotong University) Cong Zhao (Xi'an Jiaotong University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "DP4SQL: Differentially Private SQL with Flexible Privacy Policies",
+          "authors_text": "Andrew Cascio (Duke University) KinChin Tong (Binghamton University) Daniel Kifer (Penn State University) Zeyu Ding (Binghamton University) Danfeng Zhang (Duke University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Towards Scalable Fuzzy PSI via Efficient Fuzzy Matching",
+          "authors_text": "Meng Hao (Singapore Management University) Xinpeng Yang (Nanyang Technological University) Hanxiao Chen (University of Electronic Science and Technology of China) Tianwei Zhang (Nanyang Technological University) Haiyang Xue (Singapore Management University) Guomin Yang (Singapore Management University) Hongwei Li (University of Electronic Science and Technology of China) Robert H. Deng (School of Computing & Information Systems, Singapore Management University, Singapore)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Formal Security Analysis of the Olvid Messenger",
+          "authors_text": "Noemi Terzo (Max Planck Institute for Security and Privacy) Cas Cremers (CISPA Helmholtz Center for Information Security) Ruben Gonzalez (Neodyme AG) Peter Schwabe (MPI-SP & Radboud University) Yuval Yarom (Ruhr University Bochum) Zhiyuan Zhang (Max Planck Institute for Security and Privacy)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Head Unit at Risk: Cross-Domain Attacks via In-Vehicle Infotainment Systems",
+          "authors_text": "Yanbo Xu (Shanghai Jiao Tong University) Yan Meng (Shanghai Jiao Tong University) Guoxing Chen (Shanghai Jiao Tong University) Haojin Zhu (Shanghai Jiao Tong University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "ZEE200: Zero Knowledge for Everything and Everyone @ 200 KHz",
+          "authors_text": "Sunghyeon Jo (Georgia Institute of Technology) Vladimir Kolesnikov (Georgia Institute of Technology) Yibin Yang (NTT Research and University of Toronto)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Revisiting Shamir Secret Sharing for Threshold Fully Homomorphic Encryption",
+          "authors_text": "Jiseung Kim (Jeonbuk National University) Seunghu Kim (Chung-Ang University) Hyung Tae Lee (Chung-Ang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "PHPBench: Automated Generation of Verifiable and Hierarchical Benchmarks for PHP Web Fuzzing",
+          "authors_text": "Youkun Shi (Fudan University and The Hong Kong Polytechnic University) Yuan Zhang (Fudan University) Lei Zhang (Fudan University) Jiarun Dai (Fudan University) Tianhao Bai (Fudan University) Fengyu Liu (Fudan University) Bocheng Xiang (Fudan University) Xiapu Luo (The Hong Kong Polytechnic University) Min Yang (Fudan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Effects of Explanations on Driver Situation Awareness Under Physical Adversarial Attacks in Automated Driving: A Driving Simulator Study",
+          "authors_text": "Rao Li (Pennsylvania State University) Jiazheng Gao (Pennsylvania State University) Yiqi Zhang (Pennsylvania State University) Aiping Xiong (Penn State University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Turning Everyday Earphones into a Full-Duplex Speech Eavesdropping Platform via Zero-permission IMU",
+          "authors_text": "Ming Gao (Nanjing University of Posts and Telecommunications) Ayijiaken Amantai (Nanjing University of Posts and Telecommunications) Yichen Dai (Nanjing University of Posts and Telecommunications) Jia Lv (Nanjing University of Posts and Telecommunications) Kaiyan Cui (Nanjing University of Posts and Telecommunications) Jinsong Han (Zhejiang University) Minhao Cui (Seoul National University) Fu Xiao (Nanjing University of Posts and Telecommunications)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Casting the Net! Revisiting MasterFace Impersonation Attacks",
+          "authors_text": "Seunghun Paik (Hanyang University) Sunpill Kim (Hanyang University) Chanwoo Hwang (Hanyang University) Jae Hong Seo (Hanyang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Automated Side-Channel Analysis of Cryptographic Protocol Implementations",
+          "authors_text": "Faezeh Nasrabadi (CISPA Helmholtz Center for Information Security & Saarland University) Robert Künnemann (CISPA Helmholtz Center for Information Security) Hamed Nemati (Department of Computer Science, KTH Royal Institute of Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Understanding and Preserving Safety in Fine-Tuned LLMs",
+          "authors_text": "Jiawen Zhang (Zhejiang University) Yangfan Hu (University of Wisconsin–Madison) Kejia Chen (Zhejiang University) Lipeng He (University of Waterloo) Jiachen Ma (Shanghai Artificial Intelligence Laboratory) Jian Lou (Sun Yat-sen University) Dan Li (Sun Yat-sen University) Jian Liu (Zhejiang University) Xiaohu Yang (Zhejiang University) Ruoxi Jia (Virginia Tech)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Reproducing Web Application Vulnerabilities with Patch-Guided Routing Inference and Sink Exploration",
+          "authors_text": "Youkun Shi (Fudan University and The Hong Kong Polytechnic University) Yuan Zhang (Fudan University) Feng Xue (Fudan University) Jiarun Dai (Fudan University) Lei Zhang (Fudan University) Fengyu Liu (Fudan University) Bocheng Xiang (Fudan University) Xiapu Luo (The Hong Kong Polytechnic University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Don't Trust the AI Ecosystem: Analyzing Privacy Leakage in Compromised Open-Source Components",
+          "authors_text": "Jin-Seong Kim (Division of Software, Yonsei University) Han Ju LEE (Division of Software, Yonsei University) Seok-Won Hong (Division of Software, Yonsei University) Takeshi Takahashi (National Institute of Information and Communications Technology) Chansu Han (National Institute of Information and Communications Technology) Tomohiro Morikawa (University of Hyogo) Seok Hwan Choi (Yonsei University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Mitigating Code Injection Attacks on Modern GPUs",
+          "authors_text": "Carlo Ramponi (University of Trento) Adriaan Jacobs (DistriNet, KU Leuven) Luigi Dell Eva (University of Trento) Stijn Volckaert (DistriNet, KU Leuven) Silviu Vlasceanu (Huawei Research, Germany) Mahmoud Ammar (Huawei Research) Bruno Crispo (University of Trento)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "\"We just went with what seemed the best supported\": Lessons on Cryptographic Practices in Securing Microcontrollers from Embedded CTFs",
+          "authors_text": "Zheyuan Ma (University at Buffalo) Xi Tan (University of Colorado Colorado Springs) Gaoxiang Liu (University at Buffalo) Alex Eastman (University at Buffalo) Md Armanuzzaman (University of Texas at El Paso) Ziming Zhao (Northeastern University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "From Fix to Flaw: Understanding and Revealing Incomplete Patches for Link Following Vulnerabilities",
+          "authors_text": "Bocheng Xiang (Fudan University) Yuan Zhang (Fudan University) Hao Huang (Fudan university) Youkun Shi (Fudan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "It’s About Time: Detecting Timing Side-Channel Vulnerabilities in High-Level Synthesis Designs",
+          "authors_text": "Denis Zuppiger (ETH Zurich) Katharina Ceesay-Seitz (ETH Zurich) Jiahui Xu (ETH Zurich) Lana Josipovic (ETH Zurich) Kaveh Razavi (ETH Zurich)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "HYDRA: Proactive Android Malware Drift Adaptation via Hierarchical Graph Contrastive Learning",
+          "authors_text": "Han Chen (University of Technology, Sydney) Hanchen Wang (University of Technology Sydney) Hongmei Chen (Yunnan University) Lu Qin (University of Technology Sydney) Wenjie Zhang (UNSW) Ying Zhang (University of Technology Sydney)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "STMark: Watermarking Scalar and Textual Data Robustly Using Frequency Statistics",
+          "authors_text": "Jiongyang Ji (Xidian University) Yanguo Peng (Xidian University) Zhen Lv (Xidian University) Gengquan Guo (Xidian University) Hui Li (Xidian University) Jiangtao Cui (Xidian University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "MPCArbiter: Detect Numeric Error Vulnerabilities in MPC Implementations via Distribution-Aware Differential Oracle",
+          "authors_text": "Guopeng Lin (Fudan University) Zhengting Jin (Fudan University) Shuyu Chen (Fudan University) Jingwei Pu (Fudan University) Zheng Qu (Fudan University) Jiaheng Zhang (National University of Singapore) Weili Han (Fudan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "PC^2: Politically Controversial Content Generation via Jailbreaking Attacks on GPT-based Text-to-Image Models",
+          "authors_text": "Wonwoo Choi (ADD) Minjae Seo (ETRI) Minkyoo Song (KAIST) Hwanjo Heo (ETRI) Seungwon Shin (KAIST) Myoungsung You (University of Seoul)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "eMicro: Real-Time Multi-Hop Access Control for Microservices with eBPF",
+          "authors_text": "Rizky Ramadhana Putra (Virginia Tech) Osama Bajaber (King Abdulaziz University) Saimon Amanuel Tsegai (Virginia Tech) Teryl Taylor (IBM Research) Frederico Araujo (IBM Research) Yuede Ji (The University of Texas at Arlington) Peng Gao (Virginia Tech)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Reflection, Education, Consistency: Towards Best Ethics Practices At Security And Privacy Conferences",
+          "authors_text": "Florian Hantke (CISPA Helmholtz Center for Information Security) Rafael Mrowczynski (CISPA Helmholtz Center for Information Security) Til Dralle (CISPA Helmholtz Center for Information Security) Ben Stock (CISPA Helmholtz Center for Information Security)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Rethinking Backdoor Adversarial Unlearning through the Lens of Catastrophic Forgetting in Continual Learning",
+          "authors_text": "Zhenqian Zhu (Harbin Institute of Technology, Shenzhen) Yamin Hu (Harbin Institute of Technology, Shenzhen) Yujiang Liu (Harbin Institute of Technology, Shenzhen) Luping Wei (Harbin Institute of Technology, Shenzhen) Wenbo Hou (Harbin Institute of Technology, Shenzhen) Bin Li (Shenzhen University) Haodong Li (Shenzhen University) Wenjian Luo (Harbin Institute of Technology, Shenzhen)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "UnifOMR: Oblivious Message Retrieval with Near-optimal Concrete Efficiency",
+          "authors_text": "Ben Fisch (Yale University) Zeyu Liu (Yale University) Eran Tromer (Boston University) Yunhao Wang (Yale University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Blue Bubbles, Red Flags: Investigating Privacy Leakage in Apple iMessage",
+          "authors_text": "Viktor Garske (ISMK Institute for Secure Mobile Communications, University of Applied Sciences Stralsund) Swantje Lange (Hasso Plattner Institute, University of Potsdam) Gabriel Karl Gegenhuber (Interdisciplinary Transformation University Austria) David Schmidt (University of Vienna) Andreas Noack (ISMK Institute for Secure Mobile Communications, University of Applied Sciences Stralsund) Jiska Classen (Hasso Plattner Institute, University of Potsdam)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Thinking More, Harnessing Better: Automatic Harness Generation with Dataflow Aggregation and Workflow Decomposition",
+          "authors_text": "Xing Zhang (QI-ANXIN Technology Research Institute) Zikang Huang (Wuhan University; QI-ANXIN Technology Research Institute) Gang Yang (Information Support Force Engineering University) CongChong Wang (QI-ANXIN Technology Research Institute) Lu Liu (Shandong University; QI-ANXIN Technology Research Institute) Bin Yin (QI-ANXIN Technology Research Institute) Mingyi Wang (QI-ANXIN Technology Research Institute) Ziquan Zhao (QI-ANXIN Technology Research Institute) Min Li (QI-ANXIN Technology Research Institute) Zhenyu Chen (QI-ANXIN Technology Research Institute) Bo Wu (Information Support Force Engineering University) Lingyun Ying (QI-ANXIN Technology Research Institute)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "AuditPay: Anonymous Payments with Controlled Oversight",
+          "authors_text": "Elkana Tovey (Hebrew University of Jerusalem) Aviv Zohar (Hebrew University of Jerusalem) Yossi Gilad (Hebrew University of Jerusalem)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Rogue: Updatable Matrix Lookup Arguments and Applications to Verifiable Databases",
+          "authors_text": "Christodoulos Pappas (The Hong Kong University of Science and Technology) Zhuo Cai (Hong Kong University of Science and Technology) Dimitrios Papadopoulos (Hong Kong University of Science & Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Timing Games in Responsive Consensus Protocols",
+          "authors_text": "Kaya Alpturer (Princeton University) Kushal Babel (Category Labs) Aditya Saraf (Cornell University; Cornell Tech)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Proving Circuit Functional Equivalence in Zero Knowledge",
+          "authors_text": "Sirui Shen (Centrum Wiskunde & Informatica) Zunchen Huang (Centrum Wiskunde & Informatica) Chenglu Jin (Centrum Wiskunde & Informatica)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "2PC Memory-Manipulating Programs with Constant Overhead",
+          "authors_text": "David Heath (University of Illinois Urbana-Champaign)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Good Cache, BAD Cache: Exploiting DNSSEC Validation Failures for DNS Cache Poisoning Attacks",
+          "authors_text": "Shiming Liu (Tsinghua University, BNRist) Yunyi Zhang (Tsinghua University) Chaoyi Lu (Zhongguancun Laboratory) Baojun Liu (Tsinghua University) Shuhan Zhang (Tsinghua University) Donghong Sun (Tsinghua University) Yong Ma (Alibaba Group) Linjian Song (Alibaba Group)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "MnemonicHack: Recovering the Master Seed from Bitcoin Hardware Wallets via Side-Channel Attacks",
+          "authors_text": "Jiwoo Baek (Korea University) Daehyeon Bae (Korea University) Gyusang Kim (Korea University) Gilsang Ahn (Korea University) Insup Lee (Korea University) Sujin Park (Korea University) Seokhie Hong (Korea University) HeeSeok Kim (Korea University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "CameraBlinder: Blinding Wireless Security Cameras Using a Low-Power Laser",
+          "authors_text": "Yan He (University of Oklahoma) Guanchong Huang (Co-first author) (University of Oklahoma) Yao Liu (University of South Florida) Song Fang (University of Oklahoma)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "A Sound Translation from Tamarin to ProVerif: Enabling Comparative Analysis",
+          "authors_text": "Kevin Morio (CISPA Helmholtz Center for Information Security) Yavor Ivanov (CISPA Helmholtz Center for Information Security) Robert Künnemann (CISPA Helmholtz Center for Information Security)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "MirrorGuard: Toward Secure Computer-Use Agents via Simulation-to-Real Reasoning Correction",
+          "authors_text": "Wenqi Zhang (Fudan University) Yulin Shen (Fudan University) Changyue Jiang (Fudan University) Jiarun Dai (Fudan University) Geng Hong (Fudan University, China) Xudong Pan (Fudan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Accelerating Multiparty Noise Generation Using Lookups",
+          "authors_text": "Fabian Schmid (Graz University of Technology) Fredrik Meisingseth (Graz University of Technology) Christian Rechberger (Graz University of Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "ACOFuzz: Memory-Error-Sensitive Fuzzing Driven by Address-Computation-Operand-Aware Feedback Mechanism",
+          "authors_text": "Yiru Zhao (Wuhan University) Aorui Zhang (Wuhan University) Xiaoke Wang (Wuhan University) Aoshuang Ye (Wuhan Textile University) Benxiao Tang (Wuhan Textile University) Jinxin Ma (School of Cyberspace Security, Beijing University of Posts and Telecommunications) Lei Zhao (Wuhan University) Heqing Huang (City University of Hong Kong)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Secrets Everywhere: Auditing Memorization in Mobility Prediction Models",
+          "authors_text": "Anne Josiane Kouam (Inria & TU Berlin) Hristo Boyadzhiev (BIFOLD & TU Berlin) Konrad Rieck (BIFOLD & TU Berlin)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Efficient Private Filtering and Aggregation for Weighted Set Intersection via Oblivious Encrypted Weight Transfer",
+          "authors_text": "Xiaodong Wang (Tsinghua University) Shengzhe Meng (Tsinghua University) Zijie Lu (Xi'an Jiaotong-Liverpool University) Bei Liang (Beijing Institute of Mathematical Sciences and Applications)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "The Illusion of Rust Safety: Detecting Modular Unsafe Functions with LLMs",
+          "authors_text": "Xiang Cheng (Georgia Institute of Technology) Fan Sang (Georgia Institute of Technology) Yibin Yang (NTT Research and University of Toronto) Hang Zhang (Indiana University) Sangdon Park (Pohang University of Science and Technology) Xiaokuan Zhang (George Mason University) Taesoo Kim (Georgia Institute of Technology and Microsoft)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "KingsGuard: Enclave Data Protection Under Real-World TEE Vulnerabilities",
+          "authors_text": "Saltanat Allaqband (Indian Institue of Technology Madras) Deepanjali S (Indian Institute of Technology Madras) Rohit Srinivas R G (Indian Institute of Technology Madras) Devashish Gosain (IIT Bombay) Chester Rebeiro (IIT Madras)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "LUNA+: More Succinct Post-Quantum ZK-SNARKs from Computational Privacy",
+          "authors_text": "Yuki Kume (Monash University) Ron Steinfeld (Monash University) Amin Sakzad (Monash University) Mert Yassi (Monash University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Thresholdizing Standardized FALCON Signatures",
+          "authors_text": "Radhika Garg (Northwestern University) Daniel Escudero (TACEO) Antigoni Polychroniadou (J.P. Morgan AI Research & AlgoCRYPT CoE) Akira Takahashi (J.P. Morgan AI Research & AlgoCRYPT CoE) Xiao Wang (Northwestern University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Piquant$\\varepsilon$: Private Quantile Estimation in the Two-Server Model",
+          "authors_text": "Hannah Keller (Aarhus University) Jacob Imola (BARC, University of Copenhagen) Fabrizio Boninsegna (University of Padova) Rasmus Pagh (BARC, University of Copenhagen) Amrita Roy Chowdhury (University of Michigan)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Non-interactive Anonymous Tokens with Private Metadata Bit",
+          "authors_text": "Foteini Baldimtsi (George Mason University, Mysten Labs) Lucjan Hanzlik (CISPA Helmholtz Center for Information Security) Quan Nguyen (George Mason University) Aayush Yadav (George Mason University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Exploring Privacy Leakage and Data Disclosure Violations in the MacOS Application Ecosystem",
+          "authors_text": "Jyotirmay Chauhan (University of Illinois Chicago) Kostas Solomos (Brandeis University) Mir Masood Ali (University of Illinois Chicago) Jason Polakis (University of Illinois Chicago)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Lether: Practical Post-Quantum Account-Based Private Blockchain Payments",
+          "authors_text": "Hongxiao Wang (The University of Hong Kong) Muhammed F. Esgin (Monash University) Ron Steinfeld (Monash University) Siu-Ming Yiu (The University of Hong Kong, Hong Kong)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "LightShark: Actively Secure Machine-Learning Inference Based on Lightweight Authenticated Distributed Comparison Function",
+          "authors_text": "Chenkai Zeng (Wuhan University) Qi Feng (Wuhan University) Debiao He (Wuhan University) Min Luo (Wuhan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "LockSnoop: Eavesdropping Plain-text Keypad Smart Lock Passcode via Electromagnetic Side Channel",
+          "authors_text": "Bowei Zhang (Clemson University) Zhuoyang Wang (Clemson University) Chenxu Jiang (Clemson University) Gen Li (Clemson University) Ming Li (University of Texas at Arlington) Linke Guo (Clemson University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Improved Garbled RAM via Garbled Merge",
+          "authors_text": "Can Liu (Tsinghua University) Lenny Liu (University of Illinois Urbana-Champaign) Ning Luo (UIUC) David Heath (University of Illinois Urbana-Champaign)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Doubly Aggregatable Signatures",
+          "authors_text": "Georg Fuchsbauer (TU Wien) Pranav Garimidi (a16z Crypto Research) Joachim Neu (a16z Crypto Research) Guru Vamsi Policharla (UC Berkeley) Max Resnick (Anza) Ertem Nusret Tas (a16z Crypto Research)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Universally Composable Adaptor Signatures",
+          "authors_text": "Paul Gerhart (TU Wien) Daniel Rausch (University of Stuttgart) Dominique Schroeder (TU Wien)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Compiler Provenance as a Service: Decoupled Identification for Composite Provenance and Operational Resilience",
+          "authors_text": "Han Gao (Purdue University) Antonio Bianchi (Purdue University) Z. Berkay Celik (Purdue University) Dave (Jing) Tian (Purdue University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Insecurity Through Obscurity: Veiled Vulnerabilities in Closed-Source Contracts",
+          "authors_text": "Sen Yang (Yale University, IC3) Kaihua Qin (University of Warwick) Aviv Yaish (Yale University, IC3) Fan Zhang (Yale University, IC3)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "PyFEX: Uncovering Evasive Python-based Threats via Resilient and Exhaustive Path Exploration",
+          "authors_text": "Meng Wang (CISPA Helmholtz Center for Information Security) Yue Ma (University of Electronic Science and Technology) Majid Garoosi (CISPA Helmholtz Center for Information Security) Wenting Fan (Shanghai Jiao Tong University) Liwei Guo (University of Electronic Science and Technology) Jiangqiang Wang (Max Planck Institute for Security and Privacy) Ali Abbasi (CISPA Helmholtz Center for Information Security)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Hydra: A Security Analysis Framework for TCP via Auto-Scaling FSMs",
+          "authors_text": "Ao Wang (Southeast University) Xuewei Feng (Tsinghua university) Yuxiang Yang (Tsinghua University) Yinchao Zhang (Tsinghua University) Qi Li (Tsinghua University) Guang Cheng (Southeast University) Weiqiang Wang (Ant Group) Ke Xu (Tsinghua University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Beyond the Buzzword: How do Professionals Understand and Translate Zero Trust?",
+          "authors_text": "Ananta Soneji (Arizona State University) Souradip Nath (Arizona State University) Moritz Schloegel (CISPA Helmholtz Center for Information Security) Yan Shoshitaishvili (Arizona State University) Gail-Joon Ahn (Arizona State University) Adam Doupe (Arizona State University) Carlos Rubio-Medrano (Texas A&M University - Corpus Christi)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Efficient Single-Round Obfuscation of Search and Result Patterns in Searchable Encryption",
+          "authors_text": "Tung Le (Virginia Tech) Thang Hoang (Virginia Tech)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Beyond Anonymity Sets: A Security Model for Distributed Shuffling in Adversarial Environments",
+          "authors_text": "Adrian Cinal (NASK National Research Institute) Oliwer Sobolewski (NASK National Research Institute) Gabriel Wechta (NASK National Research Institute) Filip Zagórski (University of Wroclaw)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Robust Estimation of Sparse Numerical Vectors under Local Differential Privacy",
+          "authors_text": "Puning Zhao (Sun Yat-sen University) Zhikun Zhang (Zhejiang University) Shaowei Wang (Guangzhou University) Sheng Yue (Sun Yat-sen University) Bangzhou Xin (National Interdisciplinary Research Center of Engineering Physics) Tianhang Zheng (Zhejiang University) Pengfei Zhang (Anhui University of Science and Technology) Xiaochun Cao (Shenzhen Campus of Sun Yat-sen University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "The Billion Dollar Merkle Tree",
+          "authors_text": "Thomas Coratger (Ethereum Foundation) Dmitry Khovratovich (Ethereum Foundation) Bart Mennink (Maastricht University) Benedikt Wagner (Ethereum Foundation)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Robust Logical Foundations for Mechanizing Post-Quantum Cryptography in Squirrel",
+          "authors_text": "David Baelde (Univ Rennes, IRISA, CNRS) Antoine Dallon (AMIAD) Stéphanie Delaune (univ Rennes, IRISA, CNRS) Charlie Jacomme (Inria Nancy Grand-Est, Université de Lorraine, LORIA, France) Adrien Koutsos (Inria)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "3PaaS: Privacy-Preserving Post-Compromise Security as a Service",
+          "authors_text": "Cas Cremers (CISPA Helmholtz Center for Information Security) Abhinav Nakarmi (University of Michigan) Aleksi Peltonen (University of Aberdeen) Eyal Ronen (Tel Aviv University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Symbolic Protocol Verification modulo XOR in ProVerif",
+          "authors_text": "Vincent Cheval (University of Oxford) Stéphanie Delaune (Univ Rennes, CNRS, IRISA)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Snatcher: Apple Find My Network Exposes Your Lost Devices To Strangers",
+          "authors_text": "Zhenyu Ren (The Hong Kong University of Science and Technology) Yanbo Zhang (The Hong Kong University of Science and Technology) Boya Liu (The Hong Kong University of Science and Technology) Mo Li (The Hong Kong University of Science and Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "An Iconic Heavy Hitters Algorithm Made Private",
+          "authors_text": "William Holland (CSIRO's Data61)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Detecting and Measuring Client- and Server-Side Google Tag Manager and its Tags in 80K Websites",
+          "authors_text": "Gilles Mertens (Inria Centre at University Grenoble-Alpes) Nataliia Bielova (Inria Centre at University Côte d’Azur) Vincent Roca (Inria Centre at University Grenoble-Alpes) Ahmed Bouhoula (ETH Zurich) Marouane Akassab (Inria Centre at University Grenoble-Alpes)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "VUPER: Verified ASN.1 UPER Parser",
+          "authors_text": "Xiaotian Zhou (The Pennsylvania State University) Kai Tu (Pennsylvania State University) Ali Ranjbar (The Pennsylvania State University) Yilu Dong (The Pennsylvania State University) Gang Tan (Penn State) Syed Rafiul Hussain (Pennsylvania State University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "An Extended Hierarchy of Security Notions for Threshold Signature Schemes and Automated Analysis of Protocols That Use Them",
+          "authors_text": "Cas Cremers (CISPA Helmholtz Center for Information Security) Aleksi Peltonen (University of Aberdeen) Mang Zhao (Wuhan University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Hieronym: Leveraging Hierarchical Multi-Source Information for Function Renaming in Stripped Binary",
+          "authors_text": "Xiaoling Zhang (Zhongguancun Laboratory) Jian Sun (Zhongguancun Laboratory) Dawei Wang (Zhongguancun Laboratory) Chongyu Wang (Zhongguancun Laboratory) Li Chen (Zhongguancun Laboratory) zhaoteng yan (Zhongguancun Laboratory) peipei liu (Zhongguancun Laboratory) Lixiao Zhang (Harbin Institute of Technology) Dan Li (Tsinghua University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Function Privatization in the Local Model",
+          "authors_text": "Yuting Liang (University of Toronto) Tian SHU (Hong Kong University of Science and Technology) Ke YI (Hong Kong University of Science and Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Forced Execution for Malware Protected by Commercial Virtualization Obfuscators",
+          "authors_text": "Yifei Zhan (Renmin University of China) Yukun Cui (Renmin University of China) Shuofeng Hao (Renmin University of China) Dongnan He (Renmin University of China) Wei You (Renmin University of China) Bin Liang (Renmin University of China) Jianjun Huang (Renmin University of China)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Assessing Privacy Compliance Awareness and Practices Among Mobile Third-party Library Developers",
+          "authors_text": "Fares F. Alharbi (Indiana University-Bloomington) Ece Gumusel (Rutgers University/University of Illinois Urbana-Champaign) Luyi Xing (University of Illinois Urbana-Champaign) Xiaojing Liao (University of Illinois Urbana-Champaign)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Low-Complexity Private Decision Tree Evaluation over Homomorphic Encryption",
+          "authors_text": "Dongjin Park (Chung-Ang University) Gyeongwon Cha (Chung-Ang University) Joon-Woo Lee (Chung-Ang University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "TACITA: Threshold Aggregation without Client Interaction",
+          "authors_text": "Varun Madathil (Yale University) Charalampos Papamanthou (Yale University) Arthur Lazzaretti (Yale University) Zeyu Liu (Yale University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "One Leak Away: How Pretrained Model Exposure Amplifies Jailbreak Risks in Finetuned LLMs",
+          "authors_text": "Yixin Tan (Institue of Science Tokyo) Yu Zhe (RIKEN AIP) Rui Wen (Institute of Science Tokyo) Jun Sakuma (Institute of Science Tokyo)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Your Space is My Zone: Demystifying the Security Risks of AI-Powered Applications on Pre-Trained Model Hubs",
+          "authors_text": "Yacong Gu (Tsinghua University; Tsinghua University-QI-ANXIN Group JCN) Lingyun Ying (QI-ANXIN Technology Research Institute) Zidong Zhang (QI-ANXIN Technology Research Institute) Yingyuan Pu (Qi An Xin Technology Research Institute) Xiaoxue Huang (QI-ANXIN Technology Research Institute) Jiawei Zhou (QI-ANXIN Technology Research Institute) Wenjie Zhu (QI-ANXIN Technology Research Institute) Donghong Sun (Tsinghua University) Haixin Duan (Tsinghua University)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "PathMark: Protecting Intellectual Property of Mixture-of-expert LLMs via Path Watermarks",
+          "authors_text": "Yudong Gao (the Hong Kong University of Science and Techlonogy) Qingyue Wang (the Hong Kong University of Science and Techlonogy) Yuanyuan Yuan (Tsinghua University) Ruixuan HUANG (The Hong Kong University of Science and Technology) Linghan Chen (Adelaide University) Zimo Ji (the Hong Kong University of Science and Techlonogy) Shuai Wang (Hong Kong University of Science and Technology)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "dfence: Fine-Grained Speculation Barriers for Efficient and Effective Hardware-Software Protection in the Spectre Era",
+          "authors_text": "Davide Davoli (MPI-SP) Marton Bognar (DistriNet, KU Leuven) Lesly-Ann Daniel (EURECOM) Benjamin Gregoire (Inria Sophia-Antipolis) Frank Piessens (DistriNet, KU Leuven) Tamara Rezk (Inria)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Prefix Consensus For Censorship Resilient BFT",
+          "authors_text": "Zhuolun Xiang (Aptos Labs) Andrei Tonkikh (Aptos Labs) Alexander Spiegelman (Aptos Labs)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "EdgeRefine: Privacy-Utility Balance for Graphs via Jaccard Sampling under Edge Differential Privacy",
+          "authors_text": "Wenxiu Ding (Xidian University, Xian, Shaanxi) Muzhi Liu (Xidian University, Xian, Shaanxi) Zheng Yan (Xidian University, Xian, Shaanxi) Mingjun Wang (Xidian University, Xian, Shaanxi) Yifan Zhao (Xidian University, Xian, Shaanxi) Qiao Liu (Xidian University, Xian, Shaanxi)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "Overloading Ad Blockers: Exploiting Filtering Logic for Selective Denial of Service",
+          "authors_text": "Hyunjoon Lee (KAIST) Suyoung Lee (KAIST) Heiko Kiesel (Technical University of Darmstadt) Sooel Son (KAIST)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        },
+        {
+          "title": "On the Pitfalls of Modeling Individual Knowledge",
+          "authors_text": "Wojciech Ciszewski (University of Warsaw) Stefan Dziembowski (University of Warsaw and IDEAS Institute) Tomasz Lizurej (NASK Institute) Marcin Mielniczuk (University of Warsaw)",
+          "paper_url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+          "cycle": "cycle1"
+        }
+      ],
       "user_experiment_candidate_count": 0,
       "user_experiment_candidates": []
     }

@@ -471,7 +471,12 @@ def _venue_family(venue):
         return "Big4"
     if any(x in v for x in ["usable privacy", "privacy enhancing technologies", "popets", "soups"]):
         return "SOUPS/PETS"
-    if any(x in v for x in ["human factors in computing", "chi", "cscw", "designing interactive", "dis"]):
+    if any(x in v for x in [
+        "human factors in computing", "chi", "cscw", "designing interactive", "dis",
+        "computer-human interaction", "tochi", "ubiquitous computing", "ubicomp",
+        "interactive mobile wearable and ubiquitous technologies", "imwut",
+        "international journal of human-computer studies", "ijhcs",
+    ]):
         return "HCI"
     if "arxiv" in v or "preprint" in v:
         return "Preprint"
@@ -871,6 +876,26 @@ def is_allowed_hci_venue(venue):
     ))
 
 
+def is_ccf_a_hci_venue(venue):
+    """CCF A venues in Human-Computer Interaction and Pervasive Computing."""
+    v = (venue or "").strip().lower()
+    if not v:
+        return False
+    return any(term in v for term in (
+        "international conference on human factors in computing systems",
+        "chi conference on human factors",
+        "acm chi",
+        "acm transactions on computer-human interaction",
+        "acm trans. comput. hum. interact",
+        "tochi",
+        "international conference on ubiquitous computing",
+        "acm international joint conference on pervasive and ubiquitous computing",
+        "ubicomp",
+        "international journal of human-computer studies",
+        "ijhcs",
+    ))
+
+
 def usable_source_family(venue):
     v = (venue or "").lower()
     if any(term in v for term in BIG4_VENUE_TERMS):
@@ -1005,6 +1030,8 @@ def collect_usable_hub_papers(official, advice, experiments, automatic, genai_ro
         if not key or not family:
             return
         tags = paper_default_topic_tags(paper, {"Usable Security", *(forced_tags or [])})
+        if is_ccf_a_hci_venue(paper.get("venue")):
+            tags.add("HCI CCF A")
         themes = usable_theme_labels(paper, tags)
         supplemental_summary = summary_by_title.get(key) or {}
         row = rows.setdefault(key, {
@@ -1091,6 +1118,10 @@ def compact_venue(venue):
         (("proceedings on privacy enhancing technologies", "privacy enhancing technologies", "popets", "pets"), "PoPETS/PETS"),
         (("international conference on human factors in computing systems", "acm chi", "chi conference"), "CHI"),
         (("computer supported cooperative work", "computer-supported cooperative work", "cscw"), "CSCW"),
+        (("acm transactions on computer-human interaction", "acm trans. comput. hum. interact", "tochi"), "TOCHI"),
+        (("international journal of human-computer studies", "ijhcs"), "IJHCS"),
+        (("international conference on ubiquitous computing", "pervasive and ubiquitous computing", "ubicomp"), "UbiComp"),
+        (("interactive mobile wearable and ubiquitous technologies", "imwut"), "IMWUT"),
     )
     for terms, label in labels:
         if any(term in v for term in terms):
@@ -1128,7 +1159,7 @@ def usable_security_hub_html(rows):
     sources = [
         ("big4", "安全四大", "IEEE S&P、USENIX Security、ACM CCS、NDSS"),
         ("other_security", "其他安全会议", "SOUPS、PETS/PoPETS、USEC 等"),
-        ("hci", "HCI 来源", "CHI、CSCW、TOCHI、UbiComp/IMWUT、IJHCS；不含 IJHCI"),
+        ("hci", "HCI 来源", "CCF A：CHI、UbiComp、TOCHI、IJHCS；另保留指定观察来源 CSCW/PACM HCI、IMWUT；不含 IJHCI"),
     ]
     themes = [label for label, _ in EXPERT_THEME_RULES] + ["其他新方向"]
     source_sections = []
@@ -1252,7 +1283,7 @@ def expert_themes_html(experts, area, tz):
     scope = (
         "安全会议与安全领域论文"
         if area == "security"
-        else "CHI、CSCW、TOCHI、UbiComp/IMWUT、IJHCS（不含 IJHCI）"
+        else "CCF A 的 CHI、UbiComp、TOCHI、IJHCS，以及指定观察来源 CSCW/PACM HCI、IMWUT（不含 IJHCI）"
     )
     return (
         f'<div class="coverage-note"><strong>大牛库 2025–2026 主题切片</strong>'

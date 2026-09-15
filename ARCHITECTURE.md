@@ -151,8 +151,10 @@ python scripts/build_dashboard.py  # 重新生成 index.html
   - `网络安全`：保留安全趋势与 SOUPS/PETS → Big4 话题传导，并加入大牛库
     2025–2026 网络安全论文的多标签主题切片。
   - `HCI`：保留 HCI 隐私安全趋势，并加入大牛库 2025–2026 HCI 论文主题。
-- HCI 来源白名单为 CHI、CSCW/PACM HCI、TOCHI、UbiComp/IMWUT、IJHCS；
-  明确排除 IJHCI（International Journal of Human-Computer Interaction）。
+- HCI 来源白名单中，CCF A 会/A 刊为 CHI、UbiComp、TOCHI、IJHCS；其中 IJHCS
+  （International Journal of Human-Computer Studies）直接计入核心 HCI 来源，不是补充来源。
+  CSCW/PACM HCI、IMWUT作为项目指定观察来源保留；明确排除 IJHCI
+  （International Journal of Human-Computer Interaction）。
 - `data/paper_tags.json` 保存预设标签和可选的构建时基础标签。页面以规范化论文题名作为
   本地论文 ID，把相同论文在不同专题中的标签状态合并。
 - 页面上的自定义标签保存在浏览器 `localStorage`。用户可以给任意论文增加或删除标签，

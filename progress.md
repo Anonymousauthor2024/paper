@@ -91,3 +91,11 @@ paper/
   与 IJHCS，并覆盖 phishing/scam/fraud/authentication/warning 等 usable-security 语义；保存
   2025–2026 完整相关论文切片供单篇卡片召回，不再仅依赖引用增速 Top 15。
   IJHCS 另以 Crossref 期刊元数据补齐 Semantic Scholar 尚未收录的新文章。
+- **2026-09-15（ACM CCS 官方源修复）**：将 CCS 2026 来源修正为官方
+  `program/accepted-papers.html` 页面，并新增 First/Second Cycle 表格解析与完整性保护。
+  自动抓取 383 篇（Cycle 1：187；Cycle 2：196），四大官方原始库合计 1,278 篇；
+  页面结构异常或轮次缺失时脚本会中止并保留上一份有效数据，不再把解析失败写成零篇。
+- **2026-09-15（HCI CCF A 分级修正）**：将 IJHCS 明确归入人机交互 CCF A 刊核心来源，
+  并为 CHI、UbiComp、TOCHI、IJHCS 增加统一的 `HCI CCF A` 标签。大牛抓取规则补齐
+  IJHCS/TOCHI 正式名称及缩写；CSCW/PACM HCI、IMWUT继续作为项目指定观察来源保留，
+  但不标记为 CCF A；IJHCI 继续排除。

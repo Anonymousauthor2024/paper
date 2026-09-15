@@ -33,7 +33,7 @@ SOURCES = {
         "all": "https://www.ndss-symposium.org/ndss2026/accepted-papers/",
     },
     "ACM CCS": {
-        "all": "https://www.sigsac.org/ccs/CCS2026/accepted-papers.html",
+        "all": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
     },
 }
 
@@ -323,6 +323,55 @@ def parse_ndss(page):
     return rows
 
 
+def parse_ccs(page, source_url):
+    """Parse only visible cycle tables on the official ACM CCS paper page."""
+    # The CCS page can retain old accepted-paper tables inside HTML comments.
+    # Browsers do not display those rows, so they must not enter the live dataset.
+    page = re.sub(r"(?is)<!--.*?-->", "", page)
+    rows = []
+    headings = list(re.finditer(
+        r"(?is)<h3[^>]*>\s*(First Cycle|Second Cycle)\s*</h3>",
+        page,
+    ))
+    cycle_names = {
+        "first cycle": "cycle1",
+        "second cycle": "cycle2",
+    }
+    for index, heading in enumerate(headings):
+        start = heading.end()
+        end = headings[index + 1].start() if index + 1 < len(headings) else len(page)
+        section = page[start:end]
+        cycle = cycle_names[clean(heading.group(1)).lower()]
+        pattern = re.compile(
+            r"(?is)<tr[^>]*>\s*<td[^>]*>(.*?)</td>\s*"
+            r"<td[^>]*>(.*?)</td>\s*</tr>"
+        )
+        for match in pattern.finditer(section):
+            title = clean(match.group(1))
+            authors = clean(match.group(2))
+            if not title:
+                continue
+            rows.append({
+                "title": title,
+                "authors_text": authors,
+                "paper_url": source_url,
+                "cycle": cycle,
+            })
+
+    cycle_counts = {
+        cycle: sum(row.get("cycle") == cycle for row in rows)
+        for cycle in ("cycle1", "cycle2")
+    }
+    # Cycle 2 may not have been announced yet.  Cycle 1 is the stable minimum
+    # needed to distinguish a valid page from an error/placeholder response.
+    if len(rows) < 100 or cycle_counts["cycle1"] == 0:
+        raise RuntimeError(
+            "ACM CCS parser integrity check failed: "
+            f"{len(rows)} rows, cycles={cycle_counts}; preserving old output"
+        )
+    return rows
+
+
 def main():
     result = {
         "generated_at": time.strftime("%Y-%m-%d"),
@@ -349,6 +398,8 @@ def main():
                 rows = parse_sp(page)
             elif venue == "NDSS":
                 rows = parse_ndss(page)
+            elif venue == "ACM CCS":
+                rows = parse_ccs(page, url)
             else:
                 rows = []
             venue_rows.extend(rows)

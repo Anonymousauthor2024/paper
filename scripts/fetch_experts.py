@@ -49,6 +49,8 @@ HCI_PATTERNS = [
     "computer-supported cooperative", "cscw",
     "acm on human-computer interaction",
     "ubicomp", "interactive, mobile, wearable", "imwut",
+    "acm transactions on computer-human interaction", "tochi",
+    "international journal of human-computer studies", "ijhcs",
     "designing interactive systems",
 ]
 
