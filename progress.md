@@ -93,9 +93,15 @@ paper/
   IJHCS 另以 Crossref 期刊元数据补齐 Semantic Scholar 尚未收录的新文章。
 - **2026-09-15（ACM CCS 官方源修复）**：将 CCS 2026 来源修正为官方
   `program/accepted-papers.html` 页面，并新增 First/Second Cycle 表格解析与完整性保护。
-  自动抓取 383 篇（Cycle 1：187；Cycle 2：196），四大官方原始库合计 1,278 篇；
-  页面结构异常或轮次缺失时脚本会中止并保留上一份有效数据，不再把解析失败写成零篇。
+  自动抓取 187 篇（Cycle 1，全部为官网浏览器可见条目），四大官方原始库合计 1,082 篇；
+  页面结构异常或 Cycle 1 缺失时脚本会中止并保留上一份有效数据，不再把解析失败写成零篇。
 - **2026-09-15（HCI CCF A 分级修正）**：将 IJHCS 明确归入人机交互 CCF A 刊核心来源，
   并为 CHI、UbiComp、TOCHI、IJHCS 增加统一的 `HCI CCF A` 标签。大牛抓取规则补齐
   IJHCS/TOCHI 正式名称及缩写；CSCW/PACM HCI、IMWUT继续作为项目指定观察来源保留，
   但不标记为 CCF A；IJHCI 继续排除。
+- **2026-09-16（CCS Cycle 2 口径核实）**：核对官方 accepted-papers 页面，First Cycle
+  187 篇为浏览器可见内容；Second Cycle 的 `<h3>` 标题与 196 篇表格整体处于 HTML 注释
+  状态，浏览器不渲染，按“官方页面未公开 ≠ 零篇”的原则不计入数据库。此前日志中的
+  383 篇 / 合计 1,278 篇取自注释内容，与 `data/official_accepted_2026_raw.json` 不符，
+  已更正为 187 篇 / 1,082 篇。Second Cycle 正式公开后重跑
+  `fetch_official_accepted.py` 即可并入。

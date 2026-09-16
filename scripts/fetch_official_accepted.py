@@ -327,6 +327,7 @@ def parse_ccs(page, source_url):
     """Parse only visible cycle tables on the official ACM CCS paper page."""
     # The CCS page can retain old accepted-paper tables inside HTML comments.
     # Browsers do not display those rows, so they must not enter the live dataset.
+    raw_page = page
     page = re.sub(r"(?is)<!--.*?-->", "", page)
     rows = []
     headings = list(re.finditer(
@@ -368,6 +369,14 @@ def parse_ccs(page, source_url):
         raise RuntimeError(
             "ACM CCS parser integrity check failed: "
             f"{len(rows)} rows, cycles={cycle_counts}; preserving old output"
+        )
+    if cycle_counts["cycle2"] == 0:
+        hidden = re.search(r"(?is)<h3[^>]*>\s*Second Cycle\s*</h3>", raw_page)
+        print(
+            "  [warn] ACM CCS Second Cycle absent from dataset "
+            f"(cycle1={cycle_counts['cycle1']}): "
+            + ("section present but commented out, i.e. not yet public"
+               if hidden else "no Second Cycle heading on the page")
         )
     return rows
 
