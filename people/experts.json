@@ -212,7 +212,7 @@
       "affiliation": "Brigham Young University",
       "role": "researcher",
       "known_for": "human-centered threat modeling, usable security research practice",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2230680596"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "IEEE S&P 2026 Cycle 2 人本威胁建模论文一作；S2 profile 待核验"
@@ -222,7 +222,7 @@
       "affiliation": "Justus Liebig University Giessen",
       "role": "researcher",
       "known_for": "information security awareness measurement, psychometrics",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2403362234"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "IEEE S&P 2026 Cycle 2 LISA 安全意识量表论文一作；同名较多，S2 profile 待核验"
@@ -232,7 +232,7 @@
       "affiliation": "Max Planck Institute for Security and Privacy",
       "role": "researcher",
       "known_for": "accessible security and privacy, Deaf and hard-of-hearing communities",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2360124419", "2261559983"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "IEEE S&P 2026 Cycle 1 DHH 社区访谈论文一作；同名 profile 待核验"
@@ -242,7 +242,7 @@
       "affiliation": "University of Regensburg",
       "role": "researcher",
       "known_for": "passkey adoption, cybersecurity motivation, authentication usability",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2191746768"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "IEEE S&P 2026 Cycle 1 passkey 纵向田野研究一作；S2 profile 待核验"
@@ -262,7 +262,7 @@
       "affiliation": "Cornell University",
       "role": "researcher",
       "known_for": "account security interfaces, interpersonal security, usable security",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2292408533", "2161886410"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "USENIX Security 2026 Cycle 1 账户安全界面研究一作；S2 profile 待核验"
@@ -272,7 +272,7 @@
       "affiliation": "NTT DOCOMO BUSINESS / Waseda University",
       "role": "researcher",
       "known_for": "developer security practices, GitHub Actions, mixed methods",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2053713646"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "NDSS 2026 GitHub Actions 安全实践研究一作；同名较多，S2 profile 待核验"
@@ -282,7 +282,7 @@
       "affiliation": "University of California, Los Angeles",
       "role": "researcher",
       "known_for": "developer-centered security and privacy, extended reality",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2262443936"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "NDSS 2026 XR 开发者安全隐私研究一作；同名 profile 待核验"
@@ -292,7 +292,7 @@
       "affiliation": "Munich University of Applied Sciences",
       "role": "researcher",
       "known_for": "passkeys, MFA usability, authentication",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2223373912"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "IEEE S&P 2026 Cycle 1 passkey 对比可用性研究一作；S2 profile 待核验"
@@ -312,7 +312,7 @@
       "affiliation": "ETH Zurich",
       "role": "researcher",
       "known_for": "explainable AI, cybersecurity decision-making, human-AI trust",
-      "ss_author_ids": [],
+      "ss_author_ids": ["2319684370"],
       "dblp": null,
       "tracking_role": ["2026 Big4 first author"],
       "note": "USENIX Security 2026 Cycle 1 XAI 与安全决策研究一作；S2 profile 待核验"

@@ -14,8 +14,7 @@ _局限:仅按会议 venue 认领;只发 arXiv 的新 profile 可能漏检_
 - ✅已绑 id=2210099720 | 领域论文 7 | 最近 2026 |  | 例:What is Safety? Corporate Discourse, Power, and the Politics
 - ✅已绑 id=2405999618 | 领域论文 6 | 最近 2026 |  | 例:Revealed or Reinforced: How Assistive Technologies Shape the
 
-## Jingjie Li — 已绑 2，扫到 2 个含领域论文的 profile，无漏绑
-- ✅已绑 id=2325102614 | 领域论文 5 | 最近 2026 |  | 例:Stepping Into the Black Box: Opening Up LLMs to Public Explo
+## Jingjie Li — 已绑 2，扫到 1 个含领域论文的 profile，无漏绑
 - ✅已绑 id=49297766 | 领域论文 5 | 最近 2024 |  | 例:I see an IC: A Mixed-Methods Approach to Study Human Problem
 
 ## Tanusree Sharma — 已绑 2，扫到 3 个含领域论文的 profile，⚠️ 1 个疑似漏绑
@@ -24,7 +23,7 @@ _局限:仅按会议 venue 认领;只发 arXiv 的新 profile 可能漏检_
 - ✅已绑 id=1717671332 | 领域论文 4 | 最近 2023 |  | 例:A Mixed-Methods Study of Security Practices of Smart Contrac
 
 ## Elissa M. Redmiles — 已绑 1，扫到 1 个含领域论文的 profile，无漏绑
-- ✅已绑 id=2391370 | 领域论文 48 | 最近 2026 |  | 例:“I Wonder if These Warnings are Accurate”: Security and Priv
+- ✅已绑 id=2391370 | 领域论文 49 | 最近 2026 |  | 例:Goals, Risks, and Safety Practices in Online Labor Abuse Dis
 
 ## Michelle L. Mazurek — 已绑 2，扫到 2 个含领域论文的 profile，⚠️ 1 个疑似漏绑
 - ⚠️疑似漏绑 id=147341485 | 领域论文 1 | 最近 2017 |  | 例:インターネット資源は支援はより高速の開発あなたが安全に少ないか【Powered by NICT】
@@ -38,8 +37,8 @@ _局限:仅按会议 venue 认领;只发 arXiv 的新 profile 可能漏检_
 - ✅已绑 id=1820919795 | 领域论文 4 | 最近 2024 |  | 例:"I feel physically safe but not politically safe": Understan
 
 ## Allison McDonald — 已绑 3，扫到 3 个含领域论文的 profile，无漏绑
-- ✅已绑 id=143890973 | 领域论文 8 | 最近 2022 |  | 例:Ethical Practices for Security Research with At-Risk Populat
-- ✅已绑 id=46479224 | 领域论文 4 | 最近 2026 |  | 例:How We Define Privacy Literacy: Teaching Experiences & Chall
+- ✅已绑 id=143890973 | 领域论文 9 | 最近 2022 |  | 例:Ethical Practices for Security Research with At-Risk Populat
+- ✅已绑 id=46479224 | 领域论文 5 | 最近 2026 |  | 例:Nice to Know You're Not Alone: Co-designing Community-center
 - ✅已绑 id=2292260114 | 领域论文 4 | 最近 2026 |  | 例:Surveillance, Spacing, Screaming and Scabbing: How Digital T
 
 ## Miranda Wei — 已绑 3，扫到 3 个含领域论文的 profile，无漏绑
@@ -51,48 +50,81 @@ _局限:仅按会议 venue 认领;只发 arXiv 的新 profile 可能漏检_
 - ✅已绑 id=2238332466 | 领域论文 13 | 最近 2025 |  | 例:To Reveal or Conceal: Privacy and Marginalization in Avatars
 - ✅已绑 id=2312304883 | 领域论文 3 | 最近 2025 |  | 例:Ethics in Computer Security Research: A Data-Driven Assessme
 
-## Zhicong Lu — 已绑 2，扫到 6 个含领域论文的 profile，⚠️ 6 个疑似漏绑
-- ⚠️疑似漏绑 id=2110326898 | 领域论文 15 | 最近 2024 |  | 例:“There is a Job Prepared for Me Here”: Understanding How Sho
-- ⚠️疑似漏绑 id=2290025575 | 领域论文 15 | 最近 2026 |  | 例:Cultures as Catalysts: Nurturing HCI Communities Across Regi
-- ⚠️疑似漏绑 id=10682650 | 领域论文 11 | 最近 2023 | University of Toronto | 例:StoryChat: Designing a Narrative-Based Viewer Participation 
-- ⚠️疑似漏绑 id=2319388146 | 领域论文 4 | 最近 2026 |  | 例:PuppetChat: Fostering Intimate Communication through Bidirec
-- ⚠️疑似漏绑 id=2304442295 | 领域论文 3 | 最近 2026 |  | 例:InterFlow: Designing Unobtrusive AI to Empower Interviewers 
-- ⚠️疑似漏绑 id=2344960065 | 领域论文 1 | 最近 2025 |  | 例:HarmonyCut: Supporting Creative Chinese Paper-cutting Design
+## Zhicong Lu — 已绑 8，扫到 6 个含领域论文的 profile，无漏绑
+- ✅已绑 id=2110326898 | 领域论文 15 | 最近 2024 |  | 例:“There is a Job Prepared for Me Here”: Understanding How Sho
+- ✅已绑 id=2290025575 | 领域论文 15 | 最近 2026 |  | 例:Cultures as Catalysts: Nurturing HCI Communities Across Regi
+- ✅已绑 id=10682650 | 领域论文 11 | 最近 2023 | University of Toronto | 例:StoryChat: Designing a Narrative-Based Viewer Participation 
+- ✅已绑 id=2319388146 | 领域论文 4 | 最近 2026 |  | 例:PuppetChat: Fostering Intimate Communication through Bidirec
+- ✅已绑 id=2304442295 | 领域论文 3 | 最近 2026 |  | 例:InterFlow: Designing Unobtrusive AI to Empower Interviewers 
+- ✅已绑 id=2344960065 | 领域论文 1 | 最近 2025 |  | 例:HarmonyCut: Supporting Creative Chinese Paper-cutting Design
 
-## Xin Tong — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
-- ⚠️疑似漏绑 id=47632675 | 领域论文 6 | 最近 2023 |  | 例:"I Am a Mirror Dweller": Probing the Unique Strategies Users
-
-## Mingming Fan — 已绑 3，扫到 12 个含领域论文的 profile，⚠️ 12 个疑似漏绑
-- ⚠️疑似漏绑 id=2204644498 | 领域论文 17 | 最近 2025 |  | 例:JournalAIde: Empowering Older Adults in Digital Journal Writ
-- ⚠️疑似漏绑 id=2375349091 | 领域论文 12 | 最近 2026 |  | 例:Exploring How Telepresence Robot Might Facilitate Communicat
-- ⚠️疑似漏绑 id=1868611 | 领域论文 8 | 最近 2021 |  | 例:”Too old to bank digitally? ”: A Survey of Banking Practices
-- ⚠️疑似漏绑 id=2152097239 | 领域论文 8 | 最近 2023 |  | 例:CoPracTter: Toward Integrating Personalized Practice Scenari
-- ⚠️疑似漏绑 id=2283134529 | 领域论文 5 | 最近 2026 |  | 例:From Performers to Creators: Understanding Retired Women's P
-- ⚠️疑似漏绑 id=2267335232 | 领域论文 5 | 最近 2024 |  | 例:To Reach the Unreachable: Exploring the Potential of VR Hand
-- ⚠️疑似漏绑 id=2153464801 | 领域论文 2 | 最近 2022 |  | 例:“It Feels Like Being Locked in A Cage”: Understanding Blind 
-- ⚠️疑似漏绑 id=2203948179 | 领域论文 2 | 最近 2026 |  | 例:“It Became My Buddy, But I’m Not Afraid to Disagree”: A Mult
-- ⚠️疑似漏绑 id=2310442231 | 领域论文 1 | 最近 2025 |  | 例:InteRecon: Towards Reconstructing Interactivity of Personal 
-- ⚠️疑似漏绑 id=2306825157 | 领域论文 1 | 最近 2025 |  | 例:Toward Enabling Natural Conversation with Older Adults via t
-- ⚠️疑似漏绑 id=2328976537 | 领域论文 1 | 最近 2025 |  | 例:"Watch, Smell, Ask, Touch": Practices, Challenges, and Techn
-- ⚠️疑似漏绑 id=2054874811 | 领域论文 1 | 最近 2022 |  | 例:“I Don’t Want People to Look At Me Differently”: Designing U
+## Xin Tong — 已绑 1，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
+- ⚠️疑似漏绑 id=2382447833 | 领域论文 4 | 最近 2026 |  | 例:Proactive AI as a Catalyst for Creativity? Balancing Human A
 
 ## Yi Xin — 已绑 1，扫到 0 个含领域论文的 profile，无漏绑
 
-## Shuning Zhang — 已绑 0，扫到 3 个含领域论文的 profile，⚠️ 3 个疑似漏绑
-- ⚠️疑似漏绑 id=2214812586 | 领域论文 7 | 最近 2025 |  | 例:Request a Note: How the Request Function Shapes X's Communit
-- ⚠️疑似漏绑 id=2316101018 | 领域论文 7 | 最近 2026 |  | 例:Characterizing Unintended Consequences of GUI Agents For Web
-- ⚠️疑似漏绑 id=2327003527 | 领域论文 5 | 最近 2026 |  | 例:Collab: Fostering Critical Identification of Deepfake Videos
+## Shuning Zhang — 已绑 3，扫到 3 个含领域论文的 profile，无漏绑
+- ✅已绑 id=2214812586 | 领域论文 7 | 最近 2025 |  | 例:Request a Note: How the Request Function Shapes X's Communit
+- ✅已绑 id=2316101018 | 领域论文 7 | 最近 2026 |  | 例:Characterizing Unintended Consequences of GUI Agents For Web
+- ✅已绑 id=2327003527 | 领域论文 5 | 最近 2026 |  | 例:Collab: Fostering Critical Identification of Deepfake Videos
 
 ## Chun Yu — 已绑 1，扫到 0 个含领域论文的 profile，无漏绑
 
-## Liyi Zhou — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
-- ⚠️疑似漏绑 id=3138957 | 领域论文 7 | 最近 2025 |  | 例:DeFi '25: 5th ACM Workshop on Decentralized Finance and Secu
+## Liyi Zhou — 已绑 1，扫到 1 个含领域论文的 profile，无漏绑
+- ✅已绑 id=3138957 | 领域论文 7 | 最近 2025 |  | 例:DeFi '25: 5th ACM Workshop on Decentralized Finance and Secu
+
+## Jiachi Chen — 已绑 3，扫到 0 个含领域论文的 profile，无漏绑
 
 ## Florian Schaub — 已绑 4，扫到 3 个含领域论文的 profile，无漏绑
 - ✅已绑 id=2261515099 | 领域论文 6 | 最近 2026 |  | 例:Privacy and Trust vs. Utility: Adoption of Commercial vs. In
-- ✅已绑 id=2330204560 | 领域论文 4 | 最近 2026 |  | 例:How We Define Privacy Literacy: Teaching Experiences & Chall
+- ✅已绑 id=2330204560 | 领域论文 5 | 最近 2026 |  | 例:Nice to Know You're Not Alone: Co-designing Community-center
 - ✅已绑 id=2340453411 | 领域论文 2 | 最近 2025 |  | 例:How Transparent is Usable Privacy and Security Research? A M
 
-## Lorrie Faith Cranor — 已绑 3，扫到 2 个含领域论文的 profile，无漏绑
-- ✅已绑 id=2106548793 | 领域论文 15 | 最近 2026 |  | 例:From “Be Careful” to “Here's Why”: Investigating User Reason
-- ✅已绑 id=1491256745 | 领域论文 2 | 最近 2026 |  | 例:Passing Down Passwords: How Older Adults Approach Postmortem
+## Lorrie Faith Cranor — 已绑 3，扫到 1 个含领域论文的 profile，无漏绑
+- ✅已绑 id=2106548793 | 领域论文 17 | 最近 2026 |  | 例:Quantifying Risk Perception and Scam Response Among Internat
+
+## Collins W. Munyendo — 已绑 1，扫到 1 个含领域论文的 profile，无漏绑
+- ✅已绑 id=2106415744 | 领域论文 17 | 最近 2026 |  | 例:“I Wonder if These Warnings are Accurate”: Security and Priv
+
+## Elijah Bouma-Sims — 已绑 2，扫到 1 个含领域论文的 profile，无漏绑
+- ✅已绑 id=1887618805 | 领域论文 9 | 最近 2026 |  | 例:Quantifying Risk Perception and Scam Response Among Internat
+
+## Warda Usman — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
+- ⚠️疑似漏绑 id=2230680596 | 领域论文 6 | 最近 2026 |  | 例:Understanding Gendered Experiences of Harassment Among Pakis
+
+## David Langer — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
+- ⚠️疑似漏绑 id=2403362234 | 领域论文 2 | 最近 2026 |  | 例:LISA: A Scale-Optimized and Psychometrically-Validated Instr
+
+## Mindy Tran — 已绑 0，扫到 2 个含领域论文的 profile，⚠️ 2 个疑似漏绑
+- ⚠️疑似漏绑 id=2360124419 | 领域论文 4 | 最近 2026 |  | 例:Revealed or Reinforced: How Assistive Technologies Shape the
+- ⚠️疑似漏绑 id=2261559983 | 领域论文 2 | 最近 2024 |  | 例:Security, Privacy, and Data-sharing Trade-offs When Moving t
+
+## Tobias Reittinger — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
+- ⚠️疑似漏绑 id=2191746768 | 领域论文 3 | 最近 2026 |  | 例:Moving Beyond Passwords: Investigating the Effect of Digital
+
+## Kelechi G. Kalu — 已绑 1，扫到 1 个含领域论文的 profile，无漏绑
+- ✅已绑 id=2229562943 | 领域论文 2 | 最近 2024 |  | 例:Signing in Four Public Software Package Registries: Quantity
+
+## Arkaprabha Bhattacharya — 已绑 0，扫到 2 个含领域论文的 profile，⚠️ 2 个疑似漏绑
+- ⚠️疑似漏绑 id=2292408533 | 领域论文 2 | 最近 2025 |  | 例:A Framework for Abusability Analysis: The Case of Passkeys i
+- ⚠️疑似漏绑 id=2161886410 | 领域论文 1 | 最近 2024 |  | 例:When the User Is Inside the User Interface: An Empirical Stu
+
+## Yusuke Kubo — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
+- ⚠️疑似漏绑 id=2053713646 | 领域论文 1 | 最近 2026 |  | 例:Action Required: A Mixed-Methods Study of Security Practices
+
+## Kunlin Cai — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
+- ⚠️疑似漏绑 id=2262443936 | 领域论文 5 | 最近 2026 |  | 例:Location-Enhanced Information Flow for Home Automations
+
+## Erwin Kupris — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
+- ⚠️疑似漏绑 id=2223373912 | 领域论文 3 | 最近 2026 |  | 例:All You Need is Trust: A Longitudinal Analysis of Italy’s Op
+
+## Vijay Prakash — 已绑 0，扫到 2 个含领域论文的 profile，⚠️ 2 个疑似漏绑
+- ⚠️疑似漏绑 id=2067221370 | 领域论文 1 | 最近 2019 |  | 例:Examining DES-based Cipher Suite Support within the TLS Ecos
+- ⚠️疑似漏绑 id=2261098415 | 领域论文 1 | 最近 2024 |  | 例:Can Allowlists Capture the Variability of Home IoT Device Ne
+
+## Neele Roch — 已绑 0，扫到 1 个含领域论文的 profile，⚠️ 1 个疑似漏绑
+- ⚠️疑似漏绑 id=2319684370 | 领域论文 2 | 最近 2025 |  | 例:It's a Match - Enhancing the Fit between Users and Phishing 
+
+## Ronald E. Thompson III — 已绑 0，扫到 0 个含领域论文的 profile，无漏绑
+
+## Xin Zhang — 已绑 0，扫到 0 个含领域论文的 profile，无漏绑
