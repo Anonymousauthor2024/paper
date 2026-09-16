@@ -1,14 +1,14 @@
 # 大牛 · HCI(CHI / CSCW)近期论文
 
-_生成于 2026-09-07；🆕 = 最近 18 个月_
+_生成于 2026-09-16；🆕 = 最近 18 个月_
 
 - 2026 🆕 | [HCI] Yaman Yu | CHI Extended Abstracts — **Developmentally Safe Generative AI Environment for Youth**
-- 2026 🆕 | [HCI] Yixin Zou | Symposium on Designing Interactive Syste — **Revealed or Reinforced: How Assistive Technologies Shape the Experience with Dark Patterns for Blind and Low-Vision Users**
+- 2026 🆕 | [HCI] Yixin Zou, Mindy Tran | Symposium on Designing Interactive Syste — **Revealed or Reinforced: How Assistive Technologies Shape the Experience with Dark Patterns for Blind and Low-Vision Users**
 - 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **It Shouldn't Be This Difficult: Researcher Perspectives on Diversity and Inclusion in Usable Privacy and Security Research**
 - 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **Do Citizens Agree with the EU AI Act? Public Perspectives on Risk and Regulation of AI Systems**
 - 2026 🆕 | [HCI] Yixin Zou, Jingjie Li | International Conference on Human Factor — **Characterizing Scam-Driven Human Trafficking Across Chinese Borders and Online Community Responses on RedNote** (arXiv:2603.26520)
 - 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **What is Safety? Corporate Discourse, Power, and the Politics of Generative AI Safety** (arXiv:2602.06981)
-- 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **From Harm to Healing: Understanding Individual Resilience after Cybercrimes** (arXiv:2601.16050)
+- 2026 🆕 | [HCI] Yixin Zou, Mindy Tran | International Conference on Human Factor — **From Harm to Healing: Understanding Individual Resilience after Cybercrimes** (arXiv:2601.16050)
 - 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **“What If My Face Gets Scanned Without Consent”: Older Adults' Experiences with Biometric Payment** (arXiv:2601.12300)
 - 2026 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **Experiencer, Helper, or Observer: Online Fraud Intervention for Older Adults Through a Role-based Simulation Approach** (arXiv:2601.12324)
 - 2026 🆕 | [HCI] Jingjie Li | Symposium on Designing Interactive Syste — **Stepping Into the Black Box: Opening Up LLMs to Public Exploration Through Discursive Design**
@@ -27,14 +27,15 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2026 🆕 | [HCI] Shuning Zhang | International Conference on Human Factor — **"Privacy across the boundary": Examining Perceived Privacy Risk Across Data Transmission and Sharing Ranges of Smart Home Personal Assistants** (arXiv:2601.17373)
 - 2026 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **Privacy and Trust vs. Utility: Adoption of Commercial vs. Institutional AI assistants Among University Users**
 - 2026 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **“Families are messy”: From Parent-Child Tensions to Family-Centered Design of Smart Home Technologies**
-- 2026 🆕 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **My Money, Your Name: Challenges and Workarounds in ID-Required Mobile Money in East Africa**
 - 2026 🆕 | [HCI] Collins W. Munyendo | International Conference on Human Factor — **Re-Examining the Examiners: Changes in Privacy and Security Perceptions of Exam Proctoring**
+- 2026 🆕 | [HCI] Warda Usman | International Conference on Human Factor — **Understanding Gendered Experiences of Harassment Among Pakistani Young Adults Using Human-Centered Threat Modeling**
+- 2026 🆕 | [HCI] Tobias Reittinger | International Conference on Human Factor — **Moving Beyond Passwords: Investigating the Effect of Digital Nudges on Passkey Adoption**
 - 2025 🆕 | [HCI] Yang Wang, Yaman Yu | International Conference on Human Factor — **Principles of Safe AI Companions for Youth: Parent and Expert Perspectives** (arXiv:2510.11185)
 - 2025 🆕 | [HCI] Yaman Yu | CHI Extended Abstracts — **"I Am a Blind Seller!": Picture Taking Assistance for Visually Impaired Individuals for Participation as Sellers in Customer to Customer (C2C) Marketplaces**
 - 2025 🆕 | [HCI] Yaman Yu | International Conference on Human Factor — **Using Affordance to Understand Usability of Web3 Social Media**
 - 2025 🆕 | [HCI] Yixin Zou | International Conference on Human Factor — **Lay Perceptions of Algorithmic Discrimination in the Context of Systemic Injustice**
 - 2025 | [HCI] Yixin Zou | International Conference on Human Factor — **"Auntie, Please Don't Fall for Those Smooth Talkers": How Chinese Younger Family Members Safeguard Seniors from Online Fraud** (arXiv:2501.10803)
-- 2025 🆕 | [HCI] Jingjie Li | International Conference on Human Factor — **``Impressively Scary:' Exploring User Perceptions and Reactions to Unraveling Machine Learning Models in Social Media Applications** (arXiv:2503.03927)
+- 2025 | [HCI] Jingjie Li | International Conference on Human Factor — **``Impressively Scary:' Exploring User Perceptions and Reactions to Unraveling Machine Learning Models in Social Media Applications** (arXiv:2503.03927)
 - 2025 🆕 | [HCI] Elissa M. Redmiles, Gabriel Kaptchuk | International Conference on Human Factor — **"Having Confidence in My Confidence Intervals": How Data Users Engage with Privacy-Protected Wikipedia Data** (arXiv:2512.06534)
 - 2025 🆕 | [HCI] Elissa M. Redmiles, Allison McDonald, Miranda Wei | CSCW Companion — **Co-Constructing the Future of Digital Intimacy**
 - 2025 🆕 | [HCI] Elissa M. Redmiles, Miranda Wei | CSCW Companion — **Reflexivity & Reflection (R&R) for Sociotechnical Safety: Creating a Space for Collective Learning**
@@ -44,7 +45,7 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2025 🆕 | [HCI] Zhicong Lu | International Conference on Human Factor — **'Douyin is My Nourishment of the Mind': Exploring the Infrastructuralization Process of Short Video Sharing Platforms From Rural People’s Perspective**
 - 2025 🆕 | [HCI] Zhicong Lu | International Conference on Human Factor — **ProductMeta: An Interactive System for Metaphorical Product Design Ideation with Multimodal Large Language Models**
 - 2025 🆕 | [HCI] Zhicong Lu | International Conference on Human Factor — **"Can't believe I'm crying over an anime girl": Public Parasocial Grieving and Coping Towards VTuber Graduation and Termination** (arXiv:2504.13421)
-- 2025 🆕 | [HCI] Zhicong Lu | CHI Extended Abstracts — **RevTogether: Supporting Science Story Revision with Multiple AI Agents** (arXiv:2503.01608)
+- 2025 | [HCI] Zhicong Lu | CHI Extended Abstracts — **RevTogether: Supporting Science Story Revision with Multiple AI Agents** (arXiv:2503.01608)
 - 2025 | [HCI] Zhicong Lu | International Conference on Human Factor — **How Users Who are Blind or Low Vision Play Mobile Games: Perceptions, Challenges, and Strategies** (arXiv:2502.09866)
 - 2025 | [HCI] Zhicong Lu | International Conference on Human Factor — **HarmonyCut: Supporting Creative Chinese Paper-cutting Design with Form and Connotation Harmony** (arXiv:2502.07628)
 - 2025 🆕 | [HCI] Shuning Zhang | UbiComp Companion — **SituGuard: LLM-based Fine-grained Smart Glass Privacy Control in Home Environments**
@@ -57,6 +58,7 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2025 | [HCI] Shuning Zhang | International Conference on Human Factor — **Vision-Based Multimodal Interfaces: A Survey and Taxonomy for Enhanced Context-Aware System Design** (arXiv:2501.13443)
 - 2025 🆕 | [HCI] Florian Schaub | International Conference on Human Factor — **Intriguing, Concerning, and Questioning the Impact on Immersion: An Exploration of VR Users' Advertising Experiences and Attitudes**
 - 2025 🆕 | [HCI] Collins W. Munyendo | International Conference on Human Factor — **Reimagining Wearable-Based Digital Contact Tracing: Insights from Kenya and Côte d'Ivoire**
+- 2025 🆕 | [HCI] Neele Roch | International Conference on Human Factor — **It's a Match - Enhancing the Fit between Users and Phishing Training through Personalisation**
 - 2024 | [HCI] Yang Wang, Tanusree Sharma | International Conference on Human Factor — **Designing Accessible Obfuscation Support for Blind Individuals’ Visual Privacy Management**
 - 2024 | [HCI] Yang Wang, Yaman Yu, Yixin Zou, Tanusree Sharma | CHI Extended Abstracts — **Cross-Country Examination of People’s Experience with Targeted Advertising on Social Media**
 - 2024 | [HCI] Yang Wang, Tanusree Sharma | International Conference on Human Factor — **“I Can’t Believe It’s Not Custodial!”: Usable Trustless Decentralized Key Management**
@@ -84,6 +86,7 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2024 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **Interdisciplinary Approaches to Cybervulnerability Impact Assessment for Energy Critical Infrastructure**
 - 2024 | [HCI] Lorrie Faith Cranor | International Conference on Human Factor — **Is a Trustmark and QR Code Enough? The Effect of IoT Security and Privacy Label Information Complexity on Consumer Comprehension and Behavior**
 - 2024 | [HCI] Collins W. Munyendo | CHI Extended Abstracts — **An Analysis of Password Managers’ Password Checkup Tools**
+- 2024 | [HCI] Arkaprabha Bhattacharya | International Conference on Human Factor — **Shortchanged: Uncovering and Analyzing Intimate Partner Financial Abuse in Consumer Complaints** (arXiv:2403.13944)
 - 2023 | [HCI] Yang Wang, Yaman Yu, Tanusree Sharma | International Conference on Human Factor — **User Perceptions and Experiences of Targeted Ads on Social Media Platforms: Learning from Bangladesh and India**
 - 2023 | [HCI] Tanusree Sharma | International Conference on Human Factor — **Disability-First Design and Creation of A Dataset Showing Private Visual Information Collected With People Who Are Blind**
 - 2023 | [HCI] Elissa M. Redmiles | International Conference on Human Factor — **Analyzing User Engagement with TikTok's Short Format Video Recommendations using Data Donations** (arXiv:2301.04945)

@@ -1,26 +1,38 @@
 # 大牛 · 安全会议(四大会 + SOUPS/PETS)近期论文
 
-_生成于 2026-09-07；🆕 = 最近 18 个月_
+_生成于 2026-09-16；🆕 = 最近 18 个月_
 
 - 2026 🆕 | [SEC] Yixin Zou, Elissa M. Redmiles, Collins W. Munyendo | IEEE Symposium on Security and Privacy — **“I Wonder if These Warnings are Accurate”: Security and Privacy Advice in Nine Majority World Countries**
-- 2026 🆕 | [SEC] Yixin Zou | IEEE Symposium on Security and Privacy — **Toward Inclusive Security and Privacy for Deaf and Hard-of-Hearing People: A Community-Based Interview Study**
+- 2026 🆕 | [SEC] Yixin Zou, Mindy Tran | IEEE Symposium on Security and Privacy — **Toward Inclusive Security and Privacy for Deaf and Hard-of-Hearing People: A Community-Based Interview Study**
 - 2026 🆕 | [SEC] Elissa M. Redmiles | Symposium On Usable Privacy and Security — **Goals, Risks, and Safety Practices in Online Labor Abuse Disclosures**
+- 2026 🆕 | [SEC] Michelle L. Mazurek | Symposium On Usable Privacy and Security — **Nudging Developers Toward Privacy: Evaluating the Impact of Personalized App Review Reports**
+- 2026 🆕 | [SEC] Michelle L. Mazurek | Symposium On Usable Privacy and Security — **The Impact of Emerging AI Practices on the Cybersecurity Workforce**
 - 2026 🆕 | [SEC] Michelle L. Mazurek | IEEE Symposium on Security and Privacy — **Perceived Privacy Risk and Mitigation Post-Roe**
 - 2026 🆕 | [SEC] Michelle L. Mazurek | Proceedings on Privacy Enhancing Technol — **How Experts Personalize Privacy & Security Advice for At-Risk Users**
+- 2026 🆕 | [SEC] Allison McDonald, Florian Schaub | Symposium On Usable Privacy and Security — **Nice to Know You're Not Alone: Co-designing Community-centered Online Safety and Privacy Education with Librarians**
 - 2026 🆕 | [SEC] Allison McDonald, Florian Schaub | Proceedings on Privacy Enhancing Technol — **How We Define Privacy Literacy: Teaching Experiences & Challenges of Community-Engaged Privacy Educators**
 - 2026 🆕 | [SEC] Shuning Zhang | Proceedings on Privacy Enhancing Technol — **Designing Reflective Thinking-Based Contextual Privacy Policy for Mobile Applications**
+- 2026 🆕 | [SEC] Lorrie Faith Cranor, Elijah Bouma-Sims | Symposium On Usable Privacy and Security — **Quantifying Risk Perception and Scam Response Among International and Domestic US University Students**
 - 2026 🆕 | [SEC] Lorrie Faith Cranor, Elijah Bouma-Sims | IEEE Symposium on Security and Privacy — **From “Be Careful” to “Here's Why”: Investigating User Reasoning with Context-Specific SMS Scam Warnings**
+- 2026 🆕 | [SEC] Warda Usman | Symposium On Usable Privacy and Security — **"Don't Let Them Get To You": Understanding the Role of TikTok as a Source of Support for Cyberbullying Victims**
+- 2026 🆕 | [SEC] David Langer | IEEE Symposium on Security and Privacy — **LISA: A Scale-Optimized and Psychometrically-Validated Instrument for the Lightweight Assessment of Organizational Information Security Awareness in Heterogeneous Organizations**
+- 2026 🆕 | [SEC] Tobias Reittinger | IEEE Symposium on Security and Privacy — **No Password, No Problem? A Large-Scale Field Study of Passkey Adoption and Usage**
+- 2026 🆕 | [SEC] Yusuke Kubo | Network and Distributed System Security  — **Action Required: A Mixed-Methods Study of Security Practices in GitHub Actions**
+- 2026 🆕 | [SEC] Kunlin Cai | Proceedings on Privacy Enhancing Technol — **Location-Enhanced Information Flow for Home Automations**
+- 2026 🆕 | [SEC] Erwin Kupris | European Symposium on Security and Priva — **All You Need is Trust: A Longitudinal Analysis of Italy’s OpenID Federation Journey**
+- 2026 🆕 | [SEC] Erwin Kupris | IEEE Symposium on Security and Privacy — **The Passkey Promise: A Comparative Usability Study of MFA Methods**
 - 2025 🆕 | [SEC] Yang Wang, Yaman Yu | Conference on Computer and Communication — **YouthSafe: A Youth-Centric Safety Benchmark and Safeguard Model for Large Language Models** (arXiv:2509.08997)
 - 2025 🆕 | [SEC] Yang Wang, Yaman Yu | Symposium On Usable Privacy and Security — **Youth-Centered GAI Risks (YAIR): A Taxonomy of Generative AI Risks from Empirical Data**
 - 2025 🆕 | [SEC] Yang Wang, Yaman Yu, Tanusree Sharma | IEEE Symposium on Security and Privacy — **Security Perceptions of Users in Stablecoins: Advantages and Risks within the Cryptocurrency Ecosystem**
 - 2025 🆕 | [SEC] Yang Wang, Yaman Yu, Yixin Zou, Tanusree Sharma | Proceedings on Privacy Enhancing Technol — **Privacy Perceptions and Behaviors Towards Targeted Advertising on Social Media: A Cross-Country Study on the Effect of Culture and Religion**
-- 2025 🆕 | [SEC] Yixin Zou | IEEE Symposium on Security and Privacy — **Human-Centered Threat Modeling in Practice: Lessons, Challenges, and Paths Forward** (arXiv:2511.13781)
+- 2025 🆕 | [SEC] Yixin Zou, Warda Usman | IEEE Symposium on Security and Privacy — **Human-Centered Threat Modeling in Practice: Lessons, Challenges, and Paths Forward** (arXiv:2511.13781)
 - 2025 🆕 | [SEC] Yixin Zou, Collins W. Munyendo | USENIX Security Symposium — **"No, I Can't Be a Security Personnel on Your Phone": Security and Privacy Threats From Sharing Infrastructure in Rural Ghana**
 - 2025 🆕 | [SEC] Yixin Zou | Symposium On Usable Privacy and Security — **More than Usability: Differential Access to Digital Security and Privacy**
 - 2025 🆕 | [SEC] Yixin Zou, Collins W. Munyendo | USENIX Security Symposium — **Digital Security Perceptions and Practices Around the World: A WEIRD versus Non-WEIRD Comparison**
-- 2025 🆕 | [SEC] Yixin Zou | IEEE Symposium on Security and Privacy — **SoK: A Privacy Framework for Security Research Using Social Media Data**
+- 2025 🆕 | [SEC] Yixin Zou, Mindy Tran | IEEE Symposium on Security and Privacy — **SoK: A Privacy Framework for Security Research Using Social Media Data**
 - 2025 | [SEC] Yixin Zou | Proceedings on Privacy Enhancing Technol — **"What are they gonna do with my data?": Privacy Expectations, Concerns, and Behaviors in Virtual Reality**
 - 2025 | [SEC] Yixin Zou, Florian Schaub | Proceedings on Privacy Enhancing Technol — **Misalignments and Demographic Differences in Expected and Actual Privacy Settings on Facebook**
+- 2025 🆕 | [SEC] Jingjie Li | Proceedings on Privacy Enhancing Technol — **Understanding How University Guidelines Address Privacy and Security Issues of Generative AI in Academic Settings** (arXiv:2506.20463)
 - 2025 | [SEC] Jingjie Li | Proceedings on Privacy Enhancing Technol — **Privacy Bills of Materials: A Transparent Privacy Information Inventory for Collaborative Privacy Notice Generation in Mobile App Development** (arXiv:2501.01131)
 - 2025 🆕 | [SEC] Elissa M. Redmiles | IEEE Symposium on Security and Privacy — **Evaluating Concept Filtering Defenses against Child Sexual Abuse Material Generation by Text-to-Image Models** (arXiv:2512.05707)
 - 2025 🆕 | [SEC] Michelle L. Mazurek | Conference on Computer and Communication — **A Qualitative Analysis of Fuzzer Usability and Challenges**
@@ -45,6 +57,13 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2025 🆕 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **Rethinking Fingerprinting: An Assessment of Behavior-based Methods at Scale and Implications for Web Tracking**
 - 2025 🆕 | [SEC] Lorrie Faith Cranor | USENIX Security Symposium — **Privacy Solution or Menace? Investigating Perceptions of Radio-Frequency Sensing**
 - 2025 🆕 | [SEC] Lorrie Faith Cranor, Elijah Bouma-Sims | Network and Distributed System Security  — **The Kids Are All Right: Investigating the Susceptibility of Teens and Adults to YouTube Giveaway Scams**
+- 2025 🆕 | [SEC] Warda Usman | IEEE Symposium on Security and Privacy — **Security and Privacy Experiences of First- and Second-Generation Pakistani Immigrants to the US: Perceptions, Practices, Challenges, and Parent-Child Dynamics**
+- 2025 🆕 | [SEC] Warda Usman | IEEE Symposium on Security and Privacy — **SoK: A Framework and Guide for Human-Centered Threat Modeling in Security and Privacy Research**
+- 2025 🆕 | [SEC] David Langer | Conference on Computer and Communication — **Phishing Susceptibility and the (In-)Effectiveness of Common Anti-Phishing Interventions in a Large University Hospital**
+- 2025 🆕 | [SEC] Arkaprabha Bhattacharya | USENIX Security Symposium — **A Framework for Abusability Analysis: The Case of Passkeys in Interpersonal Threat Models**
+- 2025 🆕 | [SEC] Kunlin Cai | IEEE Symposium on Security and Privacy — **Breaking the Illusion: Automated Reasoning of GDPR Consent Violations** (arXiv:2512.22789)
+- 2025 🆕 | [SEC] Kunlin Cai | Network and Distributed System Security  — **From Perception to Protection: A Developer-Centered Study of Security and Privacy Threats in Extended Reality (XR)** (arXiv:2509.06368)
+- 2025 🆕 | [SEC] Erwin Kupris | 2025 IEEE European Symposium on Security — **Identity Threats and Where to Find Them: Mapping ITDR and MITRE ATT&CK**
 - 2024 | [SEC] Yang Wang, Tanusree Sharma | USENIX Security Symposium — **"I'm not convinced that they don't collect more than is necessary": User-Controlled Data Minimization Design in Search Engines**
 - 2024 | [SEC] Yang Wang, Yaman Yu, Tanusree Sharma | IEEE Symposium on Security and Privacy — **Exploring Parent-Child Perceptions on Safety in Generative AI: Concerns, Mitigation Strategies, and Design Implications** (arXiv:2406.10461)
 - 2024 | [SEC] Yixin Zou, Florian Schaub | Proceedings on Privacy Enhancing Technol — **Cross-Contextual Examination of Older Adults' Privacy Concerns, Behaviors, and Vulnerabilities**
@@ -71,7 +90,7 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2024 | [SEC] Gabriel Kaptchuk | Conference on Computer and Communication — **Dora: A Simple Approach to Zero-Knowledge for RAM Programs**
 - 2024 | [SEC] Gabriel Kaptchuk | Proceedings on Privacy Enhancing Technol — **SocIoTy: Practical Cryptography in Smart Home Contexts**
 - 2024 | [SEC] Miranda Wei, Tadayoshi Kohno | USENIX Security Symposium — **Understanding Help-Seeking and Help-Giving on Social Media for Image-Based Sexual Abuse** (arXiv:2406.12161)
-- 2024 | [SEC] Tadayoshi Kohno | USENIX Security Symposium — **When the User Is Inside the User Interface: An Empirical Study of UI Security Properties in Augmented Reality**
+- 2024 | [SEC] Tadayoshi Kohno, Arkaprabha Bhattacharya | USENIX Security Symposium — **When the User Is Inside the User Interface: An Empirical Study of UI Security Properties in Augmented Reality**
 - 2024 | [SEC] Tadayoshi Kohno | Network and Distributed System Security  — **Experimental Analyses of the Physical Surveillance Risks in Client-Side Content Scanning**
 - 2024 | [SEC] Tadayoshi Kohno | USENIX Security Symposium — **"But they have overlooked a few things in Afghanistan: " An Analysis of the Integration of Biometric Voter Verification in the 2019 Afghan Presidential Elections**
 - 2024 | [SEC] Tadayoshi Kohno | Network and Distributed System Security  — **IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems** (arXiv:2403.04960)
@@ -82,10 +101,15 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2024 | [SEC] Lorrie Faith Cranor | SOUPS @ USENIX Security Symposium — **Exploring Expandable-Grid Designs to Make iOS App Privacy Labels More Usable**
 - 2024 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **What Do Privacy Advertisements Communicate to Consumers?** (arXiv:2405.13857)
 - 2024 | [SEC] Lorrie Faith Cranor, Elijah Bouma-Sims | Proceedings on Privacy Enhancing Technol — **Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US**
-- 2024 | [SEC] Collins W. Munyendo | IEEE Symposium on Security and Privacy — **Security, Privacy, and Data-sharing Trade-offs When Moving to the United States: Insights from a Qualitative Study**
+- 2024 | [SEC] Collins W. Munyendo, Mindy Tran | IEEE Symposium on Security and Privacy — **Security, Privacy, and Data-sharing Trade-offs When Moving to the United States: Insights from a Qualitative Study**
 - 2024 | [SEC] Elijah Bouma-Sims | Proceedings on Privacy Enhancing Technol — **Crumbling Cookie Categories: Deconstructing Common Cookie Categories to Create Categories that People Understand**
+- 2024 | [SEC] Mindy Tran | Proceedings on Privacy Enhancing Technol — **"Those things are written by lawyers, and programmers are reading that." Mapping the Communication Gap Between Software Developers and Privacy Experts**
+- 2024 | [SEC] Tobias Reittinger | SOUPS @ USENIX Security Symposium — **Digital Nudges for Access Reviews: Guiding Deciders to Revoke Excessive Authorizations**
 - 2024 | [SEC] Kelechi G. Kalu | USENIX Security Symposium — **An Industry Interview Study of Software Signing for Supply Chain Security** (arXiv:2406.08198)
 - 2024 | [SEC] Kelechi G. Kalu | IEEE Symposium on Security and Privacy — **Signing in Four Public Software Package Registries: Quantity, Quality, and Influencing Factors** (arXiv:2401.14635)
+- 2024 | [SEC] Kunlin Cai | Conference on Computer and Communication — **BadMerging: Backdoor Attacks Against Model Merging** (arXiv:2408.07362)
+- 2024 | [SEC] Kunlin Cai | USENIX Security Symposium — **Remote Keylogging Attacks in Multi-user VR Applications** (arXiv:2405.14036)
+- 2024 | [SEC] Neele Roch | SOUPS @ USENIX Security Symposium — **Navigating Autonomy: Unveiling Security Experts' Perspectives on Augmented Intelligence in Cybersecurity**
 - 2023 | [SEC] Yang Wang, Yaman Yu | IEEE Symposium on Security and Privacy — **Design and Evaluation of Inclusive Email Security Indicators for People with Visual Impairments**
 - 2023 | [SEC] Yang Wang | IEEE Symposium on Security and Privacy — **When and Why Do People Want Ad Targeting Explanations? Evidence from a Four-Week, Mixed-Methods Field Study**
 - 2023 | [SEC] Jingjie Li, Florian Schaub | IEEE Symposium on Security and Privacy — **“It’s up to the Consumer to be Smart”: Understanding the Security and Privacy Attitudes of Smart Home Users on Reddit**
@@ -116,6 +140,7 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2023 | [SEC] Lorrie Faith Cranor | Proceedings on Privacy Enhancing Technol — **Is There a Reverse Privacy Paradox? An Exploratory Analysis of Gaps Between Privacy Perspectives and Privacy-Seeking Behaviors**
 - 2023 | [SEC] Collins W. Munyendo | Conference on Computer and Communication — **"I just stopped using one and started using the other": Motivations, Techniques, and Challenges When Switching Password Managers**
 - 2023 | [SEC] Collins W. Munyendo | IEEE Symposium on Security and Privacy — **"In Eighty Percent of the Cases, I Select the Password for Them": Security and Privacy Challenges, Advice, and Opportunities at Cybercafes in Kenya**
+- 2023 | [SEC] Warda Usman | Symposium On Usable Privacy and Security — **Distrust of big tech and a desire for privacy: Understanding the motivations of people who have voluntarily adopted secure email**
 - 2022 | [SEC] Yang Wang | USENIX Security Symposium — **DeepPhish: Understanding User Trust Towards Artificially Generated Profiles in Online Social Networks**
 - 2022 | [SEC] Elissa M. Redmiles | USENIX Security Symposium — **"Like Lesbians Walking the Perimeter": Experiences of U.S. LGBTQ+ Folks With Online Security, Safety, and Privacy Advice**
 - 2022 | [SEC] Elissa M. Redmiles, Vaughn Hamilton, Allison McDonald | 2022 IEEE European Symposium on Security — **Ethical Practices for Security Research with At-Risk Populations**

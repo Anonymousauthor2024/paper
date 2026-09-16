@@ -1,6 +1,6 @@
 # 大牛库 · 各学者的最近论文
 
-_生成于 2026-09-07；🆕 = 最近 18 个月_
+_生成于 2026-09-16；🆕 = 最近 18 个月_
 
 
 ## Yang Wang (UIUC) — 领域内 20 篇，近 18 月 6 篇
@@ -64,11 +64,13 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2024 | [SEC] Proceedings on Privacy Enhancing Technol — **Cross-Contextual Examination of Older Adults' Privacy Concerns, Behaviors, and Vulnerabilities**
 - 2022 | [HCI] International Conference on Human Factor — **Trauma-Informed Computing: Towards Safer Technology Experiences for All**
 
-## Jingjie Li (University of Edinburgh) — 领域内 11 篇，近 18 月 4 篇
+## Jingjie Li (University of Edinburgh) — 领域内 13 篇，近 18 月 5 篇
+- 2026 🆕 | [arXiv] — — **PIA-Bench: Towards Automated Privacy Impact Assessment with Large Language Models** (arXiv:2609.12571)
 - 2026 🆕 | [HCI] Symposium on Designing Interactive Syste — **Stepping Into the Black Box: Opening Up LLMs to Public Exploration Through Discursive Design**
 - 2026 🆕 | [HCI] International Conference on Human Factor — **Speculative Performance: Staging Intergenerational Speculation to Explore Critical Literacies of Technological Futures**
 - 2026 🆕 | [HCI] International Conference on Human Factor — **Characterizing Scam-Driven Human Trafficking Across Chinese Borders and Online Community Responses on RedNote** (arXiv:2603.26520)
-- 2025 🆕 | [HCI] International Conference on Human Factor — **``Impressively Scary:' Exploring User Perceptions and Reactions to Unraveling Machine Learning Models in Social Media Applications** (arXiv:2503.03927)
+- 2025 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **Understanding How University Guidelines Address Privacy and Security Issues of Generative AI in Academic Settings** (arXiv:2506.20463)
+- 2025 | [HCI] International Conference on Human Factor — **``Impressively Scary:' Exploring User Perceptions and Reactions to Unraveling Machine Learning Models in Social Media Applications** (arXiv:2503.03927)
 - 2025 | [SEC] Proceedings on Privacy Enhancing Technol — **Privacy Bills of Materials: A Transparent Privacy Information Inventory for Collaborative Privacy Notice Generation in Mobile App Development** (arXiv:2501.01131)
 - 2024 | [HCI] International Conference on Human Factor — **I see an IC: A Mixed-Methods Approach to Study Human Problem-Solving Processes in Hardware Reverse Engineering** (arXiv:2402.15452)
 - 2023 | [SEC] IEEE Symposium on Security and Privacy — **“It’s up to the Consumer to be Smart”: Understanding the Security and Privacy Attitudes of Smart Home Users on Reddit**
@@ -121,7 +123,9 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2022 | [HCI] International Conference on Human Factor — **A Large-Scale Measurement of Cybercrime Against Individuals**
 - 2022 | [arXiv] Proc. ACM Hum. Comput. Interact. — **Ethics and Efficacy of Unsolicited Anti-Trafficking SMS Outreach** (arXiv:2202.09527)
 
-## Michelle L. Mazurek (University of Maryland) — 领域内 96 篇，近 18 月 8 篇
+## Michelle L. Mazurek (University of Maryland) — 领域内 99 篇，近 18 月 10 篇
+- 2026 🆕 | [SEC] Symposium On Usable Privacy and Security — **Nudging Developers Toward Privacy: Evaluating the Impact of Personalized App Review Reports**
+- 2026 🆕 | [SEC] Symposium On Usable Privacy and Security — **The Impact of Emerging AI Practices on the Cybersecurity Workforce**
 - 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Perceived Privacy Risk and Mitigation Post-Roe**
 - 2026 🆕 | [arXiv] arXiv.org — **Continuous Discovery of Vulnerabilities in LLM Serving Systems with Fuzzing** (arXiv:2605.11202)
 - 2026 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **How Experts Personalize Privacy & Security Advice for At-Risk Users**
@@ -171,7 +175,8 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2022 | [HCI] International Conference on Human Factor — **“Nudes? Shouldn’t I charge for these?”: Motivations of New Sexual Content Creators on OnlyFans** (arXiv:2205.10425)
 - 2022 | [arXiv] Proc. ACM Hum. Comput. Interact. — **Ethics and Efficacy of Unsolicited Anti-Trafficking SMS Outreach** (arXiv:2202.09527)
 
-## Allison McDonald (Boston University) — 领域内 17 篇，近 18 月 3 篇
+## Allison McDonald (Boston University) — 领域内 18 篇，近 18 月 4 篇
+- 2026 🆕 | [SEC] Symposium On Usable Privacy and Security — **Nice to Know You're Not Alone: Co-designing Community-centered Online Safety and Privacy Education with Librarians**
 - 2026 🆕 | [HCI] International Conference on Human Factor — **Surveillance, Spacing, Screaming and Scabbing: How Digital Technology Facilitates Union Busting** (arXiv:2603.03130)
 - 2026 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **How We Define Privacy Literacy: Teaching Experiences & Challenges of Community-Engaged Privacy Educators**
 - 2025 🆕 | [HCI] CSCW Companion — **Co-Constructing the Future of Digital Intimacy**
@@ -198,7 +203,7 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2022 | [SEC] SOUPS @ USENIX Security Symposium — **Anti-Privacy and Anti-Security Advice on TikTok: Case Studies of Technology-Enabled Surveillance and Control in Intimate Partner and Parent-Child Relationships**
 - 2022 | [HCI] CHI Extended Abstracts — **Styx++: Reliable Data Access and Availability Using a Hybrid Paxos and Chain Replication Protocol**
 
-## Tadayoshi Kohno (University of Washington) — 领域内 90 篇，近 18 月 9 篇
+## Tadayoshi Kohno (University of Washington) — 领域内 91 篇，近 18 月 9 篇
 - 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Towards Automating Data Access Permissions in AI Agents** (arXiv:2511.17959)
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **Ethics in Computer Security Research: A Data-Driven Assessment of the Past, the Present, and the Possible Future**
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **Poster: Computer Security Researchers' Experiences with Vulnerability Disclosures**
@@ -230,7 +235,7 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2022 | [SEC] SOUPS @ USENIX Security Symposium — **Anti-Privacy and Anti-Security Advice on TikTok: Case Studies of Technology-Enabled Surveillance and Control in Intimate Partner and Parent-Child Relationships**
 - 2022 | [SEC] USENIX Security Symposium — **Electronic Monitoring Smartphone Apps: An Analysis of Risks from Technical, Human-Centered, and Legal Perspectives**
 
-## Zhicong Lu (City University of Hong Kong) — 领域内 55 篇，近 18 月 16 篇
+## Zhicong Lu (City University of Hong Kong) — 领域内 55 篇，近 18 月 15 篇
 - 2026 🆕 | [arXiv] — — **Balancing Safety and Autonomy: Accessibility-Oriented Interventions in Generative AI for Cognitive Impairment** (arXiv:2608.17175)
 - 2026 🆕 | [arXiv] arXiv.org — **HIPIF: Hierarchical Planning and Information Folding for Long-Horizon LLM Agent Learning** (arXiv:2606.10507)
 - 2026 🆕 | [arXiv] arXiv.org — **LLM-as-a-Reviewer: Benchmarking Their Ability, Divergence, and Prompt Injection Resistance as Paper Reviewers** (arXiv:2605.25415)
@@ -246,7 +251,7 @@ _生成于 2026-09-07；🆕 = 最近 18 个月_
 - 2025 🆕 | [HCI] International Conference on Human Factor — **'Douyin is My Nourishment of the Mind': Exploring the Infrastructuralization Process of Short Video Sharing Platforms From Rural People’s Perspective**
 - 2025 🆕 | [HCI] International Conference on Human Factor — **ProductMeta: An Interactive System for Metaphorical Product Design Ideation with Multimodal Large Language Models**
 - 2025 🆕 | [HCI] International Conference on Human Factor — **"Can't believe I'm crying over an anime girl": Public Parasocial Grieving and Coping Towards VTuber Graduation and Termination** (arXiv:2504.13421)
-- 2025 🆕 | [HCI] CHI Extended Abstracts — **RevTogether: Supporting Science Story Revision with Multiple AI Agents** (arXiv:2503.01608)
+- 2025 | [HCI] CHI Extended Abstracts — **RevTogether: Supporting Science Story Revision with Multiple AI Agents** (arXiv:2503.01608)
 - 2025 | [HCI] International Conference on Human Factor — **How Users Who are Blind or Low Vision Play Mobile Games: Perceptions, Challenges, and Strategies** (arXiv:2502.09866)
 - 2025 | [HCI] International Conference on Human Factor — **HarmonyCut: Supporting Creative Chinese Paper-cutting Design with Form and Connotation Harmony** (arXiv:2502.07628)
 - 2024 | [HCI] International Conference on Human Factor — **Let's Influence Algorithms Together: How Millions of Fans Build Collective Understanding of Algorithms and Organize Coordinated Algorithmic Actions** (arXiv:2409.10670)
@@ -340,7 +345,7 @@ _(近年无领域内论文)_
 - 2026 🆕 | [arXiv] arXiv.org — **Advances and Frontiers of LLM-based Issue Resolution in Software Engineering: A Comprehensive Survey** (arXiv:2601.11655)
 - 2025 🆕 | [arXiv] arXiv.org — **Coinvisor: An RL-Enhanced Chatbot Agent for Interactive Cryptocurrency Investment Analysis** (arXiv:2510.17235)
 - 2025 🆕 | [arXiv] — — **RISKTAGGER: Evidence-Guided LLM Agent for Post-Incident Forensic Analysis of Money Laundering in Web3** (arXiv:2510.17848)
-- 2025 🆕 | [arXiv] arXiv.org — **FORGE: An LLM-driven Framework for Large-Scale Smart Contract Vulnerability Dataset Construction** (arXiv:2506.18795)
+- 2025 🆕 | [arXiv] Proceedings of the 2026 IEEE/ACM 48th In — **FORGE: An LLM-driven Framework for Large-Scale Smart Contract Vulnerability Dataset Construction** (arXiv:2506.18795)
 - 2025 🆕 | [arXiv] IEEE Transactions on Software Engineerin — **NumScout: Unveiling Numerical Defects in Smart Contracts Using LLM-Pruning Symbolic Execution** (arXiv:2503.10041)
 - 2024 | [arXiv] Proc. ACM Softw. Eng. — **LLM Hallucinations in Practical Code Generation: Phenomena, Mechanism, and Mitigation** (arXiv:2409.20550)
 - 2024 | [arXiv] International Conference on Software Eng — **Hyperion: Unveiling DApp Inconsistencies Using LLM and Dataflow-Guided Symbolic Execution** (arXiv:2408.06037)
@@ -348,7 +353,8 @@ _(近年无领域内论文)_
 - 2024 | [arXiv] International Symposium on Software Test — **Identifying Smart Contract Security Issues in Code Snippets from Stack Overflow** (arXiv:2407.13271)
 - 2024 | [arXiv] IEEE Transactions on Software Engineerin — **CRPWarner: Warning the Risk of Contract-Related Rug Pull in DeFi Smart Contracts** (arXiv:2403.01425)
 
-## Florian Schaub (University of Michigan) — 领域内 54 篇，近 18 月 8 篇
+## Florian Schaub (University of Michigan) — 领域内 55 篇，近 18 月 9 篇
+- 2026 🆕 | [SEC] Symposium On Usable Privacy and Security — **Nice to Know You're Not Alone: Co-designing Community-centered Online Safety and Privacy Education with Librarians**
 - 2026 🆕 | [HCI] International Conference on Human Factor — **Privacy and Trust vs. Utility: Adoption of Commercial vs. Institutional AI assistants Among University Users**
 - 2026 🆕 | [HCI] International Conference on Human Factor — **“Families are messy”: From Parent-Child Tensions to Family-Centered Design of Smart Home Technologies**
 - 2026 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **How We Define Privacy Literacy: Teaching Experiences & Challenges of Community-Engaged Privacy Educators**
@@ -370,15 +376,14 @@ _(近年无领域内论文)_
 - 2022 | [SEC] Proceedings on Privacy Enhancing Technol — **Increasing Adoption of Tor Browser Using Informational and Planning Nudges**
 
 ## Lorrie Faith Cranor (CMU) — 领域内 133 篇，近 18 月 7 篇
+- 2026 🆕 | [SEC] Symposium On Usable Privacy and Security — **Quantifying Risk Perception and Scam Response Among International and Domestic US University Students**
 - 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **From “Be Careful” to “Here's Why”: Investigating User Reasoning with Context-Specific SMS Scam Warnings**
-- 2026 🆕 | [HCI] International Conference on Human Factor — **My Money, Your Name: Challenges and Workarounds in ID-Required Mobile Money in East Africa**
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **'Is this a scam?': The Nature and Quality of Reddit Discussion about Scams**
 - 2025 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **Rethinking Fingerprinting: An Assessment of Behavior-based Methods at Scale and Implications for Web Tracking**
 - 2025 🆕 | [arXiv] Journal of Cybersecurity — **The Impact of Device Type, Data Practices, and Use Case Scenarios on Privacy Concerns about Eye-tracked Augmented Reality in the United States and Germany** (arXiv:2509.09285)
 - 2025 🆕 | [SEC] USENIX Security Symposium — **Privacy Solution or Menace? Investigating Perceptions of Radio-Frequency Sensing**
 - 2025 🆕 | [SEC] Network and Distributed System Security  — **The Kids Are All Right: Investigating the Susceptibility of Teens and Adults to YouTube Giveaway Scams**
 - 2024 | [SEC] Symposium On Usable Privacy and Security — **Design and Evaluation of Privacy-Preserving Protocols for Agent-Facilitated Mobile Money Services in Kenya** (arXiv:2412.18716)
-- 2024 | [arXiv] European Symposium on Usable Security — **Detection and Impact of Debit/Credit Card Fraud: Victims' Experiences** (arXiv:2408.08131)
 - 2024 | [arXiv] arXiv.org — **Recruiting Teenage Participants for an Online Security Experiment: A Case Study Using Peachjar** (arXiv:2408.00864)
 - 2024 | [arXiv] Journal of Cybersecurity — **Work from home and privacy challenges: what do workers face and what are they doing about it?** (arXiv:2407.10094)
 - 2024 | [SEC] SOUPS @ USENIX Security Symposium — **"It was honestly just gambling": Investigating the Experiences of Teenage Cryptocurrency Users on Reddit**
@@ -421,7 +426,8 @@ _(近年无领域内论文)_
 - 2022 | [SEC] USENIX Security Symposium — **"The Same PIN, Just Longer": On the (In)Security of Upgrading PINs from 4 to 6 Digits**
 - 2022 | [SEC] IEEE Symposium on Security and Privacy — **“Desperate Times Call for Desperate Measures”: User Concerns with Mobile Loan Apps in Kenya**
 
-## Elijah Bouma-Sims (Carnegie Mellon University) — 领域内 10 篇，近 18 月 3 篇
+## Elijah Bouma-Sims (Carnegie Mellon University) — 领域内 11 篇，近 18 月 4 篇
+- 2026 🆕 | [SEC] Symposium On Usable Privacy and Security — **Quantifying Risk Perception and Scam Response Among International and Domestic US University Students**
 - 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **From “Be Careful” to “Here's Why”: Investigating User Reasoning with Context-Specific SMS Scam Warnings**
 - 2025 🆕 | [SEC] Conference on Computer and Communication — **'Is this a scam?': The Nature and Quality of Reddit Discussion about Scams**
 - 2025 🆕 | [SEC] Network and Distributed System Security  — **The Kids Are All Right: Investigating the Susceptibility of Teens and Adults to YouTube Giveaway Scams**
@@ -431,17 +437,31 @@ _(近年无领域内论文)_
 - 2024 | [SEC] Proceedings on Privacy Enhancing Technol — **Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US**
 - 2023 | [HCI] International Conference on Human Factor — **A US-UK Usability Evaluation of Consent Management Platform Cookie Consent Interface Design on Desktop and Mobile**
 
-## Warda Usman (Brigham Young University) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## Warda Usman (Brigham Young University) — 领域内 6 篇，近 18 月 5 篇
+- 2026 🆕 | [SEC] Symposium On Usable Privacy and Security — **"Don't Let Them Get To You": Understanding the Role of TikTok as a Source of Support for Cyberbullying Victims**
+- 2026 🆕 | [HCI] International Conference on Human Factor — **Understanding Gendered Experiences of Harassment Among Pakistani Young Adults Using Human-Centered Threat Modeling**
+- 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Human-Centered Threat Modeling in Practice: Lessons, Challenges, and Paths Forward** (arXiv:2511.13781)
+- 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Security and Privacy Experiences of First- and Second-Generation Pakistani Immigrants to the US: Perceptions, Practices, Challenges, and Parent-Child Dynamics**
+- 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **SoK: A Framework and Guide for Human-Centered Threat Modeling in Security and Privacy Research**
+- 2023 | [SEC] Symposium On Usable Privacy and Security — **Distrust of big tech and a desire for privacy: Understanding the motivations of people who have voluntarily adopted secure email**
 
-## David Langer (Justus Liebig University Giessen) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## David Langer (Justus Liebig University Giessen) — 领域内 2 篇，近 18 月 2 篇
+- 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **LISA: A Scale-Optimized and Psychometrically-Validated Instrument for the Lightweight Assessment of Organizational Information Security Awareness in Heterogeneous Organizations**
+- 2025 🆕 | [SEC] Conference on Computer and Communication — **Phishing Susceptibility and the (In-)Effectiveness of Common Anti-Phishing Interventions in a Large University Hospital**
 
-## Mindy Tran (Max Planck Institute for Security and Privacy) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## Mindy Tran (Max Planck Institute for Security and Privacy) — 领域内 7 篇，近 18 月 4 篇
+- 2026 🆕 | [HCI] Symposium on Designing Interactive Syste — **Revealed or Reinforced: How Assistive Technologies Shape the Experience with Dark Patterns for Blind and Low-Vision Users**
+- 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Toward Inclusive Security and Privacy for Deaf and Hard-of-Hearing People: A Community-Based Interview Study**
+- 2026 🆕 | [HCI] International Conference on Human Factor — **From Harm to Healing: Understanding Individual Resilience after Cybercrimes** (arXiv:2601.16050)
+- 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **SoK: A Privacy Framework for Security Research Using Social Media Data**
+- 2024 | [arXiv] — — **Analyzing Challenges in Deployment of the SLSA Framework for Software Supply Chain Security** (arXiv:2409.05014)
+- 2024 | [SEC] IEEE Symposium on Security and Privacy — **Security, Privacy, and Data-sharing Trade-offs When Moving to the United States: Insights from a Qualitative Study**
+- 2024 | [SEC] Proceedings on Privacy Enhancing Technol — **"Those things are written by lawyers, and programmers are reading that." Mapping the Communication Gap Between Software Developers and Privacy Experts**
 
-## Tobias Reittinger (University of Regensburg) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## Tobias Reittinger (University of Regensburg) — 领域内 3 篇，近 18 月 2 篇
+- 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **No Password, No Problem? A Large-Scale Field Study of Passkey Adoption and Usage**
+- 2026 🆕 | [HCI] International Conference on Human Factor — **Moving Beyond Passwords: Investigating the Effect of Digital Nudges on Passkey Adoption**
+- 2024 | [SEC] SOUPS @ USENIX Security Symposium — **Digital Nudges for Access Reviews: Guiding Deciders to Revoke Excessive Authorizations**
 
 ## Kelechi G. Kalu (Purdue University) — 领域内 5 篇，近 18 月 1 篇
 - 2026 🆕 | [arXiv] arXiv.org — **Operationalizing Research Software for Supply Chain Security** (arXiv:2601.20980)
@@ -450,23 +470,36 @@ _(近年无领域内论文)_
 - 2024 | [SEC] IEEE Symposium on Security and Privacy — **Signing in Four Public Software Package Registries: Quantity, Quality, and Influencing Factors** (arXiv:2401.14635)
 - 2023 | [arXiv] SCORED@CCS — **An Empirical Study on Using Large Language Models to Analyze Software Supply Chain Security Failures** (arXiv:2308.04898)
 
-## Arkaprabha Bhattacharya (Cornell University) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## Arkaprabha Bhattacharya (Cornell University) — 领域内 4 篇，近 18 月 1 篇
+- 2025 🆕 | [SEC] USENIX Security Symposium — **A Framework for Abusability Analysis: The Case of Passkeys in Interpersonal Threat Models**
+- 2024 | [arXiv] Asia-Pacific Computer Systems Architectu — **Learned, Lagged, LLM-Splained: LLM Responses to End User Security Questions** (arXiv:2411.14571)
+- 2024 | [SEC] USENIX Security Symposium — **When the User Is Inside the User Interface: An Empirical Study of UI Security Properties in Augmented Reality**
+- 2024 | [HCI] International Conference on Human Factor — **Shortchanged: Uncovering and Analyzing Intimate Partner Financial Abuse in Consumer Complaints** (arXiv:2403.13944)
 
-## Yusuke Kubo (NTT DOCOMO BUSINESS / Waseda University) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## Yusuke Kubo (NTT DOCOMO BUSINESS / Waseda University) — 领域内 1 篇，近 18 月 1 篇
+- 2026 🆕 | [SEC] Network and Distributed System Security  — **Action Required: A Mixed-Methods Study of Security Practices in GitHub Actions**
 
-## Kunlin Cai (University of California, Los Angeles) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## Kunlin Cai (University of California, Los Angeles) — 领域内 8 篇，近 18 月 5 篇
+- 2026 🆕 | [arXiv] arXiv.org — **RogueMerge: Robust and Unified Attacks against LLM Model Merging** (arXiv:2606.03344)
+- 2026 🆕 | [SEC] Proceedings on Privacy Enhancing Technol — **Location-Enhanced Information Flow for Home Automations**
+- 2025 🆕 | [SEC] IEEE Symposium on Security and Privacy — **Breaking the Illusion: Automated Reasoning of GDPR Consent Violations** (arXiv:2512.22789)
+- 2025 🆕 | [arXiv] arXiv.org — **A Multi-Store Privacy Measurement of Virtual Reality App Ecosystem** (arXiv:2510.23024)
+- 2025 🆕 | [SEC] Network and Distributed System Security  — **From Perception to Protection: A Developer-Centered Study of Security and Privacy Threats in Extended Reality (XR)** (arXiv:2509.06368)
+- 2024 | [SEC] Conference on Computer and Communication — **BadMerging: Backdoor Attacks Against Model Merging** (arXiv:2408.07362)
+- 2024 | [SEC] USENIX Security Symposium — **Remote Keylogging Attacks in Multi-user VR Applications** (arXiv:2405.14036)
+- 2023 | [arXiv] Knowledge Discovery and Data Mining — **Where Have You Been? A Study of Privacy Risk for Point-of-Interest Recommendation** (arXiv:2310.18606)
 
-## Erwin Kupris (Munich University of Applied Sciences) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## Erwin Kupris (Munich University of Applied Sciences) — 领域内 3 篇，近 18 月 3 篇
+- 2026 🆕 | [SEC] European Symposium on Security and Priva — **All You Need is Trust: A Longitudinal Analysis of Italy’s OpenID Federation Journey**
+- 2026 🆕 | [SEC] IEEE Symposium on Security and Privacy — **The Passkey Promise: A Comparative Usability Study of MFA Methods**
+- 2025 🆕 | [SEC] 2025 IEEE European Symposium on Security — **Identity Threats and Where to Find Them: Mapping ITDR and MITRE ATT&CK**
 
 ## Vijay Prakash (New York University) — 领域内 0 篇，近 18 月 0 篇
 _(近年无领域内论文)_
 
-## Neele Roch (ETH Zurich) — 领域内 0 篇，近 18 月 0 篇
-_(近年无领域内论文)_
+## Neele Roch (ETH Zurich) — 领域内 2 篇，近 18 月 1 篇
+- 2025 🆕 | [HCI] International Conference on Human Factor — **It's a Match - Enhancing the Fit between Users and Phishing Training through Personalisation**
+- 2024 | [SEC] SOUPS @ USENIX Security Symposium — **Navigating Autonomy: Unveiling Security Experts' Perspectives on Augmented Intelligence in Cybersecurity**
 
 ## Ronald E. Thompson III (Tufts University) — 领域内 0 篇，近 18 月 0 篇
 _(近年无领域内论文)_
