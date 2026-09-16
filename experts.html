@@ -499,7 +499,7 @@ summary{cursor:pointer;color:var(--acc);font-size:13px}.rest-papers a{color:var(
 .expert-theme-list li{padding:7px 0;border-top:1px dashed var(--line);font-size:13px}.expert-theme-list a{color:var(--fg);text-decoration:none}
 .tag-toolbar{position:sticky;top:42px;z-index:4;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px;margin:0 0 18px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 .tag-toolbar button,.tag-add{border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:999px;padding:3px 9px;cursor:pointer;font-size:11px}
-.tag-toolbar button.active{border-color:var(--acc);color:var(--acc)}.tag-toolbar .spacer{flex:1}
+.tag-toolbar button.active{border-color:var(--acc);color:var(--acc)}.tag-toolbar button:disabled{opacity:.4;cursor:not-allowed}.tag-toolbar .spacer{flex:1}
 .paper-tag-editor{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-top:8px;padding-top:7px;border-top:1px dashed var(--line)}
 .paper-user-tag{border:0;border-radius:999px;padding:2px 7px;font-size:11px;background:#eef2ff;color:#3849a3}
 button.paper-user-tag.custom{cursor:pointer}.tag-help{font-size:11px;color:var(--mut)}
@@ -571,9 +571,17 @@ window.PAPER_TAG_SEED = {"version": 1, "preset_tags": ["安全建议与学习", 
     if (!target) return;
     const unique = new Map();
     entries.forEach(entry => {
-      if (combined(entry).has("安全建议与学习") && !unique.has(entry.id)) unique.set(entry.id, entry);
+      const tags = combined(entry);
+      if (!tags.has("安全建议与学习")) return;
+      if (!matched(entry)) return;
+      if (!unique.has(entry.id)) unique.set(entry.id, entry);
     });
     target.innerHTML = "";
+    if (!unique.size) {
+      const tip = document.createElement("p"); tip.className = "muted";
+      tip.textContent = "当前标签「" + [...activeTags].join("、") + "」在本专题下没有命中论文。";
+      target.appendChild(tip); return;
+    }
     [...unique.values()].forEach(entry => {
       const card = document.createElement("article"); card.className = "ongoing-paper";
       const h = document.createElement("h4"); const a = document.createElement("a");
@@ -586,17 +594,58 @@ window.PAPER_TAG_SEED = {"version": 1, "preset_tags": ["安全建议与学习", 
       card.appendChild(tags); target.appendChild(card);
     });
   }
-  let activeTag = "";
+  let activeTags = new Set();
+  const matched = entry => {
+    if (!activeTags.size) return true;
+    const tags = combined(entry);
+    return [...activeTags].every(t => tags.has(t));
+  };
+  const groupSel = ".topic-block,.new-work-panel,.genai-card,.expert-theme-card," +
+                   "section.official-group,section.usable-theme,section.advice-group,section.experiment-group";
+  const groups = [...document.querySelectorAll(groupSel)].map(node => {
+    const head = node.querySelector(":scope > h3, :scope > h4");
+    const countEl = head ? [...head.querySelectorAll("span")]
+      .find(s => /^[0-9]+ ?篇$/.test(s.textContent.trim())) : null;
+    return {node, countEl, total: countEl ? parseInt(countEl.textContent, 10) : null,
+            papers: [...node.querySelectorAll(".paper-entry")]};
+  }).filter(g => g.papers.length);
   function applyFilter() {
-    entries.forEach(entry => { entry.node.hidden = !!activeTag && !combined(entry).has(activeTag); });
+    entries.forEach(entry => { entry.node.hidden = !matched(entry); });
+    document.querySelectorAll("details").forEach(d => {
+      if (activeTags.size) {
+        if (d.dataset.prevOpen === undefined) d.dataset.prevOpen = d.open ? "1" : "0";
+        d.open = [...d.querySelectorAll(".paper-entry")].some(n => !n.hidden);
+      } else if (d.dataset.prevOpen !== undefined) {
+        d.open = d.dataset.prevOpen === "1"; delete d.dataset.prevOpen;
+      }
+    });
+    groups.forEach(g => {
+      const shown = g.papers.filter(n => !n.hidden).length;
+      g.node.hidden = !!activeTags.size && shown === 0;
+      if (g.countEl) g.countEl.textContent = activeTags.size ? shown + " / " + g.total + " 篇" : g.total + " 篇";
+    });
+    renderOngoing();
   }
   function renderToolbar() {
     const bar = document.getElementById("tag-toolbar"); if (!bar) return;
     const allTags = new Set(preset); entries.forEach(entry => combined(entry).forEach(tag => allTags.add(tag)));
-    bar.innerHTML = '<span class="tag-help">标签筛选</span>';
+    bar.innerHTML = '<span class="tag-help">标签筛选' +
+      (activeTags.size ? "（已选 " + activeTags.size + " 个 · 取交集）" : "") + '</span>';
     ["", ...allTags].forEach(tag => {
-      const b=document.createElement("button"); b.type="button"; b.textContent=tag || "全部";
-      b.className=(activeTag===tag ? "active" : ""); b.onclick=()=>{activeTag=tag; renderToolbar(); applyFilter();}; bar.appendChild(b);
+      const probe = new Set(activeTags); if (tag) probe.add(tag);
+      const n = entries.filter(e => { const t = combined(e); return [...probe].every(x => t.has(x)); }).length;
+      const on = tag ? activeTags.has(tag) : !activeTags.size;
+      const b = document.createElement("button"); b.type = "button";
+      b.textContent = (tag || "全部") + "（" + n + "）";
+      b.disabled = !on && n === 0;
+      b.className = on ? "active" : "";
+      b.onclick = () => {
+        if (!tag) activeTags.clear();
+        else if (activeTags.has(tag)) activeTags.delete(tag);
+        else activeTags.add(tag);
+        renderToolbar(); applyFilter();
+      };
+      bar.appendChild(b);
     });
     const spacer=document.createElement("span"); spacer.className="spacer"; bar.appendChild(spacer);
     const exp=document.createElement("button"); exp.type="button"; exp.textContent="导出标签";
