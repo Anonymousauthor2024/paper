@@ -129,6 +129,27 @@ HCI_TOPIC_TERMS = (
     "phishing", "scam", "scams", "fraud", "authentication", "password", "passwords",
     "cybercrime", "warning", "warnings", "online abuse", "harassment", "data protection",
 )
+# 辅助驾驶专题：独立一路检索，不套 privacy/security 过滤。
+DRIVING_QUERY = "driving | driver | drivers | vehicle | vehicles | automotive | cockpit"
+DRIVING_STRONG_TERMS = (
+    "automated driving", "autonomous driving", "automated vehicle", "automated vehicles",
+    "autonomous vehicle", "autonomous vehicles", "self-driving", "driver assistance",
+    "advanced driver", "adas", "takeover request", "take-over request", "driving simulator",
+    "in-vehicle", "in-car", "driving system", "driver monitoring", "highly automated",
+    "conditionally automated", "lane keeping",
+)
+DRIVING_WEAK_TERMS = ("driver", "drivers", "driving")
+DRIVING_CONTEXT_TERMS = (
+    "vehicle", "vehicles", "car", "cars", "road", "roads", "traffic", "steering",
+    "lane", "overtaking", "pedestrian", "cockpit", "automotive", "highway",
+)
+HCI_CCF_A_VENUES = {
+    "International Conference on Human Factors in Computing Systems",   # CHI
+    "ACM Trans. Comput. Hum. Interact.",                                # TOCHI
+    "Ubiquitous Computing",                                             # UbiComp
+    "International Journal of Human-Computer Studies",                  # IJHCS
+}
+
 TOPIC_RULES_FILE = os.path.join(ROOT, "data", "topic_rules.json")
 
 STOP = set("""a an the of to in on for and or with without via using use uses used
@@ -338,6 +359,42 @@ def crossref_ijhcs_recent():
             "metadata_source": "Crossref",
         })
     return rows
+
+
+def is_assisted_driving(p):
+    text = norm_text((p.get("title") or "") + " " + (p.get("abstract") or ""))
+    if any(t in text for t in DRIVING_STRONG_TERMS):
+        return True
+    # a bare "driver" also matches kernel drivers, so require vehicle context
+    return (any(t in text for t in DRIVING_WEAK_TERMS)
+            and any(t in text for t in DRIVING_CONTEXT_TERMS))
+
+
+def assisted_driving_rows():
+    """Assisted-driving papers from the big four and the HCI sources.
+
+    Filtered on vehicle semantics only: the privacy/security screen used
+    elsewhere would drop most driving user studies.
+    """
+    rows = []
+    for venue in HCI_VENUES:
+        tier = "hci_ccf_a" if venue in HCI_CCF_A_VENUES else "hci_watch"
+        for p in bulk(venue, DRIVING_QUERY):
+            p["venue_tier"] = tier
+            rows.append(p)
+    for aliases in SEC_BIG4_VENUES.values():
+        for venue in aliases:
+            for p in bulk(venue, DRIVING_QUERY):
+                p["venue_tier"] = "big4"
+                rows.append(p)
+    out = []
+    for p in dedup(rows):
+        if (p.get("year") or 0) < 2025 or not is_assisted_driving(p):
+            continue
+        text = norm_text((p.get("title") or "") + " " + (p.get("abstract") or ""))
+        p["user_study_evidence"] = any(t in text for t in USER_STUDY_METHOD_TERMS)
+        out.append(p)
+    return out
 
 
 def is_hci_privacy_security(p):
