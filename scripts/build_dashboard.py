@@ -12,7 +12,7 @@ build_dashboard.py — 把已生成的数据汇总成一个自包含的 HTML 看
 
 只用标准库。不联网。
 """
-import json, os, re, html
+import json, os, re, html, unicodedata
 from collections import Counter
 from datetime import date
 
@@ -261,6 +261,11 @@ def merge_homepage(rows):
     rows.sort(key=lambda r: ((r["paper"].get("publicationDate") or ""),
                              r["paper"].get("year") or 0), reverse=True)
     return rows
+
+def load_projects():
+    raw = json.loads(read("data/projects.json") or "{}")
+    return raw.get("projects") or []
+
 
 def load_topic_rules():
     rules = json.loads(read("data/topic_rules.json") or "{}")
@@ -627,7 +632,7 @@ def advice_learning_html(data):
         rows = []
         for p in papers:
             rows.append(
-                '<article class="advice-paper">'
+                f'<article class="advice-paper" data-default-tags="{tag_attr(advice_tags(p))}">'
                 f'<div class="paper-meta">{year} · {html.escape(p.get("venue") or "")} · '
                 f'{html.escape(p.get("method") or "")}</div>'
                 f'<h4><a href="{html.escape(p.get("url") or "#")}" target="_blank">'
@@ -734,7 +739,7 @@ def user_experiments_html(data, automatic_candidates=None):
             strength = strength_labels.get(p.get("strength"), p.get("strength") or "")
             cycle = f' · {html.escape(p.get("cycle"))}' if p.get("cycle") else ""
             cards.append(
-                '<article class="experiment-paper">'
+                f'<article class="experiment-paper" data-default-tags="{tag_attr(experiment_tags(p))}">'
                 f'<div class="paper-meta">{year} · {html.escape(p.get("venue") or "")}{cycle}</div>'
                 f'<h4><a href="{html.escape(p.get("url") or p.get("source_url") or "#")}" target="_blank">'
                 f'{html.escape(p.get("title") or "")}</a></h4>'
@@ -1039,6 +1044,58 @@ def collect_usable_hub_papers(official, advice, experiments, automatic, genai_ro
     return result
 
 
+# Papers recorded at build time so the On-going page can render project cards
+# without scraping another page's DOM.
+PAPER_ROWS = {}
+
+
+def js_paper_id(title):
+    """Same id the browser computes: NFKC + lowercase + drop non-alphanumerics."""
+    text = unicodedata.normalize("NFKC", title or "").lower()
+    return "".join(ch for ch in text if ch.isalnum())
+
+
+def index_paper(pid, title, url, source, tags, rank, summary="", summary_url="", summary_at=""):
+    if not pid or not tags:
+        return
+    old = PAPER_ROWS.get(pid)
+    weight = {"core": 0, "related": 1, "weak": 2}
+    row = {"id": pid, "title": title or "", "url": url or "#", "source": source or "",
+           "tags": sorted(set(tags)), "rank": rank, "summary": summary or "",
+           "summaryUrl": summary_url or "", "summaryAt": summary_at or ""}
+    if old:
+        row["tags"] = sorted(set(old["tags"]) | set(row["tags"]))
+        if weight[old["rank"]] <= weight[rank]:
+            row["rank"] = old["rank"]
+            row["summary"] = old["summary"] or row["summary"]
+            row["summaryUrl"] = old["summaryUrl"] or row["summaryUrl"]
+    PAPER_ROWS[pid] = row
+
+
+def advice_tags(paper):
+    """Curated end-user advice/learning evidence: it defines that project."""
+    tags = {"安全建议与学习", "安全建议、警告与知识学习"}
+    if paper.get("topic"):
+        tags.add(paper["topic"])
+    index_paper(js_paper_id(paper.get("title")), paper.get("title"),
+                paper.get("url"),
+                f'{paper.get("year") or "?"} · {paper.get("venue") or ""}',
+                tags, "core", paper.get("summary_zh") or "")
+    return tags
+
+
+def experiment_tags(paper):
+    """Curated user experiments: verified method evidence."""
+    tags = {"用户实验"}
+    for topic in paper.get("topics") or []:
+        tags.add(topic)
+    index_paper(js_paper_id(paper.get("title")), paper.get("title"),
+                paper.get("url") or paper.get("source_url"),
+                f'{paper.get("year") or "?"} · {paper.get("venue") or ""}',
+                tags, "core", paper.get("summary_zh") or paper.get("takeaway") or "")
+    return tags
+
+
 def tag_attr(tags):
     return html.escape(json.dumps(sorted(tags), ensure_ascii=False), quote=True)
 
@@ -1081,6 +1138,9 @@ def usable_paper_card(row):
     method = f'<div class="method-line">{html.escape(row["method"])}</div>' if row.get("method") else ""
     default_tags = set(row["tags"]) | set(row["themes"])
     publication_source = f'{row["year"] or "?"} · {compact_venue(row.get("venue") or "")}'
+    index_paper(row["id"], row.get("title"), row.get("url"), publication_source,
+                default_tags, "related", row.get("summary") or "",
+                row.get("summary_source_url") or "", row.get("summary_verified_at") or "")
     return (
         f'<article class="usable-paper paper-entry" data-paper-id="{html.escape(row["id"])}" '
         f'data-publication-source="{html.escape(publication_source, quote=True)}" '
@@ -1203,6 +1263,11 @@ def expert_themes_html(experts, area, tz):
             zh_html = f'<span class="zh">{zh}</span>' if zh else ""
             default_tags = {"大牛 2025–2026"}
             default_tags.update(paper_default_topic_tags(paper))
+            index_paper(js_paper_id(paper.get("title")), paper.get("title"),
+                        paper_url(paper),
+                        f'{paper.get("year") or "?"} · {compact_venue(paper.get("venue") or "")}',
+                        default_tags, "weak",
+                        (tz.get(paper.get("paperId", "")) or {}).get("zh", ""))
             paper_items.append(
                 f'<li class="paper-entry" data-default-tags="{tag_attr(default_tags)}">'
                 f'<span class="yr">{paper.get("year") or "?"}</span> '
@@ -1228,8 +1293,9 @@ def expert_themes_html(experts, area, tz):
     )
 
 
-def tag_interaction_assets(seed):
+def tag_interaction_assets(seed, rows):
     seed_json = json.dumps(seed or {}, ensure_ascii=False).replace("</", "<\\/")
+    rows_json = json.dumps(rows or [], ensure_ascii=False).replace("</", "<\\/")
     return """
 <style>
 .workspace-intro{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px}
@@ -1246,7 +1312,25 @@ def tag_interaction_assets(seed):
 .publication-source{font-size:10px;font-weight:600;color:var(--acc);margin-left:7px;vertical-align:super;white-space:nowrap}
 .expert-theme-card h4{font-size:14px;margin:0}.expert-theme-list{list-style:none;margin:8px 0 0;padding:0}
 .expert-theme-list li{padding:7px 0;border-top:1px dashed var(--line);font-size:13px}.expert-theme-list a{color:var(--fg);text-decoration:none}
-.tag-toolbar{position:sticky;top:42px;z-index:4;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px;margin:0 0 18px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.tag-toolbar{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:9px;margin:0 0 14px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.project-block,.adv-block{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0}
+.project-block>h3,.adv-block>h3{display:flex;gap:9px;align-items:baseline;margin:0 0 9px;font-size:15px;color:var(--acc)}
+.proj-note{color:var(--mut);font-size:12px;font-weight:400}
+.adv-block>h4{margin:16px 0 6px;font-size:13.5px;color:var(--fg)}
+.tag-io{display:flex;gap:7px;margin:0 0 14px}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;max-width:1280px;margin:0 auto;padding:20px}
+.layout>main{max-width:none;margin:0;padding:0}
+.sidenav-inner{position:sticky;top:56px;max-height:calc(100vh - 76px);overflow:auto}
+.sidenav-title{margin:0 0 6px;font-size:12px;color:var(--mut);letter-spacing:.06em}
+.sidenav ul{list-style:none;margin:0;padding:0}
+.sidenav a{display:block;padding:3px 0;color:var(--mut);text-decoration:none;font-size:13px}
+.sidenav a:hover{color:var(--acc)}.sidenav .lv2{padding-left:12px}.sidenav .lv2 a{font-size:12px}
+nav a.cur{font-weight:600;border-bottom:2px solid var(--acc)}
+.tier{margin:14px 0}.tier>h4{display:flex;justify-content:space-between;gap:10px;margin:0 0 8px;font-size:13.5px}
+.tier>h4 span{color:var(--mut);font-weight:400;font-size:12px}
+details.tier>summary{font-size:13px}
+.ongoing-summary{margin:6px 0 0;font-size:12.5px;color:var(--fg);opacity:.82}
+@media(max-width:900px){.layout{grid-template-columns:1fr;padding:14px}.sidenav{display:none}}
 .tag-toolbar button,.tag-add{border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:999px;padding:3px 9px;cursor:pointer;font-size:11px}
 .tag-toolbar button.active{border-color:var(--acc);color:var(--acc)}.tag-toolbar button:disabled{opacity:.4;cursor:not-allowed}.tag-toolbar .spacer{flex:1}
 .paper-tag-editor{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-top:8px;padding-top:7px;border-top:1px dashed var(--line)}
@@ -1256,6 +1340,7 @@ button.paper-user-tag.custom{cursor:pointer}.tag-help{font-size:11px;color:var(-
 </style>
 <script>
 window.PAPER_TAG_SEED = __SEED__;
+window.PAPER_ROWS = __ROWS__;
 (function(){
   const storageKey = "paper-dashboard-tags-v1";
   const seed = window.PAPER_TAG_SEED || {};
@@ -1269,7 +1354,7 @@ window.PAPER_TAG_SEED = __SEED__;
   ].join(",");
   const entries = [];
   document.querySelectorAll(selectors).forEach(node => {
-    if (node.closest("#ongoing-dynamic")) return;
+    if (node.closest("[data-project-target]")) return;
     const link = node.querySelector('a[target="_blank"]');
     if (!link) return;
     node.classList.add("paper-entry");
@@ -1279,7 +1364,18 @@ window.PAPER_TAG_SEED = __SEED__;
     node.dataset.paperId = id;
     let defaults = [];
     try { defaults = JSON.parse(node.dataset.defaultTags || "[]"); } catch (_) {}
-    entries.push({node, link, title, id, defaults});
+    const rank = node.matches(".advice-paper,.experiment-paper,.official-paper") ? "core"
+      : node.matches(".usable-paper") ? "related" : "weak";
+    entries.push({node, link, title, id, defaults, rank});
+  });
+  // Build-time rows keep the On-going page working now that the paper cards
+  // themselves live on advanced.html.
+  const seenIds = new Set(entries.map(e => e.id));
+  (window.PAPER_ROWS || []).forEach(row => {
+    if (seenIds.has(row.id)) return;
+    seenIds.add(row.id);
+    entries.push({node: null, link: null, title: row.title, id: row.id,
+                  defaults: row.tags || [], rank: row.rank || "weak", row});
   });
   const defaultsById = {};
   entries.forEach(entry => {
@@ -1288,6 +1384,7 @@ window.PAPER_TAG_SEED = __SEED__;
   const combined = entry => new Set([...(defaultsById[entry.id] || []), ...((saved[entry.id] || []))]);
   const persist = () => localStorage.setItem(storageKey, JSON.stringify(saved));
   function renderEditor(entry) {
+    if (!entry.node) return;
     let box = entry.node.querySelector(":scope > .paper-tag-editor");
     if (!box) { box = document.createElement("div"); box.className = "paper-tag-editor"; entry.node.appendChild(box); }
     box.innerHTML = "";
@@ -1315,100 +1412,173 @@ window.PAPER_TAG_SEED = __SEED__;
     };
     box.appendChild(add);
   }
-  function renderOngoing() {
-    const target = document.getElementById("ongoing-dynamic");
-    if (!target) return;
-    const unique = new Map();
-    entries.forEach(entry => {
-      const tags = combined(entry);
-      if (!tags.has("安全建议与学习")) return;
-      if (!matched(entry)) return;
-      if (!unique.has(entry.id)) unique.set(entry.id, entry);
-    });
-    target.innerHTML = "";
-    if (!unique.size) {
-      const tip = document.createElement("p"); tip.className = "muted";
-      tip.textContent = "当前标签「" + [...activeTags].join("、") + "」在本专题下没有命中论文。";
-      target.appendChild(tip); return;
+  function projectCard(entry) {
+    const row = entry.row || null;
+    const card = document.createElement("article"); card.className = "ongoing-paper";
+    const h = document.createElement("h4"); const a = document.createElement("a");
+    a.href = entry.link ? entry.link.href : (row ? row.url : "#");
+    a.target = "_blank"; a.textContent = entry.title;
+    h.appendChild(a); card.appendChild(h);
+    const source = entry.node
+      ? (entry.node.dataset.publicationSource ||
+         (entry.node.querySelector(".paper-meta")?.textContent ||
+          entry.node.querySelector(".venue")?.textContent || "").trim())
+      : (row ? row.source : "");
+    if (source) { const sup=document.createElement("sup"); sup.className="publication-source";
+      sup.textContent=source; h.appendChild(sup); }
+    const tags = document.createElement("div"); tags.className = "default-topic-tags";
+    combined(entry).forEach(tag => { const s=document.createElement("span");
+      s.className="topic-chip"; s.textContent=tag; tags.appendChild(s); });
+    card.appendChild(tags);
+    const domSummary = entry.node
+      ? (entry.node.querySelector(":scope > p:not(.muted)")?.textContent || "").trim() : "";
+    const summary = domSummary || (row ? row.summary : "");
+    if (summary) {
+      const p = document.createElement("p"); p.className = "ongoing-summary";
+      p.textContent = summary; card.appendChild(p);
     }
-    [...unique.values()].forEach(entry => {
-      const card = document.createElement("article"); card.className = "ongoing-paper";
-      const h = document.createElement("h4"); const a = document.createElement("a");
-      a.href = entry.link.href; a.target = "_blank"; a.textContent = entry.title; h.appendChild(a); card.appendChild(h);
-      const source = entry.node.dataset.publicationSource ||
-        (entry.node.querySelector(".paper-meta")?.textContent || entry.node.querySelector(".venue")?.textContent || "").trim();
-      if (source) { const sup=document.createElement("sup"); sup.className="publication-source"; sup.textContent=source; h.appendChild(sup); }
-      const tags = document.createElement("div"); tags.className = "default-topic-tags";
-      combined(entry).forEach(tag => { const s=document.createElement("span"); s.className="topic-chip"; s.textContent=tag; tags.appendChild(s); });
-      card.appendChild(tags); target.appendChild(card);
-    });
+    const ref = entry.node ? entry.node.querySelector(".summary-source") : null;
+    if (ref) card.appendChild(ref.cloneNode(true));
+    else if (row && row.summaryUrl) {
+      const box = document.createElement("div"); box.className = "summary-source";
+      const link = document.createElement("a"); link.href = row.summaryUrl;
+      link.target = "_blank"; link.textContent = "简介依据";
+      box.appendChild(link);
+      if (row.summaryAt) box.appendChild(document.createTextNode(" · 核验 " + row.summaryAt));
+      card.appendChild(box);
+    }
+    return card;
   }
-  let activeTags = new Set();
-  const matched = entry => {
-    if (!activeTags.size) return true;
-    const tags = combined(entry);
-    return [...activeTags].every(t => tags.has(t));
-  };
+  const RANKW = {core: 0, related: 1, weak: 2};
   const groupSel = ".topic-block,.new-work-panel,.genai-card,.expert-theme-card," +
                    "section.official-group,section.usable-theme,section.advice-group,section.experiment-group";
-  const groups = [...document.querySelectorAll(groupSel)].map(node => {
-    const head = node.querySelector(":scope > h3, :scope > h4");
-    const countEl = head ? [...head.querySelectorAll("span")]
-      .find(s => /^[0-9]+ ?篇$/.test(s.textContent.trim())) : null;
-    return {node, countEl, total: countEl ? parseInt(countEl.textContent, 10) : null,
-            papers: [...node.querySelectorAll(".paper-entry")]};
-  }).filter(g => g.papers.length);
-  function applyFilter() {
-    entries.forEach(entry => { entry.node.hidden = !matched(entry); });
-    document.querySelectorAll("details").forEach(d => {
-      if (activeTags.size) {
-        if (d.dataset.prevOpen === undefined) d.dataset.prevOpen = d.open ? "1" : "0";
-        d.open = [...d.querySelectorAll(".paper-entry")].some(n => !n.hidden);
-      } else if (d.dataset.prevOpen !== undefined) {
-        d.open = d.dataset.prevOpen === "1"; delete d.dataset.prevOpen;
+  function collectGroups(scope) {
+    return [...scope.querySelectorAll(groupSel)].map(node => {
+      const head = node.querySelector(":scope > h3, :scope > h4");
+      const countEl = head ? [...head.querySelectorAll("span")]
+        .find(s => /^[0-9]+ ?篇$/.test(s.textContent.trim())) : null;
+      return {node, countEl, total: countEl ? parseInt(countEl.textContent, 10) : null,
+              papers: [...node.querySelectorAll(".paper-entry")]};
+    }).filter(g => g.papers.length);
+  }
+  function setupBar(bar) {
+    const scope = bar.closest("[data-scope]"); if (!scope) return () => {};
+    let projTags = null;
+    try { projTags = JSON.parse(scope.dataset.projectTags || "null"); } catch (_) {}
+    const target = scope.querySelector("[data-project-target]");
+    const local = projTags
+      ? entries.filter(e => { const t = combined(e); return projTags.some(x => t.has(x)); })
+      : entries.filter(e => e.node && scope.contains(e.node));
+    const active = new Set();
+    const groups = projTags ? [] : collectGroups(scope);
+    const dets = projTags ? [] : [...scope.querySelectorAll("details")]
+      .map(d => ({node: d, papers: [...d.querySelectorAll(".paper-entry")]}))
+      .filter(d => d.papers.length);
+    const matched = e => {
+      if (!active.size) return true;
+      const t = combined(e);
+      return [...active].every(x => t.has(x));
+    };
+    function apply() {
+      if (projTags) {
+        const seen = new Map();
+        local.forEach(e => {
+          if (!matched(e)) return;
+          const prev = seen.get(e.id);
+          if (!prev || RANKW[e.rank] < RANKW[prev.rank]) seen.set(e.id, e);
+        });
+        const buckets = {core: [], related: [], weak: []};
+        [...seen.values()].forEach(e => buckets[e.rank].push(e));
+        ["core", "related", "weak"].forEach(k => {
+          const box = scope.querySelector('[data-project-target="' + k + '"]');
+          if (!box) return;
+          box.innerHTML = "";
+          buckets[k].forEach(e => box.appendChild(projectCard(e)));
+          const tier = box.closest(".tier");
+          if (!tier) return;
+          const cnt = tier.querySelector("[data-tier-count]");
+          if (cnt) cnt.textContent = buckets[k].length + " 篇";
+          tier.hidden = buckets[k].length === 0;
+        });
+        const total = seen.size;
+        const empty = scope.querySelector("[data-project-empty]");
+        if (empty) {
+          empty.hidden = total > 0;
+          empty.textContent = active.size
+            ? "当前标签「" + [...active].join("、") + "」在本项目下没有命中论文。"
+            : "本项目还没有论文；在 Advanced Academic Work 页给论文打上项目标签即可进入。";
+        }
+      } else {
+        local.forEach(e => { if (e.node) e.node.hidden = !matched(e); });
+        dets.forEach(d => {
+          if (active.size) {
+            if (d.node.dataset.prevOpen === undefined) d.node.dataset.prevOpen = d.node.open ? "1" : "0";
+            const want = d.papers.some(x => !x.hidden);
+            if (d.node.open !== want) d.node.open = want;
+          } else if (d.node.dataset.prevOpen !== undefined) {
+            const want = d.node.dataset.prevOpen === "1";
+            if (d.node.open !== want) d.node.open = want;
+            delete d.node.dataset.prevOpen;
+          }
+        });
+        groups.forEach(g => {
+          const shown = g.papers.filter(x => !x.hidden).length;
+          g.node.hidden = !!active.size && shown === 0;
+          if (g.countEl) g.countEl.textContent =
+            active.size ? shown + " / " + g.total + " 篇" : g.total + " 篇";
+        });
       }
-    });
-    groups.forEach(g => {
-      const shown = g.papers.filter(n => !n.hidden).length;
-      g.node.hidden = !!activeTags.size && shown === 0;
-      if (g.countEl) g.countEl.textContent = activeTags.size ? shown + " / " + g.total + " 篇" : g.total + " 篇";
-    });
-    renderOngoing();
+      draw();
+    }
+    function draw() {
+      const all = new Set(preset); local.forEach(e => combined(e).forEach(t => all.add(t)));
+      if (projTags) projTags.forEach(t => all.delete(t));
+      bar.innerHTML = '<span class="tag-help">标签筛选' +
+        (active.size ? "（已选 " + active.size + " 个 · 取交集）" : "") + "</span>";
+      ["", ...all].forEach(tag => {
+        const probe = new Set(active); if (tag) probe.add(tag);
+        const n = local.filter(e => { const t = combined(e);
+          return [...probe].every(x => t.has(x)); }).length;
+        const on = tag ? active.has(tag) : !active.size;
+        const b = document.createElement("button"); b.type = "button";
+        b.textContent = (tag || "全部") + "（" + n + "）";
+        b.disabled = !on && n === 0;
+        b.className = on ? "active" : "";
+        b.onclick = () => {
+          if (!tag) active.clear();
+          else if (active.has(tag)) active.delete(tag);
+          else active.add(tag);
+          apply();
+        };
+        bar.appendChild(b);
+      });
+    }
+    return apply;
   }
-  function renderToolbar() {
-    const bar = document.getElementById("tag-toolbar"); if (!bar) return;
-    const allTags = new Set(preset); entries.forEach(entry => combined(entry).forEach(tag => allTags.add(tag)));
-    bar.innerHTML = '<span class="tag-help">标签筛选' +
-      (activeTags.size ? "（已选 " + activeTags.size + " 个 · 取交集）" : "") + '</span>';
-    ["", ...allTags].forEach(tag => {
-      const probe = new Set(activeTags); if (tag) probe.add(tag);
-      const n = entries.filter(e => { const t = combined(e); return [...probe].every(x => t.has(x)); }).length;
-      const on = tag ? activeTags.has(tag) : !activeTags.size;
-      const b = document.createElement("button"); b.type = "button";
-      b.textContent = (tag || "全部") + "（" + n + "）";
-      b.disabled = !on && n === 0;
-      b.className = on ? "active" : "";
-      b.onclick = () => {
-        if (!tag) activeTags.clear();
-        else if (activeTags.has(tag)) activeTags.delete(tag);
-        else activeTags.add(tag);
-        renderToolbar(); applyFilter();
-      };
-      bar.appendChild(b);
-    });
-    const spacer=document.createElement("span"); spacer.className="spacer"; bar.appendChild(spacer);
+  function renderTagIO() {
+    const io = document.getElementById("tag-io"); if (!io) return;
+    io.innerHTML = "";
     const exp=document.createElement("button"); exp.type="button"; exp.textContent="导出标签";
-    exp.onclick=()=>{const blob=new Blob([JSON.stringify(saved,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="paper-tags.json";a.click();URL.revokeObjectURL(a.href);};bar.appendChild(exp);
+    exp.onclick=()=>{const blob=new Blob([JSON.stringify(saved,null,2)],{type:"application/json"});
+      const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+      a.download="paper-tags.json";a.click();URL.revokeObjectURL(a.href);};
+    io.appendChild(exp);
     const imp=document.createElement("button"); imp.type="button"; imp.textContent="导入标签";
-    imp.onclick=()=>document.getElementById("tag-import").click();bar.appendChild(imp);
+    imp.onclick=()=>document.getElementById("tag-import").click(); io.appendChild(imp);
   }
-  function renderAll(){ entries.forEach(renderEditor); renderToolbar(); renderOngoing(); applyFilter(); }
+  let refreshers = [];
+  function renderAll(){
+    entries.forEach(renderEditor);
+    renderTagIO();
+    refreshers = [...document.querySelectorAll("[data-tagbar]")].map(setupBar);
+    refreshers.forEach(fn => fn());
+  }
   const input=document.getElementById("tag-import");
   if(input) input.onchange=async()=>{const file=input.files[0];if(!file)return;try{saved=JSON.parse(await file.text());persist();renderAll();}catch(_){alert("标签 JSON 无法读取");}input.value="";};
   renderAll();
 })();
 </script>
-""".replace("__SEED__", seed_json)
+""".replace("__SEED__", seed_json).replace("__ROWS__", rows_json)
 
 
 def expert_card(e, tz):
@@ -1492,7 +1662,7 @@ def main():
     expert_security_themes = expert_themes_html(experts, "security", tz)
     expert_hci_themes = expert_themes_html(experts, "hci", tz)
     paper_tag_seed = json.loads(read("data/paper_tags.json") or "{}")
-    tag_assets = tag_interaction_assets(paper_tag_seed)
+    tag_assets = tag_interaction_assets(paper_tag_seed, list(PAPER_ROWS.values()))
 
     doc = f"""<!doctype html>
 <html lang="zh"><head><meta charset="utf-8">
@@ -1623,87 +1793,141 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
 </main></body></html>"""
     style_match = re.search(r"(?s)<style>.*?</style>", doc)
     style_tag = style_match.group(0) if style_match else ""
+    subtitle = f"大牛库 {len(experts)} 人 · 领域内论文 {total_infield} 篇 · 数据更新 {gen}"
 
-    # Main dashboard: four research workspaces; full expert library stays on experts.html.
-    doc = re.sub(
-        r"(?s)<nav>.*?</nav>",
-        '<nav><a href="#ongoing">On-going</a><a href="#usable">Usable Security</a>'
-        '<a href="#cybersecurity">网络安全</a><a href="#hci">HCI</a>'
-        '<a href="experts.html">大牛库 ↗</a></nav>',
-        doc,
-        count=1,
+    # Three sibling pages: the projects I am working on, the community-wide
+    # reading surface, and the expert library.
+    NAV = [("index.html", "On-going", "ongoing"),
+           ("advanced.html", "Advanced Academic Work", "advanced"),
+           ("experts.html", "大牛库", "experts")]
+
+    def nav_html(active):
+        links = "".join(
+            '<a href="%s" class="%s">%s</a>' % (href, "cur" if key == active else "", label)
+            for href, label, key in NAV)
+        return "<nav>" + links + "</nav>"
+
+    def sidebar_html(items):
+        rows = "".join(
+            '<li class="lv%d"><a href="#%s">%s</a></li>' % (lv, aid, html.escape(label))
+            for aid, label, lv in items)
+        return '<div class="sidenav-inner"><p class="sidenav-title">目录</p><ul>' + rows + "</ul></div>"
+
+    def page(title, active, sidebar, body):
+        return ('<!doctype html><html lang="zh"><head><meta charset="utf-8">'
+                '<meta name="viewport" content="width=device-width, initial-scale=1">'
+                '<title>' + title + '</title>' + style_tag + '</head><body>'
+                '<header><h1>' + title + '</h1><div class="sub">' + subtitle + '</div></header>'
+                + nav_html(active)
+                + '<input id="tag-import" type="file" accept="application/json" hidden>'
+                + '<div class="layout"><aside class="sidenav">' + sidebar + '</aside>'
+                + '<main data-scope><div class="tag-io" id="tag-io"></div>' + body + '</main></div>'
+                + tag_assets + '</body></html>')
+
+    # ---------- page 1: On-going ----------
+    project_sections, project_nav = [], []
+    for proj in load_projects():
+        pid = html.escape(proj.get("id") or "")
+        pname = html.escape(proj.get("name") or "")
+        pnote = html.escape(proj.get("note") or "")
+        ptags = html.escape(json.dumps(proj.get("tags") or [], ensure_ascii=False), quote=True)
+        extra = ""
+        if proj.get("id") == "advice-learning":
+            extra = ('<details class="deep-dive"><summary>查看人工整理的 2025-2026 证据详情</summary>'
+                     + advice_learning_section + '</details>')
+        tiers = (
+            f'<div class="tier" id="proj-{pid}-core"><h4>核心 · 人工核验证据'
+            '<span data-tier-count>0 篇</span></h4>'
+            '<div class="ongoing-grid" data-project-target="core"></div></div>'
+            f'<div class="tier" id="proj-{pid}-related"><h4>相关 · Usable Security 主库'
+            '<span data-tier-count>0 篇</span></h4>'
+            '<div class="ongoing-grid" data-project-target="related"></div></div>'
+            f'<details class="tier" id="proj-{pid}-weak"><summary>弱相关 · 仅主题标签命中'
+            '（<span data-tier-count>0 篇</span>）</summary>'
+            '<div class="ongoing-grid" data-project-target="weak"></div></details>'
+            '<p class="muted" data-project-empty hidden></p>'
+        )
+        project_sections.append(
+            f'<section class="project-block" data-scope data-project-tags="{ptags}" id="proj-{pid}">'
+            f'<h3>{pname}<span class="proj-note">{pnote}</span></h3>'
+            '<div class="tag-toolbar" data-tagbar></div>'
+            + tiers + extra + '</section>'
+        )
+        project_nav.append(("proj-" + pid, proj.get("name") or "", 1))
+        project_nav.append(("proj-%s-core" % pid, "核心 · 人工核验", 2))
+        project_nav.append(("proj-%s-related" % pid, "相关 · 主库", 2))
+        project_nav.append(("proj-%s-weak" % pid, "弱相关", 2))
+
+    ongoing_body = (
+        '<section id="ongoing"><h2>On-going · 我的项目</h2>'
+        '<div class="coverage-note"><strong>怎么维护</strong><p>项目清单在 '
+        '<code>data/projects.json</code>；论文带上项目标签就会自动进入对应项目块。'
+        '分档口径：<b>核心</b>来自人工核验数据集，<b>相关</b>来自 Usable Security 主库，'
+        '<b>弱相关</b>只靠主题关键词命中标签，默认折叠。每块的标签栏只筛该项目，'
+        '用来按方法或主题进一步收窄。</p></div>'
+        + "".join(project_sections) + '</section>'
     )
-    main_content = (
-        '<main>'
-        '<div class="workspace-intro">'
-        '<a href="#ongoing"><b>On-going</b><span>正在推进的安全建议与知识学习</span></a>'
-        '<a href="#usable"><b>Usable Security</b><span>按来源，再按 GenAI / 建议学习 / 其他主题</span></a>'
-        '<a href="#cybersecurity"><b>网络安全</b><span>趋势、话题传导与大牛主题</span></a>'
-        '<a href="#hci"><b>HCI</b><span>指定 HCI 来源趋势与大牛主题</span></a>'
-        '</div>'
-        '<div id="tag-toolbar" class="tag-toolbar"></div>'
-        '<input id="tag-import" type="file" accept="application/json" hidden>'
-        '<section id="ongoing"><h2>On-going · 终端用户安全建议与安全知识学习</h2>'
-        '<div class="coverage-note"><strong>当前工作区</strong><p>'
-        '这里自动汇总所有带“安全建议与学习”标签的论文；您在其他专题给论文增加该标签后，它会立即进入这里。'
-        '</p></div><div id="ongoing-dynamic" class="ongoing-grid"></div>'
-        '<details class="deep-dive"><summary>查看人工整理的 2025–2026 证据详情</summary>'
-        f'{advice_learning_section}</details></section>'
-        '<section id="usable"><h2>Usable Security 专题</h2>'
-        f'{usable_hub_section}'
-        '<details class="deep-dive"><summary>查看用户实验 / A-B Test 方法详情</summary>'
-        f'{user_experiments_section}</details>'
+    index_doc = page("On-going · 我的项目", "ongoing",
+                     sidebar_html(project_nav), ongoing_body)
+
+    # ---------- page 2: Advanced Academic Work ----------
+    advanced_body = (
+        '<section class="adv-block" data-scope id="usable"><h3>Usable Security</h3>'
+        '<div class="tag-toolbar" data-tagbar></div>'
+        + usable_hub_section
+        + '<details class="deep-dive"><summary>查看用户实验 / A-B Test 方法详情</summary>'
+        + user_experiments_section + '</details>'
         '<details class="deep-dive"><summary>查看 GenAI × Usable Security 扩展证据</summary>'
-        f'{genai_html}</details></section>'
-        '<section id="cybersecurity" class="trend"><h2>网络安全专题</h2>'
-        '<h3>大牛库 · 2025–2026 网络安全论文主题</h3>'
-        f'{expert_security_themes}'
-        '<h3>安全四大与 SOUPS/PETS · 话题传导</h3>'
-        f'{sec_migration_html}'
-        '<h3>网络安全趋势</h3>'
-        f'{sec_html}</section>'
-        '<section id="hci" class="trend"><h2>HCI 专题</h2>'
-        '<h3>大牛库 · 2025–2026 HCI 论文主题</h3>'
-        f'{expert_hci_themes}'
-        '<h3>HCI 隐私与安全趋势</h3>'
-        f'{hci_html}</section>'
-        '</main>'
+        + genai_html + '</details></section>'
+        '<section class="adv-block trend" data-scope id="cybersecurity"><h3>网络安全</h3>'
+        '<div class="tag-toolbar" data-tagbar></div>'
+        '<h4 id="cyber-themes">大牛库 · 2025-2026 网络安全论文主题</h4>'
+        + expert_security_themes
+        + '<h4 id="cyber-migration">安全四大与 SOUPS/PETS · 话题传导</h4>'
+        + sec_migration_html
+        + '<h4 id="cyber-trend">网络安全趋势</h4>'
+        + sec_html + '</section>'
+        '<section class="adv-block trend" data-scope id="hci"><h3>HCI</h3>'
+        '<div class="tag-toolbar" data-tagbar></div>'
+        '<h4 id="hci-themes">大牛库 · 2025-2026 HCI 论文主题</h4>'
+        + expert_hci_themes
+        + '<h4 id="hci-trend">HCI 隐私与安全趋势</h4>'
+        + hci_html + '</section>'
     )
-    # Use a callable replacement so backslashes in paper titles/abstracts are
-    # treated as literal content instead of regex replacement escapes.
-    doc = re.sub(r"(?s)<main>.*?</main>", lambda _match: main_content, doc, count=1)
-    doc = doc.replace("</body>", f"{tag_assets}</body>", 1)
+    advanced_nav = [
+        ("usable", "Usable Security", 1),
+        ("cybersecurity", "网络安全", 1),
+        ("cyber-themes", "大牛主题", 2),
+        ("cyber-migration", "话题传导", 2),
+        ("cyber-trend", "安全趋势", 2),
+        ("hci", "HCI", 1),
+        ("hci-themes", "大牛主题", 2),
+        ("hci-trend", "HCI 趋势", 2),
+    ]
+    advanced_doc = page("Advanced Academic Work", "advanced",
+                        sidebar_html(advanced_nav), advanced_body)
 
-    experts_doc = f"""<!doctype html>
-<html lang="zh"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>大牛库 · Usable Security / HCI</title>
-{style_tag}</head><body>
-<header><h1>大牛库 · Usable Security / HCI</h1>
-<div class="sub">{len(experts)} 人 · 领域内论文 {total_infield} 篇 · 数据更新 {gen}</div></header>
-<nav><a href="index.html">← 主看板</a><a href="#new">2026 新工作</a>
-<a href="#new-authors">2026 新增作者</a><a href="#experts">完整大牛库</a></nav>
-<main>
-<section id="new"><h2>大牛 2026 年以来新工作</h2>
-<div class="new-work">{new_work}</div></section>
-<section id="new-authors"><h2>2026 最新 Usable Security · 新增一作与通讯作者</h2>
-<div class="coverage-note"><p>一作按官方作者顺序加入；通讯作者仅在论文 PDF 或作者主页明确标注时认定。
-没有可靠 Semantic Scholar ID 的作者标为“待核验”，不会自动绑定同名 profile。</p></div>
-<div class="grid">{tracked_cards}</div></section>
-<section id="experts"><h2>完整大牛库 · 各学者最近论文</h2>
-<div class="grid">{cards}</div></section>
-</main></body></html>"""
-    experts_doc = experts_doc.replace(
-        "<main>",
-        '<main><div id="tag-toolbar" class="tag-toolbar"></div>'
-        '<input id="tag-import" type="file" accept="application/json" hidden>',
-        1,
+    # ---------- page 3: expert library ----------
+    experts_body = (
+        '<div class="tag-toolbar" data-tagbar></div>'
+        '<section id="new"><h2>大牛 2026 年以来新工作</h2>'
+        f'<div class="new-work">{new_work}</div></section>'
+        '<section id="new-authors"><h2>2026 最新 Usable Security · 新增一作与通讯作者</h2>'
+        '<div class="coverage-note"><p>一作按官方作者顺序加入；通讯作者仅在论文 PDF 或作者主页明确标注时认定。'
+        '没有可靠 Semantic Scholar ID 的作者标为“待核验”，不会自动绑定同名 profile。</p></div>'
+        f'<div class="grid">{tracked_cards}</div></section>'
+        '<section id="experts"><h2>完整大牛库 · 各学者最近论文</h2>'
+        f'<div class="grid">{cards}</div></section>'
     )
-    experts_doc = experts_doc.replace("</body>", f"{tag_assets}</body>", 1)
+    experts_nav = [("new", "2026 新工作", 1), ("new-authors", "2026 新增作者", 1),
+                   ("experts", "完整大牛库", 1)]
+    experts_doc = page("大牛库 · Usable Security / HCI", "experts",
+                       sidebar_html(experts_nav), experts_body)
 
-    open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(doc)
+    open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(index_doc)
+    open(os.path.join(ROOT, "advanced.html"), "w", encoding="utf-8").write(advanced_doc)
     open(os.path.join(ROOT, "experts.html"), "w", encoding="utf-8").write(experts_doc)
-    print(f"看板已生成 index.html + experts.html（{len(experts)} 位追踪作者，{total_infield} 篇领域内论文）")
+    print(f"看板已生成 index.html + advanced.html + experts.html（{len(experts)} 位追踪作者，{total_infield} 篇领域内论文）")
 
 if __name__ == "__main__":
     main()
