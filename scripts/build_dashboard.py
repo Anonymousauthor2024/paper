@@ -262,9 +262,69 @@ def merge_homepage(rows):
                              r["paper"].get("year") or 0), reverse=True)
     return rows
 
+PROJECTS_DIR = os.path.join(ROOT, "projects")
+
+
 def load_projects():
-    raw = json.loads(read("data/projects.json") or "{}")
-    return raw.get("projects") or []
+    """One folder per project; moving the folder out retires the project."""
+    if not os.path.isdir(PROJECTS_DIR):
+        return []
+    out = []
+    for name in sorted(os.listdir(PROJECTS_DIR)):
+        folder = os.path.join(PROJECTS_DIR, name)
+        meta_path = os.path.join(folder, "project.json")
+        if not os.path.isfile(meta_path):
+            continue
+        with open(meta_path, encoding="utf-8") as handle:
+            meta = json.load(handle)
+        meta["id"] = meta.get("id") or name
+        meta["folder"] = folder
+        out.append(meta)
+    return out
+
+
+def match_rule(paper, when):
+    return all(paper.get(field) in values for field, values in when.items())
+
+
+def load_project_sources(project):
+    """Read the data files a project declares and feed them into the index.
+
+    Everything - field names, extra tags, tier rules - comes from
+    project.json, so a new project is a new folder, not a code change.
+    """
+    for source in project.get("sources") or []:
+        path = os.path.join(project.get("folder") or "", source.get("file") or "")
+        if not os.path.isfile(path):
+            continue
+        with open(path, encoding="utf-8") as handle:
+            payload = json.load(handle)
+        fields = source.get("fields") or {}
+        base_tags = set(project.get("tags") or []) | set(source.get("tags") or [])
+        for paper in payload.get(source.get("papers_key") or "papers") or []:
+            tags = set(base_tags)
+            for field, mapping in (source.get("tag_from") or {}).items():
+                value = paper.get(field)
+                label = mapping.get(value) if not isinstance(value, bool) else None
+                if label is None:
+                    label = mapping.get(str(value).lower())
+                if label:
+                    tags.add(label)
+            rank = source.get("default_rank") or "weak"
+            for rule in source.get("tiers") or []:
+                if match_rule(paper, rule.get("when") or {}):
+                    rank = rule.get("rank") or rank
+                    break
+
+            def field(key, default=""):
+                return paper.get(fields.get(key, key)) or default
+
+            abstract = str(field("summary"))
+            summary = abstract[:180] + ("…" if len(abstract) > 180 else "")
+            index_paper(field("id") or js_paper_id(field("title")),
+                        field("title"), field("url"),
+                        "%s · %s" % (field("year", "?"), compact_venue(str(field("venue")))),
+                        tags, rank, summary)
 
 
 def load_topic_rules():
@@ -1662,7 +1722,6 @@ def main():
     expert_security_themes = expert_themes_html(experts, "security", tz)
     expert_hci_themes = expert_themes_html(experts, "hci", tz)
     paper_tag_seed = json.loads(read("data/paper_tags.json") or "{}")
-    tag_assets = tag_interaction_assets(paper_tag_seed, list(PAPER_ROWS.values()))
 
     doc = f"""<!doctype html>
 <html lang="zh"><head><meta charset="utf-8">
@@ -1826,13 +1885,18 @@ summary{{cursor:pointer;color:var(--acc);font-size:13px}}.rest-papers a{{color:v
 
     # ---------- page 1: On-going ----------
     project_sections, project_nav = [], []
-    for proj in load_projects():
+    projects = load_projects()
+    for proj in projects:
+        load_project_sources(proj)
+    # every project's own data is in the index before the page embeds it
+    tag_assets = tag_interaction_assets(paper_tag_seed, list(PAPER_ROWS.values()))
+    for proj in projects:
         pid = html.escape(proj.get("id") or "")
         pname = html.escape(proj.get("name") or "")
         pnote = html.escape(proj.get("note") or "")
         ptags = html.escape(json.dumps(proj.get("tags") or [], ensure_ascii=False), quote=True)
         extra = ""
-        if proj.get("id") == "advice-learning":
+        if proj.get("curated_evidence") == "advice_learning":
             extra = ('<details class="deep-dive"><summary>查看人工整理的 2025-2026 证据详情</summary>'
                      + advice_learning_section + '</details>')
         tiers = (

@@ -3,16 +3,22 @@
 """fetch_assisted_driving.py — 只抓 2025-2026 辅助驾驶的人因/用户研究。
 
 复用 fetch_trends 的检索与过滤规则，独立成文件，避免整轮趋势抓取的限流成本。
-输出: data/assisted_driving_2025_2026.json
+输出: projects/assisted-driving/assisted_driving_2025_2026.json
+（项目文件夹被移走即视为下线，脚本跳过而不重建）
 """
 import json, os, time
 from fetch_trends import assisted_driving_rows, DRIVING_QUERY
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "data", "assisted_driving_2025_2026.json")
+PROJECT_DIR = os.path.join(ROOT, "projects", "assisted-driving")
+OUT = os.path.join(PROJECT_DIR, "assisted_driving_2025_2026.json")
 
 
 def main():
+    if not os.path.isdir(PROJECT_DIR):
+        # The folder is the project: moving it out retires the tracker.
+        print(f"{PROJECT_DIR} 不存在：项目已下线，跳过抓取")
+        return
     rows = assisted_driving_rows()
     with_method = [p for p in rows if p.get("user_study_evidence")]
     if not rows:

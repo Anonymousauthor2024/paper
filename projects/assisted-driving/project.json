@@ -1,0 +1,35 @@
+{
+  "name": "辅助驾驶 user study（2025–2026）",
+  "note": "核心限 HCI CCF A + 方法证据；安全四大的车载攻防放弱相关",
+  "tags": ["辅助驾驶"],
+  "sources": [
+    {
+      "file": "assisted_driving_2025_2026.json",
+      "papers_key": "papers",
+      "fields": {
+        "id": "paperId",
+        "title": "title",
+        "url": "url",
+        "venue": "venue",
+        "year": "year",
+        "summary": "abstract"
+      },
+      "tag_from": {
+        "venue_tier": {
+          "big4": "安全四大",
+          "hci_ccf_a": "HCI CCF A",
+          "hci_watch": "HCI 观察来源"
+        },
+        "user_study_evidence": {
+          "true": "用户研究方法"
+        }
+      },
+      "tiers": [
+        {"rank": "core", "when": {"venue_tier": ["hci_ccf_a"], "user_study_evidence": [true]}},
+        {"rank": "related", "when": {"venue_tier": ["hci_ccf_a"]}},
+        {"rank": "related", "when": {"venue_tier": ["hci_watch"], "user_study_evidence": [true]}}
+      ],
+      "default_rank": "weak"
+    }
+  ]
+}
